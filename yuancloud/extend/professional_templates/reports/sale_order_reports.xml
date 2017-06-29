@@ -1,0 +1,25 @@
+<yuancloud>
+    <data>
+            <!--inherits the default sales report  and override its name  and file-->
+      <report 
+            id="sale.report_sale_order"
+            model="sale.order"
+            string="Quotation / Order"
+            report_type="qweb-pdf"
+            name="professional_templates.sale_order"
+            file="professional_templates.sale_order"
+      />
+
+      <!--  <report 
+            id="account.account_invoice_action_report_duplicate"
+            model="account.invoice"
+            string="Duplicates"
+            report_type="qweb-pdf"
+            name="customized_invoice.my_duplicate"
+            file="customized_invoice.my_duplicate"
+            attachment_use="False"
+        /> -->
+
+
+    </data>
+</yuancloud>

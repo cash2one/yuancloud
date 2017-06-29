@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>导入Coda 对账单文件 (仅比利时) &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="银行费用" href="../feeds.html" />
+    <link rel="next" title="在YuanCloud如何同步你的PayPal账户?" href="paypal.html" />
+    <link rel="prev" title="导入QIF 对账单文件" href="qif.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../accounting.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              导入Coda 对账单文件 (仅比利时)
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="current toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#install-the-coda-feature" class="ripple internal reference">安装 CODA 功能</a></li><li class="list-group-item"><a href="#import-your-first-coda-file" class="ripple internal reference">导入你的CODA文件</a></li></ul></li><li class="list-group-item"><a href="#importing-coda-files" class="ripple internal reference">导入 CODA 文件</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/accounting/bank/feeds/coda.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="import-coda-statement-files-belgium-only"><p >CODA 是比利时银行对账单文件格式。多数比利时银行，以及 Isabel 软件，允许下载你所有银行对账单 CODA 文件。</p><p >对于YuanCloud, 你可以从你的银行或者会计软件下载CODA文件并直接导入YuanCloud。这将创建所有银行对账单。</p><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >现在测试功能  <a href="https://drive.google.com/file/d/0B5BDHVRYo-q5UVVMbGRxUmtpVDg/view?usp=sharing" class="external reference alert-link">CODA 示例文件</a></p></div></section><section id="configuration"><h2 >配置</h2></section><section id="install-the-coda-feature"><h3 >安装 CODA 功能</h3><p >如果您已经安装了YuanCloud提供的比利时科目表，CODA 导入功能会默认安装。在这种情况下，您可以直接转到下一章 <a href="#installcoda" class="internal reference">导入你的第一个 coda 文件&lt;InstallCoda_&gt;</a></p><p >如果CODA没激活，你首先激活它。在会计应用中，去菜单 [UNKNOWN NODE problematic]. 在会计设置中，检查选项 <strong >以 .CODA 格式导入银行对账单</strong> 并应用。</p></section><section id="import-your-first-coda-file"><h3 >导入你的CODA文件</h3><p >一旦你已经安装了此功能，你可以设置你的银行账户允许导入银行对账单文件。 要做到这一点, 去会计 <strong >仪表板</strong>, 并在银行账户卡上点击按钮**更多** 。然后, 点击 <strong >导入对账单</strong> 来加载你的第一个 CODA 文件。</p><img src="../../../_images/coda01.png" class="img-responsive center-block"><p >在下面界面中加载 CODA 文件并点击**导入** 来创建你的说要银行对账单。</p><img src="../../../_images/coda02.png" class="img-responsive center-block"><p >如果成功加载该文件，你会被重定向到银行核对屏幕，所有的交易会被重新核对。</p></section><section id="importing-coda-files"><i id="installcoda"></i><h2 >导入 CODA 文件</h2><p >在导入了你的第一个文件后，这个YuanCloud会计仪表板会自动建议你为你的银行导入更多的文件。为了下一次导入，你不需要再去点击 * <em >更多</em> * 按钮，你可以直接在链接上点击 <strong >导入声明</strong>。</p><img src="../../../_images/coda03.png" class="img-responsive center-block"><p >每次你得到一个新客户/供应商的对账单,YuanCloud将要求您选择正确的单据去核销。从此项操作信息,将使YuanCloud自动完成下一个付款或自动关联。这将加快核销进程。</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >YuanCloud能够自动检测是否某些文件或交易已经导入。所以,你不需要担心如何避免重复导入相同的文件:YuanCloud将在创建新的银行对账单之前检查一切。</p></div><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="ofx.html" class="internal alert-link reference"><em >导入OFX 对账单文件</em></a></li><li ><a href="qif.html" class="internal alert-link reference"><em >导入QIF 对账单文件</em></a></li><li ><a href="synchronize.html" class="internal alert-link reference"><em >如何与银行同步yuancloud？</em></a></li><li ><a href="manual.html" class="internal alert-link reference"><em >手工登记银行对账单</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何在最小库存和按订单补货规则之间选择？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="库存调整" href="../adjustment.html" />
+    <link rel="next" title="交货订单" href="../delivery.html" />
+    <link rel="prev" title="如何进行初始化盘点？" href="initial_inventory.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../inventory.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何在最小库存和按订单补货规则之间选择？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="current toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#terminology" class="ripple internal reference">术语</a><ul ><li class="list-group-item"><a href="#minimum-stock-rule" class="ripple internal reference">最小库存规则</a></li><li class="list-group-item"><a href="#make-to-order" class="ripple internal reference">按单补货</a></li></ul></li><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#minimum-stock-rules" class="ripple internal reference">最小库存规则</a></li><li class="list-group-item"><a href="#id1" class="ripple internal reference">按单补货</a></li><li class="list-group-item"><a href="#choice-between-the-two-options" class="ripple internal reference">选择两个选项其中一个</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/inventory/management/adjustment/min_stock_rule_vs_mto.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-choose-between-minimum-stock-rule-and-make-to-order"><p >[UNKNOWN NODE problematic]最小库存规则**和**按订单补货**有着同样的结果但是却有不同的规则。依赖于生产以及发货的策略，我们可以选择使用它。</p></section><section id="terminology"><h2 >术语</h2></section><section id="minimum-stock-rule"><h3 >最小库存规则</h3><p >[UNKNOWN NODE problematic]最小库存 [UNKNOWN NODE problematic]规则能来确保在你的库存中总是有最少数量的产品用来满足生产或者满足客户的需求。当库存水平到达最低库存时，系统会自动生成一个达到最大数量的需求补货单。</p></section><section id="make-to-order"><h3 >按单补货</h3><p ><strong >按订单生产**的功能会根据**销售订单**的产品数量触发一个该产品的**采购订单</strong>，系统**不会**检查当前的库存估值，也就是系统不考虑产品当前的在手数量会去触发一个采购订单。</p></section><section id="configuration"><h2 >配置</h2></section><section id="minimum-stock-rules"><h3 >最小库存规则</h3><p >最小库存规则的配置是在菜单项 <span class="menuselection">存货(Inventory) ‣ 存货控制(Inventory Control) ‣ 再定点规则(Reordering Rule)</span> 的下拉菜单中。然后点击 <strong >创建</strong> 去设置给定产品最小和最大库存数值。</p><img src="../../../_images/min_stock_rule_vs_mto01.png" class="img-responsive center-block"><div class="code-fields"><div class="code-field"><div class="code-field-name">Procurement Group</div><div class="code-field-body"><div class="line-block"><div class="line">Moves created through this orderpoint will be put in this procurement group. If none is given, the moves generated by procurement rules will be grouped into one big picking.</div></div></div></div><div class="code-field"><div class="code-field-name">Minimum Quantity</div><div class="code-field-body"><div class="line-block"><div class="line">When the virtual stock goes below the Min Quantity specified for this field, YuanCloud generates a procurement to bring the forecasted quantity to the Max Quantity.</div></div></div></div><div class="code-field"><div class="code-field-name">Maximum Quantity</div><div class="code-field-body"><div class="line-block"><div class="line">When the virtual stock goes below the Min Quantity, YuanCloud generates a procurement to bring the forecasted quantity to the Quantity specified as Max Quantity.</div></div></div></div><div class="code-field"><div class="code-field-name">Quantity Multiple</div><div class="code-field-body"><div class="line-block"><div class="line">The procurement quantity will be rounded up to this multiple.  If it is 0, the exact quantity will be used.  </div></div></div></div><div class="code-field"><div class="code-field-name">Active</div><div class="code-field-body"><div class="line-block"><div class="line">If the active field is set to False, it will allow you to hide the orderpoint without removing it.</div></div></div></div><div class="code-field"><div class="code-field-name">Lead Time</div><div class="code-field-body"><div class="line-block"><div class="line">Number of days after the orderpoint is triggered to receive the products or to order to the vendor</div></div></div></div></div><p >然后，在产品点击进入产品表单，在**存货子页面**选择一个供应商。</p><img src="../../../_images/min_stock_rule_vs_mto02.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >不要忘了在产品表单中选择正确的产品类型。销售品不计入库存并且不进行库存估值</p></div></section><section id="id1"><h3 >按单补货</h3><p >按订单生产可以在产品表单配置:[UNKNOWN NODE title_reference] (或者其它模块下有的产品路径下)。</p><p >在产品表单信息的**存货**页面，点击**按单补货**</p><img src="../../../_images/min_stock_rule_vs_mto03.png" class="img-responsive center-block"></section><section id="choice-between-the-two-options"><h3 >选择两个选项其中一个</h3><p >两种选项的选择依赖于你的存货策略。如果你想有一点存货缓冲并总是在仓库中留有最少的存货数量，那么就可以使用最小库存规则。如果想只是在销售订单确认的状态下才去补充存货，那么就建议使用按照订单补货。</p></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

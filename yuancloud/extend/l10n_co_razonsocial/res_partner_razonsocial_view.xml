@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+
+    <record model="ir.ui.view" id="view_partner_form_inherit_razonsocial">
+        <field name="name">partner.form.razonsocial</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <field name="state"
+                       placeholder="Selecciona tipo de persona"
+                       class="oe_edit_only"
+                       attrs="{'invisible': [('is_company', '=', False)], 'required': [('is_company', '=', True)]}"></field>
+                <field name="legal_denomination"
+                       class="oe_read_only"></field>
+                <field name="legal_entity_name"
+                       placeholder="Razon social"
+                       class="oe_edit_only"></field>
+                <field name="firstname"
+                       placeholder="Primer nombre"
+                       style="width: 50%%"
+                       class="oe_edit_only"></field>
+                <field name="middlename"
+                       placeholder="Segundo nombre"
+                       style="width: 49%%"
+                       class="oe_edit_only"></field>
+                <field name="first_lastname"
+                       placeholder="Primer Apellido"
+                       style="width: 50%%"
+                       class="oe_edit_only"></field>
+                <field name="second_lastname"
+                       placeholder="Segundo Apellido"
+                       style="width: 49%%"
+                       class="oe_edit_only"></field>
+            </field>
+        </field>
+    </record>
+
+    </data>
+</yuancloud>

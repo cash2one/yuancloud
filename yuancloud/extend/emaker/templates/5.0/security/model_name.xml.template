@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<yuancloud>
+  <data>
+
+      {{ groups }}
+
+      {{ rules }}
+
+  </data>
+</yuancloud>

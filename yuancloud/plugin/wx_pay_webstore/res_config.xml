@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<yuancloud>
+    <data>
+        <record model="ir.ui.view" id="view_general_wx_payment_configuration">
+            <field name="name">base.config.settings.wx_websitepayment</field>
+            <field name="model">base.config.settings</field>
+            <field name="inherit_id" ref="wx_base.view_general_wx_configuration"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='module_wx_base']/.." position="inside">
+                    <div attrs="{'invisible':[('module_wx_base','=',False)]}">
+                        <div name="webstore_weixin_payment">
+                            <div>
+                                <field name="website_wxpayment_enabled" class="oe_inline"/>
+                                <label for="website_wxpayment_enabled"/>
+                            </div>
+                            <div attrs="{'invisible':[('website_wxpayment_enabled','=',False)]}">
+                                <blockquote>
+                                    为了网站商城使用微信支付，请设置公众号信息:<br/>
+                                    公众号: <field name="wx_officicalaccount" class="oe_inline"/>
+                                    <br/>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <!--<div name="website_weixin_payment">-->
+                            <!--<div>-->
+                                <!--<field name="website_wxpayment_enabled" class="oe_inline"/>-->
+                                <!--<label for="website_wxpayment_enabled"/>-->
+                            <!--</div>-->
+                            <!--<div attrs="{'invisible':[('website_wxpayment_enabled','=',False)]}">-->
+                                <!--<blockquote>-->
+                                    <!--为了使用微信支付，请对公众号信息进行设置:<br/>-->
+                                    <!--选择公众号: <field name="wx_officicalaccount" class="oe_inline"/>-->
+                                    <!--<br/>-->
+                                <!--</blockquote>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_payment_wx_payment_configuration">
+            <field name="name">payment.payment_acquirer_installation</field>
+            <field name="model">account.config.settings</field>
+            <field name="inherit_id" ref="payment.payment_acquirer_installation"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='payment_acquirer']" position="inside">
+                    <div>
+                        <field name="module_wx_pay_webstore" class="oe_inline"/>
+                        <label for="module_wx_pay_webstore"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</yuancloud>

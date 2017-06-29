@@ -1,0 +1,155 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何接受PayPal付款？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="客户付款" href="../customer_payments.html" />
+    <link rel="next" title="How to register customer payments by checks?" href="check.html" />
+    <link rel="prev" title="如何在发票上进行信用卡支付?" href="credit_cards.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../accounting.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何接受PayPal付款？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="current toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#install-the-paypal-payment-acquirer-module" class="ripple internal reference">安装 &quot;PayPal 付款托收&quot; 模块</a></li><li class="list-group-item"><a href="#creating-and-configuring-a-paypal-merchant-account" class="ripple internal reference">Creating and configuring a PayPal merchant account</a><ul ><li class="list-group-item"><a href="#create-a-basic-paypal-account" class="ripple internal reference">创建一个基本的 Paypal 账户</a></li><li class="list-group-item"><a href="#paypal-configuration" class="ripple internal reference">Paypal 配置</a></li></ul></li><li class="list-group-item"><a href="#setup-your-paypal-payment-acquirer-account-credentials-in-yuancloud" class="ripple internal reference">Setup your Paypal Payment Acquirer account credentials in YuanCloud</a></li></ul></li><li class="list-group-item"><a href="#troubleshooting" class="ripple internal reference">排查</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/accounting/receivables/customer_payments/paypal.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-accept-paypal-payments-on-invoices"><p >The &quot;Paypal Payment Acquirer&quot; module allows you to accept payments via
+paypal, for your sales orders, invoices, or online orders. As paypal
+accepts payments through credit cards (VISA, Mastercard, …), you will be
+able to process most payment methods.</p><p >Paypal 支持两种模式:</p><ul ><li >Paypal Merchant Account: the user is redirected to paypal to do the
+payment (either with a credit card or a paypal account)</li><li >PayPal PayFlow Pro (S2S, Server 2 Server): the user is not redirected
+to paypal and the payment can be done in the background. This
+method is mostly used for subscription businesses where you need
+to charge your customers periodically.</li></ul><p >As of today, YuanCloud only support the normal Paypal Merchant Account.</p></section><section id="configuration"><h2 >配置</h2></section><section id="install-the-paypal-payment-acquirer-module"><h3 >安装 &quot;PayPal 付款托收&quot; 模块</h3><p >开始安装 <strong >PayPal 付款托收</strong> 模块。</p><p >Once the module is installed, you should see a new payment acquirer in
+the Setting application, menu &quot;Payment Acquirers&quot;.</p><img src="../../../_images/paypal011.png" class="img-responsive center-block"><p >By default, Paypal is configured to work in a test environment,
+out-of-the-box. It means you can already test the full order to payment
+flow with the paypal sandbox, without having to configure the next
+steps.</p></section><section id="creating-and-configuring-a-paypal-merchant-account"><h3 >Creating and configuring a PayPal merchant account</h3></section><section id="create-a-basic-paypal-account"><h4 >创建一个基本的 Paypal 账户</h4><ol ><li >Existing or newly created Personal Paypal account can be used.</li><li >Or upgrade your account to Business account (merchant) if needed</li></ol><div id="id1" class="figure"><img src="../../../_images/paypal021.png" class="img-responsive"><h4 >Paypal 账户概览页面</h4></div></section><section id="paypal-configuration"><h4 >Paypal 配置</h4><ol ><li ><p >Access &quot;Seller preferences&quot; menu from <a href="https://www.paypal.com/myaccount/home" class="external reference">PayPal website</a></p><img src="../../../_images/paypal031.png" class="img-responsive"></li></ol><ol id="websitepreferences"><li ><p >Access &quot;Website preferences&quot; and configure Auto Return</p><ul ><li ><p ><strong >数据库名称</strong>: 你的公司</p></li><li ><p ><strong >网址</strong>: <a href="https://yourcompany.yuancloud.com/" class="external reference">https://yourcompany.yuancloud.com/</a></p></li><li ><p ><strong >返回网址</strong>: <a href="https://yourcompany.yuancloud.com/shop/confirmation" class="external reference">https://yourcompany.yuancloud.com/shop/confirmation</a></p></li></ul><img src="../../../_images/paypal04.png" class="img-responsive"><img src="../../../_images/paypal05.png" class="img-responsive"><p >These settings will redirect your buyer to your web confirmation page.</p><img src="../../../_images/paypal06.png" class="img-responsive"></li><li ><p >Access and edit Instant payment notifications settings - IPN</p><img src="../../../_images/paypal07.png" class="img-responsive"><img src="../../../_images/paypal08.png" class="img-responsive"><p >例子</p><ul ><li ><p ><strong >数据库名称</strong>: “你的公司”</p></li><li ><p ><strong >网址</strong>: <a href="https://yourcompany.yuancloud.com/" class="external reference">https://yourcompany.yuancloud.com/</a></p></li><li ><p ><strong >通知网址</strong>: <a href="https://yourcompany.yuancloud.com/payment/paypal/ipn/" class="external reference">https://yourcompany.yuancloud.com/payment/paypal/ipn/</a></p></li></ul><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >verify that your Notify URL uses the correct protocol (HTTP / HTTPS)</p></div></li><li ><p >Set the encoding to UTF-8 from the menu <span class="menuselection">Settings ‣
+Language Encoding ‣ More Options ‣ More selling tools</span></p><img src="../../../_images/paypal09.png" class="img-responsive"><img src="../../../_images/paypal10.png" class="img-responsive"><img src="../../../_images/paypal11.png" class="img-responsive"></li><li ><p >Record your Merchant Paypal ID (personal or business account
+both will have it) it will be entered in YuanCloud backend <span class="menuselection">Paypal
+Settings ‣ Account Options</span>.</p><img src="../../../_images/paypal12.png" class="img-responsive"><img src="../../../_images/paypal13.png" class="img-responsive"></li><li ><p >If you want your customers to be able to pay through Paypal
+while not having a Paypal account- following setting &quot;Paypal Account
+Optional&quot; needs to be set to <strong >ON</strong>. All users will be able to
+choose Credit/debit card payment option - Paypal account not
+required.</p><img src="../../../_images/paypal14.png" class="img-responsive"></li></ol></section><section id="setup-your-paypal-payment-acquirer-account-credentials-in-yuancloud"><h3 >Setup your Paypal Payment Acquirer account credentials in YuanCloud</h3><ul ><li ><p >[UNKNOWN NODE problematic]</p></li><li ><p ><strong >Paypal Email ID</strong>: 你的 paypal 账户 email 地址</p></li><li ><strong >Paypal Merchant ID</strong>: ID retrieved at previous step</li></ul><img src="../../../_images/paypal15.png" class="img-responsive center-block"></section><section id="troubleshooting"><h2 >排查</h2><p >If your eCommerce customer gets this Error Message after completing
+Paypal payment instead of being redirected to your database:</p><img src="../../../_images/paypal16.png" class="img-responsive center-block"><p >Verify the Auto Return URL you have <a href="#websitepreferences" class="internal reference">configured in Paypal</a>
+is correct and pointing to your own domain name.</p><p >You can either:</p><ul ><li ><p >输入正确的返回网址并激活自动返回</p></li><li >or deactivate Auto Return and delete URL (this method will have an
+extra click through Paypal in order to return to your ecommerce
+page.)</li></ul><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="credit_cards.html" class="internal alert-link reference"><em >如何在发票上进行信用卡支付?</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

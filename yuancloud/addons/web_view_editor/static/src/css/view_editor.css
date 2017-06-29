@@ -1,0 +1,15 @@
+.yuancloud .oe_view_editor {
+  width: 100%;
+  margin-left: -12px;
+}
+.yuancloud .oe_view_editor td {
+  border: 1px solid #d8d8d8;
+  cursor: pointer;
+}
+.yuancloud .oe_view_editor td *{
+  border: 0px !important;
+  color : #404040;
+}
+.yuancloud .oe_view_editor tr:hover {
+  background-color: #ecebf2;
+}

@@ -1,0 +1,175 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>产品退货时使用移动平均计算成本 &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="库存" href="../inventory.html" />
+    <link rel="next" title="如何做存货评估(持续会计)？" href="../../../inventory/management/reporting/valuation_methods_continental.html" />
+    <link rel="prev" title="库存" href="../inventory.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../accounting.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              产品退货时使用移动平均计算成本
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="current toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#definition-of-average-cost" class="ripple internal reference">平均成本定义</a><ul ><li class="list-group-item"><a href="#defining-the-purchase-price" class="ripple internal reference">定义采购价格</a></li></ul></li><li class="list-group-item"><a href="#average-cost-example" class="ripple internal reference">平均成本示例</a></li><li class="list-group-item"><a href="#purchase-return-use-case" class="ripple internal reference">采购退货使用案例</a><ul ><li class="list-group-item"><a href="#explanation-counter-example" class="ripple internal reference">Explanation: counter example</a></li><li class="list-group-item"><a href="#further-thoughts-on-anglo-saxon-mode" class="ripple internal reference">anglo saxon模式的深究</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/accounting/others/inventory/avg_price_valuation.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="impact-on-the-average-price-valuation-when-returning-goods"><p >As stated in the <a href="https://www.yuancloud.com/documentation/functional/valuation.html" class="external reference">*inventory valuation
+page*</a>,
+one of the possible costing method you can use in perpetual stock
+valuation, is the average cost.</p><p >This document answers to one recurrent question for companies using that
+method to make their stock valuation: how does a shipping returned to
+its supplier impact the average cost and the accounting entries? This
+document is <strong >only</strong> for the specific use case of a perpetual valuation (as
+opposed to the periodic one) and in average price costing method (as
+opposed to standard of FIFO).</p></section><section id="definition-of-average-cost"><h2 >平均成本定义</h2><p >The average cost method calculates the cost of ending inventory and cost
+of goods sold on the basis of weighted average cost per unit of
+inventory.</p><p >The weighted average cost per unit is calculated using the following
+formula:</p><ul ><li >When new products arrive in a warehouse, the new average cost is
+recomputed as:</li></ul><img src="../../../_images/avg01.png" class="img-responsive center-block"><ul ><li >When products leave the warehouse: the average cost <strong >does not</strong> change</li></ul></section><section id="defining-the-purchase-price"><h3 >定义采购价格</h3><p >The purchase price is estimated at the reception of the products (you
+might not have received the vendor bill yet) and reevaluated at the
+reception of the vendor bill. The purchase price includes the cost you
+pay for the products, but it may also includes additional costs, like
+landed costs.</p></section><section id="average-cost-example"><h2 >平均成本示例</h2><table class="table"><thead ><tr ><th ><p >操作</p></th><th ><p >增量值</p></th><th ><p >库存价值</p></th><th ><p >在手数量</p></th><th ><p >平均成本</p></th></tr></thead><tbody ><tr ><td ></td><td ></td><td >$0</td><td >0</td><td >$0</td></tr><tr ><td ><p >以$10收到8个产品</p></td><td >+8*$10</td><td >$80</td><td >8</td><td >$10</td></tr><tr ><td ><p >以$16收到4个产品</p></td><td >+4*$16</td><td >$144</td><td >12</td><td >$12</td></tr><tr ><td ><p >发货10片产品</p></td><td >-10*$12</td><td >$24</td><td >2</td><td >$12</td></tr><tr ><td ></td><td ></td><td ></td><td ></td><td ></td></tr></tbody></table><p >At the beginning, the Avg Cost is set to 0 set as there is no product in
+the inventory. When the first reception is made, the average cost
+becomes logically the purchase price.</p><p >At the second reception, the average cost is updated because the total
+inventory value is now <code >$80 + 4*$16 = $144</code>. As we have 12 units on
+hand, the average price per unit is <code >$144 / 12 = $12</code>.</p><p >By definition, the delivery of 10 products does not change the average
+cost. Indeed, the inventory value is now $24 as we have only 2 units
+remaining of each <code >$24 / 2 = $12</code>.</p></section><section id="purchase-return-use-case"><h2 >采购退货使用案例</h2><p >In case of a product returned to its supplier after reception, the
+inventory value is reduced using the average cost formulae (not at the
+initial price of these products!).</p><p >意味着以上表格将会按照如下更新：</p><table class="table"><thead ><tr ><th ><p >操作</p></th><th ><p >增量值</p></th><th ><p >库存价值</p></th><th ><p >在手数量</p></th><th ><p >平均成本</p></th></tr></thead><tbody ><tr ><td ></td><td ></td><td >$24</td><td >2</td><td >$12</td></tr><tr ><td ><p >以原始购买价格$10退回1个产品</p></td><td >-1*$12</td><td >$12</td><td >1</td><td >$12</td></tr></tbody></table></section><section id="explanation-counter-example"><h3 >Explanation: counter example</h3><p >Remember the definition of <strong >Average Cost</strong>, saying that we do not update
+the average cost of a product leaving the inventory. If you break this
+rule, you may lead to inconsistencies in your inventory.</p><p >As an example, here is the scenario when you deliver one piece to the
+customer and return the other one to your supplier (at the cost you
+purchased it). Here is the operation:</p><table class="table"><thead ><tr ><th ><p >操作</p></th><th ><p >增量值</p></th><th ><p >库存价值</p></th><th ><p >在手数量</p></th><th ><p >平均成本</p></th></tr></thead><tbody ><tr ><td ></td><td ></td><td >$24</td><td >2</td><td >$12</td></tr><tr ><td ><p >给客户发货1片产品</p></td><td >-1*$12</td><td >$12</td><td >1</td><td >$12</td></tr><tr ><td ><p >以原始购买价格$10退回1个产品</p></td><td >-1*$10</td><td ><strong >$2</strong></td><td ><strong >0</strong></td><td >$12</td></tr></tbody></table><p >As you can see in this example, this is not correct: an inventory
+valuation of $2 for 0 pieces in the warehouse.</p><p >The correct scenario should be to return the goods at the current
+average cost:</p><table class="table"><thead ><tr ><th ><p >操作</p></th><th ><p >增量值</p></th><th ><p >库存价值</p></th><th ><p >在手数量</p></th><th ><p >平均成本</p></th></tr></thead><tbody ><tr ><td ></td><td ></td><td >$24</td><td >2</td><td >$12</td></tr><tr ><td ><p >给客户发货1片产品</p></td><td >-1*$12</td><td >$12</td><td >1</td><td >$12</td></tr><tr ><td ><p >以原始购买价格$10退回1个产品</p></td><td >-1*$12</td><td ><strong >$0</strong></td><td ><strong >0</strong></td><td >$12</td></tr></tbody></table><p >On the other hand, using the average cost to value the return ensure a
+correct inventory value at all times.</p></section><section id="further-thoughts-on-anglo-saxon-mode"><h3 >anglo saxon模式的深究</h3><p >For people in using the <strong >anglo saxon accounting</strong> principles, there is
+another concept to take into account: the stock input account of the
+product, which is intended to hold at any time the value of vendor bills
+to receive. So the stock input account will increase on reception of
+incoming shipments and will decrease when receiving the related vendor
+bills.</p><p >Back to our example, we see that when the return is valued at the
+average price, the amount booked in the stock input account is the
+original purchase price:</p><table class="table"><thead ><tr ><th ><p >操作</p></th><th ><p >采购产品科目</p></th><th ><p >价格差异</p></th><th ><p >库存价值</p></th><th ><p >在手数量</p></th><th ><p >平均成本</p></th></tr></thead><tbody ><tr ><td ></td><td ></td><td ></td><td >$0</td><td >0</td><td >$0</td></tr><tr ><td ><p >以$10收到8个产品</p></td><td >($80)</td><td ></td><td >$80</td><td >8</td><td >$10</td></tr><tr ><td ><p >收到供应商的账单$80</p></td><td >$0</td><td ></td><td >$80</td><td >8</td><td >$10</td></tr><tr ><td ><p >以$16收到4个产品</p></td><td >($64)</td><td ></td><td >$144</td><td >12</td><td >$12</td></tr><tr ><td ><p >收到供应商的账单$64</p></td><td >$0</td><td ></td><td >$144</td><td >12</td><td >$12</td></tr><tr ><td ><p >发货10片产品</p></td><td >$0</td><td ></td><td >$24</td><td >2</td><td >$12</td></tr><tr ><td ><p >以原始购买价格$10退回1个产品</p></td><td ><strong >$10</strong></td><td ><strong >$2</strong></td><td ><strong >$12</strong></td><td >1</td><td >$12</td></tr><tr ><td ><p >收到供应商的退款账单$10</p></td><td >$0</td><td >$2</td><td >$12</td><td >1</td><td >$12</td></tr></tbody></table><p >This is because the vendor refund will be made using the original
+purchase price, so to zero out the effect of the return in the stock
+input in last operation, we need to reuse the original price. The price
+difference account located on the product category is used to book the
+difference between the average cost and the original purchase price.</p></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

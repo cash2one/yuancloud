@@ -1,0 +1,134 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>导入OFX 对账单文件 &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="银行费用" href="../feeds.html" />
+    <link rel="next" title="导入QIF 对账单文件" href="qif.html" />
+    <link rel="prev" title="如何与银行同步yuancloud？" href="synchronize.html" />
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../accounting.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              导入OFX 对账单文件
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="current toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a></li><li class="list-group-item"><a href="#importing-ofx-files" class="ripple internal reference">导入OFX 文件</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/accounting/bank/feeds/ofx.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="import-ofx-statement-files"><p >开放金融交易所(OFX)是一个统一规范金融机构之间的电子金融数据交换平台,企业和消费者通过互联网交易。</p><p >YuanCloud,您可以从你的银行或财务软件下载一个OFX文件并将其直接导入YuanCloud。这将创建所有银行对账单。</p><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >现在测试OFX文件的功能
+&lt;<a href="https://drive.google.com/file/d/0B5BDHVRYo-q5Mmg4T3oxTWszeEk/view" class="external reference alert-link">https://drive.google.com/file/d/0B5BDHVRYo-q5Mmg4T3oxTWszeEk/view</a>&gt;`__</p></div></section><section id="configuration"><h2 >配置</h2><p >为了能导入OFX对账单,您需要在YuanCloud激活特性。在会计应用程序中,进入菜单:menuselection:[UNKNOWN NODE title_reference]. 从会计设置,检查银行对账单选项 [UNKNOWN NODE problematic]Import in .OFX Format**和应用。</p><img src="../../../_images/ofx01.png" class="img-responsive center-block"><p >一旦你安装这个功能,你可以设置你的银行账户,允许导入银行对账单文件。要做到这一点,去会计仪表板,在银行账户点击**更多** 按钮。然后,点击**Import Statement**加载第一个OFX文件。</p><img src="../../../_images/ofx02.png" class="img-responsive center-block"><p >在下面的屏幕加载OFX文件,单击* <em >导入</em> [UNKNOWN NODE problematic]创建你所有的银行对账单。</p><img src="../../../_images/ofx03.png" class="img-responsive center-block"><p >如果成功加载该文件，你会被重定向到银行核对屏幕，所有的交易会被重新核对。</p></section><section id="importing-ofx-files"><h2 >导入OFX 文件</h2><p >在导入你的第一个文件之后,YuanCloud会计仪表板将自动建议你导入更多文件。在接下来的文件导入,你不需要去 <strong >More</strong> 菜单了,您可以直接点击链接**Import Statement**。</p><img src="../../../_images/ofx04.png" class="img-responsive center-block"><p >每次你得到一个新客户/供应商的相关对账单时,YuanCloud将要求您选择正确的核销对象。从此操作信息,YuanCloud将自动完成下一个付款或是这些联系。这将加快核销进程。</p><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="qif.html" class="internal alert-link reference"><em >导入QIF 对账单文件</em></a></li><li ><a href="coda.html" class="internal alert-link reference"><em >导入Coda 对账单文件 (仅比利时)</em></a></li><li ><a href="synchronize.html" class="internal alert-link reference"><em >如何与银行同步yuancloud？</em></a></li><li ><a href="manual.html" class="internal alert-link reference"><em >手工登记银行对账单</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--<yuancloud>-->
+    <!--<data>-->
+        <!--<record model="ir.ui.view" id="view_general_wx_configuration">-->
+            <!--<field name="name">base.config.settings.wx_base</field>-->
+            <!--<field name="model">base.config.settings</field>-->
+            <!--<field name="inherit_id" ref="base_setup.view_general_configuration"/>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<xpath expr="//group[@name='authentication']" position="after">-->
+                    <!--<group name="wx_base">-->
+                        <!--<label for="id" string="微信相关模块"/>-->
+                        <!--<div>-->
+                            <!--<field name="module_wx_base" class="oe_inline"/>-->
+                            <!--<label for="module_wx_base"/>-->
+                        <!--</div>-->
+                    <!--</group>-->
+                <!--</xpath>-->
+            <!--</field>-->
+        <!--</record>-->
+    <!--</data>-->
+<!--</yuancloud>-->
+<yuancloud>
+    <data>
+        <record model="ir.ui.view" id="view_general_wx_configuration">
+            <field name="name">base.config.settings.wx_base</field>
+            <field name="model">base.config.settings</field>
+            <field name="inherit_id" ref="base_setup.view_general_configuration"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='authentication']" position="before">
+                    <group name="wx_base">
+                        <label for="id" string="微信模块"/><div>
+                            <field name="module_wx_base" class="oe_inline"/>
+                            <label for="module_wx_base"/>
+                        </div>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</yuancloud>

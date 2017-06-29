@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何管理银行的外币？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="设置" href="../setup.html" />
+    <link rel="next" title="银行费用" href="../feeds.html" />
+    <link rel="prev" title="如何管理现金出纳？" href="manage_cash_register.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../accounting.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何管理银行的外币？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="current toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#activate-the-multi-currency-feature" class="ripple internal reference">激活多币种功能</a></li><li class="list-group-item"><a href="#configure-currencies" class="ripple internal reference">配置货币</a></li><li class="list-group-item"><a href="#create-a-new-bank-account" class="ripple internal reference">创建银行账户</a></li></ul></li><li class="list-group-item"><a href="#example-a-vendor-bill-in-a-foreign-currency" class="ripple internal reference">例如：外币的供应商账单</a></li><li class="list-group-item"><a href="#customers-statements" class="ripple internal reference">客户对账单</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/accounting/bank/setup/foreign_currency.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-manage-a-bank-in-a-foreign-currency"><p >在YuanCloud,每笔交易都用公司的默认货币记录。报告都是基于该公司的货币。但另一种货币交易发生, YuanCloud保存公司的货币价值和交易的货币的价值。</p><p >当你有一个外币的银行账户,对于每笔交易,YuanCloud都保存两个值:</p><ul ><li ><p >公司币别中的借方／贷方</p></li><li ><p >银行账户币别中的借方／贷方</p></li></ul><p >汇率会自动更新, 使用yahoo.com,或者欧洲央行的在线服务。</p></section><section id="configuration"><h2 >配置</h2></section><section id="activate-the-multi-currency-feature"><h3 >激活多币种功能</h3><p >为了让贵公司使用多种货币,你应该激活多种货币的模式。在会计应用程序中,进入:menuselection:menuselection:[UNKNOWN NODE title_reference] , 确保**Allow Multi-currencies** 已勾选。提供一个 [UNKNOWN NODE problematic]Currency Exchange Gain / Loss**科目,然后点击* <em >应用</em> [UNKNOWN NODE problematic]。</p></section><section id="configure-currencies"><h3 >配置货币</h3><p >一旦YuanCloud配置为支持多种货币,你应该激活您计划使用的货币。要做到这一点,菜单:menuselection:menuselection:[UNKNOWN NODE title_reference]. 。默认情况下,所有货币都已创建. 但是你应该激活你计划的货币。(激活一种货币,检查他的活跃的字段)</p><p >激活货币后,你可以配置的参数自动更新汇率。这些选项的设置也在会计应用程序中,在页面的底部:</p><img src="../../../_images/foreign01.png" class="img-responsive center-block"><p >点击* <em >现在更新</em> [UNKNOWN NODE problematic]链接到目前最新的汇率。</p></section><section id="create-a-new-bank-account"><h3 >创建银行账户</h3><p >在会计应用程序中,我们首先去:menuselection:[UNKNOWN NODE title_reference],我们创建一个新的账户。</p><img src="../../../_images/foreign02.png" class="img-responsive center-block"><p >一旦你保存这个银行账户,YuanCloud将为您创建的所有文件:</p><ul ><li ><p >科目试算平衡表</p></li><li ><p >将此帐簿显示在仪表盘上</p></li><li ><p >如果选择框* <em >在发票页脚显示</em> [UNKNOWN NODE problematic], 银行信息将在发票页脚显示</p></li></ul></section><section id="example-a-vendor-bill-in-a-foreign-currency"><h2 >例如：外币的供应商账单</h2><p >根据上面的例子中,我们假设我们收到中国供应商的发票。</p><p >在:menuselection:[UNKNOWN NODE title_reference] ,你可以看到:</p><img src="../../../_images/foreign03.png" class="img-responsive center-block"><p >一旦你已经准备好支付这个账单,点击登记付款记录付款。</p><img src="../../../_images/foreign04.png" class="img-responsive center-block"><p >这是你所要做的。YuanCloud将在核销时, 自动将发票日和付款日的汇率差计入外汇损益。</p><p >注意,您可以用另一种货币支付外汇发票。在这种情况下,YuanCloud将自动完成两种货币之间的转换。</p></section><section id="customers-statements"><h2 >客户对账单</h2><p >客户和供应商的报表是用发票货币来管理的。所以,客户(供应商)的到期金额总是用发票的货币表示。</p><p >如果同一客户有几个不同货币的发票, YuanCloud将按货币分类, 如下报告所示。</p><img src="../../../_images/foreign05.png" class="img-responsive center-block"><p >在上面的报告, Camptocamp相关的应收帐款没有用第二种货币管理,这意味着, 每笔交易都使用自己的货币。如果你喜欢,你可以为该客户的应收帐款设置第二种货币, 他所有的债务将自动转换货币。</p><p >在这种情况下,客户对账单总是只有一种货币。一般来说,这不是什么客户所希望的, 他更喜欢看到他收到发票的货币金额;</p></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

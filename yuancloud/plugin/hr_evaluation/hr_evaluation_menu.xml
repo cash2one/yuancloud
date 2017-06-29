@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <menuitem id="hr.eval_root" name="绩效管理" sequence="850" parent="hr.menu_hr_root"/>
+        <menuitem id="menu_eval_hr" name="Appraisal" parent="hr.eval_root"  sequence="30"/>
+        <menuitem id="menu_eval_hr_config" name="Periodic Appraisal" parent="hr.eval_root" sequence="40"/>
+        <menuitem id="menu_open_view_hr_evaluation_plan_tree" parent="hr.eval_root"
+            action="open_view_hr_evaluation_plan_tree" sequence="10"/>
+        <menuitem id="menu_open_hr_evaluation_interview_requests" name="Interview Requests" parent="hr.eval_root"
+            action="action_hr_evaluation_interview_tree" sequence="20"/>
+        <menuitem id="menu_open_view_hr_evaluation_tree" name="Appraisals" parent="hr.eval_root"
+            action="open_view_hr_evaluation_tree" groups="base.group_hr_user" sequence="50"/>
+        <menuitem id="menu_evaluation_report_all" action="action_evaluation_report_all"  parent="hr.menu_hr_report" groups="base.group_hr_manager" sequence="50"/>
+    </data>
+</yuancloud>

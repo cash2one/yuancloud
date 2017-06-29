@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data><!-- Action -->
+        <record model="ir.actions.act_window" id="cloudserver_domain_list_action">
+            <field name="name">域名信息</field>
+            <field name="res_model">oa.cloudserver.domain</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建第一个域名信息
+                </p>
+            </field>
+        </record>
+        <!-- List View (base_domain)-->
+        <record model="ir.ui.view" id="cloudserver_domain_list_view">
+            <field name="name">oa.cloudserver.domain.tree</field>
+            <field name="model">oa.cloudserver.domain</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="provider"/>
+                    <field name="name"/>
+                    <field name="state"/>
+                    <field name="owner"/>
+                    <field name="mail"/>
+                    <field name="endtime"/>
+                    <field name="contact_person"/>
+                    <field name="phone1"/>
+                    <field name="phone2"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--base_server卡片 -->
+        <record model="ir.ui.view" id="cloudserver_domain_form_view">
+            <field name="name">oa.cloudserver.domain.form</field>
+            <field name="model">oa.cloudserver.domain</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="provider"/>
+                                <field name="name"/>
+                                <field name="state"/>
+                                <!--<field name="dns"/>-->
+                            </group>
+                            <group>
+                                <field name="owner"/>
+                                <field name="endtime"/>
+                                <field name="account4domain"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="联系人">
+                                <group>
+                                    <group>
+                                        <field name="contact_person"/>
+                                        <field name="phone1"/>
+                                        <field name="zip"/>
+                                        <field name="country"/>
+                                        <field name="city"/>
+                                    </group>
+                                    <group>
+                                        <field name="mail"/>
+                                        <field name="phone2"/>
+                                        <field name="fax"/>
+                                        <field name="province"/>
+                                        <field name="address"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="备案信息">
+                                <group>
+                                    <group>
+                                        <field name="record_provider"/>
+                                        <field name="record_sys_account"/>
+                                        <field name="record_sys_pwd"/>
+                                    </group>
+                                    <group>
+                                        <field name="record_no"/>
+                                        <field name="record_pwd"/>
+                                        <field name="record_description"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="描述">
+                                <group>
+                                    <field name="description"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</yuancloud>

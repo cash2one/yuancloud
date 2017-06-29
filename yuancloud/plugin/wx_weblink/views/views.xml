@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<yuancloud>
+    <data>
+        <template id="assets_website_links" inherit_id="website.assets_frontend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/wx_weblink/static/src/js/website_links.js" defer="defer"/>
+                <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" defer="defer"/>
+                <script type="text/javascript" src="/wx_weblink/static/src/js/wx_sign.js?v=4" defer="defer"/>
+            </xpath>
+        </template>
+
+        <template id="create_shorten_url_extend" inherit_id="website_links.create_shorten_url">
+            <xpath expr="//div[@class='o_website_links_utm_forms']" position="inside">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">服务号
+                        <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+                           title="选择待分享的服务号或企业号应用."></i>
+                    </label>
+
+                    <div class="col-sm-9">
+                        <input type="hidden" class="form-control" id="officialaccount-select"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">销售员
+                        <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+                           title="选择销售员."></i>
+                    </label>
+
+                    <div class="col-sm-9">
+                        <input type="hidden" class="form-control" id="sales_person-select"/>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">销售团队
+                        <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+                           title="选择销售团队."></i>
+                    </label>
+
+                    <div class="col-sm-9">
+                        <input type="hidden" class="form-control" id="sale_team-select"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">分享描述
+                        <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+                           title="分享描述."></i>
+                    </label>
+
+                    <div class="col-sm-9">
+                        <input type="text" id="share_desc" class="form-control"/>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+        <record model="ir.ui.view" id="view_link_tracker_form_extended">
+            <field name="name">link_tracker.link_tracker.form</field>
+            <field name="model">link.tracker</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="link_tracker.view_link_tracker_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='source_id']" position="after">
+                    <field name="officialaccount"/>
+                    <field name="qy_officialaccount"/>
+                    <field name="user_id"/>
+                    <field name="team_id"/>
+                    <field name="share_desc"/>
+                    <field name="share_mood_1"/>
+                    <field name="share_mood_2"/>
+                    <field name="share_mood_3"/>
+                    <field name="share_image" widget="image" class="oe_avatar oe_left"/>
+                </xpath>
+                <xpath expr="//button[@name='action_visit_page']" position="before">
+                    <button type="object" class="oe_stat_button" name="action_view_batchshare" string="批量推送">
+                    </button>
+                </xpath>
+                <xpath expr="//button[@name='action_view_statistics']" position="after">
+                    <button type="object" class="oe_stat_button" name="action_view_share_statistics"
+                            icon="fa-bar-chart-o">
+                        <field name="share_count" string="微信分享量" widget="statinfo"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_link_tracker_tree_extend">
+            <field name="name">link_tracker.link.tracker.tree</field>
+            <field name="model">link.tracker</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="link_tracker.view_link_tracker_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='count']" position="before">
+                    <field name="officialaccount"/>
+                    <field name="user_id"/>
+                </xpath>
+                <xpath expr="//field[@name='count']" position="after">
+                    <field name="share_count"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_view_share_statistics">
+            <field name="name">分享统计</field>
+            <field name="res_model">link.tracker.share</field>
+            <field name="view_mode">graph</field>
+            <field name="domain">[('link_id', 'IN', ids)]</field>
+        </record>
+
+        <!-- Action for website links click-->
+        <record model="ir.actions.act_window" id="action_link_tracker_share">
+            <field name="name">分享</field>
+            <field name="res_model">link.tracker.share</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">graph,tree,form</field>
+        </record>
+
+        <record id="view_link_tracker_share_graph" model="ir.ui.view">
+            <field name="name">link.tracker.share.graph</field>
+            <field name="model">link.tracker.share</field>
+            <field name="arch" type="xml">
+                <graph string="Website Link Shares">
+                    <field name="link_id"/>
+                    <field name="ip"/>
+                    <field name="country_id"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="view_link_tracker_share_tree" model="ir.ui.view">
+            <field name="name">link.tracker.share.tree</field>
+            <field name="model">link.tracker.share</field>
+            <field name="arch" type="xml">
+                <tree string="Website Links Shares">
+                    <field name="link_id"/>
+                    <field name="ip"/>
+                    <field name="country_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_link_tracker_share_form" model="ir.ui.view">
+            <field name="name">link.tracker.share.form</field>
+            <field name="model">link.tracker.share</field>
+            <field name="arch" type="xml">
+                <form string="Website Link Shares">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="link_id"/>
+                            <field name="ip"/>
+                            <field name="country_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</yuancloud>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <menuitem id="daily_menu" name="日常流水"/>
+        <!--Menu Item  -->
+        <menuitem id="menu_journal" name="日常流水" parent="daily_menu" sequence="10" action="oa_journal_list_action"/>
+        <menuitem id="menu_oa_journal_report_all" name='报告' parent="daily_menu"
+                  action="action_oa_journal_report_all" sequence="20"/>
+        <menuitem id="menu_oa_journal_configuration" name="配置" parent="daily_menu" sequence="100"/>
+        <menuitem id="menu_oa_journal_configuration_invoice_type" name="发票类型" parent="menu_oa_journal_configuration" action="oa_journal_invoice_type_list_action" sequence="10"/>
+        <menuitem id="menu_oa_journal_configuration_ec_platform" name="电商平台" parent="menu_oa_journal_configuration" action="oa_journal_ecplatform_list_action" sequence="20"/>
+    </data>
+</yuancloud>

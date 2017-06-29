@@ -1,0 +1,171 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何产品上设置不同的供应商 &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="主材数据" href="../master.html" />
+    <link rel="next" title="如何导入供应商价格表?" href="import.html" />
+    <link rel="prev" title="如何和和销售使用不同计量单位进行采购？" href="uom.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../purchase.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何产品上设置不同的供应商
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="current toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#install-the-purchase-module" class="ripple internal reference">安装 purchase 模块</a></li><li class="list-group-item"><a href="#create-a-vendor" class="ripple internal reference">创建供应商</a></li><li class="list-group-item"><a href="#create-a-product" class="ripple internal reference">创建产品</a></li><li class="list-group-item"><a href="#add-vendors-to-the-product" class="ripple internal reference">给产品添加可供货的供应商</a><ul ><li class="list-group-item"><a href="#by-issuing-a-first-purchase-order-to-new-vendor" class="ripple internal reference">通过发布第一个到新的供应商的采购订单</a></li><li class="list-group-item"><a href="#by-adding-manually" class="ripple internal reference">手工的添加</a></li></ul></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/purchase/purchases/master/suppliers.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-set-several-suppliers-on-a-product"><p >Keeping track of your vendors can be a real burden in day-to-day
+business life. Prices can change and you might have several suppliers
+for one product. With YuanCloud you have the possibility to directly link
+vendors with the corresponding product and specify prices automatically
+the first time you purchase them.</p><p >We will take the following example: We need to buy <code >5 t-shirts</code>. We found
+a <strong >Vendor</strong>; called <code >Bob&amp;Jerry's</code> and we want to issue a request for
+quotation.</p></section><section id="configuration"><h2 >配置</h2></section><section id="install-the-purchase-module"><h3 >安装 purchase 模块</h3><p >The first step to set your suppliers on your products is to install the
+purchase module. Go into your <strong >App</strong> module and install the
+<strong >Purchase</strong> module.</p><img src="../../../_images/suppliers01.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >By installing the purchase module, the inventory and invoicing module
+will be installed as well.</p></div></section><section id="create-a-vendor"><h3 >创建供应商</h3><p >The second step is to create a vendor. In this case we'll create the
+vendor <code >Bob&amp;Jerry's</code>. Enter the purchase module, select
+<span class="menuselection">Purchase ‣ Vendors</span> and create a new vendor.</p><p >You can choose if the contact is a company or a person, fill in basic
+information such as address, phone, email,...</p><p >If you did not create the contact from the purchase module you will need
+to go in the <strong >Sales and Purchases</strong> tab as well and indicate that the
+contact is a <strong >Vendor</strong> (see picture below). If the contact is created from
+the purchase module this box will be ticked automatically.</p><img src="../../../_images/suppliers02.png" class="img-responsive center-block"></section><section id="create-a-product"><h3 >创建产品</h3><p >Next we can create the product we want to buy. We don't know the price
+of the t-shirt yet because we still need to issue our <strong >Request for
+Quotation</strong>.</p><p >To create a product enter your purchase module select
+<span class="menuselection">Purchase ‣ Products</span> and create a new product.</p><p >We will call our product <code >T-shirt</code> and specify that the product can be
+sold and purchased.</p><img src="../../../_images/suppliers03.png" class="img-responsive center-block"></section><section id="add-vendors-to-the-product"><h3 >给产品添加可供货的供应商</h3><p >The next action is to add vendors to the product. There are two ways to
+handle this. If you issue a purchase order for the first time YuanCloud will
+automatically link the vendor and its price to the product. You can also
+add vendors manually</p></section><section id="by-issuing-a-first-purchase-order-to-new-vendor"><h4 >通过发布第一个到新的供应商的采购订单</h4><p >When issuing a purchase order for the first time to a vendor, he will
+automatically be linked to the product by YuanCloud. For our example let's
+say that we issue a first purchase order to <code >Bob&amp;Jerry's</code> for <code >5 t-shirts</code>
+at <code >12.35 euros / piece</code>.</p><p >First create your purchase order with the correct product and
+supplier (see picture below, or the documentation page
+<a href="../rfq/create.html" class="internal reference"><em >How to create a Request for Quotation?</em></a> for more information)</p><img src="../../../_images/suppliers04.png" class="img-responsive center-block"><p >When we save and validate the purchase order the vendor will
+automatically be added to the product's vendors list. To check this
+enter the purchase module, select <span class="menuselection">Purchase ‣ Products</span> and
+select our T-shirt product. By opening the <strong >Inventory</strong> tab we notice that our
+vendor and its price has automatically been added.</p><img src="../../../_images/suppliers05.png" class="img-responsive center-block"><p >Note that every first time the product is purchased from a new
+vendor, YuanCloud will automatically link the contact and price with the
+product.</p></section><section id="by-adding-manually"><h4 >手工的添加</h4><p >We can of course also add vendors and vendors information manually. On
+the same page than previously, simply click on <strong >Edit</strong> and click the <strong >Add
+an item</strong> button.</p><img src="../../../_images/suppliers06.png" class="img-responsive center-block"><p >When adding a new <strong >Vendor</strong> you are also able to add extra information such
+as the vendor product name or code, the validity of the price and the eventual
+minimum quantity required. These informations can be added and modified
+for existing vendors by simply clicking on the vendors line.</p><img src="../../../_images/suppliers07.png" class="img-responsive center-block"></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

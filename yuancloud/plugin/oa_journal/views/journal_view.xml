@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!-- Action -->
+        <record model="ir.actions.act_window" id="oa_journal_list_action">
+            <field name="name">日常流水</field>
+            <field name="res_model">oa.journal</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建第一笔日常流水
+                </p>
+            </field>
+        </record>
+        <!-- 日常流水-列表样式 -->
+        <record model="ir.ui.view" id="oa_journal_list_view">
+            <field name="name">oa.journal.tree</field>
+            <field name="model">oa.journal</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!--<field name="item"/>-->
+                    <field name="name"/>
+                    <field name="total_debit"/>
+                    <field name="invoice_type"/>
+                    <field name="mode_of_payment"/>
+                    <field name="payer_employee"/>
+                    <field name="paidon"/>
+                    <field name="collar_employee"/>
+                    <field name="state"/>
+                    <field name="company_id"/>
+                </tree>
+            </field>
+        </record>
+        <!--日常流水-卡片样式 -->
+        <record model="ir.ui.view" id="oa_journal_form_view">
+            <field name="name">oa.journal.form</field>
+            <field name="model">oa.journal</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button string="付款" type='workflow' name="action_topaid" states="draft" class="oe_highlight"/>
+                        <button string="接收" name="action_toreceived" states="paid" class="oe_highlight"/>
+                        <button string="报销" name="action_toexpensed" states="received" class="oe_highlight"/>
+                        <button string="关闭" name="action_toclosed" states="expensed" class="oe_highlight"/>
+                        <button string="打开" name="action_todraft" states="expensed" class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,paid,received,expensed,closed"
+                               statusbar_colors='{"paid":"red","received":"blue"}'/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <label string="日常流水 "/>
+                                <field name="name" class="oe_inline" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="total_debit" attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
+                                <field name="spec" attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
+                                <field name="invoice_type" domain="[('active','=',True)]" attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
+                                <field name="company_id" groups="base.group_multi_company"
+                                       attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
+                                <!--<field name="company_id" groups="base.group_multi_company" widget="selection"/>-->
+                            </group>
+                            <group>
+                                <field name="mode_of_payment" attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
+                                <field name="payer_employee" attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
+                                <field name="paidon" attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string='采购&amp;供应商'>
+                                <group>
+                                    <group>
+                                        <field name="item" attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
+                                        <field name="supplier" attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
+                                        <field name="supplier_order"
+                                               attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
+                                        <field name="ec_platform"
+                                               attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="description"/>
+                                    </group>
+                                </group>
+
+                            </page>
+                            <page string='收货'>
+                                <group>
+                                    <group>
+                                        <field name="receivedon"
+                                               attrs="{'readonly': [('state', 'not in', ['draft','paid'])]}"/>
+                                        <field name="storage_location"
+                                               attrs="{'readonly': [('state', 'not in', ['draft','paid'])]}"/>
+                                        <field name="collar_employee"
+                                               attrs="{'readonly': [('state', '=', 'closed')]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="address" attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
+                                        <field name="expense_claim"
+                                               attrs="{'readonly': [('state', 'in', ['draft','expensed','closed'])]}"/>
+                                        <field name="claim_amount"
+                                               attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+    </data>
+</yuancloud>

@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何检验我的销售活动(新的销售仪表盘) &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../index.html" />
+    <link rel="up" title="报告" href="../reporting.html" />
+    <link rel="next" title="销售" href="../../sales.html" />
+    <link rel="prev" title="如何分析你的团队的销售业绩，并获得定制的报告" href="analysis.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../crm.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何检验我的销售活动(新的销售仪表盘)
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../accounting.html" class="internal reference">会计</a></li><li class="current toctree-l2"><a href="../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#install-the-crm-application" class="ripple internal reference">安装CRM程序</a></li><li class="list-group-item"><a href="#create-opportunities" class="ripple internal reference">创建商机</a></li></ul></li><li class="list-group-item"><a href="#daily-tasks-to-process" class="ripple internal reference">要处理的日常任务</a><ul ><li class="list-group-item"><a href="#meetings" class="ripple internal reference">会议</a></li><li class="list-group-item"><a href="#next-actions" class="ripple internal reference">下一步</a></li></ul></li><li class="list-group-item"><a href="#performances" class="ripple internal reference">业绩</a><ul ><li class="list-group-item"><a href="#activities-done" class="ripple internal reference">已完成活动</a></li><li class="list-group-item"><a href="#won-in-opportunities" class="ripple internal reference">赢得机会</a></li><li class="list-group-item"><a href="#quantity-invoiced" class="ripple internal reference">开票数量</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/crm/reporting/review.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-review-my-personal-sales-activities-new-sales-dashboard"><p >专业销售人员每天都在努力达到他们的目标并跟进销售活动。他们需要随时随地访问一些重要的指标，以了解它们是如何操作的以及更好地组织他们的日常工作。</p><p >在YuanCloud CRM 模块里，每个小组成员都可以访问个人的独立的仪表盘来获得一个实时的概览：</p><ul ><li ><p >最高优先级别：他们立即看到自己预定的会议和下一步行动</p></li><li ><p >销售业绩：他们清楚地知道他们的销售表现相比他们的每月目标和上个月的活动。</p></li></ul><img src="../../_images/review01.png" class="img-responsive center-block"></section><section id="configuration"><h2 >配置</h2></section><section id="install-the-crm-application"><h3 >安装CRM程序</h3><p >为了管理您的销售渠道和跟踪您的机会，你需要从**应用程序图标**安装的CRM模块。</p><img src="../../_images/review02.png" class="img-responsive center-block"></section><section id="create-opportunities"><h3 >创建商机</h3><p >如果您的管道是空的，你的销售仪表板看起来像下面的截图。您将需要创建一些机会来激活您的仪表板(阅读相关文档：DOC：[UNKNOWN NODE problematic]../线索/生成/ 手册`了解详情)。</p><img src="../../_images/review03.png" class="img-responsive center-block"><p >你的仪表盘会实时更新基于你登录到CRM的信息。</p><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >你能点击仪表盘的任意地方来得到你的活动的具体分析。然后，你可以方便得生成喜欢的报告并导出到EXCEL.</p></div></section><section id="daily-tasks-to-process"><h2 >要处理的日常任务</h2><p >销售仪表板(标**待办事项**)的左半部分显示计划于未来7天会议和下一步行动的数量(例如，如果您需要通过电子邮件调用一个前景或跟进)。</p><img src="../../_images/review04.png" class="img-responsive center-block"></section><section id="meetings"><h3 >会议</h3><p >在上面的例子中，我看到今天我没有会议安排，在接下来的7天内有3个会议安排。我只需点击**会议**按钮访问我的日历并看到近期的约会。</p><img src="../../_images/review05.png" class="img-responsive center-block"></section><section id="next-actions"><h3 >下一步</h3><p >回到上面的例子，我有1个活动需要我的行动。如果我点击**下一步行动**绿色按钮，我将被重定向到相应机会的联系方式。</p><img src="../../_images/review06.png" class="img-responsive center-block"><p >根据**下一个活动**现场，我看到，我曾计划今天通过电子邮件送一本小册子。一旦活动结束，我可以点击**完成**(或**取消**)，以便从我的下一步行动消除这种机会。</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >当你的下一个活动之一逾期时，桔黄色将出现在你的仪表板。</p></div></section><section id="performances"><h2 >业绩</h2><p >你的销售仪表盘的右边部分是关于我的销售业绩。我可以对我的目标(销售经理所设定的)和我最近一个月的活动进行评估。</p><img src="../../_images/review07.png" class="img-responsive center-block"></section><section id="activities-done"><h3 >已完成活动</h3><p >[UNKNOWN NODE problematic]已做活动**对应于已完成的下一个动作(这意味着你已经点击**下一个活动**的**完成**字段)。当我点击它，我可以访问我已经完成了的活动的详细报告。</p><img src="../../_images/review08.png" class="img-responsive center-block"></section><section id="won-in-opportunities"><h3 >赢得机会</h3><p >这节会统计所有在销售管道中**赢得**阶段的机会的预期收入</p><img src="../../_images/review09.png" class="img-responsive center-block"></section><section id="quantity-invoiced"><h3 >开票数量</h3><p >本节将统计给我的机会开具发票的数量。有关开票过程的详细信息，请参阅相关的文档：文档：[UNKNOWN NODE title_reference]</p><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="analysis.html" class="internal alert-link reference"><em >如何分析你的团队的销售业绩，并获得定制的报告</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

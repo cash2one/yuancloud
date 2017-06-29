@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+  <data>
+<template id="report_deliveryslip">
+    <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="o">
+	<t t-call="{{o.templ_id.key}}" t-lang="o.partner_id.lang"/>
+     </t>
+    </t>
+</template>
+</data>
+</yuancloud>

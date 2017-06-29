@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <record id="view_expenses8_form_inherited" model="ir.ui.view">
+            <field name="name">hr.expense8.form.inherited</field>
+            <field name="model">hr.expense8.expense</field>
+            <field name="inherit_id" ref="hr_expense8.view_expenses8_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="replace">
+                    <field name="description" string="说明"/>
+                </xpath>
+                <xpath expr="//group[1]" position="before">
+                    <div class="oe_title">
+                        <h1>
+                            <label string="费用" class="oe_inline" />
+                            <field name="name" class="oe_inline" readonly="1"/>
+                        </h1>
+                    </div>
+                </xpath>
+                <!-- -->
+                <xpath expr="//tree[@name='Expense Lines']/field[@name='product_id']" position="replace" />
+                <xpath expr="//tree[@name='Expense Lines']/field[@name='ref']" position="replace" />
+                <xpath expr="//tree[@name='Expense Lines']/field[@name='uom_id']" position="replace" />
+                <xpath expr="//tree[@name='Expense Lines']/field[@name='analytic_account']" position="replace" />
+                <xpath expr="//tree[@name='Expense Lines']/field[@name='date_value']" position="before" >
+                    <field name="product_id" string="费用类型"></field>
+                </xpath>
+
+                <!-- -->
+            </field>
+        </record>
+
+        <record id="view_expenses8_tree_inherited" model="ir.ui.view">
+            <field name="name">hr.expense8.expense.tree.inherited</field>
+            <field name="model">hr.expense8.expense</field>
+            <field name="inherit_id" ref="hr_expense8.view_expenses8_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="replace"/>
+                <xpath expr="//field[@name='employee_id']" position="before">
+                    <field name="name" string="单号"/>
+                    <field name="description" string="说明"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+
+    <data noupdate="1">
+        <!--&lt;!&ndash; Sequences for hr.expense.expense &ndash;&gt;-->
+        <!--<record id="seq_type_hr_expence" model="ir.sequence.type">-->
+            <!--<field name="name">HR Expense</field>-->
+            <!--<field name="code">hr.expense8.expense</field>-->
+        <!--</record>-->
+
+        <record id="seq_hr_expence8" model="ir.sequence">
+            <field name="name">HR Expense8</field>
+            <field name="code">hr.expense8.expense</field>
+            <field name="prefix">EA%(y)s%(month)s</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</yuancloud>

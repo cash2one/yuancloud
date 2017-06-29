@@ -1,0 +1,143 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>How to trigger a warning when purchasing at a specific vendor? &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="Replenishment Flows" href="../flows.html" />
+    <link rel="next" title="How are the order date and scheduled dates computed?" href="compute_date.html" />
+    <link rel="prev" title="How to trigger the purchase of products based on sales?" href="purchase_triggering.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../purchase.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              How to trigger a warning when purchasing at a specific vendor?
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="current toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#overview" class="ripple internal reference">概述</a></li><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#module-installation" class="ripple internal reference">Module Installation</a></li><li class="list-group-item"><a href="#vendor-or-customer-warnings" class="ripple internal reference">Vendor or Customer warnings</a></li><li class="list-group-item"><a href="#product-warnings" class="ripple internal reference">Product Warnings</a></li></ul></li><li class="list-group-item"><a href="#id1" class="ripple internal reference">How to trigger a warning when purchasing at a specific vendor?</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/purchase/replenishment/flows/warning_triggering.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-trigger-a-warning-when-purchasing-at-a-specific-vendor"></section><section id="overview"><h2 >概述</h2><p >The <strong >Warning Messages and Alerts</strong> module allow you to configure alerts
+on the customers and vendors or products.</p><p >You can select the following types of warnings and create different
+warnings for purchases and sales:</p><ul ><li >Warning: This option displays the warning message during the process,
+but allows the user to continue.</li><li >Blocking Message: The message displays a warning message, but the
+user cannot continue the process further.</li></ul></section><section id="configuration"><h2 >配置</h2></section><section id="module-installation"><h3 >Module Installation</h3><p >First, you need to install the <strong >Warning Messages and Alerts</strong> module. Go
+to <strong >Apps</strong> and look for it (don't forget to remove the <strong >Apps</strong> filter).</p><img src="../../../_images/warning_triggering01.png" class="img-responsive center-block"></section><section id="vendor-or-customer-warnings"><h3 >Vendor or Customer warnings</h3><p >Go to <span class="menuselection">Purchases ‣ Vendors</span> or to <span class="menuselection">Sales ‣ Customers</span>.</p><p >Open the vendor or the customer and click on the <strong >Warnings</strong> tab.</p><img src="../../../_images/warning_triggering02.png" class="img-responsive center-block"><p >The available warnings are:</p><ul ><li >Warning on the <strong >Sales Order</strong></li><li >Warning on the <strong >Purchase Order</strong></li><li >Warning on the <strong >Picking</strong></li><li >Warning on the <strong >Invoice</strong></li></ul></section><section id="product-warnings"><h3 >Product Warnings</h3><p >Go to <span class="menuselection">Purchases ‣ Products</span> or to <span class="menuselection">Sales ‣ Products</span>.</p><p >Open the product and click on the <strong >Notes</strong> tab.</p><img src="../../../_images/warning_triggering03.png" class="img-responsive center-block"><p >The available warnings are:</p><ul ><li >Warning when selling this product.</li><li >Warning when Purchasing this product.</li></ul></section><section id="id1"><h2 >How to trigger a warning when purchasing at a specific vendor?</h2><p >Go to the Purchases application, click on <span class="menuselection">Purchase ‣ Vendors</span>.
+Go to the <strong >Warnings</strong> tab.</p><p >Under <strong >Warning on the Purchase Order</strong>, choose <strong >Warning</strong> and write your
+warning.</p><img src="../../../_images/warning_triggering04.png" class="img-responsive center-block"><p >Create a <strong >Request for Quotation</strong>. Go to
+<span class="menuselection">Purchase ‣ Request for Quotation</span> and click on <strong >Create</strong>.
+Choose the vendor on which a warning was set.</p><p >When choosing the vendor, the warning will appear.</p><img src="../../../_images/warning_triggering01.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >If you set a blocking message instead of a warning message, you
+won't be able to choose the vendor.</p></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

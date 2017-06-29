@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>开票流程概述 &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="主要概念" href="../main_concepts.html" />
+    <link rel="next" title="报价单" href="../../quotation.html" />
+    <link rel="prev" title="YUANCLOUD 销售管理介绍" href="introduction.html" />
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../sales.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              开票流程概述
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="current toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#sales-order-invoice" class="ripple internal reference"><span class="menuselection">销售订单(Sales Order) ‣ 发票(Invoice)</span></a></li><li class="list-group-item"><a href="#sales-order-delivery-invoice" class="ripple internal reference"><span class="menuselection">销售订单(Sales Order) ‣ 交货(Delivery) ‣ 开票(Invoice)</span></a></li><li class="list-group-item"><a href="#recurring-contracts-subscriptions-invoices" class="ripple internal reference"><span class="menuselection">再发性合同 (Recurring Contracts) ‣ 开票(Invoices)</span></a></li><li class="list-group-item"><a href="#ecommerce-order-invoice" class="ripple internal reference"><span class="menuselection">电商订单(eCommerce Order) ‣ 开票(Invoice)</span></a></li><li class="list-group-item"><a href="#creating-an-invoice-manually" class="ripple internal reference">手工创建发票</a></li><li class="list-group-item"><a href="#others" class="ripple internal reference">其余</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/sales/overview/main_concepts/invoicing.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="overview-of-the-invoicing-process"><p >基于你的业务场景以及你所使用的模块，在YuanCloud中有几种不同的方式去自动触发客户发票。通常，系统创建草稿发票(发票信息从其他单据例如销售订单或者合同)并且会计只需要确认草稿发票并且批量的发送即可(快递或者电子邮件)</p><p >基于你的业务场景，可以选择以下方式的其中之一创建草稿发票：</p></section><section id="sales-order-invoice"><h2 ><span class="menuselection">销售订单(Sales Order) ‣ 发票(Invoice)</span></h2><p >在大多数公司里面，销售人员创建报价单，并且确认后转换为销售就订单。然后基于销售订单创建草稿发票。可以选择如下集中方式：</p><ul ><li ><p >基于订单数量开票：在触发交货单之前给整张订单开票</p></li><li ><p >基于交货数量开票：见下章节</p></li></ul><p >发货之前开票通常用于电商应用中，通常都是客户先付钱之后我们发货给他们(预付)。</p><p >对于其余大多数用例，建议手工开票。这能让销售人员有选择地开票：基于订单行开票，基于百分比开票(预付)，基于固定价格开票。</p><p >该过程适用与服务类型的产品和实物类产品</p><p >详阅: <em >基于销售订单开票.</em></p></section><section id="sales-order-delivery-invoice"><h2 ><span class="menuselection">销售订单(Sales Order) ‣ 交货(Delivery) ‣ 开票(Invoice)</span></h2><p >零售和电商通常根据交货数量开票，而不是基于销售订单。此种方法适用于业务场景中实际发货数量和订单数量不一致的情况：食品(根据实际发出的公斤数开票)。</p><p >该方法下，如果你部分发货，只需要为实际发出的数量开票。如果需要未完成订单的话(部分发货和稍晚剩余发出)，客户会收到基于两次发货生成的两个发票。</p></section><section id="recurring-contracts-subscriptions-invoices"><h2 ><span class="menuselection">再发性合同 (Recurring Contracts) ‣ 开票(Invoices)</span></h2><p >对于订阅，发票会定期地，自动地生成。生成发票频率以及服务／产品已经在合同上定义好了。</p></section><section id="ecommerce-order-invoice"><h2 ><span class="menuselection">电商订单(eCommerce Order) ‣ 开票(Invoice)</span></h2><p >在全部付款完成后，电商订单也会触发订单的创建，如果允许通过支票和电汇付款，YuanCloud只会创建一张订单并且一旦付款完成发票会触发。</p></section><section id="creating-an-invoice-manually"><h2 >手工创建发票</h2><p >用户也可以不通过合同或者销售订单手工的创建发票。如果没有使用销售模块(报价)以及仓库模块，建议使用手工创建发票。</p><p >及时可以从销售订单中创建发票，在一些特殊场景中还是需要手工创建发票：</p><ul ><li ><p >如果需要创建退款</p></li><li ><p >如果需要折扣</p></li><li ><p >如果需要变更为从销售订单开票</p></li><li ><p >如果需要对不是主营业务的交易开票</p></li></ul></section><section id="others"><h2 >其余</h2><p >一些特定的模块也可以生成草稿发票</p><ul ><li ><p >会员：每年给会员开票</p></li><li ><p >维修：售后服务的开票</p></li></ul></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

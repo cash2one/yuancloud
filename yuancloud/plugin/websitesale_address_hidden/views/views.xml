@@ -1,0 +1,15 @@
+<yuancloud>
+    <data>
+        <template id="website_sale_address_hide_shopping" name="continue_shopping"
+                  inherit_id="website_sale.continue_shopping">
+            <xpath expr="//a[@href='/shop/checkout']" position="replace">
+                <a t-if="not optional_products and website_sale_order and website_sale_order.website_order_line"
+                   class="btn btn-primary pull-right mb32" href="/shop/payment">
+                    <span class="hidden-xs">Process Checkout</span>
+                    <span class="visible-xs-inline">Checkout</span>
+                    <span class="fa fa-long-arrow-right"/>
+                </a>
+            </xpath>
+        </template>
+    </data>
+</yuancloud>

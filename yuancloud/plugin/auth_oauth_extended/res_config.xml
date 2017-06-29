@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<yuancloud>
+    <data>
+        <record model="ir.ui.view" id="view_general_auth_configuration">
+            <field name="name">base.config.settings.oauth</field>
+            <field name="model">base.config.settings</field>
+            <field name="inherit_id" ref="base_setup.view_general_configuration"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='module_auth_oauth']/.." position="inside">
+                    <div attrs="{'invisible':[('module_auth_oauth','=',False)]}">
+                        <div name="weixin_platform">
+                            <div>
+                                <field name="auth_oauth_weixin_openplatform_enabled" class="oe_inline"/>
+                                <label for="auth_oauth_weixin_openplatform_enabled"/>
+                            </div>
+                            <div attrs="{'invisible':[('auth_oauth_weixin_openplatform_enabled','=',False)]}">
+                                <blockquote>
+                                    为了使用微信开放平台登录，请用选择开放平台网页应用:<br/>
+                                    <br/>
+                                    开放平台网页应用: <field name="auth_oauth_openplatform" class="oe_inline" placeholder="北京山水物源网页应用"/>
+                                    <br/>
+                                    <!--复制AppSecret: <field name="auth_oauth_weixin_openplatform_appsercret" class="oe_inline" placeholder="95dff9a3d515eb84fd1e880761943b32"/>-->
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div name="weixin_officialaccount">
+                            <div>
+                                <field name="auth_oauth_weixin_officialaccount_enabled" class="oe_inline"/>
+                                <label for="auth_oauth_weixin_officialaccount_enabled"/>
+                            </div>
+                            <div attrs="{'invisible':[('auth_oauth_weixin_officialaccount_enabled','=',False)]}">
+                                <blockquote>
+                                    为了使用微信服务号登录，请用选择微信服务号:<br/>
+                                    <br/>
+                                    微信服务号: <field name="auth_oauth_officialaccount" domain="[('is_qyhapp','=',False)]" class="oe_inline" placeholder="北京山水物源服务号"/>
+                                    <br/>
+                                    <!--复制AppSecret: <field name="auth_oauth_weixin_openplatform_appsercret" class="oe_inline" placeholder="95dff9a3d515eb84fd1e880761943b32"/>-->
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div name="weixin_qyh">
+                            <div>
+                                <field name="auth_oauth_weixin_qyh_enabled" class="oe_inline"/>
+                                <label for="auth_oauth_weixin_qyh_enabled"/>
+                            </div>
+                            <div attrs="{'invisible':[('auth_oauth_weixin_qyh_enabled','=',False)]}">
+                                <blockquote>
+                                    为了使用微信企业号应用登录，请用选择微信企业号应用:<br/>
+                                    <br/>
+                                    微信企业号应用: <field name="auth_oauth_qyh" domain="[('is_qyhapp','=',True)]" class="oe_inline" placeholder="北京山水物源服务号"/>
+                                    <br/>
+                                    <!--复制AppSecret: <field name="auth_oauth_weixin_openplatform_appsercret" class="oe_inline" placeholder="95dff9a3d515eb84fd1e880761943b32"/>-->
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</yuancloud>

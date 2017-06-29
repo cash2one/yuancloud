@@ -1,0 +1,107 @@
+<yuancloud>
+    <data><!-- Action -->
+        <record model="ir.actions.act_window" id="wx_mpnews_message_record_list_action">
+            <field name="name">图文消息记录</field>
+            <field name="res_model">wx.mpnews_message_record</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建第一个图文消息记录
+                </p>
+            </field>
+        </record>
+        <!-- List View (wx_message-text)-->
+        <record model="ir.ui.view" id="mpnews_message_record_list_view">
+            <field name="name">ycloud_wx_mpnews_message_record.tree</field>
+            <field name="model">wx.mpnews_message_record</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="message_type"/>
+                    <field name="message_event"/>
+                    <field name="officialaccount"/>
+                    <field name="official_username"/>
+                    <field name="qy_toUserName"/>
+                    <field name="send_event"/>
+                    <field name="createTime"/>
+                    <field name="message_template"/>
+                    <field name="message_title"/>
+                    <field name="message_description"/>
+                    <field name="isList"/>
+                    <field name="association_order"/>
+                    <field name="association_user"/>
+                    <field name="message_status"/>
+                    <field name="session_id"/>
+                </tree>
+            </field>
+        </record>
+        <!--文字消息卡片 -->
+        <record model="ir.ui.view" id="mpnews_message_record_form_view">
+            <field name="name">ycloud_wx_mpnews_message_record.form</field>
+            <field name="model">wx.mpnews_message_record</field>
+            <field name="arch" type="xml">
+                <form create="false">
+                    <sheet>
+                        <group>
+                            <field name="message_type"/>
+                            <field name="message_event"/>
+                            <field name="official_username"/>
+                            <field name="qy_toUserName"/>
+                            <field name="send_event"/>
+                            <field name="createTime"/>
+                            <field name="officialaccount"/>
+                            <field name="message_template"/>
+                            <field name="message_title"/>
+                            <field name="message_description"/>
+                            <field name="message_picurl"/>
+                            <field name="message_url"/>
+                            <field name="isList"/>
+                            <field name="association_order"/>
+                            <field name="association_user"/>
+                            <field name="message_status"/>
+                            <field name="session_id"/>
+                        </group>
+                        <notebook>
+                            <page string="图文">
+                                <separator string="图文信息"/>
+                                <field name="message_news"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="ycloud_wx_message_mpnews_record_tree_view" model="ir.ui.view">
+            <field name="name">ycloud_wx_message_mpnews_record.tree.view</field>
+            <field name="model">wx.message_mpnews_record</field>
+            <field name="arch" type="xml">
+                <tree string="图文">
+                    <field name="message_title"/>
+                    <field name="message_description"/>
+                    <field name="message_picurl"/>
+                    <field name="message_url"/>
+                    <field name="model_id"/>
+                    <!--<field name="message_imagedata" widget="image" class="oe_avatar"/>-->
+                </tree>
+            </field>
+        </record>
+        <record id="ycloud_wx_message_mpnews_record_form_view" model="ir.ui.view">
+            <field name="name">ycloud_wx_message_mpnews_record.form.view</field>
+            <field name="model">wx.message_mpnews_record</field>
+            <field name="arch" type="xml">
+                <form string="图文">
+                    <group col="4">
+                        <field name="message_title"/>
+                        <field name="message_description"/>
+                        <field name="message_picurl"/>
+                        <field name="message_url"/>
+                        <field name="message_imagedata" widget="image" class="oe_avatar oe_left"/>
+                        <field name="model_id"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</yuancloud>

@@ -1,0 +1,157 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何计划和追踪分配给员工的工作？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../index.html" />
+    <link rel="up" title="给项目做计划" href="../planning.html" />
+    <link rel="next" title="如何预测任务？" href="forecast.html" />
+    <link rel="prev" title="给项目做计划" href="../planning.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../project.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何计划和追踪分配给员工的工作？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="current toctree-l2"><a href="../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a></li><li class="list-group-item"><a href="#manage-tasks-with-views" class="ripple internal reference">管理带有视图的任务</a><ul ><li class="list-group-item"><a href="#get-an-overview-of-activities-with-the-kanban-view" class="ripple internal reference">对带有看板视图的活动进行查看</a><ul ><li class="list-group-item"><a href="#add-rearrange-stages" class="ripple internal reference">添加或者重新排列阶段</a></li><li class="list-group-item"><a href="#sort-tasks-by-priority" class="ripple internal reference">根据优先级排列任务</a></li></ul></li><li class="list-group-item"><a href="#track-the-progress-of-each-task-with-the-list-view" class="ripple internal reference">用列表视图追踪每个任务的过程</a></li><li class="list-group-item"><a href="#keep-an-eye-on-deadlines-with-the-calendar-view" class="ripple internal reference">在日历视图中要留意最后期限</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/project/planning/assignments.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-plan-and-track-employees-assignments"><p >Following and planning your employees' assignments can be a heavy
+challenge especially when you manage several people. Luckily, using YuanCloud
+Project, you can handle it in only a couple of clicks.</p></section><section id="configuration"><h2 >配置</h2><p >The only necessary configuration is to install the <strong >Project Management</strong>
+module. To do so, go in the application module, search for project and
+install the application.</p><img src="../../_images/assignments01.png" class="img-responsive center-block"><p >If you wish to manage time estimation, you will need to enable
+timesheets on tasks. From the <strong >Project</strong> application, go to
+<span class="menuselection">Configuration ‣ Settings</span> in the dropdown menu.
+Then, under <strong >Time Work Estimation</strong>, select the <strong >manage time
+estimation on tasks</strong> option. Do not forget to apply your changes.</p><img src="../../_images/assignments02.png" class="img-responsive center-block"><p >This feature will create a progress bar in the form view of your tasks.
+Every time your salesperson will add working time in his timesheet, the
+bar will be updated accordingly, based on the initially planned hours.</p><img src="../../_images/assignments03.png" class="img-responsive center-block"></section><section id="manage-tasks-with-views"><h2 >管理带有视图的任务</h2><p >You can have an overview of your different task thanks to the multiple
+views available with YuanCloud. Three main views will help you to plan and
+follow up on your employees' tasks: the kanban view, the list view
+(using timesheets) and the calendar view.</p><p >来创建并编辑任务在管道中输入内容。记着填写负责人和预计日期。</p></section><section id="get-an-overview-of-activities-with-the-kanban-view"><h3 >对带有看板视图的活动进行查看</h3><p >看板视图看起来像是一个被分成不同阶段的便贴视图。这能让你清楚的看到你的任务所在的阶段以及较高优先级的任务。</p><p >The Kanban view is the default view when accessing a project, but if you
+are on another view, you can go back to it any time by clicking the
+kanban view logo in the upper right corner</p><img src="../../_images/assignments04.png" class="img-responsive center-block"></section><section id="add-rearrange-stages"><h4 >添加或者重新排列阶段</h4><p >You can easily personalize your project to suit your business needs by
+creating new columns. From the Kanban view of your project, you can add
+stages by clicking on <strong >Add new column</strong> (see image below). If you
+want to rearrange the order of your stages, you can easily do so by
+dragging and dropping the column you want to move to the desired
+location. You can also fold or unfold your stages by using the <strong >setting</strong>
+icon on your desired stage.</p><img src="../../_images/assignments10.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >根据过程的阶段分别创建栏。例如在开发项目中，阶段可能是：说明定义，开发，测试，完成。</p></div></section><section id="sort-tasks-by-priority"><h4 >根据优先级排列任务</h4><p >在每列中，你可以根据任务的优先级进行排序。高优先级的任务会自动的被移动到列的上方。在看板视图中，点击任务卡右下方的星标记该任务为 <strong >高优先级</strong> 。对于没有标记的任务，YuanCloud会自动的根据他们的最后期限进行划分。</p><p >注意超过了最后期限的日期会显示红色(列表视图中也是)，所以你能很轻松的追踪每个任务的进展。</p><img src="../../_images/assignments06.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >记着你还能在过滤按钮上过滤任务。</p></div></section><section id="track-the-progress-of-each-task-with-the-list-view"><h3 >用列表视图追踪每个任务的过程</h3><p >If you enabled the <strong >Manage Time Estimation on Tasks</strong>, your employees
+will be able to log their activities on tasks under the <strong >Timesheets</strong>
+sub-menu along with their duration. The <strong >Working Time Progress</strong> bar will
+be updated each time the employee will add an activity.</p><img src="../../_images/assignments07.png" class="img-responsive center-block"><p >作为经理，在列表视图下你可以查看所有员工花费在任务上的时间。要这样做，进入所选的项目中并点击列表视图图标(见下图)。最后一列可以看到每个任务的进展。</p><img src="../../_images/assignments08.png" class="img-responsive center-block"></section><section id="keep-an-eye-on-deadlines-with-the-calendar-view"><h3 >在日历视图中要留意最后期限</h3><p >如果在你的任务中添加最后期限，他就回显示在日历视图中。作为一个经理，这样的视图能够让你在一个窗口中查看所有的最后期限。</p><img src="../../_images/assignments09.png" class="img-responsive center-block"><p >所有的任务都根据任务的所有者的不同而标记不同的颜色。你可以在日期视图的右边勾选相关的勾选框轻易的根据员工过滤最后期限。</p><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >在日历视图中，通过退拽你可以轻易的变更最后期限。</p></div><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="../configuration/setup.html" class="internal alert-link reference"><em >如何安装与配置项目管理?</em></a></li><li ><a href="forecast.html" class="internal alert-link reference"><em >如何预测任务？</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data><!-- Action -->
+        <record model="ir.actions.act_window" id="o2o_storecategory_list_action">
+            <field name="name">门店类别</field>
+            <field name="res_model">o2o.storecategory</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建第一个门店类别
+                </p>
+            </field>
+        </record>
+        <!-- List View (store_storecategory)-->
+        <record model="ir.ui.view" id="o2o_store_storecategory_list_view">
+            <field name="name">o2o.storecategory.tree</field>
+            <field name="model">o2o.storecategory</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="code"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <!--store_storecategory卡片 -->
+        <record model="ir.ui.view" id="o2o_store_storecategory_form_view">
+            <field name="name">o2o.storecategory.form</field>
+            <field name="model">o2o.storecategory</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="code"/>
+                            </group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="小类">
+                                <field name="lines">
+                                    <tree>
+                                        <field name="code"/>
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- Line Form-->
+        <record model="ir.ui.view" id="o2o_store_storecategory_line_form_view">
+            <field name="name">o2o.storecategory.line.form</field>
+            <field name="model">o2o.storecategory.line</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="code"/>
+                            </group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</yuancloud>

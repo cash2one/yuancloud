@@ -1,0 +1,178 @@
+// ------------------------------------------------------------------
+// Typography
+// ------------------------------------------------------------------
+a {
+    color: @yuancloud-brand-optional;
+    &:hover {
+        color: darken(@yuancloud-brand-optional, 10%);
+    }
+}
+
+div.o_checkbox {
+    @yuancloud-checkbox-size: 15px;
+
+    display: inline-block;
+    position: relative;
+    vertical-align: sub;
+
+    > input {
+        width: @yuancloud-checkbox-size;
+        height: @yuancloud-checkbox-size;
+        margin: 0; // bootstrap override
+
+        position: relative;
+        cursor: pointer;
+
+        + span {
+            display: block;
+            width: @yuancloud-checkbox-size;
+            height: @yuancloud-checkbox-size;
+            border: 1px solid @yuancloud-brand-secondary;
+            background-color: white;
+        }
+
+        &:checked + span {
+            background-repeat: no-repeat;
+            background-image: url(../img/checked.svg);
+            background-position: center center;
+        }
+
+        &:disabled + span {
+            border: 1px solid @yuancloud-brand-lightsecondary;
+        }
+    }
+}
+
+// ------------------------------------------------------------------
+//  General
+// ------------------------------------------------------------------
+.o_text_overflow {
+    .o-text-overflow();
+}
+.o_hidden {
+    display: none!important;
+}
+.o-input() {
+    border: none;
+    border-bottom: 1px solid #ccc;
+//    border-radius: 5px;
+    padding: 0px;
+}
+input[type="text"], input[type="password"], input[type="number"], textarea, select {
+    .o-input();
+
+    width: 100%;
+    outline: none;
+    display: block;
+}
+select { // FIXME buggy 'padding-left'
+    cursor: pointer;
+    background-color: transparent;
+    min-width: 50px;
+
+    .o-appearance(none);
+    background-image: url("/web/static/src/img/down-arrow.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+
+    color: transparent; // This is a hack to remove the outline in FF
+    text-shadow: 0 0 0 @yuancloud-main-text-color;
+    > option {
+        color: @yuancloud-main-text-color;
+    }
+}
+
+.o-placeholder() { // Rules below need to be separeted. Otherwise all browsers will discard the whole rule.
+    color: @yuancloud-brand-secondary;
+    opacity: 0.5;
+}
+::-webkit-input-placeholder { // WebKit, Blink, Edge
+    .o-placeholder();
+}
+::-moz-placeholder { // Mozilla Firefox 19+
+    .o-placeholder();
+}
+:-ms-input-placeholder { // Internet Explorer 10-11
+    .o-placeholder();
+}
+
+// ------------------------------------------------------------------
+// Layout
+// ------------------------------------------------------------------
+.o_web_client {
+    background: white;
+
+    @media (max-width: @screen-xs-max) {
+        font-size: @yuancloud-font-size-base-touch; // Then every font-size which should grow must be fixed with em and not px!
+    }
+}
+
+// ------------------------------------------------------------------
+// Misc. widgets
+// ------------------------------------------------------------------
+.o_loading {
+    background-color: @yuancloud-brand-primary;
+    color: white;
+    padding: 4px;
+}
+
+@notification-error-bg-color: #F16567;
+@notification-info-bg-color: #FCFBEA;
+.o_notification_manager {
+    width: 300px;
+    max-width: 100%;
+
+    .o-position-absolute(@navbar-height, 0px);
+    z-index: 1100; // Bootstrap modal z-index is 1050
+
+    .o_notification {
+        padding: 0;
+        margin: 5px;
+
+        opacity: 0;
+
+        background-color: rgba(255, 255, 255, 0.75);
+        box-shadow: 0px 0px 5px 1px @yuancloud-main-text-color;
+
+        position: relative;
+        .o_close {
+            .o-position-absolute(5px, 5px);
+            color: rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+        }
+
+        .o_notification_title {
+            .o-flex-display();
+            .o-align-items(center);
+
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 10px 10px 10px 20px;
+
+            font-weight: bold;
+
+            .o_icon {
+                display: inline-block;
+                margin-right: 20px;
+                color: rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        .o_notification_content {
+            padding: 10px;
+        }
+
+        &.o_error {
+            color: #7a7a7a;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 5px;
+        }
+    }
+}
+
+// Buttons containing only an icon
+.o_icon_button {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    outline: none;
+}

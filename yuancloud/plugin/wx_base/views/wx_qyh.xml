@@ -1,0 +1,44 @@
+<yuancloud>
+    <data><!-- Action -->
+        <record model="ir.actions.act_window" id="wx_qyh_list_action">
+            <field name="name">微信企业号</field>
+            <field name="res_model">wx.qyh</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建微信企业号实体
+                </p>
+            </field>
+        </record>
+        <!-- List View (wx_qyh)-->
+        <record model="ir.ui.view" id="wx_qyh_list_view">
+            <field name="name">ycloud_wx_qyh.tree</field>
+            <field name="model">wx.qyh</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="wx_qyh_id"/>
+                    <field name="wx_qyh_name"/>
+                    <field name="wx_company"/>
+                </tree>
+            </field>
+        </record>
+        <!--微信企业号卡片 -->
+        <record model="ir.ui.view" id="wx_qyh_form_view">
+            <field name="name">ycloud_wx_qyh.form</field>
+            <field name="model">wx.qyh</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="base_info">
+                            <field name="wx_qyh_id"/>
+                            <field name="wx_qyh_name"/>
+                            <field name="wx_company"/>
+                        </group>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+    </data>
+</yuancloud>

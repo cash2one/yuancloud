@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何处理三步发货(拣货+包装＋发货)？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="交货订单" href="../delivery.html" />
+    <link rel="next" title="计划交货日期是如何运算的？" href="scheduled_dates.html" />
+    <link rel="prev" title="如何处理两步发货(拣货＋发货)？" href="two_steps.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../inventory.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何处理三步发货(拣货+包装＋发货)？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="current toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#overview" class="ripple internal reference">概述</a></li><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#install-the-inventory-module" class="ripple internal reference">安装存货模块</a></li><li class="list-group-item"><a href="#allow-managing-routes" class="ripple internal reference">允许管理路径</a></li><li class="list-group-item"><a href="#configure-the-warehouse-for-pick-pack-ship" class="ripple internal reference">配置仓库为拣货＋包装＋发货</a></li></ul></li><li class="list-group-item"><a href="#create-a-sale-order" class="ripple internal reference">创建销售订单</a></li><li class="list-group-item"><a href="#process-a-delivery" class="ripple internal reference">处理发货</a><ul ><li class="list-group-item"><a href="#how-to-process-the-picking-step" class="ripple internal reference">如何处理拣货这一步骤？</a></li><li class="list-group-item"><a href="#how-to-process-the-packing-step" class="ripple internal reference">如何处理包装这一步骤？</a></li><li class="list-group-item"><a href="#how-to-process-the-shipping-step" class="ripple internal reference">如何处理发货这一步骤？</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/inventory/management/delivery/three_steps.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-process-delivery-orders-in-three-steps-pick-pack-ship"></section><section id="overview"><h2 >概述</h2><p >当一个订单进入到发货部门进入到最后的发货阶段，YuanCloud默认的设置是**一步**操作：等所有货物都准备好，就可以用一张发货单一次性的发货。然而，该过程可能不能准确的反映公司的操作，你的公司可能在发货之前需要更多的步骤。</p><p >在**三步**过程中(<strong >拣货 + 包装 + 发货</strong>),货物先被送到包装区域，在那里按照发货的不同目的地被组合起来，然后发到发货阜用来最终发货给客户。</p><p >在YuanCloud中要完成**拣货＋包装＋发货**一些必要的配置步骤需要被完成。这些步骤创建额外的库位，这些库位默认的被成为**出货区域**和**包装区域**。所以如果你的仓库的简称是**WH**，该配置会创建一个叫做&quot;WH/发货区域&quot;和另外一个叫做&quot;WH/包装区域&quot;的库位。</p><p >第一步货物会从 <strong >WH/库存</strong> 移动到 <strong >WH/包装区域</strong> .。然后从 <strong >WH/包装区域 **移动到 **WH/发货区域</strong>.。最后从 <strong >WH/发货区域</strong> 移动到**最后的目的地 [UNKNOWN NODE problematic].</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >检查：文档：[UNKNOWN NODE problematic]仓库流程`确认该仓库流程是否是需要的正确的方法。</p></div></section><section id="configuration"><h2 >配置</h2></section><section id="install-the-inventory-module"><h3 >安装存货模块</h3><p >在**APP**菜单，搜索并安装**存货**模块。</p><img src="../../../_images/three_steps07.png" class="img-responsive center-block"><p >为了能小销售订单需要安装**销售**模块。</p></section><section id="allow-managing-routes"><h3 >允许管理路径</h3><p >YuanCloud通过**路线**配置交货单的移动。路线提供了一种把不同动作链接到一块的机制。在该状况下，我们把拣货步骤链接到发货步骤。</p><p >要管理路径,进入菜单项 <span class="menuselection">配置(Configuration) ‣设置(Settings)</span></p><p >在：[UNKNOWN NODE problematic]库位 &amp; 仓库 --&gt; 路线`中，勾选激活**产品的高级路径规则**。并确保**仓库多位置管理**也被激活。</p><img src="../../../_images/three_steps05.png" class="img-responsive center-block"></section><section id="configure-the-warehouse-for-pick-pack-ship"><h3 >配置仓库为拣货＋包装＋发货</h3><p >进入菜单项 <span class="menuselection">配置(Configuration) ‣ 仓库(Warehouses)</span> 编辑要使用的仓库。</p><p >对于发出的交货，设置选项为**使包装到指定的库位，把它们放到出货区域然后用来发货(拣货＋包装＋发货)。**</p><img src="../../../_images/three_steps01.png" class="img-responsive center-block"></section><section id="create-a-sale-order"><h2 >创建销售订单</h2><p >从**销售**模块,创建一张带有要发货产品的销售订单。</p><p >注意现在在销售订单上方的**状态**按钮上有3张转运单和本销售订单关联。</p><img src="../../../_images/three_steps06.png" class="img-responsive center-block"><p >如果你点击了按钮，现在就可以看到三个不同调拨单：</p><ol ><li ><p >第一个带有**拣货**标识拣货流程。</p></li><li ><p >中间一个带有**包装**参照标识包装流程。</p></li><li ><p >最后一个有**OUT**标识发货流程。</p></li></ol><img src="../../../_images/three_steps04.png" class="img-responsive center-block"></section><section id="process-a-delivery"><h2 >处理发货</h2></section><section id="how-to-process-the-picking-step"><h3 >如何处理拣货这一步骤？</h3><p >要确保在库存中有足够的产品然后进入**存货**并点击看板卡上的**调拨单**下方的**等待**链接。</p><img src="../../../_images/three_steps08.png" class="img-responsive center-block"><p >点击你想要处理的调拨单</p><p >如果可用，点击**预留**预留产品</p><p >点击**确认**计算从**仓库／库存**到**库存／包装区域**。</p><p >已经完成了拣货步骤并且在该**WH/拣货**单的页面上方的状态按钮显示已经**完成**。产品已经从**WH/库存**移动到了**WH/包装**区域，这样下一步的操作就可以进行了(包装)。</p></section><section id="how-to-process-the-packing-step"><h3 >如何处理包装这一步骤？</h3><p >进入**存货**并点击**包装**看板下方的**# TRANSFERS**链接。</p><img src="../../../_images/three_steps03.png" class="img-responsive center-block"><p >点击你想要处理的调拨单</p><p >点击确认完成从**仓库／包装区域**到**仓库／出货区域**的调拨。</p><p >这样已经完成了包装步骤并且在该**WH/包装**单页面上方的状态栏位显示已经**完成**。产品已经从**WH/包装区域**移动到了**WH/出货区域**，这样下一步的操作(发货)就可以进行了。</p></section><section id="how-to-process-the-shipping-step"><h3 >如何处理发货这一步骤？</h3><p >进入**存货**点击看板卡上**发货单**下方的**# 待做**链接。</p><img src="../../../_images/three_steps02.png" class="img-responsive center-block"><p >点击你想要处理的调拨单</p><p >点击**确认**来完成从**库存／发货区域**到**客户库位**的调拨(基于**待做**列表栏的数量，点击**应用**来修正数量)。</p><p >现在已经完成了发货步骤并且**仓库／发货区**看板上该单子应该显示为**完成**状态。产品已经发到客户那边。</p></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

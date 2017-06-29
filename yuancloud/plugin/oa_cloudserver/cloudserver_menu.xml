@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!--二级菜单 -->
+        <menuitem id="cloudserver_menu" name="服务器管理"/>
+        <!--服务器  -->
+        <menuitem id="cloudserver_server_menu" name="服务器信息" parent="cloudserver_menu" action="cloudserver_server_list_action"/>
+        <!--域名  -->
+        <menuitem id="cloudserver_domain_menu" name="域名信息" parent="cloudserver_menu" action="cloudserver_domain_list_action"/>
+
+    </data>
+</yuancloud>

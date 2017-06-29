@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何刚给支持合同开票(预付小时数)？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="服务" href="../services.html" />
+    <link rel="next" title="产品和价格" href="../../products_prices.html" />
+    <link rel="prev" title="如何为你的客户重开费用发票。" href="reinvoice.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../sales.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何刚给支持合同开票(预付小时数)？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="current toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#install-the-sales-and-timesheet-applications" class="ripple internal reference">安装销售和记工单应用</a></li><li class="list-group-item"><a href="#create-products" class="ripple internal reference">创建产品</a></li></ul></li><li class="list-group-item"><a href="#managing-support-contract" class="ripple internal reference">管理支持合同</a><ul ><li class="list-group-item"><a href="#quotations-and-sale-orders" class="ripple internal reference">报价单和销售订单</a></li><li class="list-group-item"><a href="#timesheets" class="ripple internal reference">记工单</a></li><li class="list-group-item"><a href="#control-delivered-support-on-the-sale-order" class="ripple internal reference">在销售订单上控制已交付的支持</a></li><li class="list-group-item"><a href="#upselling-and-renewal" class="ripple internal reference">向上销售和更新</a></li></ul></li><li class="list-group-item"><a href="#special-configuration" class="ripple internal reference">特殊配置</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/sales/invoicing/services/support.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-invoice-a-support-contract-prepaid-hours"><p >有不同种类的销售服务：预付小时数／天数(例如支持合同)，基于记工单的开票(例如咨询顾问时间)以及固定价格合同(例如一个项目)。</p><p >在本章节，我们来看一下如何销售和追踪预支付的支持合同</p><p >例如，你可以销售一个价格为``$25,000`的``50 小时`` 支持包。价格是固定的并且已经预先付款。但是你想跟踪你给客户的支持服务</p></section><section id="configuration"><h2 >配置</h2></section><section id="install-the-sales-and-timesheet-applications"><h3 >安装销售和记工单应用</h3><p >为了能销售服务，你需要从**APP**图标安装**销售**模块，并且安装从**记工单**应用</p><img src="../../../_images/support01.png" class="img-responsive center-block"><img src="../../../_images/support02.png" class="img-responsive center-block"></section><section id="create-products"><h3 >创建产品</h3><p >默认状况下，产品是根据单位数量销售的，为了能按 <code >每小时</code> 销售服务，必须使用产品的多种计量单位，在销售模块下，进入菜单选项 <span class="menuselection">配置(Configuration) ‣ 设置(Settings)</span>，在本页面激活 多种 <strong >计量单位</strong> 选项。</p><img src="../../../_images/support03.png" class="img-responsive center-block"><p >为了能够销售支持合同，必须创建一个所有支持合同都能销售的产品。从 <strong >销售</strong> 应用下，进入菜单选项 <span class="menuselection">销售(Sales) ‣ 产品(Products)</span>，用以下步骤创建新的产品：</p><ul ><li ><p ><strong >名称</strong>: 技术支持</p></li><li ><p ><strong >产品类型</strong>: 服务</p></li><li ><p ><strong >计量单位</strong> : 小时</p></li><li ><p ><strong >开票原则</strong>：订单数量，因为服务是预先支付的，我们可以根据订单数量开票，而不是根据实际发货数量</p></li><li ><p >[UNKNOWN NODE problematic]追踪服务 [UNKNOWN NODE problematic]：合同上的记工单。一个分析科目会被自动创建用来追踪所有包含这个服务的进出项，然后就可以在相关的科目下追踪小时数了</p></li></ul><img src="../../../_images/support04.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >有不同的方式来追踪和销售订单相关或者和产品相关的服务，根据上面的配置，只能够在一个订单上销售一个支持合同。如果客户同时订购不同的记工单的服务，就必须要把询价单分成不同的订单</p></div><p >需要知道除了小时我们还可以使用别的计量单位，例如：天，40/周等。而这些只需要在**计量单位**类别下设置一个和**小时**的转换规则即可(例如：1天＝8小时)。</p></section><section id="managing-support-contract"><h2 >管理支持合同</h2></section><section id="quotations-and-sale-orders"><h3 >报价单和销售订单</h3><p >一旦创建了产品，你就可以用该产品创建报价单或者销售订单。一旦报价单被确认掉并且转为小昂首订单，你的用户就可以使用记工单应用记录和支持合同相关的服务。</p><img src="../../../_images/support05.png" class="img-responsive center-block"></section><section id="timesheets"><h3 >记工单</h3><p >要跟踪一个特定合同上的服务，需要使用记工单应用 。一个和销售订单关联的分析账户自动创建， (屏幕上的``SO009 - Agrolait`` ),然后只要服务被销售掉就可以对之进行跟踪。</p><img src="../../../_images/support06.png" class="img-responsive center-block"></section><section id="control-delivered-support-on-the-sale-order"><h3 >在销售订单上控制已交付的支持</h3><p >在 <strong >销售</strong> 应用下，使用菜单项 <span class="menuselection">销售(Sales) ‣ 销售订单(Sales Orders)</span> 来控制每张订单的进度。在和支持合同相关的销售订单行上，可以看到 <strong >交货数量</strong> 会根据记工单中的小时数自动更新。</p><img src="../../../_images/support07.png" class="img-responsive center-block"></section><section id="upselling-and-renewal"><h3 >向上销售和更新</h3><p >如果在销售合同上记录的小时数大于或者等于客户采购的数量，销售订单的**开票状态**就会自动的被设置为**向上销售**。这样意味着你有一个额外合同的新的商机可以卖给该客户，因为他已经使用完了所购的服务</p><p >定期地(最好每两周一次)，你可以检查在向上销售状态的销售订单。要这样做的话，进入菜单项 <span class="menuselection">销售(Sales) ‣ 销售订单(Sales Orders)</span> 菜单并使用 <strong >向上销售</strong> 过滤器收集所有在向上销售状态的订单。</p><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >如果你使用YuanCloud CRM，最好的联系就是为每个在向上销售开票状态的销售订单创建一个商机，这样你就可以容易追踪向上销售</p></div><p >如果你销售额外的支持合同，你还可以在目前的销售订单中添加新的订单行(因此，你可以继续在同一张合同上记工单)或者创建一个新的订单(这样，就需要在新建的合同上记工单)。取消标记销售订单的**向上销售**状态，并把销售订单设置完成状态，然后该订单就从向上销售列表中消失</p></section><section id="special-configuration"><h2 >特殊配置</h2><p >在创建产品表单的时候，选择不同方式跟踪该服务</p><ul ><li ><p ><strong >创建任务并追踪小时数</strong>：在该模式下，每个订单行都会创建一个任务。然后在你记录记工单的时候，不需要在销售订单／合同上输入。而是在每个任务(代表合同)上记录记工单。该方案的优点是能够在同一张销售订单上销售不同服务合同。</p></li><li ><p ><strong >手工地</strong>：如果你不在YuanCloud中记录记工单就可以使用该种模式。特定合同的工作时间手工地在销售订单行的交货数量字段直接记录。</p></li></ul><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="time_materials.html" class="internal alert-link reference"><em >如何基于时间和材料开具发票？</em></a></li><li ><a href="../../../inventory/settings/products/uom.html" class="internal alert-link reference"><em >如何使用不同计量单位？</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

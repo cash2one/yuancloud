@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!--saal_portal.plan下的module-增加“商品”、“指导价” -->
+
+        <!--saal_portal.plan-module列表-增加“商品”、“指导价” -->
+        <record id="view_saas_portal_plan_form_inherited" model="ir.ui.view">
+            <field name="name">saas_portal.plan.form.inherited</field>
+            <field name="model">saas_portal.plan</field>
+            <field name="inherit_id" ref="saas_portal_demo.view_plans_demo_form"/>
+            <field name="arch" type="xml">
+                <field name="author" position="after">
+                    <field name="product_product_id" domain="[('type','=','service')]"/>
+                </field>
+                <field name="product_product_id" position="after">
+                    <field name="guide_price"/>
+                </field>
+                <field name="guide_price" position="after">
+                    <field name="category_name"/>
+                </field>
+            </field>
+        </record>
+
+        <!--saal_portal.module-卡片-增加“商品”、“指导价” -->
+        <record id="view_saas_portal_module_inherited" model="ir.ui.view">
+            <field name="name">saas_portal.plan.modules.form.inherited</field>
+            <field name="model">saas_portal.module</field>
+            <field name="inherit_id" ref="saas_portal_demo.view_plan_modules_form"/>
+            <field name="arch" type="xml">
+                <field name="module_id" position="after">
+                    <field name="product_product_id" domain="[('type','=','service')]" />
+                </field>
+                <field name="product_product_id" position="after">
+                    <field name="guide_price"/>
+                </field>
+                <field name="guide_price" position="after">
+                    <field name="category_name"/>
+                </field>
+                <field name="category_name" position="after">
+                    <field name="must_choose"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</yuancloud>

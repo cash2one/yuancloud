@@ -1,0 +1,153 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>在付款时登记汇率 &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="概述" href="../multicurrencies.html" />
+    <link rel="next" title="报告" href="../reporting.html" />
+    <link rel="prev" title="如何在多币别环境下管理发票和付款？" href="invoices_payments.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../accounting.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              在付款时登记汇率
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="current toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#overview" class="ripple internal reference">概述</a></li><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#enable-multi-currencies" class="ripple internal reference">启用多币种</a></li><li class="list-group-item"><a href="#configure-your-journal" class="ripple internal reference">配置你的日记账</a></li></ul></li><li class="list-group-item"><a href="#record-a-payment-in-a-different-currency" class="ripple internal reference">用其他币种记录付款</a></li><li class="list-group-item"><a href="#record-a-bank-statement-in-a-different-currency" class="ripple internal reference">用其他币种记录银行对账单</a></li><li class="list-group-item"><a href="#check-the-exchange-rate-differences" class="ripple internal reference">检查汇兑汇率差异</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/accounting/others/multicurrencies/exchange.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="record-exchange-rates-at-payments"></section><section id="overview"><h2 >概述</h2><p >Any company doing international trade faces the case where the payments
+are in a different currency.</p><p >After receiving their payments, you have the option to convert the
+amount into your company currency. Multi currency payment implies rates
+fluctuations. The rate differences are automatically recorded by YuanCloud.</p></section><section id="configuration"><h2 >配置</h2></section><section id="enable-multi-currencies"><h3 >启用多币种</h3><p >In the accounting module, Go to <span class="menuselection">Configuration ‣ Settings</span>
+and flag <strong >Allow multi currencies</strong>, then click on <strong >apply</strong>.</p><img src="../../../_images/exchange_rate03.png" class="img-responsive center-block"><p >Configure the currency rates in <span class="menuselection">Configuration ‣ Currencies</span>.
+Write down the rate and make sure the currency is active.</p><img src="../../../_images/exchange_rate02.png" class="img-responsive center-block"><p >In this document, the base currency is <strong >Euro</strong> and we will record payments
+in <strong >Dollars</strong>.</p><img src="../../../_images/exchange_rate08.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >You can automatically fetch the currency rates from the <strong >European
+Central Bank</strong> or from <strong >Yahoo</strong>. Please read the document :
+<a href="how_it_works.html" class="internal alert-link reference"><em >YuanCloud的多币种是如何工作的？</em></a>.</p></div></section><section id="configure-your-journal"><h3 >配置你的日记账</h3><p >In order to register payments in other currencies, you have to <strong >remove
+the currency constraint</strong> on the journal. Go to the accounting
+application, Click on <strong >More</strong> on the journal and <strong >Settings</strong>.</p><img src="../../../_images/exchange_rate06.png" class="img-responsive center-block"><p >Check if the <strong >Currency</strong> field is empty or in the foreign currency in which
+you will register the payments. If a currency is filled in, it means
+that you can register payments only in this currency.</p><img src="../../../_images/exchange_rate10.png" class="img-responsive center-block"></section><section id="record-a-payment-in-a-different-currency"><h2 >用其他币种记录付款</h2><p >In the <strong >Accounting</strong> application, go to <span class="menuselection">Sales ‣ Payments</span>.
+Register the payment and indicate that it was done in the foreign currency. Then
+click on <strong >confirm</strong>.</p><img src="../../../_images/exchange_rate05.png" class="img-responsive center-block"><p >The journal entry has been posted but not allocated.</p><p >Go back to your invoice (<span class="menuselection">Sales ‣ Customer Invoices</span>) and click on
+<strong >Add</strong> to allocate the payment.</p><img src="../../../_images/exchange_rate04.png" class="img-responsive center-block"></section><section id="record-a-bank-statement-in-a-different-currency"><h2 >用其他币种记录银行对账单</h2><p >Create or import the bank statement of your payment. The <strong >Amount</strong> is in
+the company currency. There are two complementary fields, the <strong >Amount currency</strong>,
+which is the amount that was actually paid and the <strong >Currency</strong> in which it was paid.</p><img src="../../../_images/exchange_rate07.png" class="img-responsive center-block"><p >When reconciling it, YuanCloud will directly match the payment with the right
+<strong >Invoice</strong>. You will get the invoice price in the invoice currency and the
+amount in your company currency.</p><img src="../../../_images/exchange_rate09.png" class="img-responsive center-block"></section><section id="check-the-exchange-rate-differences"><h2 >检查汇兑汇率差异</h2><p >Go to <span class="menuselection">Adviser ‣ Journal Entries</span> and look for the <strong >Exchange difference</strong>
+journal entries. All the exchange rates differences are recorded in it.</p><img src="../../../_images/exchange_rate01.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >The Exchange difference journal can be changed in your accounting settings.</p></div><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="../../bank/reconciliation/configure.html" class="internal alert-link reference"><em >配置条目模型</em></a></li><li ><a href="../../bank/reconciliation/use_cases.html" class="internal alert-link reference"><em >银行调节过程中的使用案例？</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

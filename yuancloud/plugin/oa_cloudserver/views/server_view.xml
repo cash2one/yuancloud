@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data><!-- Action -->
+        <record model="ir.actions.act_window" id="cloudserver_server_list_action">
+            <field name="name">服务器信息</field>
+            <field name="res_model">oa.cloudserver.server</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建第一个服务器信息
+                </p>
+            </field>
+        </record>
+        <!-- List View (base_server)-->
+        <record model="ir.ui.view" id="cloudserver_server_list_view">
+            <field name="name">oa.cloudserver.server.tree</field>
+            <field name="model">oa.cloudserver.server</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="provider"/>
+                    <!--<field name="server_id"/>-->
+                    <field name="server_name"/>
+                    <field name="ip_internet"/>
+                    <field name="domain_name"/>
+                    <field name="cpu"/>
+                    <field name="memory"/>
+                    <field name="disk"/>
+                    <field name="data_disk"/>
+                    <field name="bandwidth"/>
+                    <field name="endon"/>
+                    <field name="use_desp"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--base_server卡片 -->
+        <record model="ir.ui.view" id="cloudserver_server_form_view">
+            <field name="name">oa.cloudserver.server.form</field>
+            <field name="model">oa.cloudserver.server</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="provider"/>
+                                <field name="uses"/>
+                                <field name="local"/>
+                                <field name="ip_internet"/>
+                                <field name="ip_intranet"/>
+                                <field name="createon"/>
+                            </group>
+                            <group>
+                                <field name="server_id"/>
+                                <field name="server_name"/>
+                                <field name="domain_name"/>
+                                <field name="area"/>
+                                <field name="endon"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="配置信息">
+                                <group>
+                                    <group>
+                                        <field name="os"/>
+                                        <field name="cpu"/>
+                                        <field name="disk"/>
+                                    </group>
+                                    <group>
+                                        <field name="memory"/>
+                                        <field name="bandwidth"/>
+                                        <field name="data_disk"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="账户信息">
+                                <group>
+                                    <group>
+                                        <field name="login_name"/>
+                                        <field name="account4app"/>
+                                    </group>
+                                    <group>
+                                        <field name="login_pwd"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="描述">
+                                <group>
+                                    <field name="description"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</yuancloud>

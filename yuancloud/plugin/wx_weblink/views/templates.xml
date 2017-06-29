@@ -1,0 +1,261 @@
+<yuancloud>
+    <data>
+        <template id="shareinfo" name="分享" page="True">
+            <html lang="zh-CN">
+                <head>
+                    <meta charset="UTF-8"/>
+                    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+                    <meta name="format-detection" content="telephone=no"/>
+                    <meta name="viewport"
+                          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+                    <script type="text/javascript" src="/wx_weblink/static/src/js/jquery-1.9.1.min.js"
+                            defer="defer"></script>
+                    <script type="text/javascript" src="/wx_weblink/static/src/js/jweixin-1.0.0.js?v=2"
+                            defer="defer"></script>
+                    <script type="text/javascript" src="/wx_weblink/static/src/js/wx_sign.js?v=4"
+                            defer="defer"></script>
+
+                </head>
+                <body style="background:#fff;width:auto;margin:0 auto;padding:8px;">
+                    <div style="">
+                        <section class="wxqq Powered-by-WeixinQuanquan.com">
+                            <fieldset style="border: 0px; margin: 1em 0px; text-align: center;">
+                                <section
+                                        style="display: inline-block; padding: 0.2em 0.5em 0.15em; margin: 0px auto; text-align: center; border-left-width: 1px; border-left-style: solid; border-color: rgb(0, 187, 236); border-right-width: 1px; border-right-style: solid; font-family: inherit; font-style: normal; text-decoration: inherit; color: rgb(0, 187, 236); background-color: rgba(248, 247, 245, 0.992157);"
+                                        class="wxqq-color wxqq-borderLeftColor wxqq-borderRightColor Powered-by-微信圈圈">
+                                    <section
+                                            style="vertical-align: top; font-family: inherit; font-style: normal; text-align: center; text-decoration: inherit; color: rgb(0, 187, 236);"
+                                            class="wxqq-color">
+                                        <p style="">
+                                            <span style="font-family: inherit; text-decoration: inherit; font-size: 25.6px; line-height: 25.6px;">
+                                                <b>您的专属分享转发链接</b>
+                                            </span>
+                                        </p>
+                                        <p>
+                                            <span style="font-size: 2em; font-weight: bolder; line-height: 1; font-family: inherit; text-decoration: inherit;">
+                                                YuanCloud
+                                            </span>
+                                        </p>
+                                    </section>
+                                    <section
+                                            style="font-size: 2em; font-weight: bolder; margin-top: 0.2em; line-height: 1;">
+                                        <section
+                                                style="margin-top: -0.5em; margin-bottom: 0.5em; border-bottom: 1px solid #00bbec"
+                                                class="wxqq-borderBottomColor"></section>
+                                    </section>
+                                </section>
+                            </fieldset>
+                        </section>
+                        <p>
+                            <br/>
+                        </p>
+                        <section class="wxqq Powered-by-WeixinQuanquan.com">
+                            <section class="wxqq-width-modify" data-width-percent="100%">
+                                <fieldset
+                                        class="wxqq-borderTopColor wxqq-borderRightColor wxqq-borderBottomColor wxqq-borderLeftColor"
+                                        style="padding: 15px; border: 1px dotted rgb(0, 187, 236); line-height: 2em; font-family: 宋体; min-height: 1.5em; max-width: 100%; border-bottom-right-radius: 15px; border-bottom-left-radius: 10px; word-wrap: break-word !important;">
+                                    <legend style="margin: 0px; padding: 0px; text-align: center; color: rgb(0, 0, 0); font-family: 微软雅黑; word-wrap: break-word !important; max-width: 100%;">
+                                        <p class="wxqq-bg"
+                                           style="margin: 0px; padding: 0px 20px 4px; color: rgb(255, 255, 255); line-height: 2em; font-size: 14px; word-break: normal; word-wrap: normal; min-height: 1.5em; max-width: 100%; border-bottom-right-radius: 100%; border-bottom-left-radius: 100%; background-color: #00BBEC;">
+                                            <strong t-esc="title"></strong>
+                                        </p>
+                                    </legend>
+                                    <p style="margin: 0px; padding: 0px; line-height: 2em; word-break: normal; word-wrap: normal; min-height: 1.5em; max-width: 100%;">
+                                        <span style="color: rgb(255, 255, 255); font-family: &#39;Open Sans&#39;, sans-serif; font-size: 17px; line-height: 1.1;"></span>
+                                    </p>
+                                    <section class="wxqq Powered-by-WeixinQuanquan.com">
+                                        <section class="wxqq-width-modify" data-width-percent="100%">
+                                            <blockquote
+                                                    style="margin: 0px; border-width: 2px; font-style: normal; font-variant: normal; font-weight: normal; font-size: 16px; line-height: 24px; font-family: 微软雅黑; padding: 10px 15px; border-radius: 5px; color: rgb(255, 255, 255); text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; white-space: normal; font-stretch: normal; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+                                                <p>
+                                                    <img data-width-percent="48%"
+                                                         class="wxqq wxqq-width-modify replace replace-src"
+                                                         data-ttk="http://i3.piimg.com/3c1cace25c2fcc6b.jpg"
+                                                         data-wxurl="https://mmbiz.qlogo.cn/mmbiz/GdmicTWXQzXZvIH3vlVWnp4xFN5xLIKDpwW0WNlkszBeUJoqBZSocQL3MSGBWicscMC74mPa1jfFZHgkqIdGiadwQ/0?wx_fmt=jpeg"
+                                                         src="/wx_weblink/static/src/image/barcode.jpg"
+                                                         style="float: left; width: 48%; transform: rotateZ(0deg);"
+                                                         data-width="48%" title="1461830181740862.jpg"
+                                                         alt="沈阳服务号二维码.jpg"/>
+                                                    <img data-width-percent="48%"
+                                                         class="wxqq wxqq-width-modify replace replace-src"
+                                                         data-ttk="http://i1.piimg.com/cdc2d47edf80f956.png"
+                                                         data-wxurl="https://mmbiz.qlogo.cn/mmbiz/GdmicTWXQzXZvIH3vlVWnp4xFN5xLIKDpCn3mxrQctutZpVDdX693ReOddHk9g7ibVfrE9VMo79HVpopVHevWnMQ/0?wx_fmt=png"
+                                                         t-att-src="imageurl"
+                                                         local-src="http://www.weixinquanquan.com/Uploads/ueditor/1/20150520/1432133429755507.png"
+                                                         alt="yuan300.png" style="float: right; width: 48%;" border="0"
+                                                         vspace="0" data-width="48%" title="1461830209338689.png"/>
+                                                </p>
+                                                <p>weixinquanquan.com</p>
+                                            </blockquote>
+                                        </section>
+                                    </section>
+                                    <p style="margin: 0px; padding: 0px; line-height: 2em; word-break: normal; word-wrap: normal; min-height: 1.5em; max-width: 100%;">
+                                        <span style="color: rgb(255, 255, 255); font-family: &#39;Open Sans&#39;, sans-serif; font-size: 17px; line-height: 1.1;"></span>
+                                        <br/>
+                                    </p>
+                                    <section class="wxqq Powered-by-WeixinQuanquan.com">
+                                        <section class="wxqq-width-modify" data-width-percent="100%">
+                                            <section class="wxqq-bg"
+                                                     style="margin: 0px; border-width: 2px; font-style: normal; font-variant: normal; font-weight: normal; font-size: 16px; line-height: 24px; font-family: 微软雅黑; padding: 10px 15px; border-radius: 5px; color: rgb(255, 255, 255); text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; white-space: normal; font-stretch: normal; -webkit-text-stroke-width: 0px; background-color: rgb(0, 187, 236);">
+                                                <p>
+                                                    <span t-esc="desc"
+                                                          style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;; line-height: 2em;">
+
+                                                    </span>
+                                                </p>
+                                            </section>
+                                        </section>
+                                    </section>
+                                    <p style="margin: 0px; padding: 0px; line-height: 2em; word-break: normal; word-wrap: normal; min-height: 1.5em; max-width: 100%;">
+                                        <span t-esc="desc"
+                                              style="color: rgb(255, 255, 255); font-family: &#39;Open Sans&#39;, sans-serif; font-size: 17px; line-height: 1.1;">
+
+                                        </span>
+                                    </p>
+                                </fieldset>
+                            </section>
+                        </section>
+                        <p>
+                            <br/>
+                        </p>
+                        <section class="wxqq Powered-by-WeixinQuanquan.com">
+                            <section class="wxqq-width-modify" data-width-percent="100%">
+                                <p>
+                                    <img class="replace replace-src" data-ttk="http://i3.piimg.com/d82666e92c1ad9d4.jpg"
+                                         data-wxurl="https://mmbiz.qlogo.cn/mmbiz/GdmicTWXQzXajJKyGAnTicVvRHaLDUvP1B0kQFUXibnwcNqicd31UEiaO4aicDMU9xDJkgTbSrjxY32pghcPfc9SoBHA/0"
+                                         src="http://i3.piimg.com/d82666e92c1ad9d4.jpg"
+                                         style="width: 100%; box-shadow: rgba(0, 0, 0, 0.329412) 6px 6px 5px 0px;"
+                                         data-width="100%"/>
+                                </p>
+                            </section>
+                        </section>
+                        <p>
+                            <br/>
+                        </p>
+                        <p>
+                            <br/>
+                        </p>
+                        <p>
+                            <br/>
+                        </p>
+                        <p>
+                            <br/>
+                        </p>
+                        <p>
+                            <br/>
+                        </p>
+                        <p>
+                            <br/>
+                        </p>
+                        <p>
+                            <br/>
+                        </p>
+                        <p>
+                            <br/>
+                        </p>
+                    </div>
+                </body>
+            </html>
+            <!--<script type="text/javascript" defer="defer">-->
+            <!--var shake=100,-->
+            <!--last_update=0,-->
+            <!--count=0,-->
+            <!--x=y=z=last_x=last_y=last_z=0;-->
+            <!--if(window.DeviceMotionEvent){-->
+            <!--//alert('100');-->
+            <!--window.addEventListener("devicemotion",deviceMotionHandler,false);-->
+            <!--}else{-->
+            <!--alert("本设备不支持devicemotion事件");-->
+            <!--}-->
+            <!--function deviceMotionHandler(eventData){-->
+            <!--var acceleration = eventData.accelerationIncludingGravity,-->
+            <!--currTime=new Date().valueOf(),-->
+            <!--diffTime=currTime-last_update;-->
+            <!--//alert(diffTime);-->
+            <!--if(diffTime>100){-->
+            <!--last_update=currTime;-->
+            <!--x=acceleration.x;-->
+            <!--y=acceleration.y;-->
+            <!--z=acceleration.z;-->
+            <!--var speed=Math.abs(x+y+z-last_x-last_y-last_z)/diffTime*10000-->
+            <!--var status=document.getElementById("status");-->
+            <!--alert(speed);-->
+            <!--if(speed>shake){-->
+            <!--count++;-->
+            <!--status.innerHTML = "你摇了中"+count+"次" ;-->
+            <!--}-->
+            <!--last_x = x;-->
+            <!--last_y = y;-->
+            <!--last_z = z;-->
+            <!--}-->
+            <!--}-->
+            <!--</script>-->
+            <!--<t t-call="web.login_layout">-->
+            <!--<div id="status">准备开始摇</div>-->
+            <!--<div style="background:#fff;width:auto;margin:0 auto;padding:8px;">-->
+
+            <!--<section class="wxqq Powered-by-WeixinQuanquan.com">-->
+            <!--<section style="float: none; margin: 0px auto;" class="wxqq-width-modify" data-width-percent="100%">-->
+            <!--<fieldset-->
+            <!--style="border: none rgb(249, 110, 87); margin: 0.3em 0px; padding-bottom: 1.5em; font-weight: inherit; font-size: 1em; font-family: inherit; text-align: center; text-decoration: inherit; color: rgb(123, 129, 116); box-sizing: border-box;"-->
+            <!--class="tn-Powered-by-WeixinQuanquan">-->
+            <!--<img class="tn-Powered-by-WeixinQuanquan"-->
+            <!--t-att-src="imageurl"-->
+            <!--style="display: inline-block; width: 8em; height: 8em; border-radius: 50%; float: left; vertical-align: middle; box-sizing: border-box;  background-attachment: initial; background-size: cover; background-origin: initial; background-clip: initial; background-position: 50% 50%; background-repeat: no-repeat;"/>-->
+            <!--<section-->
+            <!--style="display: inline-block; border-left-width: 1px; border-left-style: solid; border-color: rgb(123, 129, 116); height: 6em; margin-top: 1em; padding-left: 1em; vertical-align: middle; box-sizing: border-box; font-size: 1em; font-family: inherit; font-weight: inherit; text-align: left; text-decoration: inherit;"-->
+            <!--class="tn-Powered-by-WeixinQuanquan">-->
+            <!--<section data-width="100%"-->
+            <!--style="width: 100%; font-size: 2em; vertical-align: top; overflow: hidden; box-sizing: border-box;"-->
+            <!--class="tn-Powered-by-WeixinQuanquan">-->
+            <!--<section class="tn-Powered-by-WeixinQuanquan" style="box-sizing: border-box;"><span t-esc="title"></span>-->
+            <!--</section>-->
+            <!--</section>-->
+            <!--<section data-width="100%"-->
+            <!--style="width: 100%; vertical-align: bottom; line-height: 1.5em; font-size: 1em; overflow: hidden; font-family: inherit; font-weight: inherit; text-decoration: inherit; box-sizing: border-box;"-->
+            <!--class="tn-Powered-by-WeixinQuanquan">-->
+            <!--<section class="tn-Powered-by-WeixinQuanquan" style="box-sizing: border-box;">-->
+            <!--<span t-esc="desc"/>-->
+            <!--</section>-->
+            <!--</section>-->
+            <!--</section>-->
+            <!--</fieldset>-->
+            <!--</section>-->
+            <!--</section>-->
+            <!--<section class="wxqq Powered-by-WeixinQuanquan.com">-->
+            <!--<section class="wxqq Powered-by-WeixinQuanquan.com">-->
+            <!--<section class="wxqq Powered-by-WeixinQuanquan.com">-->
+            <!--<p>-->
+            <!--<img data-width="100%" style="height: auto !important; width:100%;"-->
+            <!--class="replace replace-src" data-ttk="http://i2.piimg.com/47dba005bb0e87c3.gif"-->
+            <!--data-wxurl="https://mmbiz.qlogo.cn/mmbiz/GdmicTWXQzXZvIH3vlVWnp4xFN5xLIKDpNuzzXw2cTgHOu5jk70fAnwzd0dZRurFE5iaRVNgpIN742FWIB5Aic5ZA/0?wx_fmt=gif"-->
+            <!--src="http://i2.piimg.com/47dba005bb0e87c3.gif"-->
+            <!--local-src="http://www.weixinquanquan.com/Uploads/ueditor/1/20150520/1432129102286998.gif"/>-->
+            <!--</p>-->
+            <!--</section>-->
+            <!--</section>-->
+            <!--</section>-->
+            <!--<p>-->
+            <!--<br/>-->
+            <!--</p>-->
+            <!--<section class="wxqq Powered-by-WeixinQuanquan.com">-->
+            <!--<section class="wxqq Powered-by-WeixinQuanquan.com">-->
+            <!--<section class="wxqq Powered-by-WeixinQuanquan.com">-->
+            <!--<p>-->
+            <!--<img data-width="100%" style="width:100%" class="replace replace-bg"-->
+            <!--data-ttk="http://i4.piimg.com/44bc5903670f5c74.jpg"-->
+            <!--data-wxurl="https://mmbiz.qlogo.cn/mmbiz/GdmicTWXQzXYEicLjPNZV5JicVBeo2wtpJs8CalbBP0Z0NvhhU3Cxfib5pt2IOMIXnPnIRPYj4A5ib6jhx5L1ibhHMSg/0?wx_fmt=jpeg"-->
+            <!--src="http://i4.piimg.com/44bc5903670f5c74.jpg"-->
+            <!--local-src="http://www.weixinquanquan.com/Uploads/ueditor/1/20150520/1432128528124028.jpg"/>-->
+            <!--</p>-->
+            <!--</section>-->
+            <!--<br/>-->
+            <!--</section>-->
+
+            <!--</section>-->
+
+            <!--</div>-->
+
+        </template>
+    </data>
+</yuancloud>

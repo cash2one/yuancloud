@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何使用包裹？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="产品" href="../products.html" />
+    <link rel="next" title="仓库" href="../warehouses.html" />
+    <link rel="prev" title="何时应该使用包装，计量单位或者套装？" href="usage.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../inventory.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何使用包裹？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="current toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#overview" class="ripple internal reference">概述</a></li><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a></li><li class="list-group-item"><a href="#pack-products" class="ripple internal reference">打包产品</a></li><li class="list-group-item"><a href="#whole-packages-transfers" class="ripple internal reference">整个包裹的转移</a><ul ><li class="list-group-item"><a href="#id1" class="ripple internal reference">配置</a></li><li class="list-group-item"><a href="#transfer-packages" class="ripple internal reference">调拨包裹</a></li></ul></li><li class="list-group-item"><a href="#packages-traceability" class="ripple internal reference">包裹追踪</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/inventory/settings/products/packages.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-use-packages"></section><section id="overview"><h2 >概述</h2><p >包裹是一个你想在其中放置一个或者几个产品的实际的容器。</p><p >默认状态下，YuanCloud不用该功能</p><p >一旦你激活了该选项，你就可以在调拨的时候管理一个或者多个包裹。</p></section><section id="configuration"><h2 >配置</h2><p >要陪只如何使用包裹，进入菜单：[UNKNOWN NODE title_reference]。找到**包裹**的位置并选择 <strong >记录产品包裹的包材：栈板，盒子，……</strong></p><img src="../../../_images/packages01.png" class="img-responsive center-block"><p >一旦完成，点击**应用** 。</p></section><section id="pack-products"><h2 >打包产品</h2><p >把产品分包通常在处理仓库调拨时完成(收货，内部调拨或者发货)。</p><p >要把产品放进一个包裹，调拨单的状态必须要是**可用**。</p><img src="../../../_images/packages02.png" class="img-responsive center-block"><p >在操作页面，你可以把产品放进一个或者多个包裹中。</p><p >在**完成**栏位选择你想要放进该包裹的产品的数量，然后点击**放进一个包裹**链接。</p><img src="../../../_images/packages03.png" class="img-responsive center-block"><p >它会总动的创建所需数量的包裹。</p><p >其余的产品可以按照同样的步骤进行打包。</p><img src="../../../_images/packages04.png" class="img-responsive center-block"><p >一旦完成，点击**确认**。</p></section><section id="whole-packages-transfers"><h2 >整个包裹的转移</h2><p >如果有不同的库位和／或仓库，也有可能通过转移包裹来转移产品。</p></section><section id="id1"><h3 >配置</h3><p >你需要设置**操作类型**为允许调拨包裹。进入：[UNKNOWN NODE problematic]配置 --&gt; 操作类型 [UNKNOWN NODE problematic]。勾选 <strong >允许调拨包裹</strong>:</p><img src="../../../_images/packages05.png" class="img-responsive center-block"></section><section id="transfer-packages"><h3 >调拨包裹</h3><p >创建一个调拨单。选择源库位和目标库位，然后点击***标记为代办*。在**原始需求**页面不要放置任何内容。</p><img src="../../../_images/packages06.png" class="img-responsive center-block"><p >在操作页面，在**要移动的包裹**下面点击**添加新的条目**。</p><p >点击**完成**勾选框确认包裹的移动：</p><img src="../../../_images/packages07.png" class="img-responsive center-block"><p >When it is finished, click on <strong >Validate</strong>.</p></section><section id="packages-traceability"><h2 >包裹追踪</h2><p >要追踪一个包裹或者包裹里面的明细，进入：[UNKNOWN NODE title_reference]。</p><img src="../../../_images/packages08.png" class="img-responsive center-block"><p >点击**包裹转移**查看所有的调拨。</p><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="../../overview/start/setup.html" class="internal alert-link reference"><em >如何设置YuanCloud的仓库？</em></a></li><li ><a href="usage.html" class="internal alert-link reference"><em >何时应该使用包装，计量单位或者套装？</em></a></li><li ><a href="uom.html" class="internal alert-link reference"><em >如何使用不同计量单位？</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

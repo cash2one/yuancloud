@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <menuitem id="menu_training"  name="培训管理"/>
+        <!--Menu Item  -->
+        <menuitem id="menu_training_lession" name="培训课程" parent="menu_training" sequence="20" action="training_lesion_list_action"/>
+        <!--Menu Item  -->
+        <menuitem id="menu_training_record" name="培训记录" parent="menu_training" sequence="10" action="training_record_list_action"/>
+    </data>
+</yuancloud>

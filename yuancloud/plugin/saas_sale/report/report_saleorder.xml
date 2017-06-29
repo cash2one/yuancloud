@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<yuancloud>
+  <data>
+    <template id="report_saleorder_document">
+      <t t-call="report.external_layout">
+        <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})"/>
+        <div class="page">
+          <div class="oe_structure"/>
+          <div class="row">
+            <div class="col-xs-6">
+              <div t-field="doc.partner_invoice_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;, &quot;fax&quot;], &quot;no_marker&quot;: true, &quot;phone_icons&quot;: true}"/>
+              <p t-if="doc.partner_id.vat">VAT:
+                <span t-field="doc.partner_id.vat"/>
+              </p>
+            </div>
+          </div>
+          <h2>
+            <span t-field="doc.quotation_header"/>
+            <span>功能报价</span>
+          </h2>
+          <div class="row mt32 mb32" id="informations">
+            <div t-if="doc.date_order" class="col-xs-3">
+              <strong t-if="doc.state not in ['draft','sent']">订单日期:</strong>
+              <strong t-if="doc.state in ['draft','sent']">报价日期:</strong>
+              <p t-field="doc.date_order"/>
+            </div>
+            <div t-if="doc.user_id.name" class="col-xs-3">
+              <strong>销售员:</strong>
+              <p t-field="doc.user_id"/>
+              <p t-field="doc.user_id.phone"/>
+            </div>
+          </div>
+          <h2>
+            <span>１、功能系统</span>
+          </h2>
+          <table class="table table-condensed" align="center" style="margin: 0px auto;">
+            <thead>
+              <tr>
+                <th>子系统</th>
+                <th colspan="2" align="center" valign="middle">功能模块</th>
+                <th>功能简介</th>
+              </tr>
+            </thead>
+            <tbody class="sale_tbody">
+              <!--遍历销售订单行 -->
+              <t t-foreach="doc.order_line" t-as="l">
+                <t t-if="len(l.order_line_function)&gt;=0">
+                  <t t-foreach="l.order_line_function" t-as="f">
+                    <tr>
+                      <t t-if="l.add_td and f==l.order_line_function[0]">
+                        <td t-att-rowspan="l.categ_rowcount" class="text-left">
+                          <span t-field="l.product_id.categ_id.name"/>
+                        </td>
+                      </t>
+                      <t t-if="len(l.order_line_function)&gt;=0">
+                        <t t-if="f==l.order_line_function[0]">
+                          <td t-att-rowspan="len(l.order_line_function)">
+                            <span t-field="l.product_id.name"/>
+                          </td>
+                        </t>
+                        <td>
+                          <span t-field="f.name"/>
+                        </td>
+                        <td class="text-left">
+                          <span t-field="f.description"/>
+                        </td>
+                      </t>
+                    </tr>
+                  </t>
+                </t>
+                <!--&lt;!&ndash;单规格产品&ndash;&gt;-->
+                <!--<t t-if="len(l.product_id.function_ids)&gt;=0">-->
+                  <!--<t t-foreach="l.product_id.function_ids" t-as="f">-->
+                    <!--<tr>-->
+                      <!--<t t-if="l.add_td and f==l.product_id.function_ids[0]">-->
+                        <!--&lt;!&ndash;align="center" valign="middle"&ndash;&gt;-->
+                        <!--<td t-att-rowspan="l.categ_rowcount" class="text-left">-->
+                          <!--<span t-field="l.product_id.categ_id.name"/>-->
+                        <!--</td>-->
+                      <!--</t>-->
+                      <!--<t t-if="len(l.product_id.function_ids)&gt;=0">-->
+                        <!--<t t-if="f==l.product_id.function_ids[0]">-->
+                          <!--<td t-att-rowspan="len(l.product_id.function_ids)">-->
+                            <!--<span t-field="l.product_id.name"/>-->
+                          <!--</td>-->
+                        <!--</t>-->
+                        <!--<td>-->
+                          <!--<span t-field="f.name"/>-->
+                        <!--</td>-->
+                        <!--<td class="text-left">-->
+                          <!--<span t-field="f.description"/>-->
+                        <!--</td>-->
+                      <!--</t>-->
+                    <!--</tr>-->
+                  <!--</t>-->
+                  <!--<t t-if="len(l.product_id.function_ids)==0">-->
+                    <!--<tr>-->
+                      <!--<t t-if="l.add_td">-->
+                        <!--<td t-att-rowspan="l.categ_rowcount" class="text-left">-->
+                          <!--<span t-field="l.product_id.categ_id.name"/>-->
+                        <!--</td>-->
+                      <!--</t>-->
+                      <!--<td>-->
+                        <!--<span t-field="l.product_id.name"/>-->
+                      <!--</td>-->
+                      <!--<td/>-->
+                      <!--<td class="text-left">-->
+                        <!--<span t-field="l.product_id.description_sale"/>-->
+                      <!--</td>-->
+                    <!--</tr>-->
+                  <!--</t>-->
+                <!--</t>-->
+                <!--&lt;!&ndash;单规格产品&ndash;&gt;-->
+
+              </t>
+            </tbody>
+          </table>
+          <h2>
+            <span>2、报价</span>
+          </h2>
+          <table class="table table-condensed" align="center" style="margin: 0px auto;">
+            <thead>
+              <tr>
+                <th>类别</th>
+                <th>序号</th>
+                <th>名称</th>
+                <th>
+                  <t t-if="doc.quotation_method=='project'">
+                     报价（万元）
+                  </t>
+                  <t t-if="doc.quotation_method=='service'">
+                     报价（元／月）
+                  </t>
+                </th>
+                <th>备注</th>
+              </tr>
+            </thead>
+            <tbody class="sale_tbody">
+              <!--遍历销售报价子表 -->
+              <t t-set="total_price" t-value="0.00"></t>
+              <t t-foreach="doc.order_price" t-as="lp">
+                <t t-set="total_price" t-value="total_price+float(lp.price)"></t>
+                <tr>
+                  <t t-if="lp==doc.order_price[0]" t-att-rowspan="len(doc.order_price)+1">
+                    <td class="text-left">
+                      <span>系统软件</span>
+                    </td>
+                  </t>
+                  <td class="text-left">
+                    <span t-field="lp.seq"/>
+                  </td>
+                  <td class="text-left">
+                    <span t-field="lp.name"/>
+                  </td>
+                  <td class="text-left">
+                    <span t-field="lp.price"/>
+                  </td>
+                  <td class="text-left">
+                    <span t-field="lp.description"/>
+                  </td>
+                </tr>
+              </t>
+              <tr>
+                <td colspan="3" ></td>
+                <td>
+                  小计：<t t-esc="total_price"></t>
+                  <t t-if="doc.quotation_method=='project'">
+                     万元
+                  </t>
+                  <t t-if="doc.quotation_method=='service'">
+                     元／月
+                  </t>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <br/>
+          <span>注：以上报价不包含硬件及系统软件（操作系统、数据库等）</span>
+          <p t-field="doc.note"/>
+          <p t-if="doc.payment_term_id.note">
+            <span t-field="doc.payment_term_id.note"/>
+          </p>
+          <p t-if="not doc.payment_term_id and doc.partner_id.property_payment_term_id">
+            <span t-field="doc.partner_id.property_payment_term_id.note"/>
+          </p>
+          <p id="fiscal_position_remark" t-if="doc.fiscal_position_id and doc.fiscal_position_id.note">
+            <strong>Fiscal Position Remark:</strong>
+            <span t-field="doc.fiscal_position_id.note"/>
+          </p>
+          <div class="oe_structure"/>
+        </div>
+      </t>
+    </template>
+    <template id="report_saleorder">
+      <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="doc">
+          <t t-call="saas_sale.report_saleorder_document" t-lang="doc.partner_id.lang"/>
+        </t>
+      </t>
+    </template>
+  </data>
+</yuancloud>

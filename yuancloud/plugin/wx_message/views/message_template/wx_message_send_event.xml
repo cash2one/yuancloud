@@ -1,0 +1,161 @@
+<yuancloud>
+    <data><!-- Action -->
+        <record model="ir.actions.act_window" id="wx_message_send_event_list_action">
+            <field name="name">消息发送事件</field>
+            <field name="res_model">wx.message.send_event</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建第一个消息发送事件
+                </p>
+            </field>
+        </record>
+        <!-- List View (wx_message-text)-->
+        <record model="ir.ui.view" id="ycloud_wx_message_send_event_list_view">
+            <field name="name">ycloud_wx_message_send_event.tree</field>
+            <field name="model">wx.message.send_event</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="model_id"/>
+                    <field name="command_value"/>
+                    <field name="command_abbreviations"/>
+                    <field name="command_alias"/>
+                    <field name="command_help"/>
+                    <field name="officailaccount"/>
+                    <field name="method_name"/>
+                    <field name="version"/>
+                    <field name="iseffective"/>
+                </tree>
+            </field>
+        </record>
+        <!--文字消息卡片 -->
+        <record model="ir.ui.view" id="ycloud_wx_message_send_event_form_view">
+            <field name="name">ycloud_wx_message_send_event.form</field>
+            <field name="model">wx.message.send_event</field>
+            <field name="arch" type="xml">
+                <form create="false">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="model_id"/>
+                            <field name="command_value"/>
+                            <field name="command_abbreviations"/>
+                            <field name="command_alias"/>
+                            <field name="command_help"/>
+                            <field name="officailaccount"/>
+                            <field name="method_name"/>
+                            <field name="method_common"/>
+                            <field name="version"/>
+                            <field name="iseffective"/>
+                        </group>
+                        <notebook>
+                            <page string="命令参数表">
+                                <separator string="命令参数表"/>
+                                <field name="command_params"/>
+                            </page>
+                            <page string="实体触发时机">
+                                <separator string="实体触发时机"/>
+                                <field name="entity_trigger" context="{'model_id':model_id}"/>
+                            </page>
+                            <page string="消息发送明细">
+                                <separator string="消息发送明细"/>
+                                <field name="message_details"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="ycloud_wx_command_params_tree_view" model="ir.ui.view">
+            <field name="name">ycloud_wx_command_params.tree</field>
+            <field name="model">wx.command.params</field>
+            <field name="arch" type="xml">
+                <tree string="命令参数表">
+                    <field name="parameter_sequence"/>
+                    <field name="parameter_code"/>
+                    <!--<field name="parameter_operator"/>-->
+                    <field name="parameter_name"/>
+                    <field name="parameter_desc"/>
+                </tree>
+            </field>
+        </record>
+        <record id="ycloud_wx_command_params_form_view" model="ir.ui.view">
+            <field name="name">ycloud_wx_command_params.form</field>
+            <field name="model">wx.command.params</field>
+            <field name="arch" type="xml">
+                <form string="命令参数表">
+                    <group col="4">
+                        <field name="parameter_sequence"/>
+                        <field name="parameter_code"/>
+                        <!--<field name="parameter_operator"/>-->
+                        <field name="parameter_name"/>
+                        <field name="parameter_desc"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="ycloud_wx_entity_trigger_tree_view" model="ir.ui.view">
+            <field name="name">ycloud_wx_entity_trigger.tree</field>
+            <field name="model">wx.entity.trigger</field>
+            <field name="arch" type="xml">
+                <tree string="实体触发时机">
+                    <field name="column_code"/>
+                    <field name="column_name"/>
+                    <field name="column_type"/>
+                    <field name="operator"/>
+                    <field name="column_value"/>
+                </tree>
+            </field>
+        </record>
+        <record id="ycloud_wx_entity_trigger_form_view" model="ir.ui.view">
+            <field name="name">ycloud_wx_entity_trigger.form</field>
+            <field name="model">wx.entity.trigger</field>
+            <field name="arch" type="xml">
+                <form string="实体触发时机">
+                    <group>
+                        <field name="column_code" domain="[('model_id','=',model_id)]"/>
+                        <field name="column_name"/>
+                        <field name="column_type"/>
+                        <field name="operator"/>
+                        <field name="column_value"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="ycloud_wx_message_details_tree_view" model="ir.ui.view">
+            <field name="name">ycloud_wx_message_details.tree</field>
+            <field name="model">wx.message.details</field>
+            <field name="arch" type="xml">
+                <tree string="消息发送明细">
+                    <field name="username"/>
+                    <field name="message_template_type"/>
+                    <field name="message_template_code"/>
+                    <field name="officialaccount"/>
+                    <field name="usertype"/>
+                </tree>
+            </field>
+        </record>
+        <record id="ycloud_wx_message_details_form_view" model="ir.ui.view">
+            <field name="name">ycloud_wx_message_details.form</field>
+            <field name="model">wx.message.details</field>
+            <field name="arch" type="xml">
+                <form string="消息发送明细">
+                    <group col="4">
+                        <field name="username"/>
+                        <field name="message_template_type"/>
+                        <field name="message_template_code"/>
+                        <field name="officialaccount"/>
+                        <field name="usertype"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</yuancloud>

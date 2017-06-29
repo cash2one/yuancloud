@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!--工序上增加完工报告店”-->
+        <!--列表-->
+        <record id="view_mrp_routing_workcenter_tree_xyl" model="ir.ui.view">
+            <field name="name">mrp.routing.workcenter.tree.xyl</field>
+            <field name="model">mrp.routing.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_routing_workcenter_tree_view"/>
+            <field name="arch" type="xml">
+                <!--增加“完工报告点”-->
+                 <field name="name" position="after">
+                    <field name="is_comp_point"/>
+                </field>
+            </field>
+        </record>
+
+           <!--卡片-->
+        <record id="view_mrp_routing_workcenter_form_xyl" model="ir.ui.view">
+            <field name="name">mrp.routing.workcenter.form.xyl</field>
+            <field name="model">mrp.routing.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_routing_workcenter_form_view"/>
+            <field name="arch" type="xml">
+                <!--增加“完工报告点”-->
+                 <field name="hour_nbr" position="after">
+                    <field name="is_comp_point"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</yuancloud>

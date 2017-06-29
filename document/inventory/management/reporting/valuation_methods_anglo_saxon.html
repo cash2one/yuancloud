@@ -1,0 +1,144 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何做库存评估?(Anglo-Saxon会计) &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="库存" href="../../../accounting/others/inventory.html" />
+    <link rel="next" title="CRM" href="../../../crm.html" />
+    <link rel="prev" title="如何做存货评估(持续会计)？" href="valuation_methods_continental.html" /> 
+  </head>
+  <body role="document"><header class="has_code_col">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar has_code_col">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../inventory.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何做库存评估?(Anglo-Saxon会计)
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="current toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="current toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container-fluid has_code_col">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#costing-method" class="ripple internal reference">成本方法</a></li><li class="list-group-item"><a href="#periodic-inventory-valuation" class="ripple internal reference">定期存货估价</a></li><li class="list-group-item"><a href="#perpetual-inventory-valuation" class="ripple internal reference">定期存货估值</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/inventory/management/reporting/valuation_methods_anglo_saxon.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-do-an-inventory-valuation-anglo-saxon-accounting"><p >每年你的库存价值都需要在余额表中记录，这依赖于两个主要选项：</p><ul ><li ><p >计算库存产品的成本方式(标准，平均成本，实时价格)；</p></li><li ><p >在账簿中记录库存价值的方式(定期估值和不间断估值)。</p></li></ul></section><section id="costing-method"><h2 >成本方法</h2><dl class="doc-aside alternatives"><dt >标准价格</dt><dd ><table class="table values-table"><thead ><tr ><th ><p >操作</p></th><th ><p >单位成本</p></th><th ><p >在手数量</p></th><th ><p >增量值</p></th><th ><p >库存价值</p></th></tr></thead><tbody ><tr ><td ></td><td >€10</td><td >0</td><td ></td><td >€0</td></tr><tr ><td ><p >以€10的价格入库8个产品</p></td><td >€10</td><td >8</td><td >+8*€10</td><td >€80</td></tr><tr ><td ><p >以€16的价格入库4个产品</p></td><td >€10</td><td >12</td><td >+4*€10</td><td >€120</td></tr><tr ><td ><p >发货10片产品</p></td><td >€10</td><td >2</td><td ><div class="line-block"><div class="line">-10*€10</div><div class="line"><br /></div></div></td><td >€20</td></tr><tr ><td ><p >以€9的价格入库2个产品</p></td><td >€10</td><td >4</td><td >+2*€10</td><td >€40</td></tr></tbody></table><p >[UNKNOWN NODE problematic]标准价格 [UNKNOWN NODE problematic]意味着在期末(通常是一年)根据产品的直接材料，直接劳动以及制造费用等评估成本。你可以在产品页面输入成本价格。</p></dd><dt >平均价格</dt><dd ><table class="table values-table"><thead ><tr ><th ><p >操作</p></th><th ><p >单位成本</p></th><th ><p >在手数量</p></th><th ><p >增量值</p></th><th ><p >库存价值</p></th></tr></thead><tbody ><tr ><td ></td><td >€0</td><td >0</td><td ></td><td >€0</td></tr><tr ><td ><p >以€10的价格入库8个产品</p></td><td >€10</td><td >8</td><td >+8*€10</td><td >€80</td></tr><tr ><td ><p >以€16的价格入库4个产品</p></td><td >€12</td><td >12</td><td >+4*€16</td><td >€144</td></tr><tr ><td ><p >发货10片产品</p></td><td >€12</td><td >2</td><td ><div class="line-block"><div class="line">-10*€12</div><div class="line"><br /></div></div></td><td >€24</td></tr><tr ><td ><p >以€6的价格入库2 个产品</p></td><td >€9</td><td >4</td><td >+2*€6</td><td >€36</td></tr></tbody></table><p >The <strong >Average Price</strong> method recomputes the cost price as a receipt order
+has been processed, based on prices defined in tied purchase orders:
+FORMULA (see here attached)</p><p >The average cost does not change when products leave the warehouse.</p><p >From an accounting point of view, this method is mainly justified in
+case of huge purchase price variations and is quite unusual due to its
+operational complexity. Your actually need a software like YuanCloud to
+easily keep this cost up-to-date.</p><p >This method is dedicated to advanced users. It requires well established
+business processes because the order in which you process receipt orders
+matters in the cost computation.</p></dd><dt >先进先出(FIFO)</dt><dd ><table class="table values-table"><thead ><tr ><th ><p >操作</p></th><th ><p >单位成本</p></th><th ><p >在手数量</p></th><th ><p >增量值</p></th><th ><p >库存价值</p></th></tr></thead><tbody ><tr ><td ></td><td >€0</td><td >0</td><td ></td><td >€0</td></tr><tr ><td ><p >以€10的价格入库8个产品</p></td><td >€10</td><td >8</td><td >+8*€10</td><td >€80</td></tr><tr ><td ><p >以€16的价格入库4个产品</p></td><td >€12</td><td >12</td><td >+4*€16</td><td >€144</td></tr><tr ><td ><p >发货10片产品</p></td><td >€16</td><td >2</td><td ><div class="line-block"><div class="line">-8*€10</div><div class="line">-2*€16</div></div></td><td >€32</td></tr><tr ><td ><p >以€6的价格入库2 个产品</p></td><td >€11</td><td >4</td><td >+2*€6</td><td >€44</td></tr></tbody></table><p >对于**实时价格**(FIFO,LIFO,　FEFO，等)，需要进一步在仓库的库位上或者在产品的内部分类页面设置出库策略。默认的设置是FIFO。在该种方式下，库存价值会遵从计算存储商品的真实的价值(cfr,定量估值)而不是按照产品页面的成本来计算。只要发出货物，成本价格就是会变成最后一次出货产品()的成本，这种成本方式用在哪些还没有接收的货物的估价上(例如，库存调整)。</p><p >FIFO is advised if you manage all your workflow into YuanCloud (Sales,
+Purchases, Inventory). It suits any kind of users.</p></dd><dt >LIFO (国际财务报告准则已弃用)</dt><dd ><table class="table values-table"><thead ><tr ><th ><p >操作</p></th><th ><p >单位成本</p></th><th ><p >在手数量</p></th><th ><p >增量值</p></th><th ><p >库存价值</p></th></tr></thead><tbody ><tr ><td ></td><td >€0</td><td >0</td><td ></td><td >€0</td></tr><tr ><td ><p >以€10的价格入库8个产品</p></td><td >€10</td><td >8</td><td >+8*€10</td><td >€80</td></tr><tr ><td ><p >以€16的价格入库4个产品</p></td><td >€12</td><td >12</td><td >+4*€16</td><td >€144</td></tr><tr ><td ><p >发货10片产品</p></td><td >€10</td><td >2</td><td ><div class="line-block"><div class="line">-4*€16</div><div class="line">-6*€10</div></div></td><td >€20</td></tr><tr ><td ><p >以€6的价格入库2 个产品</p></td><td >€8</td><td >4</td><td >+2*€6</td><td >€32</td></tr></tbody></table><p >对于**实时价格**(FIFO,LIFO,　FEFO，等)，需要进一步在仓库的库位上或者在产品的内部分类页面设置出库策略。默认的设置是FIFO。在该种方式下，库存价值会遵从计算存储商品的真实的价值(cfr,定量估值)而不是按照产品页面的成本来计算。只要发出货物，成本价格就是会变成最后一次出货产品()的成本，这种成本方式用在哪些还没有接收的货物的估价上(例如，库存调整)。</p><p >LIFO is not permitted outside the United States.</p></dd></dl><p >YuanCloud中可以使用任何方式，默认的是**标准成本**。要更改的话，可以在采购的设置中勾选**使用'固定'，'实施'，'平均'价格等成本方法**。然后在产品的内部分类页面设置成本方法。产品的内部分类可以在产品的库存页面看到。</p><p >不管使用何种方式，YuanCloud都会提供在下列地方提供所有的库存计价，进入菜单 <span class="menuselection">库存(Inventory) ‣ 报表(Reports) ‣ 库存计价(Inventory Valuation)</span>  (即. 当前库存数量 * 成本价格)。</p></section><section id="periodic-inventory-valuation"><h2 >定期存货估价</h2><p >在定期的库存估值中，收货和发货都不会直接对会计产生影响，在月末或者年末，会计做一张实际库存的会计分录并过账。</p><p >这是YuanCloud中默认的配置并且可以拿来即用。检查以下操作并查看YuanCloud如何管理会计过账。</p><dl class="doc-aside alternatives"><dt >供应商账单</dt><dd ><table class="table values-table"><thead ><tr ><th ></th><th ><p >借</p></th><th ><p >贷</p></th></tr></thead><tbody ><tr ><td ><p >资产：存货</p></td><td >50</td><td ></td></tr><tr ><td ><p >资产：递延所得税资产</p></td><td >4.68</td><td ></td></tr><tr ><td ><p >负债：应付账款</p></td><td ></td><td >54.68</td></tr></tbody></table><dl ><dt >配置：</dt><dd ><ul ><li ><p >材料采购科目：在产品或者产品的产品所属的内部分类上设置(费用科目字段)。</p></li><li ><p >递延税资产：在采购订单行上使用的税上设置</p></li><li ><p >应付科目：定义在账单相关的供应商上</p></li></ul></dd></dl></dd><dt >收货</dt><dd ><p >没有会计分录</p></dd><dt >客户发票</dt><dd ><table class="table values-table"><thead ><tr ><th ></th><th ><p >借</p></th><th ><p >贷</p></th></tr></thead><tbody ><tr ><td ><p >年营收：卖掉的产品</p></td><td ></td><td >100</td></tr><tr ><td ><p >负债：递延税项负债</p></td><td ></td><td >9</td></tr><tr ><td ><p >资产：应收</p></td><td >109</td><td ></td></tr></tbody></table><dl ><dt >配置：</dt><dd ><ul ><li ><p >营收：在产品或者产品所属种类的页面设置(收入科目字段)</p></li><li ><p >递延税项负债：在发票行上使用的税上设置</p></li><li ><p >应收科目：定义在科目中(应收科目)</p></li></ul></dd></dl><p >发票上所使用的财政状况可能有替代收入账户或另外一个在产品定义的税收规则。</p></dd><dt >客户发货</dt><dd ><p >没有会计分录</p></dd><dt >生产订单</dt><dd ><p >没有会计分录</p></dd></dl><hr style="float: none; visibility: hidden; margin: 0;"><p >在月／年末，依靠公司盘点或者只是依赖于YuanCloud中的库存来计算库存价值并入账。</p><p >然后你需要适应以下公式把采购产品的余额分成库存和货物销售的成本：</p><p >销售货物的成本 (COGS) = 期初库存价值 + 采购产品 – 期末库存价值</p><p >在账簿中更新库存评估，记录一个分录：</p><div class="doc-aside"><table class="table values-table"><thead ><tr ><th ></th><th ><p >借</p></th><th ><p >贷</p></th></tr></thead><tbody ><tr ><td ><p >资产：库存(期末余额)</p></td><td >X</td><td ></td></tr><tr ><td ><p >费用：卖产品的成本</p></td><td >X</td><td ></td></tr><tr ><td ><p >费用：采购货物的成本</p></td><td ></td><td >X</td></tr><tr ><td ><p >资产：存货(期初值)</p></td><td ></td><td >X</td></tr></tbody></table></div>
+</section><section id="perpetual-inventory-valuation"><h2 >定期存货估值</h2><p >在持续的库存估值方式中，收货和发货会即时的记账。因此，账本是在这种情景下会一直不断更新。这种模式只能被会计专家和高级用户使用。相反的定义的估值方式，就需要额外的配置和测试。</p><p >让我们举个分销商的例子</p><div class="doc-aside valuation-chart-anglo-saxon"></div>
+<hr style="float: none; visibility: hidden; margin: 0;"><div class="doc-aside"><p ><strong >配置:</strong></p><ul ><li ><p >应收／应付科目：在业务伙伴上定义(会计页签)</p></li><li ><p >递延所得税资产或者负债：定义在发票行上使用的税中。</p></li><li ><p >营收/费用: 默认的在产品的内部分类中定义，也能在产品页面(会计页面)作为一个特定的值定义。</p></li><li ><p >已收货但没有采购的，设置为产品内部种类上的入库科目</p></li><li ><p >已发货但是还没有开票的货物：在产品内部种类上设置为出库科目。</p></li><li ><p >存货：在产品的内部种类中设置为库存价值科目</p></li><li ><p >价格差异：在产品或者产品的内部种类上设置形成一个特定替代值。</p></li></ul></div>
+<div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="../../routes/strategies/removal.html" class="internal alert-link reference"><em >什么是下架策略(FIFO,LIFO,FEFO,特定标识)？</em></a></li><li ><a href="../../../accounting/others/inventory/avg_price_valuation.html" class="internal alert-link reference"><em >产品退货时使用移动平均计算成本</em></a></li><li ><a href="../../routes/costing/landed_costs.html" class="internal alert-link reference"><em >如何在产品成本中集成到岸成本</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

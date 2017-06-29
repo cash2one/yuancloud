@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wx_manual_authorization_wx_manual_authorization,wx_manual_authorization.wx_manual_authorization,model_wx_manual_authorization_wx_manual_authorization,,1,0,0,0

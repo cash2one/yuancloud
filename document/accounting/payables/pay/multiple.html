@@ -1,0 +1,162 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何一次性支付几个账单？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="支付供应商帐单" href="../pay.html" />
+    <link rel="next" title="杂项" href="../misc.html" />
+    <link rel="prev" title="使用支票支付" href="check.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../accounting.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何一次性支付几个账单？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="current toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#pay-multiple-bills-with-one-payment" class="ripple internal reference">一次支付多个账单</a><ul ><li class="list-group-item"><a href="#record-several-payments" class="ripple internal reference">登记一些付款</a></li><li class="list-group-item"><a href="#pay-supplier-bills-one-after-the-other" class="ripple internal reference">一个接一个的支付账单</a></li><li class="list-group-item"><a href="#pay-several-bills-altogether" class="ripple internal reference">多个账单一块支付</a></li><li class="list-group-item"><a href="#record-the-payment-reconcile-afterwards" class="ripple internal reference">登记付款，随后核销</a></li></ul></li><li class="list-group-item"><a href="#partial-payments-of-several-supplier-bills" class="ripple internal reference">多个供应商账单的部分付款</a><ul ><li class="list-group-item"><a href="#how-to-pay-several-supplier-bills-having-cash-discounts-at-once" class="ripple internal reference">How to pay several supplier bills having cash discounts at once?</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/accounting/payables/pay/multiple.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-pay-several-bills-at-once"><p >YuanCloud provides a simple and effective way to handle several bills at
+once, with various quick or complex options. With one single process,
+anyone is able to handle bills and payment in just a few clicks.</p></section><section id="pay-multiple-bills-with-one-payment"><h2 >一次支付多个账单</h2></section><section id="record-several-payments"><h3 >登记一些付款</h3><p >In the following example, we will generate some bills. You can control
+the whole process from your accounting dashboard (first screen you get
+when you open the accounting application).</p><img src="../../../_images/multiple01.png" class="img-responsive center-block"><p >To create a bill, open the Dashboard menu and click on <strong >Vendor Bills</strong>.
+In the Vendor Bills window, click on <strong >Create</strong>.</p><img src="../../../_images/multiple02.png" class="img-responsive center-block"><p >Choose the vendor from which you wish to purchase the product, and click
+on Add an item to add one (or more) product(s). Click on <strong >Save</strong> and then
+<strong >Validate</strong>.</p></section><section id="pay-supplier-bills-one-after-the-other"><h3 >一个接一个的支付账单</h3><img src="../../../_images/multiple03.png" class="img-responsive center-block"><p >We will now record a payment for one bill only. Open the bill, then
+click on <strong >Register Payment</strong>. Insert the Payment Method, Date and Amount,
+and click on <strong >Validate</strong>.</p><img src="../../../_images/multiple04.png" class="img-responsive center-block"><p >Once you have validated the payment, the system will automatically
+reconcile the payment with the bill, and set the bill as <strong >Paid</strong>. The
+system will also generate a move from the payment account and reconcile
+it with the expense transaction.</p></section><section id="pay-several-bills-altogether"><h3 >多个账单一块支付</h3><p >In order to illustrate the process thoroughly, create at least 2 more
+bills following the above standing guide. <strong >Make sure all bills come
+from the same vendor.</strong></p><img src="../../../_images/multiple05.png" class="img-responsive center-block"><p >In the Vendors Bills, select the new bills you have just created by
+checking the box next to each of them. In the Action menu located in the
+middle of the page, click on <strong >Register Payment</strong>.</p><img src="../../../_images/multiple06.png" class="img-responsive center-block"><p >Insert the details of the payment. The system calculated the total
+amount for both bills, but you can modify it freely. Click on <strong >Validate</strong>.</p></section><section id="record-the-payment-reconcile-afterwards"><h3 >登记付款，随后核销</h3><p >你也可以在付款登记之后对付款进行核销。</p><p >首先，我们来创建一个付款</p><p >这可以在以下处理：[UNKNOWN NODE problematic]仪表盘 --&gt; 银行分类账  --&gt; 更多选项  --&gt; 付款 `</p><img src="../../../_images/multiple07.png" class="img-responsive center-block"><p >Creating payment order with check payment method. Selecting related
+Vendor and amount which remain to pay. After filling all details, we
+will confirm the payment order which will generate payment transaction
+with the system.</p><img src="../../../_images/multiple08.png" class="img-responsive center-block"><p >如你所见，账单的状态显示什么已经过账什么还没有过账。</p><p >After receiving bank statement from the bank with payment detail, you
+can reconcile the transaction from the Dashboard. It will automatically
+map the transaction amount.</p><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><p >详情参见银行核销过程，请参阅：</p><ul ><li ><a href="../../bank/reconciliation/use_cases.html" class="internal alert-link reference"><em >银行调节过程中的使用案例？</em></a></li></ul></div></section><section id="partial-payments-of-several-supplier-bills"><h2 >多个供应商账单的部分付款</h2></section><section id="how-to-pay-several-supplier-bills-having-cash-discounts-at-once"><h3 >How to pay several supplier bills having cash discounts at once?</h3><p >You already learned how to pay bills in various way but what about
+partial payment? We are taking another example where we will do partial
+payment for various bills.</p><p >We are creating multiple bills and partially pay them through bank
+statements.</p><p >We are adding payment terms which allow some cash discount where vendor
+offer us early payment discount.</p><img src="../../../_images/multiple09.png" class="img-responsive center-block"><p >We are creating the following bills with the assignment of the above
+payment term.</p><img src="../../../_images/multiple10.png" class="img-responsive center-block"><p >我们已经创建了以下账单：</p><img src="../../../_images/multiple11.png" class="img-responsive center-block"><p >We will pay the invoices by creating bank statement where we will adjust
+the cash discount our vendor provided under payment terms.</p><img src="../../../_images/multiple12.png" class="img-responsive center-block"><p >Before reconciling this bank statement, we need to create one statement
+model for cash discount.</p><img src="../../../_images/multiple13.png" class="img-responsive center-block"><p >现在我们回到银行对账单并打开核销视图。</p><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><p >带有模型选项的银行对账单的核销，见</p><ul ><li ><a href="../../bank/reconciliation/configure.html" class="internal alert-link reference"><em >配置条目模型</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

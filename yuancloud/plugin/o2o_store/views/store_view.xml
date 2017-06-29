@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data><!-- Action -->
+        <record model="ir.actions.act_window" id="o2o_store_list_action">
+            <field name="name">门店信息</field>
+            <field name="res_model">o2o.store</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建第一个门店
+                </p>
+            </field>
+        </record>
+        <!-- List View (store_storeinfo)-->
+        <record model="ir.ui.view" id="o2o_store_list_view">
+            <field name="name">o2o.store.tree</field>
+            <field name="model">o2o.store</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="category"/>
+                    <field name="business_hours"/>
+                    <field name="country"/>
+                    <field name="province"/>
+                    <field name="city"/>
+                    <field name="address"/>
+                    <field name="contact"/>
+                    <field name="phone"/>
+                </tree>
+            </field>
+        </record>
+        <!--sss -->
+        <record id="o2o_web_res_store_geo" model="ir.ui.view">
+            <field name="name">store geo</field>
+            <field name="model">web_extended.map</field>
+            <field name="arch" type="xml">
+                <form string="store_geo">
+                    <field name="addr" widget="web_extended.geo"/>
+                    <div id="store_geo">
+                        <field name="geo_latitude" invisible="1"/>
+                        <field name="geo_longitude" invisible="1"/>
+                    </div>
+                    <footer>
+                        <button name="apply" string="_Apply" type="object" class="oe_highlight"/>
+                        or
+                        <button string="_Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="o2o_action_res_store" model="ir.actions.act_window">
+            <field name="name">获取地址</field>
+            <field name="res_model">web_extended.map</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="o2o_web_res_store_geo"/>
+            <field name="target">new</field>
+        </record>
+        <!--sss -->
+        <!--store_store卡片 -->
+        <record model="ir.ui.view" id="o2o_store_form_view">
+            <field name="name">o2o.store.form</field>
+            <field name="model">o2o.store</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_left" style="width: 500px;">
+                            <field name="image_medium" widget="image" class="oe_avatar oe_left"/>
+                            <div class="oe_title" style="width: 390px;">
+                                <label class="oe_edit_only" for="name" string="门店名称"/>
+                                <h1>
+                                    <field name="name" class="oe_inline"/>
+                                </h1>
+                            </div>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="code"/>
+                                <field name="category" on_change="onchange_category(category)"/>
+                                <field name="category_line" domain="[('category_id','=',category)]"
+                                       options="{'no_create_edit': True}"/>
+                                <field name="business_hours"/>
+                                <field name="virtual_location"/>
+                                <field name="picking_type"/>
+                                <field name="pos_ids" widget="many2many_tags" options="{'no_create_edit': True}"/>
+                                <!--<field name="payment_agreement"/>-->
+                            </group>
+                            <group>
+                                <field name="company_id"/>
+                                <field name="sale_team"/>
+                                <field name="store_owner"/>
+                                <field name="simple_info"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="联系信息">
+                                <group>
+                                    <group>
+                                        <field name="contact"/>
+                                        <field name="fax"/>
+                                        <field name="mail"/>
+                                    </group>
+                                    <group>
+                                        <field name="phone"/>
+                                        <field name="mobile"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="位置信息">
+                                <group>
+                                    <group>
+                                        <field name="country" on_change="onchange_country(country)" />
+                                        <field name="province" domain="[('country_id','=',country)]"
+                                        options="{'no_create_edit': True}"
+                                        />
+                                        <field name="city"/>
+                                        <field name="longitude"/>
+                                        <field name="latitude"/>
+                                        <field name="address"/>
+                                        <button
+                                                string="修改地址坐标"
+                                                name="%(o2o_action_res_store)d"
+                                                colspan="2"
+                                                icon="gtk-apply"
+                                                type="action"/>
+                                    </group>
+                                    <group>
+                                        <widget type="tencentMap"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="推荐及特色">
+                                <group>
+                                    <group>
+                                        <field name="recommend"/>
+                                    </group>
+                                    <group>
+                                        <field name="special_service"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="门店图片">
+                                <field name="images">
+                                    <tree>
+                                        <field name="description"/>
+                                        <field name="image"/>
+                                    </tree>
+                                </field>
+                            </page>
+                             <page string="门店雇员">
+                                <field name="users">
+                                    <tree editable="bottom">
+                                        <field name="user_id"/>
+                                        <field name="phone"/>
+                                        <field name="mobile"/>
+                                        <field name="fax"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- 门店图片子表  Form-->
+        <record model="ir.ui.view" id="o2o_storeimages_form_view">
+            <field name="name">o2o.storeimages.form</field>
+            <field name="model">o2o.storeimages</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                        <group>
+                            <field name="image"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</yuancloud>

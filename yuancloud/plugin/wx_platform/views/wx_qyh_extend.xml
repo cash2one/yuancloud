@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<yuancloud>
+    <data>
+        <record model="ir.ui.view" id="view_wx_qyh_form_extended">
+            <field name="name">wx.qyh.form</field>
+            <field name="model">wx.qyh</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="wx_base.wx_qyh_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='base_info']" position="after">
+                    <group name="auth_info">
+                        <field name="operator_name"/>
+                        <field name="register_mobile"/>
+                        <field name="register_email"/>
+                        <field name="auth_time"/>
+                        <field name="wx_number"/>
+                        <field name="cus_phone"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</yuancloud>

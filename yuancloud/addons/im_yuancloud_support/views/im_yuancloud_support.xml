@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+
+        <template id="assets_backend" name="im_yuancloud_support assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+               <script type="text/javascript" src="/im_yuancloud_support/static/src/js/im_yuancloud_support.js"></script>
+                <script type="text/javascript">
+                    yuancloud.define(function (require) {
+                        var yuancloudSupport = require('im_yuancloud_support.yuancloudSupport');
+                        new yuancloudSupport(
+                            "<t t-esc="request.session.login"/>",
+                            "<t t-esc="request.registry['ir.config_parameter'].get_param(request.cr, request.uid, 'database.uuid')"/>"
+                        );
+                    });
+                </script>
+            </xpath>
+        </template>
+
+    </data>
+</yuancloud>

@@ -1,0 +1,191 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>复式记账存货管理 &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="主要概念" href="../concepts.html" />
+    <link rel="next" title="名词术语" href="terminologies.html" />
+    <link rel="prev" title="主要概念" href="../concepts.html" /> 
+  </head>
+  <body role="document"><header class="has_code_col">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar has_code_col">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../inventory.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              复式记账存货管理
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="current toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container-fluid has_code_col">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#operations" class="ripple internal reference">操作</a></li><li class="list-group-item"><a href="#analysis" class="ripple internal reference">分析</a></li><li class="list-group-item"><a href="#procurements-procurement-rules" class="ripple internal reference">补货＆拉规则</a></li><li class="list-group-item"><a href="#routes" class="ripple internal reference">路径</a></li><li class="list-group-item"><a href="#push-rules" class="ripple internal reference">推规则</a></li><li class="list-group-item"><a href="#procurement-groups" class="ripple internal reference">补货组</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/inventory/overview/concepts/double-entry.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="double-entry-inventory-management"><p >复式库存没有入库，出库(产品的disparition)或者变换。相反的，所有的移动都是在不同的库位之间移动(可以是虚拟的)。</p><div class="doc-aside chart-of-locations"></div>
+</section><section id="operations"><h2 >操作</h2><p >库存调拨表示了货物或者材料在不同的库位之间的移动。</p><dl class="doc-aside alternatives"><dt >生产订单</dt><dd ><dl ><dt >消耗</dt><dd ><div class="line-block"><div class="line">2个车轮：库存 → 产线</div><div class="line">1个车架：库存→产线</div></div></dd><dt >生产：</dt><dd ><p >1个循环：产品 → 库存</p></dd><dt >配置：</dt><dd ><div class="line-block"><div class="line">库存：生产订单的物流的原始位置</div><div class="line">产线：在产品表单上的**生产库位**字段</div></div></dd></dl></dd><dt >直运</dt><dd ><p >1辆自行车:供应商→客户</p><dl ><dt >配置：</dt><dd ><div class="line-block"><div class="line">供应商：在产品表单上</div><div class="line">客户：在销售订单上</div></div></dd></dl></dd><dt >客户发货</dt><dd ><dl ><dt >调拨</dt><dd ><p >1个循环：库存 → 拣货区域</p></dd><dt >包装</dt><dd ><p >1辆自行车:包装区域→出货区域</p></dd><dt >发货</dt><dd ><p >1辆自行车:出货区域→客户</p></dd><dt >配置：</dt><dd ><div class="line-block"><div class="line">仓库的拣货＋包装＋发货路径</div></div></dd></dl></dd><dt >仓库内部的调拨</dt><dd ><dl ><dt >转移：</dt><dd ><div class="line-block"><div class="line">1辆自行车:仓库1→中转区</div><div class="line">1辆自行车:中转区→仓库2</div></div></dd><dt >配置：</dt><dd ><div class="line-block"><div class="line">仓库2：调拨的源发库位</div><div class="line">仓库1：在中转路径上</div></div></dd></dl></dd><dt >坏掉的产品(报废)</dt><dd ><p >1辆自行车:仓库→报废</p><dl ><dt >配置：</dt><dd ><p >报废：在报废的时候需要的报废库位</p></dd></dl></dd><dt >库存</dt><dd ><dl ><dt >存货产品丢失</dt><dd ><p >1辆自行车:仓库→盘点库位</p></dd><dt >存货中的额外产品</dt><dd ><p >1辆自行车:盘点库位→仓库</p></dd><dt >配置：</dt><dd ><p >盘点库位：产品上的&quot;盘点库位&quot;字段</p></dd></dl></dd><dt >接收</dt><dd ><div class="line-block"><div class="line">1辆自行车:供应商库位→收货库位</div><div class="line">1辆自行车:收货库位→库存库位</div></div><dl ><dt >配置：</dt><dd ><div class="line-block"><div class="line">供应商库位：采购订单的补货库位</div><div class="line">收货区域：采购订单上的“目标”库位</div></div></dd></dl></dd></dl></section><section id="analysis"><h2 >分析</h2><p >存货分析可以使用产品数量或者产品价值(=产品数量*产品成本)。</p><p >对于每一个盘点库位，多个数据点可以被分析：</p><ul class="highlighter-list" data-target=".analysis-table">
+  <li data-highlight=".analysis-valuation">inventory valuation</li>
+  <li data-highlight=".analysis-creation">
+    value creation (difference between the value of manufactured products
+    and the cost of raw materials used during manufacturing) (negative)
+  </li>
+  <li data-highlight=".analysis-lost">value of lost/stolen products</li>
+  <li data-highlight=".analysis-scrapped">value of scrapped products</li>
+  <li data-highlight=".analysis-delivered">value of products delivered to clients over a period</li>
+  <li data-highlight=".analysis-received">value of products received from suppliers over a period (negative)</li>
+  <li data-highlight=".analysis-transit">value of products in transit between locations</li>
+</ul><div class="doc-aside analysis-table"> <table class="table table-condensed highlighter-target">
+   <thead>
+     <tr>
+       <th>Location</th> <th class="text-right">Value</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr class="analysis-valuation">
+       <th>Physical Locations</th> <td class="text-right">$1,000</td>
+     </tr>
+     <tr>
+       <th>&#8193;Warehouse 1</th> <td class="text-right">$600</td>
+     </tr>
+     <tr>
+       <th>&#8193;Warehouse 2</th> <td class="text-right">$400</td>
+     </tr>
+     <tr>
+       <th>Partner Locations</th> <td class="text-right">- $1,500</td>
+     </tr>
+     <tr class="analysis-delivered">
+       <th>&#8193;Customers</th> <td class="text-right">$2,000</td>
+     </tr>
+     <tr class="analysis-received">
+       <th>&#8193;Suppliers</th> <td class="text-right">- $3,500</td>
+     </tr>
+     <tr>
+       <th>Virtual Locations</th> <td class="text-right">$500</td>
+     </tr>
+     <tr class="analysis-transit">
+       <th>&#8193;Transit Location</th> <td class="text-right">$600</td>
+     </tr>
+     <tr>
+       <th>&#8193;Initial Inventory</th> <td class="text-right">$0</td>
+     </tr>
+     <tr class="analysis-lost">
+       <th>&#8193;Inventory Loss</th> <td class="text-right">$350</td>
+     </tr>
+     <tr class="analysis-scrapped">
+       <th>&#8193;Scrapped</th> <td class="text-right">$550</td>
+     </tr>
+     <tr class="analysis-creation">
+       <th>&#8193;Manufacturing</th> <td class="text-right">- $1,000</td>
+     </tr>
+   </tbody>
+</table></div>
+</section><section id="procurements-procurement-rules"><h2 >补货＆拉规则</h2><p >补货就是一个特定库位的特定产品的特定数量的需求。可以手工创建或者自动的触发于：</p><dl class="doc-aside alternatives"><dt >新的销售订单</dt><dd ><dl ><dt >工作</dt><dd ><p >补货是在客户库位上创建的客户订单上的产品(需要发货给客户的)</p></dd><dt >配置</dt><dd ><p >补货库位：在客户信息上的字段&quot;客户库位&quot;(属性)</p></dd></dl></dd><dt >最小库存规则</dt><dd ><dl ><dt >工作</dt><dd ><p >补货在规则位置创建。</p></dd><dt >配置</dt><dd ><p >补货库位：在该规则上，字段&quot;库位&quot;</p></dd></dl></dd><dt >补货规则</dt><dd ><dl ><dt >工作</dt><dd ><p >新的补货是在规则上的源库位上创建的</p></dd></dl></dd></dl><p >[UNKNOWN NODE problematic]拉规则*描述了特定库位上的补货如何实现，例如：</p><ul ><li ><p >产品移动的源头位置(源库位 )</p></li><li ><p >要么补货是：[UNKNOWN NODE title_reference] or <abbr title="按库存补货">MTS</abbr></p></li></ul><div class="doc-aside"></div>
+</section><section id="routes"><h2 >路径</h2><p >路线中对拉规则进行分组。路线定义了产品的路径。根据产品/销售订单行／仓库，……路线可能会用也可能不能用。</p><p >要完成一个补货，系统会搜索路线中定义的规则(根据顺序或者优先级)：</p><dl class="doc-aside alternatives"><dt >仓库</dt><dd ><p >仓库路线示例：拣货→ 包装→ 发货</p><dl ><dt >调拨列表</dt><dd ><p >拣货区域→ 包装区域</p></dd><dt >包装列表：</dt><dd ><p >包装区域→ 门A</p></dd><dt >交货单：</dt><dd ><p >门A→ 客户</p></dd></dl><p >描述如何组织你的仓库的路线应该在仓库中定义。</p></dd><dt >一个产品</dt><dd ><p >产品路径例子：质量控制</p><dl ><dt >收货：</dt><dd ><p >供应商 → 收货</p></dd><dt >确认：</dt><dd ><p >收货区域 → 质检区域</p></dd><dt >库存：</dt><dd ><p >质检 → 库存</p></dd></dl></dd><dt >产品种类</dt><dd ><p >产品类别路线示例：cross-dock</p><dl ><dt >收货：</dt><dd ><p >供应商 → 收货</p></dd><dt >Cross-Docks:</dt><dd ><p >收获区域 →出货区域</p></dd><dt >发货：</dt><dd ><p >发货区域 → 客户</p></dd></dl></dd><dt >销售订单行</dt><dd ><p >销售订单行示例：直运</p><dl ><dt >订单：</dt><dd ><p >供应商 → 客户</p></dd></dl></dd></dl></section><section id="push-rules"><h2 >推规则</h2><p >当产品进入一个特定库位的时候推规则会触发。它们会把产品自动移动一个新的库位。是否要用推规则依赖于可用的路线。</p><dl class="doc-aside alternatives"><dt >质量控制</dt><dd ><ul ><li ><p >产品进入收货区</p></li><li ><p >推规则1：收货区→ 质量控制</p></li><li ><p >推规则2： 质量控制→库存</p></li></ul></dd><dt >仓库中转区</dt><dd ><ul ><li ><p >产品进入中转区</p></li><li ><p >推：中转区 → 仓库 2</p></li></ul></dd></dl></section><section id="procurement-groups"><h2 >补货组</h2><p >路线和规则定义库存的移动，对于每一个规则，都需要提供一个操作类型：</p><ul ><li ><p >拣货</p></li><li ><p >包装</p></li><li ><p >发货单</p></li><li ><p >采购订单</p></li><li >...</li></ul><p >如果拉规则和库位一样的话，库存调拨就可以汇总到同一类型的操作类型中</p><p >销售订单创建一个补货组，所以同一个销售订单的拣货和发货单被分开。但是你可以在再定点规则上定义特定的组(例如，可以把特定产品的采购询价单汇总起来)。</p></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

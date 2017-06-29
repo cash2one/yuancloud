@@ -1,0 +1,160 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>Setting up the Fiscal Data Module with the YuanCloud POS &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../index.html" />
+    <link rel="up" title="Belgian Fiscal Data Module" href="../belgian_fdm.html" />
+    <link rel="next" title="项目管理" href="../../project.html" />
+    <link rel="prev" title="Belgian Fiscal Data Module" href="../belgian_fdm.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../point_of_sale.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              Setting up the Fiscal Data Module with the YuanCloud POS
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../inventory.html" class="internal reference">库存</a></li><li class="current toctree-l2"><a href="../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#introduction" class="ripple internal reference">介绍</a></li><li class="list-group-item"><a href="#required-hardware" class="ripple internal reference">Required hardware</a></li><li class="list-group-item"><a href="#setup" class="ripple internal reference">Setup</a><ul ><li class="list-group-item"><a href="#posbox" class="ripple internal reference">POSBox</a></li><li class="list-group-item"><a href="#yuancloud" class="ripple internal reference">YuanCloud</a></li></ul></li><li class="list-group-item"><a href="#restrictions" class="ripple internal reference">Restrictions</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/point_of_sale/belgian_fdm/setup.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="setting-up-the-fiscal-data-module-with-the-yuancloud-pos"></section><section id="introduction"><h2 >介绍</h2><p >The Belgian government requires certain businesses to use a
+government-certified device called a <strong >Fiscal Data Module</strong> (also
+known as a <strong >blackbox</strong>). This device works together with the POS
+application and logs certain transactions. On top of that, the used
+POS application must also be certified by the government and must
+adhere to strict standards specified by them. <a href="http://www.systemedecaisseenregistreuse.be/systemes-certifies" class="external reference">YuanCloud 9 is a certified
+application</a>. More
+information concerning the Fiscal Data Module can be found on <a href="http://www.systemedecaisseenregistreuse.be/" class="external reference">the
+official website</a>.</p><p ><strong >As of December 2015, due to Belgian government restriction, the
+certification is only valid for YuanCloud Online instances.</strong></p></section><section id="required-hardware"><h2 >Required hardware</h2><ul ><li ><p >A government certified <a href="http://www.systemedecaisseenregistreuse.be/systemes-certifies#FDM%20certifiés" class="external reference">Fiscal Data Module</a>
+per POS, all of them should work, but the Cleancash SC-B is
+recommended, you will also need:</p><ul ><li >Serial null modem cable per FDM (<a href="http://www.startech.com/Cables/Serial-Parallel-PS-2/DB9-DB25/10-ft-Cross-Wired-Serial-Null-Modem-Cable-DB9-FM~SCNM9FM" class="external reference">example</a>)</li><li >Serial-to-USB adapter per FDM (<a href="http://trendnet.com/products/proddetail.asp?prod=265_TU-S9" class="external reference">example</a>)</li></ul></li><li >A POSBox per POS</li></ul></section><section id="setup"><h2 >Setup</h2></section><section id="posbox"><h3 >POSBox</h3><p >In order to setup the blackbox, you will first have to ensure that the
+POSBoxes you're using have a recent image on them (support for the FDM
+was added to the POSBox image on the 10th of December 2015). See
+<a href="../overview/setup.html" class="internal reference"><em >Point of Sale Hardware Setup</em></a> on how to upgrade the POSBox. You can verify
+that the Fiscal Data Module is recognized by the POSBox by going to
+the <em >Hardware status page</em> via the POSBox homepage.</p><img src="../../_images/posbox_fdm_hardware_status.png" class="img-responsive center-block"></section><section id="yuancloud"><h3 >YuanCloud</h3><p >An YuanCloud POS is turned into a certified POS by installing the <strong >Belgian
+Registered Cash Register</strong> app (technical name:
+<code >pos_blackbox_be</code>). Because of government restrictions imposed on
+us, this installation cannot be undone. After this, you will have to
+ensure that each POS configuration has a unique POSBox associated with
+it (<span class="menuselection">Point of Sale ‣ Configuration ‣ Point of Sale</span>
+and ensure Hardware Proxy / POSBox is set). The first time you open
+the Point of Sale and attempt to do a transaction, you will be asked
+to input the PIN that you received with your VAT signing card.</p><img src="../../_images/vat_signing_card_pin.png" class="img-responsive center-block"></section><section id="restrictions"><h2 >Restrictions</h2><p >As mentioned before, in order to get certified the POS application
+must adhere to strict government guidelines. Because of this, a
+certified YuanCloud POS has some limitations not present in the
+non-certified YuanCloud POS.</p><ul ><li >Refunding is disabled</li><li >Modifying orderline prices</li><li >Creating/modifying/deleting POS orders</li><li >Selling products without a valid tax</li><li >Multiple YuanCloud POS configurations per POSBox are not allowed</li><li >Using the POS without a connection to the POSBox (and thus FDM)</li><li >Blacklisted modules: pos_discount, pos_reprint, pos_loyalty</li></ul></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<yuancloud>
+    <data><!-- Action -->
+        <record model="ir.actions.act_window" id="message_mpnews_template_list_action">
+            <field name="name">图文消息模板</field>
+            <field name="res_model">wx.mpnews_message_template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建第一个图文消息
+                </p>
+            </field>
+        </record>
+        <!-- List View (wx_message-text)-->
+        <record model="ir.ui.view" id="message_mpnews_template_list_view">
+            <field name="name">ycloud_wx_mpnews_message_template.tree</field>
+            <field name="model">wx.mpnews_message_template</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="message_type"/>
+                    <field name="template_code"/>
+                    <field name="template_name"/>
+                    <field name="message_title"/>
+                    <field name="message_description"/>
+                    <field name="model_id"/>
+                    <field name="iseffective"/>
+                </tree>
+            </field>
+        </record>
+        <!--文字消息卡片 -->
+        <record model="ir.ui.view" id="message_mpnews_template_form_view">
+            <field name="name">ycloud_wx_mpnews_message_template.form</field>
+            <field name="model">wx.mpnews_message_template</field>
+            <field name="arch" type="xml">
+                <form create="false">
+                    <sheet>
+                        <group>
+                            <field name="message_type"/>
+                            <field name="template_code"/>
+                            <field name="template_name"/>
+                            <field name="message_title"/>
+                            <field name="message_description"/>
+                            <field name="message_picurl"/>
+                            <field name="message_url"/>
+                            <field name="message_imagedata" widget="image" class="oe_avatar oe_left"/>
+                            <field name="model_id"/>
+                             <field name="iseffective"/>
+                        </group>
+                        <notebook>
+                            <page string="图文">
+                                <separator string="图文信息"/>
+                                <field name="message_news"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="ycloud_message_mpnews_tree_view" model="ir.ui.view">
+            <field name="name">ycloud_message_mpnews.tree.view</field>
+            <field name="model">wx.message_mpnews_template</field>
+            <field name="arch" type="xml">
+                <tree string="图文">
+                    <field name="message_title"/>
+                    <field name="message_description"/>
+                    <field name="message_picurl"/>
+                    <field name="message_url"/>
+                    <field name="model_id"/>
+                    <!--<field name="message_imagedata" widget="image" class="oe_avatar"/>-->
+                </tree>
+            </field>
+        </record>
+        <record id="ycloud_message_mpnews_form_view" model="ir.ui.view">
+            <field name="name">ycloud_message_mpnews.form.view</field>
+            <field name="model">wx.message_mpnews_template</field>
+            <field name="arch" type="xml">
+                <form string="图文">
+                    <group col="4">
+                        <field name="message_title"/>
+                        <field name="message_description"/>
+                        <field name="message_picurl"/>
+                        <field name="message_url"/>
+                        <field name="message_imagedata" widget="image" class="oe_avatar oe_left"/>
+                        <field name="model_id"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</yuancloud>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <report
+            id="report_saas_sale"
+            string="Quotation / Order"
+            model="sale.order"
+            report_type="qweb-pdf"
+            file="saas_sale.report_saleorder"
+            name="saas_sale.report_saleorder"
+        />
+    </data>
+</yuancloud>

@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何分析你的团队的销售业绩，并获得定制的报告 &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../index.html" />
+    <link rel="up" title="报告" href="../reporting.html" />
+    <link rel="next" title="如何检验我的销售活动(新的销售仪表盘)" href="review.html" />
+    <link rel="prev" title="报告" href="../reporting.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../crm.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何分析你的团队的销售业绩，并获得定制的报告
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../accounting.html" class="internal reference">会计</a></li><li class="current toctree-l2"><a href="../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#review-pipelines" class="ripple internal reference">检查销售管道</a></li><li class="list-group-item"><a href="#customize-reports" class="ripple internal reference">定制报表</a><ul ><li class="list-group-item"><a href="#evaluate-the-current-pipeline-of-each-of-your-salespeople" class="ripple internal reference">衡量你的每个销售员的现在的销售管道</a></li><li class="list-group-item"><a href="#forecast-monthly-revenue-by-sales-team" class="ripple internal reference">按销售组预计月度收入</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/crm/reporting/analysis.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-analyze-the-sales-performance-of-your-team-and-get-customize-reports"><p >作为管理者，你需要不断的监测团队的表现，以帮助您为公司得到准确的相关决策。因此，** YuanCloud销售**的**报告**部分是一个非常重要的工具，可以帮助你得到更好地了解您的企业的优势，劣势和机会，并向您展示趋势和预测的关键指标，如机遇数量和他们的预期收入，团队的成交率或者对于一个产品或服务销售周期。</p><p >除了这些显而易见的跟踪销售漏斗的指标，还有一些其他的关键绩效指标，当用来判断销售漏斗是否成功时对您的公司是非常有价值的。</p></section><section id="review-pipelines"><h2 >检查销售管道</h2><p >您可以从**销售**模块中获得您的销售渠道业绩，通过点击：菜单选择：[UNKNOWN NODE title_reference]。默认情况下，报告组合了所有的机会，通过阶段(了解更多关于如何创建和自定义阶段阅读：DOC：'../销售团队/设置/组织_管道)和当月的预期收入。这份报告对**销售经理**定期审查销售渠道与相关销售团队是很完善的。通过访问这个基本的报告，你可以得到的实际销售业绩的快速概述。</p><p >您可以通过点击**计量**图标，添加很多额外的数据到您的报告：</p><ul ><li ><p >预期收入</p></li><li ><p >超过截止日期</p></li><li ><p >延迟分配(创建线索和线索分配之间的平均时间)。</p></li><li ><p >延迟关闭(线索分配和关闭之间的平均时间)</p></li><li ><p >每个机会相互作用的次数。</p></li><li ><p >等等</p></li></ul><img src="../../_images/analysis02.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >通过点击**+**和** - <strong >图标，可以向上和向下追溯您的报告，以改变显示信息的方式。例如，如果我想看到我的**直接销售**团队的预期收入，我需要点击**+**图标在垂直轴上加上**销售团队</strong>。</p></div><p >根据你想突出的数据，你可能需要在一个更直观的视图来显示您的报告。 YuanCloud**CRM** 可以让你通过简单的点击来改变你的报告为3种图形视图：<strong >饼图</strong>，<strong >条形图**和**线图</strong>。这些视图可以通过下面的截图中显示的高亮图标进行访问。</p><img src="../../_images/analysis03.png" class="img-responsive center-block"></section><section id="customize-reports"><h2 >定制报表</h2><p >您可以根据您要访问的**KPI**轻松地自定义您的分析报告(见：'../概述/主要概念/ terminologies`：DOC)。要做到这一点，使用**高级搜索视图**位于屏幕的右侧，通过点击搜索栏结尾处的放大镜图标按钮。此功能可以在你的报告上突出选定的数据。该**过滤**选项，显示某些类别的机遇时非常有用，同时通过**分组**选项提高您需要的报表的可读性。请注意，您可以通过任何现有的CRM字段进行过滤和分组，使您的自定义非常灵活和强大。</p><img src="../../_images/analysis01.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >您可以保存并再次使用定制的过滤，从**高级搜索视图**中点击**收藏**，然后**保存当前的搜索**。保存的过滤器将从**收藏**菜单访问。</p></div><p >这里是一些定制报告的例子，你可以用来监控你的销售业绩。</p></section><section id="evaluate-the-current-pipeline-of-each-of-your-salespeople"><h3 >衡量你的每个销售员的现在的销售管道</h3><p >从您的管道分析报告，首先要确保的**预期收益**选项是从**计量**下拉列表下选择。然后，使用**+**和** - [UNKNOWN NODE problematic]图标，并添加**销售员**和**阶段**做为你的垂直轴，并筛选所需的销售人员。然后在**图形视图中**单击图标通过阶段来显示你的销售人员的可视化表示。这种定制的报告可以让您轻松一览你的销售人员的销售活动。</p><img src="../../_images/analysis05.png" class="img-responsive center-block"></section><section id="forecast-monthly-revenue-by-sales-team"><h3 >按销售组预计月度收入</h3><p >为了预计月度收入和衡量你的团队的短期业绩。你需要使用两个重要的指标：<strong >预期收入**和**预期结束</strong>。</p><p >从您的管道分析报告，首先要确保的**预期收益**选项是从**计量**下拉列表下选择。然后，使用**+**和** - <strong >图标，并添加**销售员**和**阶段**做为你的垂直轴，并选择所需的销售组。然后在横向轴上，点击**+</strong>，选择**预期关闭**。</p><img src="../../_images/analysis04.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >为了保证你的预测的准确性和相关性，要确保你的销售人员为每个机会正确建立了预期关闭和预期收入。</p></div><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="../salesteam/setup/organize_pipeline.html" class="internal alert-link reference"><em >设置和管理您的销售管道</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

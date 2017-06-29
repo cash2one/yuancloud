@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何追踪采购成本，费用，外包合同？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="分析" href="../analytic.html" />
+    <link rel="next" title="税" href="../taxes.html" />
+    <link rel="prev" title="如何追踪使用能够记工单的人资？" href="timesheets.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../accounting.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何追踪采购成本，费用，外包合同？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="current toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#overview" class="ripple internal reference">概述</a></li><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#enable-analytical-accounting" class="ripple internal reference">启用分析会计</a></li></ul></li><li class="list-group-item"><a href="#create-an-analytical-account" class="ripple internal reference">创建分析账户</a></li><li class="list-group-item"><a href="#record-an-expense" class="ripple internal reference">费用记录</a><ul ><li class="list-group-item"><a href="#create-an-expense-product" class="ripple internal reference">创建一个费用产品</a></li><li class="list-group-item"><a href="#book-the-expense" class="ripple internal reference">费用记账</a></li></ul></li><li class="list-group-item"><a href="#create-a-purchase-order-linked-to-the-analytical-account" class="ripple internal reference">创建链接到分析账户的采购订单</a><ul ><li class="list-group-item"><a href="#purchase-product" class="ripple internal reference">采购产品</a></li><li class="list-group-item"><a href="#subcontracting" class="ripple internal reference">外包</a></li></ul></li><li class="list-group-item"><a href="#track-costs-in-accounting" class="ripple internal reference">跟踪成本</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/accounting/others/analytic/purchases_expenses.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-track-costs-of-purchases-expenses-subcontracting"></section><section id="overview"><h2 >概述</h2><p >多亏分析会计, 我们可以跟踪采购成本,费用和分包的会计模块。</p><p >我们将使用以下的例子。我们售了套咨询方案给客户。方案包容了所有, 意思是没有额外成本。我们不过想遵循需要被附加到这个交易的成本, 例如采购,费用,和分包成本。</p></section><section id="configuration"><h2 >配置</h2><p >下面的模块需要安装跟踪成本。进入应用程序模块和安装以下程序:</p><table class="table"><thead ><tr ><th ><img src="../../../_images/purchase01.png" class="img-responsive"></th><th ><img src="../../../_images/purchase02.png" class="img-responsive"></th><th ><img src="../../../_images/purchase03.png" class="img-responsive"></th></tr></thead><tbody ><tr ><td ></td><td ></td><td ></td></tr></tbody></table><p >请注意,这些应用程序提供的程序只允许我们* <em >记录</em> <em >成本。我们无法向我们的客户自动重新发票。跟踪和</em> <em >将成本再开票</em> [UNKNOWN NODE problematic], 你应该安装销售管理应用程序。</p><img src="../../../_images/purchase04.png" class="img-responsive center-block"><p >关于使用分析账户, 您可以参考以下文档: doc:[UNKNOWN NODE title_reference]</p></section><section id="enable-analytical-accounting"><h3 >启用分析会计</h3><p >下一步是启动分析会计。在会计软件,选择:menuselection:[UNKNOWN NODE title_reference] , 选择分析会计。</p><img src="../../../_images/purchase05.png" class="img-responsive center-block"><p >此外,向下滚动,点击 <strong >Analytic accounting for purchases</strong> 选项框。</p><img src="../../../_images/purchase06.png" class="img-responsive center-block"><p >不要忘了保存</p></section><section id="create-an-analytical-account"><h2 >创建分析账户</h2><p >首先, 你应该创建一个分析科目用来记录所有的费用。输入会计应用程序,选择 <span class="menuselection">Configuration ‣ Analytic Accounts</span>. 创建一个新的。在这种情况下, 我们将称之为“咨询包”, 为我们的客户Smith&amp;Co所创建。</p><img src="../../../_images/purchase07.png" class="img-responsive center-block"><p >我们将在这个科目记录所有的成本, 以便跟踪。</p></section><section id="record-an-expense"><h2 >费用记录</h2><p >我们先登记一个费用。我们的IT技术人员乘火车去看我们的客户。他自己支付机票。</p></section><section id="create-an-expense-product"><h3 >创建一个费用产品</h3><p >我们首先需要创建一个费用性产品。进入* <em >费用</em> <em >模块,点击:menuselection:`Configuration --&gt; Expense Products`.  创建一个新产品, 名为火车票, 设置成本价格为15.50欧元。确保**Can be expensed*</em> 已勾选。</p><img src="../../../_images/purchase08.png" class="img-responsive center-block"></section><section id="book-the-expense"><h3 >费用记账</h3><p >进入费用模块,点击 <span class="menuselection">My expenses ‣ Create</span>.  选择火车票产品, 将其链接之前讨论过的科目上。</p><img src="../../../_images/purchase09.png" class="img-responsive center-block"><p >向经理提交,等待经理批准, 和凭证过账.</p></section><section id="create-a-purchase-order-linked-to-the-analytical-account"><h2 >创建链接到分析账户的采购订单</h2></section><section id="purchase-product"><h3 >采购产品</h3><p >我们还需要为我们的客户买一个软件。在购买应用程序中, 创建一个软件产品的购买订单。(请参考以下文档:doc:[UNKNOWN NODE title_reference]).  在产品行上, 我们可以将成本链接到分析科目上。指定订单行, 选择正确的分析科目。确认销售。</p><img src="../../../_images/purchase10.png" class="img-responsive center-block"><p >收货并登记发票。发票一旦进入成本价格(* <em >供应商价格</em> [UNKNOWN NODE problematic]字段)同时将记录在分析科目上。</p></section><section id="subcontracting"><h3 >外包</h3><p >采购模块可以使用相同的方式, 就如之前的分包处理。如果我们从另一家公司购买服务, 我们可以重新开票到正确的分析科目, 通过链接采购行。我们只是需要创建正确的供应商的产品。</p><p >关于分包的更多信息, 请参考以下文档:doc:[UNKNOWN NODE title_reference]</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >你也可以跟踪成本和工时表,请参阅: <a href="timesheets.html" class="internal alert-link reference"><em >如何追踪使用能够记工单的人资？</em></a></p></div></section><section id="track-costs-in-accounting"><h2 >跟踪成本</h2><p >现在一切都是入账并指到分析账户。只是打开它检查科目的相关成本。</p><p >进入会计模块,点击 <span class="menuselection">Advisers ‣ Analytic Accounts ‣ Open Charts</span>.</p><p >选择“咨询包-史密斯”, 单击成本和销售按钮, 以此来查看这个科目下的所有的成本。</p><img src="../../../_images/purchase11.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >收入的话, 在发票菜单下开具'咨询包'的发票, 将发票行链接到分析科目。</p></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

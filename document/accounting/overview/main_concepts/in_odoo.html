@@ -1,0 +1,141 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>YuanCloud之外的会计学 &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="主要概念" href="../main_concepts.html" />
+    <link rel="next" title="企业家的会计备忘录（US GAAP美国通用会计准则）" href="memento.html" />
+    <link rel="prev" title="YUANCLOUD 会计介绍" href="intro.html" />
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../accounting.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              YuanCloud之外的会计学
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="current toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#double-entry-bookkeeping" class="ripple internal reference">复式记账</a></li><li class="list-group-item"><a href="#accrual-and-cash-basis-methods" class="ripple internal reference">权责发生制和收付实现制方法</a></li><li class="list-group-item"><a href="#multi-companies" class="ripple internal reference">多公司</a></li><li class="list-group-item"><a href="#multi-currencies" class="ripple internal reference">多币种</a></li><li class="list-group-item"><a href="#international-standards" class="ripple internal reference">国际标准</a></li><li class="list-group-item"><a href="#accounts-receivable-payable" class="ripple internal reference">应收账款和应付账款</a></li><li class="list-group-item"><a href="#wide-range-of-financial-reports" class="ripple internal reference">更宽广范围的财务报表</a></li><li class="list-group-item"><a href="#import-bank-feeds-automatically" class="ripple internal reference">自动导入银行回单</a></li><li class="list-group-item"><a href="#calculates-the-tax-you-owe-your-tax-authority" class="ripple internal reference">计算你欠税务机关的税金</a></li><li class="list-group-item"><a href="#inventory-valuation" class="ripple internal reference">库存估价</a></li><li class="list-group-item"><a href="#easy-retained-earnings" class="ripple internal reference">容易的留存收益</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/accounting/overview/main_concepts/in_yuancloud.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="the-accounting-behind-yuancloud"><p >此页中概括的方式YuanCloud处理典型的账户和交易。</p></section><section id="double-entry-bookkeeping"><h2 >复式记账</h2><p >YuanCloud自动创建的所有背后的幕后日记帐分录为每个会计交易：客户发票，销售点秩序，费用，库存的动作，等等。</p><p >YuanCloud采用复式簿记规则：所有日记帐分录自动平衡（借方金额=学分的总和）。</p><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><p ><a href="https://yuancloud.com/documentation/functional/accounting.html" class="external reference alert-link">Understand YuanCloud's accounting transactions per document</a></p></div></section><section id="accrual-and-cash-basis-methods"><h2 >权责发生制和收付实现制方法</h2><p >YuanCloud support both accrual and cash basis reporting. This allows you to
+report income / expense at the time transactions occur (i.e., accrual basis), or when
+payment is made or received (i.e., cash basis).</p></section><section id="multi-companies"><h2 >多公司</h2><p >YuanCloud allows to manage several companies within the same database. Each
+company has its own chart of accounts and rules. You can get
+consolidation reports following your consolidation rules.</p><p >用户可以访问几家公司，但总是在同一时间工作于一体的公司。</p></section><section id="multi-currencies"><h2 >多币种</h2><p >每一笔交易都被记录在公司的默认货币。对于其他货币，YuanCloud同时存储在该公司的货币值和交易货币的价值发生的交易。 YuanCloud可以在日记项目的核对后产生的货币收益和损失。</p><p >货币汇率是每天一次使用yahoo.com在线网络服务的更新。</p></section><section id="international-standards"><h2 >国际标准</h2><p >YuanCloud会计支持超过50个国家。每个国家的YuanCloud核心会计实施的会计准则是通用于所有国家和特定模块的存在，为国家像账目，税收，或银行接口的图表的特殊性。</p><p >特别的，YuanCloud内核会计引擎支持：</p><ul ><li ><p >盎格鲁 - 撒克逊会计（美国，英国,,等英语国家包括爱尔兰，加拿大，澳大利亚和新西兰），其中售出良好的成本报告时，产品主要销往/发表。</p></li><li ><p >欧洲会计那里费用占在供应商帐单。</p></li><li >Storno accounting (Italy) where refund invoices have negative
+credit/debit instead of a reverting the original journal items.</li></ul><p >YuanCloud也有模块，符合国际财务报告准则的规则。</p></section><section id="accounts-receivable-payable"><h2 >应收账款和应付账款</h2><p >By default, YuanCloud uses a single account for all account
+receivable entries and one for all accounts payable entries. You can
+create separate accounts per customers/suppliers, but you don't need
+to.</p><p >由于交易相关联的客户或供应商，你会得到报告，分别对每个客户/供应商分析，如客户陈述，收入按客户，年龄应收/应付账款，...</p></section><section id="wide-range-of-financial-reports"><h2 >更宽广范围的财务报表</h2><p >在YuanCloud，你可以实时生成财务报告。 YuanCloud的报告范围从高级管理报告的基本会计报告。 YuanCloud的报告包括：</p><ul ><li ><p >绩效报告（如损益表，预算差异）</p></li><li ><p >位置报告（如资产负债表，到期应付款，到期应收款）</p></li><li ><p >现金报告（例如银行摘要）</p></li><li ><p >详细报告（如试算表和总账）</p></li><li ><p >管理报告（如预算，执行概要）</p></li></ul><p >YuanCloud的报告引擎可让您根据自己的公式来定制您自己的报告。</p></section><section id="import-bank-feeds-automatically"><h2 >自动导入银行回单</h2><p >银行对帐是一个过程，在总账由银行提供的，你的会计交易相匹配的银行对账单行。 YuanCloud使得银行对帐容易被频繁导入银行对帐单行从银行直接到你的YuanCloud帐户。这意味着你可以有你的现金流的日线看，而无需登录到您的网上银行或等待你的论文银行对账单。</p><p >YuanCloud通过匹配你的大部分进口的银行对帐单行到你的会计交易加快了银行对账。 YuanCloud还记得你是如何处理的其他银行对帐单行并提供建议的总帐交易。</p></section><section id="calculates-the-tax-you-owe-your-tax-authority"><h2 >计算你欠税务机关的税金</h2><p >YuanCloud总计所有的会计事项为您的纳税期限，并使用这些汇总计算纳税的义务。然后，您可以通过运行YuanCloud的税务报表检查你的销售税。</p></section><section id="inventory-valuation"><h2 >库存估价</h2><p >YuanCloud支持定期及自动库存估价。可用的成本方法有标准价、平均价、后进先出（LIFO 对于允许的国家而言）和先进先出(FIFO) 。</p><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><p ><a href="https://yuancloud.com/documentation/functional/valuation.html" class="external reference alert-link">View impact of the valuation method on your transactions</a></p></div></section><section id="easy-retained-earnings"><h2 >容易的留存收益</h2><p >未分配利润是你的公司留存收益的部分。 YuanCloud自动计算出你目前的年盈利实时所以没有年终期刊或翻转是必需的。这是通过自动报告的盈亏平衡你的资产负债表报告计算。</p></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

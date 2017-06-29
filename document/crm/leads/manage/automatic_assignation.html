@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>自动分配线索给特定的销售团队或销售员 &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="管理线索" href="../manage.html" />
+    <link rel="next" title="如何进行有效的线索评分？" href="lead_scoring.html" />
+    <link rel="prev" title="管理线索" href="../manage.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../crm.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              自动分配线索给特定的销售团队或销售员
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="current toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a></li><li class="list-group-item"><a href="#define-rules-for-a-sales-team" class="ripple internal reference">为一个销售团队定义一个规则</a></li><li class="list-group-item"><a href="#define-rules-for-a-salesperson" class="ripple internal reference">为销售员定义规则</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/crm/leads/manage/automatic_assignation.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="automate-lead-assignation-to-specific-sales-teams-or-salespeople"><p >根据您的业务流程和需求，您可能需要分派您的进来的线索到不同的销售团队，甚至具体的销售人员。这里有几个例子：</p><ul ><li ><p >你的公司有位于不同地区的办公室。你需要基于地区分配线索。</p></li><li ><p >您的一个销售团队，致力于大型企业到的机会而另一个是专门为中小型企业。您将要根据公司的大小分配线索;</p></li><li ><p >您的一个销售代表的是讲外语，而团队的其他成员只能讲母语。因此，你会想分配给那个人所有来自非母语国家的线索。</p></li></ul><p >你可以想像，手动分配新的线索给特定个人可能是乏味且耗时的 - 尤其是如果你的公司每天产生引线的高容量。幸运的是，YuanCloud CRM可以让你根据特定要求自动分配线索，比如地点，兴趣，公司规模等，在具体工作流程和精确的规则的过程中，您将能够自动重新分配所有的机会给正确的销售团队和/或推销员。</p></section><section id="configuration"><h2 >配置</h2><p >如果你刚刚开始YuanCloud CRM而且没有设置您的销售团队，也没有注册您的销售人员，：DOC：[UNKNOWN NODE title_reference]。</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >你必须安装模块**线索评分**。转到：菜单选择：[UNKNOWN NODE title_reference]，如果不是这种情况已经安装。</p></div></section><section id="define-rules-for-a-sales-team"><h2 >为一个销售团队定义一个规则</h2><p >从销售模块，进入你的仪表板和在期望的销售团队上点击**更多**按钮，然后在**设定**。如果你没有任何的销售团队呢，：DOC：'你需要先创建一个&lt;../../销售团队/设置/制作团队&gt;`。</p><img src="../../../_images/automatic01.jpg" class="img-responsive center-block"><p >在您的销售团队菜单，[UNKNOWN NODE problematic]域**字段使用特定的域规则(关于域的技术细节，参考构建模块教程&lt;<a href="https://www.yuancloud.com/documentation/9.0/howtos/backend.html#domains" class="external reference">https://www.yuancloud.com/documentation/9.0/howtos/backend.html#domains</a>&gt;`__或`语法参考指南&lt;<a href="https://www.yuancloud.com/documentation/9.0/reference/orm.html#reference-orm-domains" class="external reference">https://www.yuancloud.com/documentation/9.0/reference/orm.html#reference-orm-domains</a>&gt;`__)，将只允许线索匹配团队域。</p><p >例如，如果你希望你的*直接销售团队*只接收从美国和加拿大来的线索，你的域将如下：</p><p ><code >[[country_id, 'in', ['United States', 'Canada']]]</code></p><img src="../../../_images/automatic02.jpg" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >您还可以基于您的线索评分进行自动分配。例如，我们可以想像，你希望所有100下得分的线索分配给普通的销售团队和超过100导致了更有经验的销售团队。了解更多关于：DOC：'这里怎么得分线索&lt;线索得分&gt;`。</p></div></section><section id="define-rules-for-a-salesperson"><h2 >为销售员定义规则</h2><p >你可以一步完成你的分配规则，决定一个销售团队内部线索分配给特定的销售人员。例如，如果我希望托尼·布坎南从*直接销售*只接受来自加拿大的线索，我可以创建一个规则将自动分配他从该国来的线索的规则。</p><p >依然从销售团队菜单(见本文上面)，分配子菜单下点击您所选择的销售人员。然后，在*域*字段中输入您的规则。</p><img src="../../../_images/automatic03.jpg" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >在YuanCloud，线索总是先被分配到一个销售团队再分配给销售人员。因此，你需要确保你的销售人员的分配规则是销售团队的分配规则的子类。</p></div><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="../../overview/started/setup.html" class="internal alert-link reference"><em >如何建立你的团队，销售过程和目标</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

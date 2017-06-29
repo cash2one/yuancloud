@@ -1,0 +1,161 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何定义新的税？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="税" href="../taxes.html" />
+    <link rel="next" title="如何管理预扣税？" href="retention.html" />
+    <link rel="prev" title="如果根据国家，省份或者城市设置特定的税？" href="application.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../accounting.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何定义新的税？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="current toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#managing-taxes" class="ripple internal reference">管理税</a><ul ><li class="list-group-item"><a href="#defining-new-taxes" class="ripple internal reference">定义新的税</a></li><li class="list-group-item"><a href="#stop-using-a-tax" class="ripple internal reference">停止使用税</a></li></ul></li><li class="list-group-item"><a href="#setting-your-default-taxes" class="ripple internal reference">设置默认税</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/accounting/others/taxes/create.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-define-new-taxes"><p >YuanCloud's tax engine is very flexible and support many different type of
+taxes: value added taxes (VAT), eco-taxes, federal taxes, retention,
+withholding taxes, etc. For most countries, the chart of account you
+setup is automatically pre-configured with the main taxes of the
+country.</p><p >该章节详细的介绍了如何在特定情景中定义新的税。</p></section><section id="managing-taxes"><h2 >管理税</h2></section><section id="defining-new-taxes"><h3 >定义新的税</h3><p >In order to create new taxes, use the menu <span class="menuselection">Configuration ‣ Taxes</span> in the
+accounting application. From this menu, you will get all the taxes you
+can use: sales taxes and purchase taxes.</p><img src="../../../_images/create01.png" class="img-responsive center-block"><p >在创建新的税的时候，你可以设置如下信息：</p><ul ><li ><p ><strong >范围</strong>：销售，采购或者没有(例如，过时的税收)</p></li><li ><strong >Tax Account</strong>: is the account where the tax journal item will be
+posted. This field is optional, if you keep it empty, YuanCloud posts
+the tax journal item in the income account.</li><li ><strong >Label on Invoices</strong>: a short text on how you want this tax to be
+printed on invoice line. For example, a tax named &quot;21% on
+Services&quot; can have the following label on invoice &quot;21%&quot;.</li><li ><strong >Tax Group</strong>: defines where this tax is summed in the invoice footer.
+All the tax belonging to the same tax group will be grouped on
+the invoice footer. Examples of tax group: VAT, Retention.</li><li ><strong >Include in Analytic Cost</strong>: the tax is counted as a cost and, thus,
+generate an analytic entry if your invoice uses analytic
+accounts.</li><li ><strong >Tags</strong>: are used for custom reports. (usually, you can keep this field
+empty)</li></ul><p >税有不同的计算机制：</p><ul ><li ><p ><strong >固定的</strong>，例如：每节电池1.34元的生态税</p></li><li ><p ><strong >百分比</strong>，例如：15%的销项税</p></li><li ><p ><strong >价格的百分比</strong>，含税：例如巴西</p></li><li ><p ><strong >税组</strong>：能使用复合税</p></li></ul><img src="../../../_images/create02.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >if you need more advanced tax mechanism, you can install the
+module <strong >account_tax_python</strong> and you will be able to define new taxes
+with Python code.</p></div><p >If a tax is included in price, it means that the price set on the
+product form includes this tax. As an example, let's say you have a
+product with a sale tax of 10%. The sale price on the product form is
+$100.</p><ul ><li ><p >如果价格中不含税，你会得到：</p><ul ><li ><p >不含税价格： $100</p></li><li ><p >税：$10</p></li><li ><p >待支付总计： $110</p></li></ul></li><li ><p >如果税包含在价格中</p><ul ><li ><p >不含税价格：90.91</p></li><li ><p >税： $9.09</p></li><li ><p >总计待支付：$100</p></li></ul></li></ul><img src="../../../_images/create03.png" class="img-responsive center-block"></section><section id="stop-using-a-tax"><h3 >停止使用税</h3><p >If you want to avoid using a tax, you can not delete it because the tax
+is probably used in several invoices. So, in order to avoid users to
+continue using this tax, you should set the field <strong >Tax Scope</strong> to <strong >None</strong>.</p></section><section id="setting-your-default-taxes"><h2 >设置默认税</h2><p >Once you have created your taxes, you can define which tax is the
+default one when creating new products (for sales and purchase taxes).
+To set the default taxes, in the accounting application, go in the menu
+<span class="menuselection">Configuration ‣ Settings</span>.</p><img src="../../../_images/create04.png" class="img-responsive center-block"><p >Once taxes are set by default, when you create a new product, YuanCloud will
+propose you the right taxes by default on the product form.</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >Setting the default taxes impact the creation of product, but not
+sales order or invoices. The tax used on sales order or invoices is
+defined by the product on the sale order line.</p></div><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="application.html" class="internal alert-link reference"><em >如果根据国家，省份或者城市设置特定的税？</em></a></li><li ><a href="retention.html" class="internal alert-link reference"><em >如何管理预扣税？</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

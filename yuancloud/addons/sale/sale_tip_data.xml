@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yuancloud>
+    <data>
+
+       <record model="web.tip" id="sale_tip_1">
+            <field name="title"></field>
+            <field name="description"><![CDATA[这个进度条显示你的报价将通过。
+                        使用按钮在左边移动到下一个阶段。]]></field>
+            <field name="model">sale.order</field>
+            <field name="mode">form</field>
+            <field name="trigger_selector">.o_statusbar_status.o_form_field:visible</field>
+            <field name="highlight_selector">.o_statusbar_status.o_form_field:visible</field>
+            <field name="end_event">mousedown</field>
+            <field name="placement">bottom</field>
+        </record>
+
+        <record model="web.tip" id="sale_tip_2">
+            <field name="title"></field>
+            <field name="description"><![CDATA[使用透视图和图形视图来分析销售管道。
+根据您的需求选择措施，过滤器和组尺寸以获得完美的报告。]]></field>
+            <field name="model">sale.order</field>
+            <field name="mode">pivot</field>
+            <field name="trigger_selector">table.table.table-hover.table-condensed.table-bordered:visible</field>
+            <field name="highlight_selector">table.table.table-hover.table-condensed.table-bordered:visible</field>
+            <field name="end_event">mousedown</field>
+            <field name="placement">bottom</field>
+        </record>
+
+
+    </data>
+</yuancloud>

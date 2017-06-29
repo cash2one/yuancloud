@@ -1,0 +1,15 @@
+<yuancloud>
+    <data>
+        <!--二级菜单 -->
+        <!--<menuitem id="store_menu" name="门店" parent="ycloud.main_menu" sequence="1"/>-->
+        <!--三级菜单 -->
+        <!--门店分类  -->
+        <menuitem id="o2o_storecategory_menu" name="门店类别" parent="point_of_sale.menu_point_config_product" sequence="100"
+                  action="o2o_storecategory_list_action"/>
+        <!--门店  -->
+        <menuitem id="o2o_store_menu" name="门店信息" parent="point_of_sale.menu_point_config_product" sequence="200"
+                  action="o2o_store_list_action"/>
+
+
+    </data>
+</yuancloud>

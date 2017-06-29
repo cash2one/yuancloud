@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+
+{
+    'name': "Online Event's Tickets",
+    'category' : 'Content Management',#‘≠∑÷¿‡'Website',
+    'summary': "Sell Your Event's Tickets",
+    'website': 'http://www.yuancloud.cn/page/events',
+    'version': '1.0',
+    'description': """
+Online Event's Tickets
+======================
+
+        """,
+    'depends': ['website_event', 'event_sale', 'website_sale'],
+    'data': [
+        'views/website_event_sale.xml',
+        'security/ir.model.access.csv',
+        'security/website_event_sale.xml',
+    ],
+    'qweb': ['static/src/xml/*.xml'],
+    'installable': True,
+    'auto_install': True
+}

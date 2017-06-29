@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!--分析账户-增加“部门” -->
+        <!--分析账户卡片视图-增加“部门”-->
+        <record id="view_account_analytic_form_inherited" model="ir.ui.view">
+            <field name="name">account.analytic.account.form.inherited</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <field name="department_id"/>
+                </field>
+            </field>
+        </record>
+    </data>
+    <!--analytic.view_account_analytic_account_form-->
+
+</yuancloud>

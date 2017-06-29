@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="wx_weblink.list">
+      <field name="name">wx_weblink list</field>
+      <field name="model">wx_weblink.wx_weblink</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="wx_weblink.action_window">
+      <field name="name">wx_weblink window</field>
+      <field name="res_model">wx_weblink.wx_weblink</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="wx_weblink.action_server">
+      <field name="name">wx_weblink server</field>
+      <field name="model_id" ref="model_wx_weblink_wx_weblink"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+  
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="wx_weblink" id="wx_weblink.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="wx_weblink.menu_1" parent="wx_weblink.menu_root"/>
+    <menuitem name="Menu 2" id="wx_weblink.menu_2" parent="wx_weblink.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="wx_weblink.menu_1_list" parent="wx_weblink.menu_1"
+              action="wx_weblink.action_window"/>
+    <menuitem name="Server to list" id="wx_weblink" parent="wx_weblink.menu_2"
+              action="wx_weblink.action_server"/>
+    -->
+  </data>
+</yuancloud>

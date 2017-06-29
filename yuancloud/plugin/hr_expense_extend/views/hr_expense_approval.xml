@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <record id="base.group_hr_user" model="res.groups">
+        <field name="name">部门经理</field>
+        <field name="category_id" ref="base.module_category_approvalflow"/>
+
+    </record>
+      <record id="base.group_hr_approvel_manager" model="res.groups">
+        <field name="name">总经理</field>
+        <field name="category_id" ref="base.module_category_approvalflow"/>
+          <field name="implied_ids" eval="[(4, ref('base.group_hr_user'))]"/>
+      </record>
+        <record id="base.group_hr_approvel_vpresident" model="res.groups">
+        <field name="name">副总裁</field>
+        <field name="category_id" ref="base.module_category_approvalflow"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_hr_user'))]"/>
+      </record>
+        <record id="base.group_hr_approvel_president" model="res.groups">
+        <field name="name">总裁</field>
+        <field name="category_id" ref="base.module_category_approvalflow"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_hr_user'))]"/>
+      </record>
+
+        <record id="base.group_hr_manager" model="res.groups">
+        <field name="implied_ids" eval="[(6,0, [ref('base.group_user')])]"/>
+
+    </record>
+        <!-- Action -->
+        <record model="ir.actions.act_window" id="hr_expense_approval_list_action">
+            <field name="name">费用审批流程配置</field>
+            <field name="res_model">hr.expense.approval</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">请自行维护费用审批流程
+                </p>
+            </field>
+        </record>
+        <!-- 费用-列表样式-->
+        <record model="ir.ui.view" id="hr_expense_approval_list_view">
+            <field name="name">hr.expense.approval.tree</field>
+            <field name="model">hr.expense.approval</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="level"/>
+                    <field name="group_id"/>
+                    <field name="max_amount"/>
+                </tree>
+            </field>
+        </record>
+        <menuitem id="menu_hr_expense_approval" name="费用审批流程配置" parent="hr_expense.menu_hr_expense_configuration"
+            action="hr_expense_approval_list_action"/>
+    </data>
+</yuancloud>

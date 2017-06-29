@@ -1,0 +1,66 @@
+
+.o_application_switcher {
+    background: transparent;
+
+    font-size: @yuancloud-font-size-base-touch;
+
+    .o_apps {
+        .user-select(none);
+
+        .o_app {
+            background: transparent;
+            text-decoration: none;
+            text-align: center;
+            outline: none;
+
+            .o-app-icon-common() {
+                width: 100%;
+                max-width: 80px;
+                border-radius: 0;
+                padding: 10px;
+                box-shadow: 1px 1px 2px #ccc;
+            }
+
+            .o_app_web_icon {
+                .o-app-icon-common;
+            }
+
+            // Applied to fontawesome icons
+            .o_app_icon {
+                .o-app-icon-common;
+                color: @yuancloud-brand-primary;
+                background-color: @yuancloud-brand-lightsecondary;
+
+                padding: 2vw;
+                font-size: 18vw; // Adapt fa size (would be 100% of parent, which is himself 22% of body)
+                @media (min-width: 363px) { // Size where 22vw = 80px
+                    padding: 8px;
+                    font-size: 64px;
+                }
+            }
+
+            .o_caption {
+                .o-text-overflow(block);
+                color: @yuancloud-brand-lightsecondary;
+                margin-top: 8px;
+            }
+        }
+    }
+
+    .o_application_switcher_footer {
+        .user-select(none);
+        > img {
+            width: 50px;
+            margin-bottom: 10px;
+            display: none;
+        }
+    }
+}
+
+.database_expiration_panel {
+    text-align: center;
+}
+
+.oe_instance_register_form {
+    display: none;
+}

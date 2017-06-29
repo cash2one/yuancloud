@@ -1,0 +1,175 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>How are the order date and scheduled dates computed? &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="Replenishment Flows" href="../flows.html" />
+    <link rel="next" title="Multi-Companies" href="../multicompany.html" />
+    <link rel="prev" title="How to trigger a warning when purchasing at a specific vendor?" href="warning_triggering.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../purchase.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              How are the order date and scheduled dates computed?
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="current toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuring-lead-times" class="ripple internal reference">配置提前期</a><ul ><li class="list-group-item"><a href="#on-a-product-level" class="ripple internal reference">On a product level</a><ul ><li class="list-group-item"><a href="#supplier-lead-time" class="ripple internal reference">Supplier lead time:</a></li><li class="list-group-item"><a href="#customer-lead-time" class="ripple internal reference">Customer lead time</a></li></ul></li><li class="list-group-item"><a href="#on-the-company-level" class="ripple internal reference">On the company level</a><ul ><li class="list-group-item"><a href="#sales-safety-days" class="ripple internal reference">Sales Safety days</a></li><li class="list-group-item"><a href="#purchase-days" class="ripple internal reference">Purchase days</a></li></ul></li><li class="list-group-item"><a href="#on-route-level" class="ripple internal reference">On route level</a></li><li class="list-group-item"><a href="#on-document-level" class="ripple internal reference">On document level:</a><ul ><li class="list-group-item"><a href="#requested-date" class="ripple internal reference">Requested date</a></li></ul></li></ul></li><li class="list-group-item"><a href="#example" class="ripple internal reference">例子</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/purchase/replenishment/flows/compute_date.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-are-the-order-date-and-scheduled-dates-computed"><p >Scheduled dates are computed in order to be able to plan deliveries,
+receptions and so on. Depending on the habits of your company, YuanCloud
+automatically generates scheduled dates via the scheduler. The YuanCloud
+scheduler computes everything per line, whether it's a manufacturing
+order, a delivery order, a sale order, etc. The dates that are computed
+are dependent on the different leads times configured in YuanCloud.</p></section><section id="configuring-lead-times"><h2 >配置提前期</h2><p >Configuring <strong >lead times</strong> is an essential move in order to compute
+scheduled dates. Lead times are the delays (in term of delivery,
+manufacturing, ...) promised to your different partners and/or clients.
+Configuration of the different lead times are made as follows:</p></section><section id="on-a-product-level"><h3 >On a product level</h3></section><section id="supplier-lead-time"><h4 >Supplier lead time:</h4><p >The supplier lead time is the time needed for the supplier to deliver
+your purchased product. To configure the Supplier lead time select a
+product (from the Purchase module, go to <span class="menuselection">Purchase ‣ Product</span>),
+and go in the <strong >Inventory</strong> tab. You will have to
+add a <strong >Vendor</strong> to your product in order to select a supplier lead time.</p><img src="../../../_images/compute_date01.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >It is possible to add more than one vendor per product and thus
+different delivery lead times depending on the vendor.</p></div><p >Once a vendor is selected, click on it to open its form and indicate its
+delivery lead time.</p><img src="../../../_images/compute_date02.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >In this case security days have no influence, the scheduled
+delivery days will be equal to: Date of the purchase order + Delivery Lead Time.</p></div></section><section id="customer-lead-time"><h4 >Customer lead time</h4><p >The customer lead time is the time needed to get your product from your
+store/warehouse to your customer. It can be configured for any
+product. Simply select a product (from the <strong >Sales</strong> module, go to
+<span class="menuselection">Sales ‣ Product</span>),
+and go into the <strong >Sales</strong> tab to indicate your customer lead time.</p><img src="../../../_images/compute_date03.png" class="img-responsive center-block"></section><section id="on-the-company-level"><h3 >On the company level</h3><p >On company level, it is possible to parameter <strong >security days</strong> in order
+to cope with eventual delays and to be sure to meet your engagements.
+The idea is to subtract <strong >backup</strong> days from the computed scheduled date
+in case of delays.</p></section><section id="sales-safety-days"><h4 >Sales Safety days</h4><p >Sales Safety days are <strong >back-up</strong> days to ensure you will be able to
+deliver your clients engagements on time. They are margins of errors for
+delivery lead times. Security days are the same logic as the early
+wristwatch, in order to arrive on time. The idea is to subtract the
+numbers of security days from the calculation and thus to compute a
+scheduled date earlier than the one you promised to your client. That
+way you are sure to be able to keep your commitment.</p><p >设置安全天数，进入 <span class="menuselection">设置(Settings) ‣ 通用设置(General settings)</span>  然后点击 <strong >配置公司数据</strong> 。</p><img src="../../../_images/compute_date04.png" class="img-responsive center-block"><p >Go the <strong >Configuration</strong> tab to indicate the number of safety days</p><img src="../../../_images/compute_date05.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >Note that you can in this menu configure
+a default <strong >Manufacturing</strong> lead time.</p></div></section><section id="purchase-days"><h4 >Purchase days</h4><p >Purchase days response to the same logic than sales security days.</p><p >They are margins of error for vendor lead times. When the system
+generates purchase orders for procuring products, they will be scheduled
+in order to cope with unexpected vendor delays. Purchase lead time can
+be found in the same menu as the sales safety days (see screenshot
+above).</p></section><section id="on-route-level"><h3 >On route level</h3><p >The internal transfers due to the movement of stocks can also influence
+the computed date.</p><p >The delays due to internal transfers can be specified in the <strong >Inventory</strong>
+module when creating a new push rule for a new route.</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >Read the documentation
+<a href="../../../inventory/routes/concepts/push_rule.html" class="internal alert-link reference"><em >什么是推规则？</em></a>
+to learn more.</p></div><img src="../../../_images/compute_date06.png" class="img-responsive center-block"></section><section id="on-document-level"><h3 >On document level:</h3></section><section id="requested-date"><h4 >Requested date</h4><p >YuanCloud offers the possibility to indicate a requested date by the client
+straight on the sale order, under the tab <strong >Other information</strong>. If
+this date is earlier than the theoretically computed date, YuanCloud will
+automatically display a warning.</p><img src="../../../_images/compute_date07.png" class="img-responsive center-block"></section><section id="example"><h2 >例子</h2><p >例如，你今天可以销售一辆汽车(一月1号)，该车是按订单补货方式，并且你已经承诺会在20天内给客户交货(一月20号)。在该情景下，排程器可能会根据你的配置触发以下事件：</p><ul ><li ><p >分录19:实际计划发货(销售安全天数的1天)</p></li><li ><p >分录1８:从供应商收货(采购天数的1天)</p></li><li ><p >分录10:给供应商下单的最后期限(供应商交货提前期的9天)</p></li><li >January 8: trigger a purchase request to your purchase team, since
+the team needs on average 2 days to find the right supplier and
+order.</li></ul></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

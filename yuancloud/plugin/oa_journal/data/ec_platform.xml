@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!-- 电商平台 -Begin -->
+        <record id="ecplatform_newegg" model="oa_journal.ecplatform">
+            <field name="platform_code">newegg</field>
+            <field name="platform_name">新蛋商城</field>
+            <field name="platform_url">http://www.newegg.cn</field>
+        </record>
+        <record id="ecplatform_mi" model="oa_journal.ecplatform">
+            <field name="platform_code">mi</field>
+            <field name="platform_name">小米商城</field>
+            <field name="platform_url">http://www.mi.com</field>
+        </record>
+        <record id="ecplatform_yhd" model="oa_journal.ecplatform">
+            <field name="platform_code">yhd</field>
+            <field name="platform_name">1号店</field>
+            <field name="platform_url">http://www.yhd.com</field>
+        </record>
+        <record id="ecplatform_gome" model="oa_journal.ecplatform">
+            <field name="platform_code">gome</field>
+            <field name="platform_name">国美在线</field>
+            <field name="platform_url">http://www.gome.com.cn/</field>
+        </record>
+        <record id="ecplatform_yixun" model="oa_journal.ecplatform">
+            <field name="platform_code">yixun</field>
+            <field name="platform_name">易迅网</field>
+            <field name="platform_url">http://www.yixun.com/</field>
+        </record>
+        <record id="ecplatform_taobao" model="oa_journal.ecplatform">
+            <field name="platform_code">taobao</field>
+            <field name="platform_name">淘宝网</field>
+            <field name="platform_url">https://www.taobao.com</field>
+        </record>
+        <record id="ecplatform_tmall" model="oa_journal.ecplatform">
+            <field name="platform_code">tmall</field>
+            <field name="platform_name">天猫商城</field>
+            <field name="platform_url">https://www.tmall.com</field>
+        </record>
+        <record id="ecplatform_amazon" model="oa_journal.ecplatform">
+            <field name="platform_code">amazon</field>
+            <field name="platform_name">亚马逊</field>
+            <field name="platform_url">http://www.amazon.cn/</field>
+        </record>
+        <record id="ecplatform_suning" model="oa_journal.ecplatform">
+            <field name="platform_code">suning</field>
+            <field name="platform_name">苏宁易购</field>
+            <field name="platform_url">http://www.suning.com/</field>
+        </record>
+        <record id="ecplatform_jd" model="oa_journal.ecplatform">
+            <field name="platform_code">jd</field>
+            <field name="platform_name">京东商城</field>
+            <field name="platform_url">https://www.jd.com/</field>
+        </record>
+        <record id="ecplatform_youzan" model="oa_journal.ecplatform">
+            <field name="platform_code">youzan</field>
+            <field name="platform_name">有赞商城</field>
+            <field name="platform_url">https://www.youzan.com</field>
+        </record>
+        <record id="ecplatform_wx" model="oa_journal.ecplatform">
+            <field name="platform_code">wx</field>
+            <field name="platform_name">微信</field>
+            <field name="platform_url"></field>
+        </record>
+        <!-- 电商平台 -End -->
+    </data>
+</yuancloud>

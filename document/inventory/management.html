@@ -1,0 +1,122 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>仓库管理 &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../_static/atom.js"></script>
+    <script type="text/javascript" src="../_static/immutable.js"></script>
+    <script type="text/javascript" src="../_static/react.min.js"></script>
+    <script type="text/javascript" src="../_static/accounts.js"></script>
+    <script type="text/javascript" src="../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../_static/entries.js"></script>
+    <script type="text/javascript" src="../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../_static/misc.js"></script>
+    <script type="text/javascript" src="../_static/inventory.js"></script>
+    <script type="text/javascript" src="../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../_static/doc.js"></script>
+    <script type="text/javascript" src="../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../index.html" />
+    <link rel="up" title="库存" href="../inventory.html" />
+    <link rel="next" title="库存调整" href="management/adjustment.html" />
+    <link rel="prev" title="如何创建新的库位" href="settings/warehouses/location_creation.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../inventory.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              仓库管理
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../purchase.html" class="internal reference">采购</a></li><li class="current toctree-l2"><a href="../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <article class="doc-body doc-toc">
+        
+        
+  <section id="warehouse-management"><div class="toctree-wrapper"><ul ><li class="toctree-l1"><span >库存调整</span><ul ><li class="toctree-l2"><a href="management/adjustment/initial_inventory.html" class="internal reference">如何进行初始化盘点？</a><ul ></ul></li><li class="toctree-l2"><a href="management/adjustment/min_stock_rule_vs_mto.html" class="internal reference">如何在最小库存和按订单补货规则之间选择？</a><ul ></ul></li></ul></li><li class="toctree-l1"><span >交货订单</span><ul ><li class="toctree-l2"><a href="management/delivery/inventory_flow.html" class="internal reference">如何选择正确的仓库流程完成发货单</a><ul ></ul></li><li class="toctree-l2"><a href="management/delivery/one_step.html" class="internal reference">如何处理一步发货(发货)？</a><ul ></ul></li><li class="toctree-l2"><a href="management/delivery/two_steps.html" class="internal reference">如何处理两步发货(拣货＋发货)？</a><ul ></ul></li><li class="toctree-l2"><a href="management/delivery/three_steps.html" class="internal reference">如何处理三步发货(拣货+包装＋发货)？</a><ul ></ul></li><li class="toctree-l2"><a href="management/delivery/scheduled_dates.html" class="internal reference">计划交货日期是如何运算的？</a><ul ></ul></li><li class="toctree-l2"><a href="management/delivery/dropshipping.html" class="internal reference">如何直接从供应商发货给客户(直运)？</a><ul ></ul></li><li class="toctree-l2"><a href="management/delivery/label_type.html" class="internal reference">如何变更标签类型？</a><ul ></ul></li><li class="toctree-l2"><a href="management/delivery/packaging_type.html" class="internal reference">如何在销售订单上变更包装方式？</a><ul ></ul></li><li class="toctree-l2"><a href="management/delivery/delivery_countries.html" class="internal reference">如何把一种交货方式局限于特定的国家？</a><ul ></ul></li><li class="toctree-l2"><a href="management/delivery/cancel_order.html" class="internal reference">如何取消发货单？</a><ul ></ul></li></ul></li><li class="toctree-l1"><span >入库</span><ul ><li class="toctree-l2"><a href="management/incoming/handle_receipts.html" class="internal reference">如何选择正确的步骤来处理收货？</a><ul ></ul></li><li class="toctree-l2"><a href="management/incoming/two_steps.html" class="internal reference">如何卸货到收货区域?(2步)</a><ul ></ul></li><li class="toctree-l2"><a href="management/incoming/three_steps.html" class="internal reference">在收货时如何添加质量检验?(3步)</a><ul ></ul></li></ul></li><li class="toctree-l1"><span >杂项操作</span><ul ><li class="toctree-l2"><a href="management/misc/scrap.html" class="internal reference">如何报废产品？</a><ul ></ul></li><li class="toctree-l2"><a href="management/misc/owned_stock.html" class="internal reference">如何处理不属于你的库存？</a><ul ></ul></li><li class="toctree-l2"><a href="management/misc/schedulers.html" class="internal reference">如何配置并运行排程器？</a><ul ></ul></li></ul></li><li class="toctree-l1"><span >批次号和序列号管理</span><ul ><li class="toctree-l2"><a href="management/lots_serial_numbers/differences.html" class="internal reference">批次号和序列号的区别是什么？</a><ul ></ul></li><li class="toctree-l2"><a href="management/lots_serial_numbers/serial_numbers.html" class="internal reference">如何处理系列号</a><ul ></ul></li><li class="toctree-l2"><a href="management/lots_serial_numbers/lots.html" class="internal reference">如何管理产品的批次号？</a><ul ></ul></li></ul></li><li class="toctree-l1"><span >估值方式</span><ul ><li class="toctree-l2"><a href="management/reporting/valuation_methods_continental.html" class="internal reference">如何做存货评估(持续会计)？</a><ul ></ul></li><li class="toctree-l2"><a href="management/reporting/valuation_methods_anglo_saxon.html" class="internal reference">如何做库存评估?(Anglo-Saxon会计)</a><ul ></ul></li></ul></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

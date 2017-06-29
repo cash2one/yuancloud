@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<yuancloud>
+  <data>
+    <template id="report_payroll_document">
+      <t t-call="report.external_layout">
+        <t t-set="doc" t-value="doc.with_context({'lang':'zh_CN'})"/>
+        <div class="page">
+          <h2>
+            <span>月工资单</span>
+          </h2>
+          <table class="table table-condensed-border" style="margin: 0px auto;">
+            <thead>
+              <tr>
+                <th rowspan="3" align="center">序号</th>
+                <th rowspan="3" align="center">身份证号</th>
+                <th rowspan="3" align="center">姓名</th>
+                <th colspan="5" align="center">
+                  <t t-set="payroll" t-value="doc.name+'工资条'"> </t>
+                  <t t-esc="payroll"></t>
+                </th>
+                <th rowspan="3" align="center">本月合计应纳个税</th>
+                <th rowspan="3" align="center">应发工资</th>
+                <th rowspan="3" align="center">员工签字</th>
+              </tr>
+              <tr>
+                <th rowspan="2" align="center">税前工资</th>
+                <th align="center">养老保险</th>
+                <th align="center">医疗保险</th>
+                <th align="center">失业保险</th>
+                <th align="center">住房公积金</th>
+              </tr>
+              <tr>
+                <th align="center">个人</th>
+                <th align="center">个人</th>
+                <th align="center">个人</th>
+                <th align="center">个人</th>
+              </tr>
+              <t t-set="seq" t-value="0"></t>
+              <t t-foreach="doc.slip_ids" t-as="slip">
+              <t t-set="seq" t-value="seq+1"></t>
+              <tr>
+                <td>
+                  <t t-esc="seq"></t>
+                </td>
+                <td >
+                  <span t-field="slip.employee_id.identification_id"/>
+                </td>
+                <td>
+                  <span t-field="slip.employee_id.name_related"/>
+                </td>
+                <td class="text-right">
+                  <t t-set="JBGZ" t-value="0"></t>
+                  <t t-foreach="slip.line_ids" t-as="l">
+                    <t t-if="l.code=='JBGZ' or l.code=='JXGZ'">
+                      <t t-set="JBGZ" t-value="l.total+JBGZ"></t>
+                    </t>
+                  </t>
+                  <t t-esc="JBGZ"></t>
+                </td>
+                <td class="text-right">
+                  <t t-set="YLBXYL" t-value="0.0"></t>
+                  <t t-foreach="slip.line_ids" t-as="l">
+                    <t t-if="l.code=='YLBX-YL'">
+                      <t t-set="YLBXYL" t-value="l.total"></t>
+                    </t>
+                  </t>
+                  <t t-esc="YLBXYL"></t>
+                </td>
+                <td class="text-right">
+                  <t t-set="YLBX" t-value="0.0"></t>
+                  <t t-foreach="slip.line_ids" t-as="l">
+                    <t t-if="l.code=='YLBX'">
+                      <t t-set="YLBX" t-value="l.total"></t>
+                    </t>
+                  </t>
+                  <t t-esc="YLBX"></t>
+                </td>
+                <td class="text-right">
+                  <t t-set="SYBXCZ" t-value="0.0"></t>
+                  <t t-foreach="slip.line_ids" t-as="l">
+                    <t t-if="l.code=='SYBX-CZ'">
+                      <t t-set="SYBXCZ" t-value="l.total"></t>
+                    </t>
+                  </t>
+                  <t t-esc="SYBXCZ"></t>
+                </td>
+                <td class="text-right">
+                  <t t-set="GJJ" t-value="0.0"></t>
+                  <t t-foreach="slip.line_ids" t-as="l">
+                    <t t-if="l.code=='GJJ'">
+                      <t t-set="GJJ" t-value="l.total"></t>
+                    </t>
+                  </t>
+                  <t t-esc="GJJ"></t>
+                </td>
+                <td class="text-right">
+                  <t t-set="YJGS" t-value="0.0"></t>
+                  <t t-foreach="slip.line_ids" t-as="l">
+                    <t t-if="l.code=='YJGS'">
+                      <t t-set="YJGS" t-value="l.total"></t>
+                    </t>
+                  </t>
+                  <t t-esc="YJGS"></t>
+                </td>
+                <td class="text-right">
+                  <t t-set="SFGZ" t-value="0.0"></t>
+                  <t t-foreach="slip.line_ids" t-as="l">
+                    <t t-if="l.code=='SFGZ'">
+                      <t t-set="SFGZ" t-value="l.total"></t>
+                    </t>
+                  </t>
+                  <t t-esc="SFGZ"></t>
+                </td>
+                <td>
+
+                </td>
+              </tr>
+            </t>
+            </thead>
+          </table>
+          <!--<table class="table table-condensed-border"  style="margin: 0px auto;">-->
+            <!--<t t-set="seq" t-value="0"></t>-->
+            <!--<t t-foreach="doc.slip_ids" t-as="slip">-->
+              <!--<t t-set="seq" t-value="seq+1"></t>-->
+              <!--<tr>-->
+                <!--<td>-->
+                  <!--<t t-esc="seq"></t>-->
+                <!--</td>-->
+                <!--<td >-->
+                  <!--<span t-field="slip.employee_id.identification_id"/>-->
+                <!--</td>-->
+                <!--<td>-->
+                  <!--<span t-field="slip.employee_id.name_related"/>-->
+                <!--</td>-->
+                <!--<td>-->
+                  <!--<t t-set="JBGZ" t-value="0"></t>-->
+                  <!--<t t-foreach="slip.line_ids" t-as="l">-->
+                    <!--<t t-if="l.code=='JBGZ' or l.code=='JXGZ'">-->
+                      <!--<t t-set="JBGZ" t-value="l.total+JBGZ"></t>-->
+                    <!--</t>-->
+                  <!--</t>-->
+                  <!--<t t-esc="JBGZ"></t>-->
+                <!--</td>-->
+                <!--<td>-->
+                  <!--<t t-set="YLBXYL" t-value="0"></t>-->
+                  <!--<t t-foreach="slip.line_ids" t-as="l">-->
+                    <!--<t t-if="l.code=='YLBX-YL'">-->
+                      <!--<t t-set="YLBXYL" t-value="l.total"></t>-->
+                      <!--<t t-esc="YLBXYL"></t>-->
+                    <!--</t>-->
+                  <!--</t>-->
+                <!--</td>-->
+                <!--<td>-->
+                  <!--<t t-set="YLBX" t-value="0"></t>-->
+                  <!--<t t-foreach="slip.line_ids" t-as="l">-->
+                    <!--<t t-if="l.code=='YLBX'">-->
+                      <!--<t t-set="YLBX" t-value="l.total"></t>-->
+                      <!--<t t-esc="YLBX"></t>-->
+                    <!--</t>-->
+                  <!--</t>-->
+                <!--</td>-->
+                <!--<td>-->
+                  <!--<t t-set="SYBXCZ" t-value="0"></t>-->
+                  <!--<t t-foreach="slip.line_ids" t-as="l">-->
+                    <!--<t t-if="l.code=='SYBX-CZ'">-->
+                      <!--<t t-set="SYBXCZ" t-value="l.total"></t>-->
+                      <!--<t t-esc="SYBXCZ"></t>-->
+                    <!--</t>-->
+                  <!--</t>-->
+                <!--</td>-->
+                <!--<td>-->
+                  <!--<t t-set="GJJ" t-value="0"></t>-->
+                  <!--<t t-foreach="slip.line_ids" t-as="l">-->
+                    <!--<t t-if="l.code=='GJJ'">-->
+                      <!--<t t-set="GJJ" t-value="l.total"></t>-->
+                      <!--<t t-esc="GJJ"></t>-->
+                    <!--</t>-->
+                  <!--</t>-->
+                <!--</td>-->
+                <!--<td>-->
+                  <!--<t t-set="YJGS" t-value="0"></t>-->
+                  <!--<t t-foreach="slip.line_ids" t-as="l">-->
+                    <!--<t t-if="l.code=='YJGS'">-->
+                      <!--<t t-set="YJGS" t-value="l.total"></t>-->
+                      <!--<t t-esc="YJGS"></t>-->
+                    <!--</t>-->
+                  <!--</t>-->
+                <!--</td>-->
+                <!--<td>-->
+                  <!--<t t-set="SFGZ" t-value="0"></t>-->
+                  <!--<t t-foreach="slip.line_ids" t-as="l">-->
+                    <!--<t t-if="l.code=='SFGZ'">-->
+                      <!--<t t-set="SFGZ" t-value="l.total"></t>-->
+                      <!--<t t-esc="SFGZ"></t>-->
+                    <!--</t>-->
+                  <!--</t>-->
+                <!--</td>-->
+                <!--<td>-->
+
+                <!--</td>-->
+              <!--</tr>-->
+            <!--</t>-->
+          <!--</table>-->
+        </div>
+      </t>
+    </template>
+    <template id="report_payroll">
+      <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="doc">
+          <t t-call="hr_payroll_extend.report_payroll_document" t-lang="zh_CN"/>
+        </t>
+      </t>
+    </template>
+  </data>
+</yuancloud>

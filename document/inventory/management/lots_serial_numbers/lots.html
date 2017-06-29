@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何管理产品的批次号？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="批次号和序列号管理" href="../lots_serial_numbers.html" />
+    <link rel="next" title="估值方式" href="../reporting.html" />
+    <link rel="prev" title="如何处理系列号" href="serial_numbers.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../inventory.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何管理产品的批次号？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="current toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#overview" class="ripple internal reference">概述</a></li><li class="list-group-item"><a href="#setting-up" class="ripple internal reference">设置</a><ul ><li class="list-group-item"><a href="#application-configuration" class="ripple internal reference">应用配置</a></li><li class="list-group-item"><a href="#operation-types-configuration" class="ripple internal reference">操作类型配置</a></li><li class="list-group-item"><a href="#product-configuration" class="ripple internal reference">产品配置</a></li></ul></li><li class="list-group-item"><a href="#manage-lots" class="ripple internal reference">管理批次</a><ul ><li class="list-group-item"><a href="#transfers" class="ripple internal reference">调拨</a></li><li class="list-group-item"><a href="#inventory-adjustment" class="ripple internal reference">库存调整</a></li></ul></li><li class="list-group-item"><a href="#lots-traceability" class="ripple internal reference">批次追踪</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/inventory/management/lots_serial_numbers/lots.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-manage-lots-of-identical-products"></section><section id="overview"><h2 >概述</h2><p >在结构大批量的产品时候使用批次号很有用，批次号可以在报表中，质检过程，或者其余的信息中反映出来。批次号能定义一些产品有或者在同一生产环境中。在食品或者服装行业的批量生产中很有用。</p><p >YuanCloud有能力管理大多数行业施加规定可追溯性的要求</p><p >YuanCloud中的复式记账库存能让你进行非常高级的追踪。</p></section><section id="setting-up"><h2 >设置</h2></section><section id="application-configuration"><h3 >应用配置</h3><p >在设置中需要激活批次追踪，在**库存**模块中，进入：[UNKNOWN NODE title_reference]，选择**跟踪批次或序列号码**。</p><img src="../../../_images/lots01.png" class="img-responsive center-block"><p >为了能对批次进行高级管理，还要勾选**仓库进行多库位管理**。</p><img src="../../../_images/lots02.png" class="img-responsive center-block"><p >点击 <strong >应用</strong> 。</p></section><section id="operation-types-configuration"><h3 >操作类型配置</h3><p >你还可以对每种操作类型设置如何管理批次。在 <strong >库存</strong> 应用中，进入菜单 <span class="menuselection">配置(Configuration) ‣ 操作类型(Operation Types)</span>。</p><p >对每种操作类型(收货，发货，内部调拨，……)，你可以设置是否创建新的批次号或者使用现有的批次号。</p><img src="../../../_images/lots03.png" class="img-responsive center-block"></section><section id="product-configuration"><h3 >产品配置</h3><p >最后，需要配置哪些产品你想进行批次追踪。</p><p >进入菜单 <span class="menuselection">库存控制(Inventory Control) ‣ 产品(Products)</span>，并点开所选择的产品。点击 <strong >编辑</strong>，并在 <strong >库存</strong> 页面勾选 <strong >批次追踪</strong>，然后点击 <strong >保存</strong> 。</p><img src="../../../_images/lots04.png" class="img-responsive center-block"></section><section id="manage-lots"><h2 >管理批次</h2></section><section id="transfers"><h3 >调拨</h3><p >为了能够进行批次追踪处理发货单，你需要输入序列号()。</p><p >点击批次图标</p><img src="../../../_images/lots05.png" class="img-responsive center-block"><p >一个窗口会弹出，点击**添加新条目**并输入批次号和数量。</p><img src="../../../_images/lots06.png" class="img-responsive center-block"><p >基于操作类型的配置，你可能需要创建新的批次号或者现存批次号。</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >在扫描枪界面，只需要扫描批次号。</p></div></section><section id="inventory-adjustment"><h3 >库存调整</h3><p >仓库中产品的批次追踪有2种方式：</p><ul ><li ><p >根据产品盘点</p></li><li ><p >一个批次的库存</p></li></ul><p >在常规盘点时，有一个**序列号**栏位，如果产品已经有批次号，那么这个栏位就会预先显示产品的批次号。</p><p >如果产品还没有盘点过，点击**添加条目**。你可以容易的创建批次，只是需要在栏位中键入新的批次号。</p><img src="../../../_images/lots07.png" class="img-responsive center-block"><p >你还可以对一个批次的产品进行盘点。在该场景中，你需要输入**批次号码**。你还可以在这里创建一个新的批次。只要键入一个号码，一个窗口就会弹出来和这个产品连接。</p><img src="../../../_images/lots08.png" class="img-responsive center-block"></section><section id="lots-traceability"><h2 >批次追踪</h2><p >你可以查看批次追踪， 进入菜单 <span class="menuselection">存货(Inventory) ‣ 存货控制(Inventory Control) ‣ 序列号(Serial Numbers)／批次号(Lots)</span></p><img src="../../../_images/lots09.png" class="img-responsive center-block"><p >点击**追踪**按钮可以看到详细信息。</p><img src="../../../_images/lots10.png" class="img-responsive center-block"><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="differences.html" class="internal alert-link reference"><em >批次号和序列号的区别是什么？</em></a></li><li ><a href="serial_numbers.html" class="internal alert-link reference"><em >如何处理系列号</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

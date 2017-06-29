@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>何时应该使用包装，计量单位或者套装？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="产品" href="../products.html" />
+    <link rel="next" title="如何使用包裹？" href="packages.html" />
+    <link rel="prev" title="使用产品型号(变体)" href="variants.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../inventory.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              何时应该使用包装，计量单位或者套装？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="current toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#unit-of-measures" class="ripple internal reference">计量单位</a></li><li class="list-group-item"><a href="#packages" class="ripple internal reference">包裹</a></li><li class="list-group-item"><a href="#packaging" class="ripple internal reference">打包</a></li><li class="list-group-item"><a href="#when-to-use-packages-packagings-or-unit-of-measures" class="ripple internal reference">什么时候使用包裹，包装或者计量单位？</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/inventory/settings/products/usage.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="when-should-you-use-packages-units-of-measure-or-kits"></section><section id="unit-of-measures"><h2 >计量单位</h2><p >计量单位是一个处理产品的标度的单位，产品可以使用不同计量单位表示。</p><p >如果在你的仓库中使用不同的计量单位就激活该选项。</p><p >采购的计量单位可以和仓库中使用的计量单位不同。</p><p >销售的计量单位在销售订单上设置，也可以不同。</p><img src="../../../_images/usage011.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >不同计量单位之间的转换是自动完成的。唯一的条件是能够转换的计量单位必须是同一个种类(个，重量，容积，长度……)</p></div></section><section id="packages"><h2 >包裹</h2><p >包裹是一个你想在其中放置一个或者几个产品的实际的容器。</p><img src="../../../_images/usage021.png" class="img-responsive center-block"></section><section id="packaging"><h2 >打包</h2><p >包装是用来保护产品的物理容器。</p><p >如果你在销售电脑，包装里面会有电脑，说明书以及电源线。</p><p >在YuanCloud中，包装使用通常用于标识功能</p><img src="../../../_images/usage031.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >你可以在**包装**中定义使用哪种**包材**。但这只是象征性使用。</p></div></section><section id="when-to-use-packages-packagings-or-unit-of-measures"><h2 >什么时候使用包裹，包装或者计量单位？</h2><p >例如，你现在在销售鸡蛋，在你的仓库里单个的管理鸡蛋，很多鸡蛋坏掉了，你要一个一个的报废。[UNKNOWN NODE problematic]计量单位**是``个(一个或很多)``</p><p >如果你按打销售鸡蛋，销售的 [UNKNOWN NODE problematic]计量单位 [UNKNOWN NODE problematic]就是``打``。你可以在销售订单上进行设置。</p><p >包含一打鸡蛋的 [UNKNOWN NODE problematic]纸片托盘 [UNKNOWN NODE problematic]就是**包材**。</p><p >当你销售几个托盘的鸡蛋时，你可能会把不同的托盘放进一个``箱子``或者一个``塑料``包装中，这就是**包裹**。</p><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="../../overview/start/setup.html" class="internal alert-link reference"><em >如何设置YuanCloud的仓库？</em></a></li><li ><a href="uom.html" class="internal alert-link reference"><em >如何使用不同计量单位？</em></a></li><li ><a href="packages.html" class="internal alert-link reference"><em >如何使用包裹？</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

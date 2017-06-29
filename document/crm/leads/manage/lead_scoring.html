@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何进行有效的线索评分？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="管理线索" href="../manage.html" />
+    <link rel="next" title="报告" href="../../reporting.html" />
+    <link rel="prev" title="自动分配线索给特定的销售团队或销售员" href="automatic_assignation.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../crm.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何进行有效的线索评分？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="current toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#install-the-lead-scoring-module" class="ripple internal reference">安装**线索评分**模块</a></li><li class="list-group-item"><a href="#create-scoring-rules" class="ripple internal reference">生成评分规则</a></li></ul></li><li class="list-group-item"><a href="#assign-high-scoring-leads-to-your-sales-teams" class="ripple internal reference">分配高得分线索给您的销售团队</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/crm/leads/manage/lead_scoring.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-do-efficient-lead-scoring"><p >YuanCloud线索评分模块允许你给基于特定标准线索评分 - 值越高，就越有可能的前景“准备销售”。因此，机会最好的导线会自动分配给您的销售人员，质量差的机会不会充斥你的销售管道。</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >线索的评分分是一个有效的线索管理战略的重要组成部分。通过帮助您的销售代表按优先级排序行事，你会增加他们的总体转化率和你的销售团队的效率。</p></div></section><section id="configuration"><h2 >配置</h2></section><section id="install-the-lead-scoring-module"><h3 >安装**线索评分**模块</h3><p >开始安装**线索评分**模块</p><p >一旦模块安装后，你可以看到一条行的菜单 <span class="menuselection">销售(Sales) ‣ 线索管理(Leads Management) ‣ 评分规则(Scoring Rules)</span></p><img src="../../../_images/lead_scoring02.png" class="img-responsive center-block"></section><section id="create-scoring-rules"><h3 >生成评分规则</h3><p >信息评分允许你基于您设置的人口统计或行为准则，分配正分或负分给你的潜在客户(国家或地区，访问的页面，行业，角色，类型等)。要做到这一点，你需要先创建将分数分配给一个给定的标准规则。</p><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >为了正确分配分数您的各种规则，可以使用这两种方法：</p><ul ><li ><p >建立一份可能对你公司感兴趣的理想客户的清单。例如，如果你在加州做当地业务，从旧金山来的潜在业务应该有一个更高的分数比来自纽约的。</p></li><li ><p >挖掘你的数据来揭示你最可有可能的机会和最重要的客户的共性。</p></li></ul><p >请注意，这不是一个精确的科学，所以你需要一段时间和来自你的销售团队的反馈来适应和微调您的规则，直到获得期望的结果。</p></div><p >在**评分规则**菜单，点击**创建**写你的第一个规则。</p><img src="../../../_images/lead_scoring01.png" class="img-responsive center-block"><p >首先命名您的规则，然后输入一个值和一个域(请参`官方Python文档的&lt;<a href="https://docs.python.org/2/tutorial/" class="external reference">https://docs.python.org/2/tutorial/</a>&gt;`__了解更多信息)。例如，如果要分配8分给从**比利时**来的所有引线，你需要给``8``为**值**和``[['国家_id' ，=，'比利时']]``作为一个域。</p><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >下面是一些标准你可以用来建立一个评分规则：</p><ul ><li ><p >原产地 : <code >'country_id'</code></p></li><li ><p >销售周期的阶段：<code >'stage_id'</code></p></li><li ><p >电子邮件地址(例如，如果你想给专业电子邮件地址评分)：<code >'email_from'</code></p></li><li ><p >页面访问：<code >'score_pageview_ids.url'</code></p></li><li ><p >营销活动名称：<code >'campaign_id'</code></p></li></ul></div><p >激活了您的规则后，YuanCloud会对所有新进入的线索给出一个值。这个值可以直接在你的潜在客户表单视图中找到。</p><img src="../../../_images/lead_scoring04.png" class="img-responsive center-block"></section><section id="assign-high-scoring-leads-to-your-sales-teams"><h2 >分配高得分线索给您的销售团队</h2><p >现在下一步是自动将您的最佳线索转化为机遇。为了做到这一点，你需要决定什么是最低分数线索应该被移交给一个指定的销售团队。去你**的销售仪表板**，然后点击**更多**您期望的销售队伍的按钮，然后在**设定**。 在**最低分数**字段输入你的值。</p><img src="../../../_images/lead_scoring03.png" class="img-responsive center-block"><p >从上面的例子中，[UNKNOWN NODE problematic]直销**队只会收到不低于``50``的机会。分数较低的前景可以保持在线索阶段或分配给其他已设置了不同的最低分数的销售团队。</p><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >组织你的**营销**和**销售之**团队之间的会议，对于什么样的最低得分可以使得线索作为销售准备取得一致。</p></div><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="automatic_assignation.html" class="internal alert-link reference"><em >自动分配线索给特定的销售团队或销售员</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!--费用-增加“最高审批等级”、"当前审批等级"、“审批历史” -->
+        <!--费用列表-增加“最高审批等级”、"当前审批等级"、“审批历史”-->
+        <record id="view_hr_expense_tree_inherited" model="ir.ui.view">
+            <field name="name">hr.expense.tree.inherited</field>
+            <field name="model">hr.expense</field>
+            <field name="inherit_id" ref="hr_expense.view_expenses_tree"/>
+            <field name="arch" type="xml">
+                <field name="total_amount" position="after">
+                    <field name="max_approval_level"/>
+                </field>
+                 <field name="max_approval_level" position="after">
+                    <field name="current_approval_level"/>
+                </field>
+                 <field name="state" position="after">
+                    <field name="approval_history"/>
+                </field>
+            </field>
+        </record>
+
+        <!--“我的费用”列表，增加“最高审批等级”、"当前审批等级"、“审批历史”-->
+        <record id="view_hr_expense_my_tree_inherited" model="ir.ui.view">
+            <field name="name">hr.expense.my.tree.inherited</field>
+            <field name="model">hr.expense</field>
+            <field name="inherit_id" ref="hr_expense.hr_expense_my_tree"/>
+            <field name="arch" type="xml">
+                <field name="total_amount" position="after">
+                    <field name="max_approval_level"/>
+                </field>
+                 <field name="max_approval_level" position="after">
+                    <field name="current_approval_level"/>
+                </field>
+                 <field name="current_approval_level" position="after">
+                    <field name="approval_history"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</yuancloud>

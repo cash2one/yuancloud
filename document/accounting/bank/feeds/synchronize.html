@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何与银行同步yuancloud？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="银行费用" href="../feeds.html" />
+    <link rel="next" title="导入OFX 对账单文件" href="ofx.html" />
+    <link rel="prev" title="银行费用" href="../feeds.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../accounting.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何与银行同步yuancloud？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="current toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#yuancloud-online-users" class="ripple internal reference">YuanCloud 在线用户</a></li><li class="list-group-item"><a href="#yuancloud-enterprise-users" class="ripple internal reference">YuanCloud 企业用户</a></li></ul></li><li class="list-group-item"><a href="#sync-your-bank-feeds" class="ripple internal reference">同步银行费用</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/accounting/bank/feeds/synchronize.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-synchronize-yuancloud-with-your-bank"><p >YuanCloud能够每4小时直接获得所有银行对账单并自动导入YuanCloud,与你的银行同步。在做这步之前,你应该检查你的银行是否对予支持。你可以从“YuanCloud会计中找到相关功能 &lt;<a href="https://www.yuancloud.com/page/accounting-features" class="external reference">https://www.yuancloud.com/page/accounting-features</a>&gt;`__</p><img src="../../../_images/synchronize01.png" class="img-responsive center-block"><p >在上面的页面中寻找你银行的名字。如果你的银行出现在其中,这意味着它受YuanCloud支持。完全支持的国家(即超过95%的银行)包括:美国、加拿大、新西兰、奥地利。30多个国家部分支持,包括:哥伦比亚、印度、法国、西班牙等。</p><p >为了与银行连接, YuanCloud 使用两个 web-services:</p><ul ><li ><p >此处填写例如：美国的主要银行</p></li><li ><p >Yodlee: 其他银行</p></li></ul></section><section id="configuration"><h2 >配置</h2></section><section id="yuancloud-online-users"><h3 >YuanCloud 在线用户</h3><p >如果我们支持你们国家的银行,银行特性应该已经被安装集成。如果没有安装,您可以手动安装模块**account_yodlee**。</p></section><section id="yuancloud-enterprise-users"><h3 >YuanCloud 企业用户</h3><p >如果你计划使用YuanCloud企业版中的银行接口,你不需要做什么特别的,只是确保数据库已在YuanCloud企业合同注册。</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >你可能需要检查一下,没有防火墙/代理屏蔽以下地址</p><ul ><li ><a href="https://onlinesync.yuancloud.com/" class="external reference alert-link">https://onlinesync.yuancloud.com/</a></li><li ><a href="https://api.plaid.com/" class="external reference alert-link">https://api.plaid.com/</a></li></ul></div></section><section id="sync-your-bank-feeds"><h2 >同步银行费用</h2><p >一旦Plaid或Yodlee接口安装后,您可以将YuanCloud连接到你的银行。这样做,在银行会计仪表板上点击**More** 。在菜单中,单击设置配,置该银行账户。</p><img src="../../../_images/synchronize02.png" class="img-responsive center-block"><p >在银行界面,从银行帐户选项卡,设置银行选项为**Bank Synchronization**.。</p><img src="../../../_images/synchronize03.png" class="img-responsive center-block"><p >一旦完成,回到你的会计仪表板。在你的银行卡上,您应该能看到一个 [UNKNOWN NODE problematic]Online Synchronization**的按钮。点击这个按钮,填写你的银行凭证。</p><p >一旦你填写你的凭证,将会每4小时与你的银行同步一次。</p></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

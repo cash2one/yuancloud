@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data><!-- Action -->
+        <record model="ir.actions.act_window" id="wx_shop_list_action">
+            <field name="name">微信小店</field>
+            <field name="res_model">wx.shop</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建第一个微信小店
+                </p>
+            </field>
+        </record>
+        <!-- List View (base_shop)-->
+        <record model="ir.ui.view" id="shop_list_view">
+            <field name="name">wx.shop.tree</field>
+            <field name="model">wx.shop</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="shop_category"/>
+                    <field name="shop_id"/>
+                    <field name="shop_name"/>
+                    <field name="oe_location"/>
+                    <field name="oe_pricelist"/>
+                    <field name="wx_official_account"/>
+                    <field name="sale_team"/>
+                </tree>
+            </field>
+        </record>
+        <!--微信小店卡片 -->
+        <record model="ir.ui.view" id="shop_form_view">
+            <field name="name">wx.shop.form</field>
+            <field name="model">wx.shop</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="shop_category"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="shop_id"/>
+                                <field name="shop_name"/>
+                                <field name="oe_location"/>
+                                <field name="return_picking_type"/>
+                                <!--<field name="ready_picking_type"/>-->
+                                <!--<field name="deliver_picking_type"/>-->
+                            </group>
+                            <group>
+                                <field name="wx_official_account"/>
+                                <field name="sale_team"/>
+                                <field name="oe_pricelist"/>
+                                <!--<field name="return_picking_type"/>-->
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+    </data>
+</yuancloud>

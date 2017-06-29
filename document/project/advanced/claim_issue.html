@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何使用项目来处理索赔/问题？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../index.html" />
+    <link rel="up" title="高级" href="../advanced.html" />
+    <link rel="next" title="如何从客户处收集回馈" href="feedback.html" />
+    <link rel="prev" title="如何为销售订单创建相关任务？" href="so_to_task.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../project.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何使用项目来处理索赔/问题？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="current toctree-l2"><a href="../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a></li><li class="list-group-item"><a href="#create-a-project" class="ripple internal reference">创建项目</a><ul ><li class="list-group-item"><a href="#invite-followers" class="ripple internal reference">邀请关注</a></li><li class="list-group-item"><a href="#set-up-your-workflow" class="ripple internal reference">配置工作流</a></li></ul></li><li class="list-group-item"><a href="#generate-issues-from-emails" class="ripple internal reference">根据邮件生成问题</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/project/advanced/claim_issue.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-use-projects-to-handle-claims-issues"><p >一家提供服务的公司经常会处理在项目实施过程中遇到的问题。这些问题必须尽快跟进和解决以便确保项目的交付和客户满意。</p><p >例如，作为一家提供软件服务的IT公司，你可以跟客户邮件处理技术问题。YuanCloud提供了这项功能，她可以在收到客户需要支持的邮件后，自动匹配到相应的项目上并生成任务。这样的话，问题就会分派给对应的人员来尽快解决。</p></section><section id="configuration"><h2 >配置</h2><p >下面的配置要求能用项目来提供支持。你需要安装 <strong >项目管理</strong> 和 <strong >问题追踪</strong> 模块。</p><img src="../../_images/claim_issue01.png" class="img-responsive center-block"><img src="../../_images/claim_issue02.png" class="img-responsive center-block"></section><section id="create-a-project"><h2 >创建项目</h2><p >第一步是为了配置问题管理系统，需要建立一个项目来与这些投诉相关联。我们可以简单地从创建一个“支持项目”开始。进入项目菜单仪表盘，创建并命名为“支持”。勾选“问题”选项框，如果你想给给这些问题标上客户，也可以在这里重命名 （例如“Bugs”或者“例子”）。因为问题是面向客户的任务，你可能需要设置“隐私/可见” （这样你的客户就能够在他界面跟踪他的投诉了）。</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >如果这个项目是用来处理客户问题，你可以把它跟客户相关联。</p></div><img src="../../_images/claim_issue03.png" class="img-responsive center-block"></section><section id="invite-followers"><h3 >邀请关注</h3><p >问题一旦被创，你就可以决定通知到你的员工。在“聊天室” （屏幕下方），你可以看到两个按钮“加入”（绿色）“不加入”（白色）。点击第一个就可以收到私人通知，第二个可以添加其他员工作为项目的使用者。</p><img src="../../_images/claim_issue04.png" class="img-responsive center-block"></section><section id="set-up-your-workflow"><h3 >配置工作流</h3><p >你可以根据你的工作流来个性化你的项目状态，通过创建新栏目。在”看板“里面，你可以添加新的项目状态。如果你想更改状态的顺序，你只需要通过拖拉的动作即可。同时你也可以修改，隐藏你想要隐藏的状态。</p><img src="../../_images/claim_issue05.png" class="img-responsive center-block"></section><section id="generate-issues-from-emails"><h2 >根据邮件生成问题</h2><p >当你的项目设置完毕后并保存，你就可以在你的仪表盘上看到它。一个基于这个项目的邮件地址自动生成，并以这个项目的名字为前缀。</p><img src="../../_images/claim_issue06.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >如果你没法在这个项目上看到相对应的地址，你可以去“设置”里面设置域名，然后回到“项目”界面，这时你就可以看到以你项目名字为前缀的邮箱地址。</p></div><p >每当客户往这个邮箱发送邮件，新的问题就会自动创建。</p><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="../configuration/setup.html" class="internal alert-link reference"><em >如何安装与配置项目管理?</em></a></li><li ><a href="../configuration/collaboration.html" class="internal alert-link reference"><em >如何在任务上管理&amp;协作？</em></a></li><li ><a href="external.html" class="internal alert-link reference"><em >怎样和外部人员协调</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

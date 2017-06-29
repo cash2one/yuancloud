@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何使用不同计量单位？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="产品" href="../products.html" />
+    <link rel="next" title="使用产品型号(变体)" href="variants.html" />
+    <link rel="prev" title="产品" href="../products.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../inventory.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何使用不同计量单位？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="current toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#overview" class="ripple internal reference">概述</a></li><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a></li><li class="list-group-item"><a href="#setting-up-units-on-your-products" class="ripple internal reference">给产品设置计量单位</a></li><li class="list-group-item"><a href="#transfer-from-one-unit-to-another" class="ripple internal reference">从一种计量单位转换为另外一种</a><ul ><li class="list-group-item"><a href="#procurement" class="ripple internal reference">补货</a></li><li class="list-group-item"><a href="#quality-control" class="ripple internal reference">质量控制</a></li><li class="list-group-item"><a href="#delivery-process" class="ripple internal reference">发货流程</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/inventory/settings/products/uom.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-use-different-units-of-measure"></section><section id="overview"><h2 >概述</h2><p >有时候，很有必要使用产品的不同计量单位。例如，你在使用公制单位的国家采购但是却在使用英制单位的国家销售，这时就需要在单位之间转换。</p><p >在YuanCloud中你可以设置一个产品可以有不同的计量单位。</p></section><section id="configuration"><h2 >配置</h2><p >在**库存**模块下，进入：[UNKNOWN NODE title_reference]。在 <strong >产品**部分，选择**产品的采购/销售时可以使用不同的计量单位(高级)</strong>，然后点击**应用**。</p><img src="../../../_images/uom09.png" class="img-responsive center-block"></section><section id="setting-up-units-on-your-products"><h2 >给产品设置计量单位</h2><p >在：[UNKNOWN NODE title_reference],打开你需要在采购/销售过程中使用不同计量单位的产品并点击**编辑**。</p><p >在**计量单位**部分，选择产品销售时候的计量单位以及内部调拨时候的计量单位。</p><p >在**采购计量单位**部分，选择采购时候的计量单位。完成之后点击**保存**。</p><img src="../../../_images/uom10.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >点击编辑按钮|编辑|创建新的计量单位。</p></div></section><section id="transfer-from-one-unit-to-another"><h2 >从一种计量单位转换为另外一种</h2><p >在做计量单位的内部转换时，YuanCloud会自动的四舍五入。</p><p >计量单位在全程都可以变换。唯一的条件是这些计量单位都必须是同一类别。</p><p >在本示例中，我们用鸡蛋做示例：</p><ul ><li ><p >通常，我们都是按照一盘为单位购买(一盘30个)</p></li><li ><p >收货的时候是按照单个(质量检验)</p></li><li ><p >在卖给客户的时候是按照一打来卖</p></li></ul><img src="../../../_images/uom01.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >[UNKNOWN NODE problematic]销售价格**用**产品的计量单位**表示。[UNKNOWN NODE problematic]成本价格**用**采购计量单位**表示</p></div><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >所有的内部调拨都用**产品计量单位**表示。</p></div></section><section id="procurement"><h3 >补货</h3><p >在进行补货需求时，你还是可以更改计量单位。</p><img src="../../../_images/uom06.png" class="img-responsive center-block"><p >在采购订单中也可以更改计量单位：</p><img src="../../../_images/uom03.png" class="img-responsive center-block"></section><section id="quality-control"><h3 >质量控制</h3><p >质检过程按照单个检验</p><p >产品的最基本的计量单位是**个**。因此产品数量按个数检查。</p><img src="../../../_images/uom05.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >只有当调拨单状态是**草稿**状态时，计量单位才能更改。</p></div></section><section id="delivery-process"><h3 >发货流程</h3><p >鸡蛋按打销售。你可以在销售订单上选择计量单位。在变换计量单位的时候，单位价格会根据一打的单位价格自动计算。</p><img src="../../../_images/uom04.png" class="img-responsive center-block"><p >在发货单中，最初的需求用销售订单中的计量单位完成：</p><img src="../../../_images/uom02.png" class="img-responsive center-block"><p >但是调拨使用产品的计量单位已经完成，所有都自动的转换：</p><img src="../../../_images/uom08.png" class="img-responsive center-block"></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

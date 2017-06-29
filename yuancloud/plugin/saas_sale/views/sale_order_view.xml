@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!--销售订单-增加“saas方案” -->
+
+        <!--销售订单-卡片-增加“saas方案”及“生成saas商品”按钮 -->
+        <record id="view_sale_order_form_inherited" model="ir.ui.view">
+            <field name="name">sale.order.form.inherited</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="project_id" position="after">
+                    <field name="saas_plan" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+                </field>
+                <field name="saas_plan" position="after">
+                    <field name="quotation_header" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+                </field>
+                <field name="payment_term_id" position="after">
+                    <field name="quotation_method" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+                </field>
+                <button name="action_confirm" position="before" >
+                    <button name="action_generate_saas_product" states="draft" string="按产品线生成商品" type="object"/>
+                </button>
+            </field>
+        </record>
+
+        <!--销售订单-列表-增加“saas方案” -->
+        <record id="view_sale_order_tree_inherited" model="ir.ui.view">
+            <field name="name">sale.order.tree.inherited</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="saas_plan"/>
+                </field>
+                <field name="saas_plan" position="after">
+                    <field name="quotation_method"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</yuancloud>

@@ -1,0 +1,57 @@
+<yuancloud>
+    <data>
+        <!-- Action -->
+        <record id="wx_officialmenu_list_action" model="ir.actions.act_window">
+            <field name="name">微信公众号菜单</field>
+            <field name="res_model">wx.officialaccount_menu</field>
+            <field name="domain">[('is_qyhapp','=',False)]</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建微信公众号菜单
+                </p>
+            </field>
+        </record>
+
+        <record id="menu_tree" model="ir.ui.view">
+            <field name="name">ycloud_wx_officialaccount_menu.tree</field>
+            <field name="model">wx.officialaccount_menu</field>
+            <field name="field_parent">child_id</field>
+            <field name="arch" type="xml">
+                <tree string="Website menu" editable="bottom">
+                    <field name="wx_menu_name"/>
+                    <field name="wx_menu_url"/>
+                    <field name="wx_menu_type"/>
+                    <field name="wx_menu_level"/>
+                    <field name="parent_id" domain="[('is_qyhapp','=',False)]" options="{'no_create_edit': True}"/>
+                    <field name="sequence"/>
+                    <field name="officialaccount" options="{'no_create_edit': True}" string="微信公众号" domain="[('is_qyhapp','=',False)]"/>
+                    <field name="officialaccount_menu_type" options="{'no_create_edit': True}" domain="[('officalaccount','=',officialaccount)]"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_wx_officialmenu_form">
+            <field name="name">ycloud_wx_officialaccount_menu.form</field>
+            <field name="model">wx.officialaccount_menu</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="wx_menu_name"/>
+                                <field name="wx_menu_url"/>
+                                <field name="wx_menu_type"/>
+                                <field name="wx_menu_level"/>
+                                <field name="parent_id" domain="[('is_qyhapp','=',False)]" options="{'no_create_edit': True}"/>
+                                <field name="sequence"/>
+                                <field name="officialaccount" options="{'no_create_edit': True}" string="微信公众号" domain="[('is_qyhapp','=',False)]"/>
+                                <field name="officialaccount_menu_type" options="{'no_create_edit': True}" domain="[('officalaccount','=',officialaccount)]"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</yuancloud>

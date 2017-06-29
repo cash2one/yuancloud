@@ -1,0 +1,46 @@
+<yuancloud>
+    <data><!-- Action -->
+        <record model="ir.actions.act_window" id="wx_openplatform_webapp_list_action">
+            <field name="name">开放平台网站应用</field>
+            <field name="res_model">wx.webapplication</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建微信开放平台的网站应用实体
+                </p>
+            </field>
+        </record>
+        <!-- List View (wx_qyh)-->
+        <record model="ir.ui.view" id="wx_openplatform_webapp_list_view">
+            <field name="name">wx.officialaccount.webapplication.tree</field>
+            <field name="model">wx.webapplication</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="wx_webappname"/>
+                    <field name="wx_webappid"/>
+                    <field name="wx_webappsecret"/>
+                    <field name="wx_webapp_desc"/>
+                </tree>
+            </field>
+        </record>
+        <!--微信开放平台网站应用卡片 -->
+        <record model="ir.ui.view" id="wx_openplatform_webapp_form_view">
+            <field name="name">wx.officialaccount.webapplication.form</field>
+            <field name="model">wx.webapplication</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="wx_webappname"/>
+                            <field name="wx_webappid"/>
+                            <field name="wx_webappsecret"/>
+                            <field name="wx_webapp_authwebsiteurl"/>
+                            <field name="wx_webapp_desc"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</yuancloud>

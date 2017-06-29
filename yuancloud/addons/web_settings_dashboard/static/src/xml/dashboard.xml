@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+    <t t-name="DashboardMain">
+        <div class="container-fluid o_web_settings_dashboard">
+            <div class="row">
+                <div class="o_web_settings_dashboard_enterprise" style="display: none"/>
+                <div class="col-md-3 col-sm-6 col-xs-12 o_web_settings_dashboard_col">
+                    <div class="text-center o_web_settings_dashboard_apps"></div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 o_web_settings_dashboard_col"> 
+                    <div class="text-center o_web_settings_dashboard_invitations"></div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 o_web_settings_dashboard_col">
+                    <div class="text-center o_web_settings_dashboard_planner"></div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 o_web_settings_dashboard_col">
+                    <div class="text-center o_web_settings_dashboard_share"></div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="DashboardApps">
+        <div class="text-center o_web_settings_dashboard_apps">
+            <img class="icon icons8-Settings" src="data:image/png;base64,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" width="50" height="50"/>
+            <div class="o_web_settings_dashboard_header">
+                <t t-set="installed_apps" t-value="widget.data.installed_apps"/>
+                <t t-if="installed_apps">
+                    <t t-esc="installed_apps"></t>
+                    <t t-if="installed_apps == 1">Installed App</t>
+                    <t t-if="installed_apps > 1">Installed Apps</t>
+                </t>
+                <t t-if="! installed_apps">
+                    No app installed
+                </t>
+            </div>
+            <div>
+                <a class="btn btn-primary btn-block o_browse_apps" role="button"><strong>Browse Apps</strong></a>
+            </div>
+            <div class="o_web_settings_dashboard_pills" style="display: none">
+                <a href="http://www.yuancloud.cn/apps/modules" target="_blank" class="pull-left"><i class="fa fa-rocket fa-2x text-muted"/> App store</a>
+                <a href="http://www.yuancloud.cn/apps/themes" target="_blank" class="pull-right"><i class="fa fa-picture-o fa-2x text-muted"/> Theme store</a>
+            </div>
+            <div class="clearfix"/>
+        </div>
+    </t>
+    <t t-name="DashboardInvitations">
+        <div class="text-center o_web_settings_dashboard_invitations">
+            <img class="icon icons8-User-Group" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAFJ0lEQVRoQ+1Z21EbSRQ9t8clyquhFkeAHMHiCCwiMPwg+csiAnAEiAhWjgD4QuIHEQEiAtgIkCMwlEamzHr6bnVrZjQCjfq2ELtel/lyWdOPc5/nnib8JH/0k+DALyA/mief7pHjuwoCrCrW1Tw4TaqHrZcX/xbguYEEnegDGA0QJgDkL86MvlbYxFZ4NQHolFfw7etbRVjL/p/5RnNwhvcv+/OA9wdyyivBfXQA0IY5kMG3BFwx0BtfilYAbBBhlcE3AB1qzWfAi76ieI8IjaLLMtDStfCjLxg/IKe8ou6H5wSsGQAaqoFauVt0qOpEhwR8mP47X0yAB1UA3iDQ7xY8U1dzsC/1kBcQ1Rk0CbTHjL/0UrmKTbpxWu4kWlMaVRCbtfaSuhS+nrrWGOrbsEeEPxJv32ii9UehOeVQOZDju0qg4muzR0x4I9l84rzju4pS368MmFjzOt4vj0Px4cXMWfS9BaJ3YPTierjuMpgYiGpHu0T4E8xncX3Z5ofvX+pR0R42jKO+BS4wnBhI0B50rYUI2/FWeOgLwn5/Eq0FjEsbXrXlV649VDtqEWGHwfu6ttyc9b0cSGfQA+itMywctws6EdvwrIXOs4OTqAHGAQNHuhYWVjqzn3Oz9F6qHV0ToSJx8ywsPkDQGW4E4FOAL+LacmG/8gIS/Aceyark/z20nidHkmSPQZuzmuDMFDkeVANF57YP1cMxPSlY5BMF8hxJm6HAzYWdPinhkuQ1e2T5VCq/cjVfMRAk1pQkXhEQrxKees+Uav3ijYuqyIEkFUTaA6aBUZ3BFwKtSMMzyxHGR10PWwvtI5LmVEwiR1xN6lUfD4o94pN4hZbzCE/VGe4R2HbzWAevFxZaPtYpzJGkUzu5lp15hl/MPtIIkHskpQuMPins+/ItQzdYwwxVFSdf8+joqdHEQGw5TImjkCvlPZOWUqc37DnRuRmhWZDkcwExi1Q7ujKDjxfnSlmvpBGOq+OtLoUVV/94ChAxtc4RzmSNm8VmnvMcF7xC69FMUTSy5mNqNCBd2/4hGJC82HHuHH8gljqMZhMGrnSpvF7o/gnFxU3FJ2iJYF7J22suIBiJBCZXVmcOWmOacauJqpI5X3UGN9Lx9ulAcl6RAJF28snKyN24trzpGDizn+fzyDMCMXO9Yu5Z6cj0LEIzroVHLkDPC8RTbMguO9LCuiZ0bXdn9EFGrVRHRVRlPiAjjerSViIHD8qqkKBiPbR6wgaMDGUFuwTU4TQF0h+IdT0OjGwqif1UNrUVjrAtSfhHYXQ8qCpFjbz8yqCmrpX3/Rui8UJOgBbLpg9lUMZUi7pywP5uIyFuZoCMCrlU3jTl3+2R9vBdAN7NPx/YUbVU3pXSB1uu74etCUHbXALUQr18JgKR/8h6CN2kIHzS9XB3OhB78NcdMDcsW02eDwDqah00XbNB4cUSi6aq+0Qil377JDaMWZgUEvNP0wIeAVHtaCdRzs0bh6kYn2HeLJbKh14HzTKz6fh/DzdYI0tkO0JDbfsoNLn8OxoDefCAYxNZozlTNfeOiSkLbPdH01CepC51GWryhavgHIJeMw9OppBkQFQnukwfcIho13dweiomW2qZWybu59nLAskpemJONM9hzjWTXf0ziMWqP5mSlj3guB5gnDdZwAeZQCETHbI+knpDMoIu4JqiLdKR2mvUTWcLpyAgusJiPkrfRSTMIfNINlou5g4L3cVH1aQfGYhtdsJJ0U1RFmrj59vsF5Dns+18O/8D7FdHpMP1XK0AAAAASUVORK5CYII=" width="50" height="50"/>
+            <div class="o_web_settings_dashboard_header">
+                <t t-set="active_users" t-value="widget.data.active_users"></t>
+                <t t-set="pending_users" t-value="widget.data.pending_users"></t>
+                <t t-if="active_users">
+                    <t t-esc="active_users"></t> Active User<t t-if="active_users > 1"></t>
+                </t>
+            </div>
+            <div class="text-center">
+                <a href="#" class="o_web_settings_dashboard_access_rights"> Manage access rights</a>
+            </div>
+            <hr/>
+            <div class="o_web_settings_dashboard_invitation_form">
+                <strong>Invite new users:</strong>
+                <textarea rows="3" id="user_emails" placeholder="Enter e-mail addresses (one per line)"></textarea>
+                <button class="btn btn-primary btn-block o_web_settings_dashboard_invitations" role="button"> <strong><i class="fa fa-cog fa-spin hidden"/> Invite</strong></button>
+            </div>
+            <div>
+                <small class="o_web_settings_dashboard_pending_users text-muted text-center">
+                    <t t-if="pending_users.length">
+                        <br/>
+                        <strong>Pending invitations:</strong><br/>
+                        <t t-foreach="pending_users" t-as="pending">
+                            <a href="#"><div class="o_web_settings_dashboard_user" t-att-data-user-id="pending[0]"> <t t-esc="pending[1]"/></div></a>
+                        </t>
+                        <t t-if="pending_users.length &lt; widget.data.pending_count">
+                            <br/>
+                            <a href="#"><div class="o_web_settings_dashboard_more"><t t-esc="widget.data.pending_count - pending_users.length"/> more</div></a>
+                        </t>
+                    </t>
+                </small>
+            </div>
+        </div>
+    </t>
+    <t t-name="DashboardPlanner">
+        <div class="text-center o_web_settings_dashboard_planner">
+            <img class="icon icons8-User-Manual" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACqElEQVRoQ+1ZS3LaQBB9PfLGZbmSG0Q5QfAJzA3CyuAdOUFyg5gTxDeIdiBW+Ab4BCYniDhBqEIpNtZ0ahQJCyFAwhJM4dF6ptWvX3+kfoQTeehEcMAA0Y3JN8TIMGgIiWsADQIcBhwiOGlGmOET4DPgA5hIYU1wc/6Yy9pwcS1k2ChnD4+4sSfbsiCfkcHfzwLcAnGLQO/3SSMGz8A0kqCRul+pvc7FQ9anNSDCC54IUBGLHmb8AjAmgUkYsg+c+bg9V5F/efoLB3h2LIscltHdJhE+5QWgCnusWG/bV2n7a0AsL+AIALgn5Zm75nRRevoLR4jnLoG+12EvbNsrvm8Ekj1Y1P/suSQwdds7LSDCC36A0Up3o7oj+FqG4/r1QeTK9kWPxCC4J8LXrOGDAunPm4Lop/JBMn/B7eV4E9AkVVfaP7hHwpv/US02JFypXn2onE47IgbB7yQb1EySHfvjLiBRoIdBw2I8RXMs6/hRgHjzGYHexekylR17ZeCmQW3yVwsg+J9abpxa3SKplaR+AkwPICUqX29GDBBAi9RKd6vlt13Od5T2xS4GgU+ED2VmmNY1kh1y24axAVKioeQeLTJgDSPQpGslFBpGDCN7VL4p9g1BM3Nkj2xauVIktcq8Q2tGDBDd2q9hpBQjSgZg2QSzU0hWIPIliXEiK6wVe8X2dv4hMsOtQlYgQjde81Rqr/AWZfnrGcsKAHzJPNkmKwgiJSmonVQlssI2ezuBiEGglCEl7txLtkavkhUobAH4FgelSnsz2bEjDWeZWiLe8iUr0zId5OhnX1amU7X7vUvEmKM7tqcDSpSK9BEFBkzdvI3GnrYPco0ZUxC7sn15V6s8rSQLAKpOkLywLoS1AqnL6Ty7Bsgho13kXYaRIlE65JmTYeQflpVZvXRHZr0AAAAASUVORK5CYII=" width="50" height="50"/>
+            <div class="o_web_settings_dashboard_header">
+                <span class="o_web_settings_dashboard_planner_overall_progress"><t t-esc="widget.overall_progress"></t></span> % 实施
+            </div>
+            <div>
+                <small class="text-muted text-center o_web_settings_dashboard_compact_subtitle">
+                    Follow these implementation guides to get the most out of YuanCloud.
+                </small>
+            </div>
+            <hr/>
+            <t t-set="planners" t-value="widget.planners"/>
+            <t t-call="DashboardPlanner.PlannersList"/>
+            <hr/>
+            Need more help? <a target="_blank" href="/doc/index.html">用户手册</a>
+        </div>
+    </t>
+    
+    <t t-name="DashboardPlanner.PlannersList">
+        <div class="row o_web_settings_dashboard_planners_list">
+            <t t-if="!planners.length">
+                <div>You need to install some apps first.</div>
+            </t>
+            <t t-if="planners.length" t-foreach="planners" t-as="p">
+                <div t-attf-class="col-xs-2 col-md-3 col-lg-2 o_web_settings_dashboard_planner_progress_text o_web_settings_dashboard_progress_#{p.progress}">
+                    <t t-esc="p.progress"/>%
+                </div>
+                <div t-attf-class="col-xs-10 col-md-9 col-lg-10 o_web_settings_dashboard_planner_progress_bar o_web_settings_dashboard_progress_#{p.progress}">
+                    <div class="o_web_settings_dashboard_progress_title text-left" t-att-data-menu-id="p.menu_id[0]">
+                        <t t-esc="p.menu_id[1]"></t> <i class="fa fa-arrow-right pull-right"/>
+                    </div>
+                    <div class="progress" t-att-data-menu-id="p.menu_id[0]">
+                        <div class="progress-bar" role="progressbar" t-attf-style="width:#{p.progress}%">
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </div>
+    </t>
+
+    <t t-name="DashboardShare">
+        <div class="text-center o_web_settings_dashboard_share" style="display: none;">
+            <i class="fa fa-share-alt fa-4x text-muted"/>
+            <div class="o_web_settings_dashboard_header">Social Share</div>
+            <div>
+                <small class="text-muted text-center o_web_settings_dashboard_compact_subtitle">
+                    Help us spread the word: Share YuanCloud's awesomeness with your friends!
+                </small>
+            </div>
+            <hr/>
+            <div class="row mt16">
+                <div class="col-xs-4"><a><i class="fa fa-twitter-square fa-4x tw_share"/></a></div>
+                <div class="col-xs-4"><a><i class="fa fa-facebook-square fa-4x fb_share"/></a></div>
+                <div class="col-xs-4"><a><i class="fa fa-linkedin-square fa-4x li_share"/></a></div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="DashboardEnterprise">
+        <hr class="mt16"/>
+        <div class="text-center o_web_settings_dashboard_enterprise" style="display: none">
+            <div class="text-center o_web_settings_dashboard_enterprise" style="display: none">
+                <div class="text-center o_web_settings_dashboard_header">YuanCloud Enterprise</div>
+                <div class="mb16"><a href="http://www.yuancloud.cn/editions" target="_blank">Get more features with the Enterprise Edition!</a></div>
+                <div><img class="img img-responsive" t-att-src='_s + "/web/static/src/img/enterprise_upgrade.png"'/></div>
+                <div>
+                    <a class="btn btn-primary btn-block o_confirm_upgrade" role="button"><strong>Upgrade Now</strong></a>
+                </div>
+            </div>
+        </div>
+    </t>
+
+</templates>

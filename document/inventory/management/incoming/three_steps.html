@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>在收货时如何添加质量检验?(3步) &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="入库" href="../incoming.html" />
+    <link rel="next" title="杂项操作" href="../misc.html" />
+    <link rel="prev" title="如何卸货到收货区域?(2步)" href="two_steps.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../inventory.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              在收货时如何添加质量检验?(3步)
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="current toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#overview" class="ripple internal reference">概述</a></li><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#use-advanced-routes" class="ripple internal reference">使用高级路径</a></li><li class="list-group-item"><a href="#how-to-add-a-quality-control-step-in-goods-receipt" class="ripple internal reference">如何在收货中添加质量控制步骤？</a></li></ul></li><li class="list-group-item"><a href="#how-to-control-a-receipt" class="ripple internal reference">如何控制收货？</a><ul ><li class="list-group-item"><a href="#how-to-process-the-receipt-step" class="ripple internal reference">如何处理收货？</a></li><li class="list-group-item"><a href="#how-to-move-your-product-from-the-receipt-zone-to-the-quality-control-zone" class="ripple internal reference">如何把产品从收货区域移动到质检区域？</a></li><li class="list-group-item"><a href="#how-to-to-process-the-quality-control" class="ripple internal reference">如何处理质检？</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/inventory/management/incoming/three_steps.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-add-a-quality-control-step-in-goods-receipt-3-steps"></section><section id="overview"><h2 >概述</h2><p >在很多公司，很必要对接收的货物进行检查。目的是检查接收的货物和与供应商达成的质量标砖一致。因此，在收货的过程中添加一个质检步骤就变得很有必要。</p><p >YuanCloud使用路径精确地定义如何处理不同的接收步骤。该配置可以在仓库层面完成。默认的，收货是一步完成，通过变更配置可以允许2步或者3步收货。</p><p >3步流程如下：在收货区域接收货物，然后转移他们到质检区域。当质检过程完成后，就可以把货物从QC区域转移到库存。当然，你可以更改数量并且只转移符合质量要求的产品到库存然后把质量不好的产品退回</p><p >这个情景会在本文档解释。</p></section><section id="configuration"><h2 >配置</h2></section><section id="use-advanced-routes"><h3 >使用高级路径</h3><p >要管理路径，进入菜单项 <span class="menuselection">存货(Inventory) ‣ 配置(Configuration) ‣ 设置(Settings)</span>。</p><img src="../../../_images/three_steps061.png" class="img-responsive center-block"><p >确保路径选项**使用规则产品的高级路径**有勾选。然后点击**应用**来保存变更。</p><p >确保**每个仓库管理多库位**被勾选到。</p></section><section id="how-to-add-a-quality-control-step-in-goods-receipt"><h3 >如何在收货中添加质量控制步骤？</h3><p >进入菜单项 <span class="menuselection">存货(Inventory) ‣ 配置(Configuration) ‣ 仓库(Warehouse)</span> 然后选择需要变更收货方式的仓库。</p><p >默认的，仓库是一步收货(<strong >直接收货入库</strong>)。</p><p >在把产品转移到库存之前添加质量控制步骤，点选**卸货在收货区域，在入库之前通过质检区域(3步)**。</p><img src="../../../_images/three_steps011.png" class="img-responsive center-block"></section><section id="how-to-control-a-receipt"><h2 >如何控制收货？</h2></section><section id="how-to-process-the-receipt-step"><h3 >如何处理收货？</h3><ul ><li ><p >在**采购**应用中，创建一个**询价单**。点击**确认订单**按钮。你可以看到有一个**收货单**在采购订单的右上角的状态按钮上和该采购订单关联。这是接收步骤。</p></li></ul><img src="../../../_images/three_steps041.png" class="img-responsive center-block"><ul ><li ><p >进入**存货**然后点击**收货**看板上的**# 待收**链接。</p></li></ul><img src="../../../_images/three_steps021.png" class="img-responsive center-block"><ul ><li ><p >点击打开你想要完成的收货单。点击**确认**完成从**供应商**库位到**WH/收货区域**的调拨。</p></li></ul><p >已经完成了收货步骤并且在**WH/IN**单上面的状态栏位显示**完成**。产品已经从**供应商**库位移动了**收货区域**库位，这样下一步(移动到质检区域)就可以操作了。</p></section><section id="how-to-move-your-product-from-the-receipt-zone-to-the-quality-control-zone"><h3 >如何把产品从收货区域移动到质检区域？</h3><p >进入**库存**仪表盘。你会看到有一个已经就绪的转移(移动到质检区域的调拨)和一个在等待的移动(在质检之后的往库存移动的调拨)。点击**内部调拨**的**# 转移**链接完成质检。</p><img src="../../../_images/three_steps031.png" class="img-responsive center-block"><p >点击你想要处理的调拨单</p><p >点击**确认**完成从**库存／收货区域**到**库存／质检区域**的调拨。</p><p >已经完成了内部调拨步骤并且 <strong >WH/INT**页面上部的状态显示为**完成</strong>。现在收货已经可以被控制了。</p></section><section id="how-to-to-process-the-quality-control"><h3 >如何处理质检？</h3><p >回到**库存**的仪表盘中。等待状态的调拨单现在已经可以转移了，在**内部调拨**的仪表盘卡上点击**#调拨 [UNKNOWN NODE problematic]并完成质检过程。</p><img src="../../../_images/three_steps051.png" class="img-responsive center-block"><p >点击最后一个调拨并完成。点击**确认**完成从**库存／质检区域**到**库存／库存**的调拨。</p><p >已经完成了质检步骤并且**内部调拨单**页面上方的状态栏位显示**完成**。收货过程很好的的到了控制并且货物已经进入仓库。</p><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="../delivery/inventory_flow.html" class="internal alert-link reference"><em >如何选择正确的仓库流程完成发货单</em></a></li><li ><a href="two_steps.html" class="internal alert-link reference"><em >如何卸货到收货区域?(2步)</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

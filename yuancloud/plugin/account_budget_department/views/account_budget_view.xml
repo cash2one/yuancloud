@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!--预算-增加“部门，科目，预算金额” -->
+        <!--预算卡片视图增加“部门”、“科目”、“预算金额”-->
+        <record id="view_account_budget_form_inherited" model="ir.ui.view">
+            <field name="name">crossovered.budget.form.inherited</field>
+            <field name="model">crossovered.budget</field>
+            <field name="inherit_id" ref="account_budget.crossovered_budget_view_form"/>
+            <field name="arch" type="xml">
+                <field name="creating_user_id" position="after">
+                    <field name="department_id" domain="[('company_id','=',company_id)]"/>
+                </field>
+                <field name="department_id" position="after">
+                    <field name="account_id" domain="[('budget','=',True)]"/>
+                </field>
+                <field name="company_id" position="before">
+                    <field name="total_amount"/>
+                </field>
+                <field name="planned_amount" position="after">
+                    <field name="reimbursement_amount" widget="monetary"/>
+                </field>
+            </field>
+        </record>
+
+        <!--预算列表视图增加“部门”、"科目"、“预算金额”-->
+        <record id="view_account_budget_tree_inherited" model="ir.ui.view">
+            <field name="name">crossovered.budget.tree.inherited</field>
+            <field name="model">crossovered.budget</field>
+            <field name="inherit_id" ref="account_budget.crossovered_budget_view_tree"/>
+            <field name="arch" type="xml">
+                <!--<field name="name" position="after">-->
+                    <!--<field name="department_id"/>-->
+                <!--</field>-->
+                <!--<field name="department_id" position="after">-->
+                    <!--<field name="account_id"/>-->
+                <!--</field>-->
+                <field name="date_to" position="after">
+                    <field name="total_amount"/>
+                </field>
+                <field name="total_amount" position="after">
+                    <field name="month_avera_amount"/>
+                </field>
+                <field name="month_avera_amount" position="after">
+                    <field name="quarter_avera_amount"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</yuancloud>

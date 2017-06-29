@@ -1,0 +1,13 @@
+<yuancloud>
+    <data>
+
+        <record id="delivery.delivery_carrier" model="delivery.carrier">
+            <field name="website_published" eval="True"/>
+        </record>
+
+        <record id="delivery.normal_delivery_carrier" model="delivery.carrier">
+            <field name="website_published" eval="True"/>
+        </record>
+
+    </data>
+</yuancloud>

@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>什么是推规则？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="概念" href="../concepts.html" />
+    <link rel="next" title="如何做仓库的内部调拨？" href="inter_warehouse.html" />
+    <link rel="prev" title="什么是补货规则？" href="procurement_rule.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../inventory.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              什么是推规则？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="current toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#overview" class="ripple internal reference">概述</a></li><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a></li><li class="list-group-item"><a href="#push-rules-settings" class="ripple internal reference">推规则设置</a></li><li class="list-group-item"><a href="#stock-transfers" class="ripple internal reference">库存调拨</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/inventory/routes/concepts/push_rule.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="what-is-a-push-rule"></section><section id="overview"><h2 >概述</h2><p >库存控制的推系统包含需要满足客户需求的预测数量。公司在决定采购产品的数量时候需要预测客户将要采购哪些产品。相应的公司会生产足够的产品来满足预测的需求和销售或者把产品推到消费者那里。推库存的缺点是通常情况下预测和实际销售相比不精确，差异一年年的不同。推库存的另外一个问题是太多的产品留在了库存中。这就增加了公司的产品存储成本。一个优点是公司可以保证在库存中总是有足够的产品满足客户的订单，防止无法满足客户对产品的需求。</p><p >一个推流程定义了库位如何和其余的库位链接起来，形成库位链。只要在源库位中给定数量的产品发生移动，通过在流程说明中配置的参数一个链式移动会自动的生成(目标库位，延迟，移动类型，分类账)。它可以自动的触发或者手动处理。</p></section><section id="configuration"><h2 >配置</h2><p >推规则是路线的构成，进入菜单 <span class="menuselection">库存(Inventory) ‣ 配置(Configuration) ‣ 设置(Settings)</span> 并勾选 <strong >产品使用高级路径规则</strong> 。</p><img src="../../../_images/push_rule01.png" class="img-responsive center-block"></section><section id="push-rules-settings"><h2 >推规则设置</h2><p >在路径上设置推规则。进入菜单 <span class="menuselection">配置(Configuration) ‣ 路径(Routes)</span> 。</p><p >在推规则部分，点击**添加一个新项目**</p><img src="../../../_images/push_rule02.png" class="img-responsive center-block"><p >在这里你可以设置规则的条件。在该示例中，当货物在**收货区域**时候，需要被移动到质检区域，在3步收货流程中，会有另外一个推规则把货物从质检区域移动到库存中。</p><img src="../../../_images/push_rule03.png" class="img-responsive center-block"><a href="https://demo.yuancloud.com?module=stock.action_routes_form" class="center-block reference btn-lg btn-primary external btn-block btn"><p >在demo用例中创建一个推规则</p></a><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >有些仓库用已经定义好的推规则创建路径。</p></div></section><section id="stock-transfers"><h2 >库存调拨</h2><p >推规则会触发库存转移。通过路径中设置的规则，你会看到有些转移已经已经就绪并且在等待中。</p><p >以上设置的推规则会创建一个从**库存／收货区域**到**库存／质检**区域的一个调拨。</p><img src="../../../_images/push_rule04.png" class="img-responsive center-block"><p >在该示例中，另外一个调拨在等待第二个调拨，它的逻辑是当质检过程的调拨完成后，产品就会移动到主要库存中。</p><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="procurement_rule.html" class="internal alert-link reference"><em >什么是补货规则？</em></a></li><li ><a href="inter_warehouse.html" class="internal alert-link reference"><em >如何做仓库的内部调拨？</em></a></li><li ><a href="cross_dock.html" class="internal alert-link reference"><em >如何在仓库中实现cross-dock？</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

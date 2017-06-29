@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <report
+            id="action_report_hr_expense8"
+            string="HR Expense"
+            model="hr.expense8.expense"
+            report_type="qweb-pdf"
+            name="hr_expense8.report_expense"
+            file="hr_expense8.report_expense"
+        />
+    </data>
+</yuancloud>

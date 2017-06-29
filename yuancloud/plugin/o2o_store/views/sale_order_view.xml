@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <record id="store_view_sale_order_form_inherited" model="ir.ui.view">
+            <field name="name">store.sale.order.form.inherited</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <!--销售订单增加“门店”字段-->
+                <field name="pricelist_id" position="after">
+                    <field name="store_id"/>
+                </field>
+                <!--销售订单增加“门店编码”字段-->
+                <field name="store_id" position="after">
+                    <field name="store_code"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</yuancloud>

@@ -1,0 +1,75 @@
+<yuancloud>
+    <data><!-- Action -->
+        <record model="ir.actions.act_window" id="wx_qyhapp_list_action">
+            <field name="name">微信企业号应用</field>
+            <field name="res_model">wx.officialaccount</field>
+            <field name="domain">[('is_qyhapp','=',True)]</field>
+            <field name="context">{"default_is_qyhapp": True}</field>
+            <field name="priority">20</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建微信企业号应用实体
+                </p>
+            </field>
+        </record>
+
+        <!-- List View (ec_shop)-->
+        <record model="ir.ui.view" id="wx_qyhapp_list_view">
+            <field name="name">ycloud_wx_officialaccount.tree</field>
+            <field name="model">wx.officialaccount</field>
+            <field name="priority">20</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="wx_name"/>
+                    <field name="wx_qyh_app_id"/>
+                    <field name="wx_appid"/>
+                    <field name="wx_appsecret"/>
+                    <field name="wx_mch_id"/>
+                    <field name="wx_mch_secret"/>
+                    <field name="wx_qyh"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--微信服务号卡片 -->
+        <record model="ir.ui.view" id="wx_qyhapp_form_view">
+            <field name="name">ycloud_wx_officialaccount.form</field>
+            <field name="model">wx.officialaccount</field>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="base_info">
+                            <field name="wx_name"/>
+                            <field name="wx_qyh_app_id"/>
+                            <field name="is_qyhapp" invisible="1"/>
+                            <field name="wx_appid"/>
+                            <field name="wx_appsecret"/>
+                            <field name="wx_mch_id"/>
+                            <field name="wx_mch_secret"/>
+                            <field name="wx_desc"/>
+                            <field name="wx_qyh" attrs="{'required':1}"/>
+                        </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_wx_qyhapp_tree" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="wx_qyhapp_list_view"></field>
+        <field name="act_window_id" ref="wx_qyhapp_list_action"/>
+    </record>
+    <record id="action_wx_qyhapp_form" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wx_qyhapp_form_view"/>
+        <field name="act_window_id" ref="wx_qyhapp_list_action"/>
+    </record>
+
+</data>
+        </yuancloud>

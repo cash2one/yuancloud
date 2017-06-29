@@ -1,0 +1,96 @@
+<yuancloud>
+    <data><!-- Action -->
+        <record model="ir.actions.act_window" id="wx_notify_message_record_list_action">
+            <field name="name">通知消息记录</field>
+            <field name="res_model">wx.notify_message_record</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建第一个通知消息记录
+                </p>
+            </field>
+        </record>
+        <!-- List View (wx_message-text)-->
+        <record model="ir.ui.view" id="notify_message_record_list_view">
+            <field name="name">ycloud_wx_notify_message_record.tree</field>
+            <field name="model">wx.notify_message_record</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="message_type"/>
+                    <field name="message_event"/>
+                    <field name="message_msgid"/>
+                    <field name="message_template"/>
+                    <field name="officialaccount"/>
+                    <field name="official_username"/>
+                    <field name="qy_toUserName"/>
+                    <field name="send_event"/>
+                    <field name="createTime"/>
+                    <field name="model_id"/>
+                    <field name="association_order"/>
+                    <field name="message_status"/>
+                    <field name="association_user"/>
+                    <field name="session_id"/>
+                </tree>
+            </field>
+        </record>
+        <!--通知消息卡片 -->
+        <record model="ir.ui.view" id="notify_message_record_form_view">
+            <field name="name">ycloud_wx_notify_message_record.form</field>
+            <field name="model">wx.notify_message_record</field>
+            <field name="arch" type="xml">
+                <form create="false">
+                    <sheet>
+                        <group>
+                            <field name="message_type"/>
+                            <field name="message_event"/>
+                            <field name="message_msgid"/>
+                            <field name="message_template"/>
+                            <field name="officialaccount"/>
+                            <field name="official_username"/>
+                            <field name="qy_toUserName"/>
+                            <field name="send_event"/>
+                            <field name="createTime"/>
+                            <field name="model_id"/>
+                            <field name="association_order"/>
+                            <field name="message_status"/>
+                            <field name="association_user"/>
+                            <field name="session_id"/>
+                        </group>
+                        <notebook>
+                            <page string="模板记录">
+                                <separator string="模板信息记录"/>
+                                <field name="message_templateid" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="ycloud_wx_notify_record_value_tree_view" model="ir.ui.view">
+            <field name="name">ycloud_wx_notify_record_value.tree.view</field>
+            <field name="model">wx.notify_record_value</field>
+            <field name="arch" type="xml">
+                <tree string="模板数据">
+                    <field name="template_key"/>
+                    <field name="template_value"/>
+                    <field name="template_remark"/>
+                </tree>
+            </field>
+        </record>
+        <record id="ycloud_wx_notify_record_value_form_view" model="ir.ui.view">
+            <field name="name">ycloud_wx_notify_record_value.form.view</field>
+            <field name="model">wx.notify_record_value</field>
+            <field name="arch" type="xml">
+                <form string="模板数据">
+                    <group>
+                        <field name="template_key"/>
+                        <field name="template_value"/>
+                        <field name="template_remark"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</yuancloud>

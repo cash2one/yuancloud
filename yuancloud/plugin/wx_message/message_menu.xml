@@ -1,0 +1,72 @@
+<yuancloud>
+    <data>
+        <!--<menuitem name="微信消息" id="wx_message.menu_root"/>-->
+        <menuitem id="message_template_menu" name="消息模板" parent="wx_base.menu_root"
+                  sequence="60" web_icon="wx_base,static/description/yuan_wx.png"/>
+        <menuitem id="text_message_template_menu" name="文字消息模板" parent="message_template_menu"
+                  action="wx_text_message_template_list_action" web_icon="wx_base,static/description/yuan_wx.png"
+                  sequence="1"/>
+        <menuitem id="mpnews_message_template_menu" name="图文消息模板" parent="message_template_menu"
+                  action="message_mpnews_template_list_action" web_icon="wx_base,static/description/yuan_wx.png"
+                  sequence="2"/>
+        <menuitem id="notify_message_template_menu" name="通知消息模板" parent="message_template_menu"
+                  action="wx_notify_message_list_action" web_icon="wx_base,static/description/yuan_wx.png"
+                  sequence="3"/>
+        <menuitem id="image_message_template_menu" name="图片消息模板" parent="message_template_menu"
+                  action="wx_image_message_template_list_action" web_icon="wx_base,static/description/yuan_wx.png"
+                  sequence="4"/>
+        <menuitem id="wx_notify_message_template_menu" name="微信消息模板" parent="message_template_menu"
+                  action="wx_notify_message_templates_list_action" web_icon="wx_base,static/description/yuan_wx.png"
+                  sequence="5"/>
+        <menuitem id="voice_message_template_menu" name="语音消息模板" parent="message_template_menu"
+                  action="wx_voice_message_template_list_action" web_icon="wx_base,static/description/yuan_wx.png"
+                  sequence="8"/>
+        <menuitem id="link_message_template_menu" name="链接消息模板" parent="message_template_menu"
+                  action="wx_link_message_template_list_action" web_icon="wx_base,static/description/yuan_wx.png"
+                  sequence="9"/>
+        <menuitem id="location_message_template_menu" name="位置消息模板" parent="message_template_menu"
+                  action="wx_location_message_template_list_action" web_icon="wx_base,static/description/yuan_wx.png"
+                  sequence="10"/>
+        <menuitem id="video_message_template_menu" name="视频消息模板" parent="message_template_menu"
+                  action="wx_video_message_template_list_action" web_icon="wx_base,static/description/yuan_wx.png"
+                  sequence="11"/>
+        <menuitem id="music_message_template_menu" name="音乐消息模板" parent="message_template_menu"
+                  action="wx_music_message_template_list_action" web_icon="wx_base,static/description/yuan_wx.png"
+                  sequence="12"/>
+        <menuitem id="list_message_template_menu" name="列表消息模板" parent="message_template_menu"
+                  action="wx_list_message_template_list_action" web_icon="wx_base,static/description/yuan_wx.png"
+                  sequence="13"/>
+        <menuitem id="message_send_event_menu" name="消息发送事件" parent="message_template_menu"
+                  action="wx_message_send_event_list_action" web_icon="wx_base,static/description/yuan_wx.png"
+                  sequence="13"/>
+        <menuitem id="message_record_menu" name="微信消息记录" parent="wx_base.menu_root"
+                  sequence="65" web_icon="wx_base,static/description/yuan_wx.png"/>
+        <menuitem id="text_message_record_menu" name="文字消息记录" parent="message_record_menu"
+                  action="wx_text_message_record_list_action" web_icon="wx_base,static/description/yuan_wx.png"
+                  sequence="1"/>
+        <menuitem id="mpnews_message_record_menu" name="图文消息记录" parent="message_record_menu"
+                  action="wx_mpnews_message_record_list_action" web_icon="wx_base,static/description/yuan_wx.png"
+                  sequence="2"/>
+        <menuitem id="notify_message_record_menu" name="通知消息记录" parent="message_record_menu"
+                  action="wx_notify_message_record_list_action" web_icon="wx_base,static/description/yuan_wx.png"
+                  sequence="3"/>
+        <menuitem id="image_message_record_menu" name="图片消息记录" parent="message_record_menu"
+                  action="wx_image_message_record_list_action" web_icon="wx_base,static/description/yuan_wx.png"
+                  sequence="4"/>
+        <menuitem id="voice_message_record_menu" name="语音消息记录" parent="message_record_menu"
+                  action="wx_voice_message_record_list_action" web_icon="wx_base,static/description/yuan_wx.png"
+                  sequence="5"/>
+        <menuitem id="link_message_record_menu" name="链接消息记录" parent="message_record_menu"
+                  action="wx_link_message_record_list_action" web_icon="wx_base,static/description/yuan_wx.png"
+                  sequence="6"/>
+        <menuitem id="location_message_record_menu" name="位置消息记录" parent="message_record_menu"
+                  action="wx_location_message_record_list_action" web_icon="wx_base,static/description/yuan_wx.png"
+                  sequence="7"/>
+        <menuitem id="video_message_record_menu" name="视频消息记录" parent="message_record_menu"
+                  action="wx_video_message_record_list_action" web_icon="wx_base,static/description/yuan_wx.png"
+                  sequence="8"/>
+        <menuitem id="music_message_record_menu" name="音乐消息记录" parent="message_record_menu"
+                  action="wx_music_message_record_list_action" web_icon="wx_base,static/description/yuan_wx.png"
+                  sequence="9"/>
+   </data>
+</yuancloud>

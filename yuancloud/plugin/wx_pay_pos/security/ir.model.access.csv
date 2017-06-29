@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wx_pay_pos_wx_pay_pos,wx_pay_pos.wx_pay_pos,model_wx_pay_pos_wx_pay_pos,,1,0,0,0

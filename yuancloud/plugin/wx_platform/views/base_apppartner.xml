@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!-- Action -->
+        <record model="ir.actions.act_window" id="base_apppartner_list_action">
+            <field name="name">接入平台</field>
+            <field name="res_model">base.apppartner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建第一个接入平台信息
+                </p>
+            </field>
+        </record>
+        <!-- List View (base_apppartner)-->
+        <record model="ir.ui.view" id="apppartner_list_view">
+            <field name="name">base_apppartner.tree</field>
+            <field name="model">base.apppartner</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="key"/>
+                    <field name="user"/>
+                    <field name="apppartner_type"/>
+                    <field name="officalaccount" domain="[('is_qyhapp','=','False')]"/>
+                    <field name="enterpriseaccount" domain="[('is_qyhapp','=','True')]"/>
+                    <field name="third_platform"/>
+                </tree>
+            </field>
+        </record>
+        <!--App Partner卡片 -->
+        <record model="ir.ui.view" id="apppartner_form_view">
+            <field name="name">base_apppartner.form</field>
+            <field name="model">base.apppartner</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="key"/>
+                                <field name="user"/>
+                                <field name="apppartner_type"/>
+                            </group>
+                            <group>
+                                <field name="officalaccount" domain="[('is_qyhapp','=',False)]"/>
+                                <field name="enterpriseaccount" domain="[('is_qyhapp','=',True)]"/>
+                                <field name="third_platform"/>
+                                <field name="apppartner_desc"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</yuancloud>

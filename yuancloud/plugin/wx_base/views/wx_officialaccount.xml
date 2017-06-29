@@ -1,0 +1,53 @@
+<yuancloud>
+    <data><!-- Action -->
+        <record model="ir.actions.act_window" id="wx_official_account_list_action">
+            <field name="name">微信公众号</field>
+            <field name="res_model">wx.officialaccount</field>
+            <field name="domain">[('is_qyhapp','=',False)]</field>
+            <field name="context">{"default_is_qyhapp": False}</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建第一个微信公众号实体
+                </p>
+            </field>
+        </record>
+        <!-- List View (ec_shop)-->
+        <record model="ir.ui.view" id="officialaccount_list_view">
+            <field name="name">ycloud_wx_officialaccount.tree</field>
+            <field name="model">wx.officialaccount</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="wx_name"/>
+                    <field name="wx_appid"/>
+                    <field name="wx_appsecret"/>
+                    <field name="wx_mch_id"/>
+                    <field name="wx_mch_secret"/>
+                    <field name="wx_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--微信服务号卡片 -->
+        <record model="ir.ui.view" id="officialaccount_form_view">
+            <field name="name">ycloud_wx_officialaccount.form</field>
+            <field name="model">wx.officialaccount</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="base_info">
+                            <field name="wx_name"/>
+                            <field name="wx_appid"/>
+                            <field name="wx_appsecret"/>
+                            <field name="wx_mch_id"/>
+                            <field name="wx_mch_secret"/>
+                            <field name="wx_company"/>
+                            <field name="wx_desc"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</yuancloud>

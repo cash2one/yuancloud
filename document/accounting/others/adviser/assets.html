@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>管理固定资产 &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="顾问" href="../adviser.html" />
+    <link rel="next" title="如何在YuanCloud中做年末(关闭会计区间)" href="fiscalyear.html" />
+    <link rel="prev" title="顾问" href="../adviser.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../accounting.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              管理固定资产
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="current toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#install-the-asset-module" class="ripple internal reference">安装资产模块</a></li><li class="list-group-item"><a href="#defining-asset-types" class="ripple internal reference">定义资产类型</a></li></ul></li><li class="list-group-item"><a href="#create-assets-manually" class="ripple internal reference">手动创建资产</a></li><li class="list-group-item"><a href="#create-assets-automatically-from-a-supplier-bill" class="ripple internal reference">从供应商票据自动创建资产</a></li><li class="list-group-item"><a href="#how-to-deprecate-an-asset" class="ripple internal reference">如何折旧资产？</a></li><li class="list-group-item"><a href="#how-to-modify-an-existing-asset" class="ripple internal reference">如何修改现有的资产？</a></li><li class="list-group-item"><a href="#how-to-record-the-sale-or-disposal-of-an-asset" class="ripple internal reference">如何记录出售或处置资产？</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/accounting/others/adviser/assets.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="manage-your-fixed-assets"><p >在 &quot;资产&quot; 模块，可以让你保持跟踪机械，土地和建筑物等固定资产。该模块可以自动生成每月的折旧项，获得折旧板，出售或处置资产，并对公司的资产产生报告。</p><p >举个例子，你可以买一辆车的$ 36,000个（总值），并且计划的期限平均摊销超过36个月（3年）。每月（周期），YuanCloud将创建一个折旧分录自动降低自己的资产价值由$ 1,000，并通过1000 $的费用。 3年后，该资产在资产负债表占$ 0（残值）。</p><p >不同类型的资产分为'资产类型'，描述了如何折旧资产。下面是资产类型的两个例子：</p><ul ><li ><p >建筑：10年，按年直线折旧</p></li><li ><p >汽车：5年，按月直线折旧</p></li></ul></section><section id="configuration"><h2 >配置</h2></section><section id="install-the-asset-module"><h3 >安装资产模块</h3><p >首先，<em >安装资产模块。</em></p><p >一旦模块被安装了，你应该看到在财务应用程序了两个新的菜单：</p><ul ><li ><p ><span class="menuselection">顾问(Adviser) ‣  资产(Assets)</span></p></li><li ><p ><span class="menuselection">配置(Configuration) ‣ 资产类型(Asset Types)</span></p></li></ul><p >在登记你的第一资产之前,您必须定义资产类型&lt;accounting/adviser/assets_management/defining&gt;`.</p></section><section id="defining-asset-types"><i id="accounting-adviser-assets-management-defining"></i><h3 >定义资产类型</h3><p >资产类型用于配置资产的所有信息: 资产和弃用帐户、 摊销方法等。这样一来，顾问可以配置资产类型，用户可以进一步记录资产，而无需提供任何复杂的会计信息。他们只需要提供资产类型供应商条例草案 》。</p><p >您应当为每一个资产组你经常买喜欢中创建资产类型'汽车：5年'，'计算机硬件：3年'。对于所有其他资产，你可以创建通用的资产类型。根据资产的期限如'36个月'的名字他们，'10年'，...</p><p >要定义资产类型，进入 <span class="menuselection">配置‣ 资产类型</span></p><img src="../../../_images/image01.png" class="img-responsive center-block"></section><section id="create-assets-manually"><h2 >手动创建资产</h2><p >要手动登记资产，进入菜单 <span class="menuselection">顾问‣ 资产</span>。</p><img src="../../../_images/image08.png" class="img-responsive center-block"><p >一旦资产创建,别忘了确认一下。在确认资产前, 可以单击计算折旧按钮检查折旧。</p><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >如果您手动创建的资产，你仍然需要建立供应商账单这一资产。资产文件只会产生折旧日记帐分录，而不是那些涉及到供应商账单。</p></div><p >字段的说明:</p><div class="code-fields"><div class="code-field"><div class="code-field-name">Status</div><div class="code-field-body"><div class="line-block"><div class="line">When an asset is created, the status is 'Draft'.</div><div class="line">If the asset is confirmed, the status goes in 'Running' and the depreciation lines can be posted in the accounting.</div><div class="line">You can manually close an asset when the depreciation is over. If the last line of depreciation is posted, the asset automatically goes in that status.</div></div></div></div><div class="code-field"><div class="code-field-name">Category</div><div class="code-field-body"><div class="line-block"><div class="line">Category of asset</div></div></div></div><div class="code-field"><div class="code-field-name">Date</div><div class="code-field-body"><div class="line-block"><div class="line">Date of asset</div></div></div></div><div class="code-field"><div class="code-field-name">Gross Value</div><div class="code-field-body"><div class="line-block"><div class="line">Gross value of asset</div></div></div></div><div class="code-field"><div class="code-field-name">Salvage Value</div><div class="code-field-body"><div class="line-block"><div class="line">It is the amount you plan to have that you cannot depreciate.</div></div></div></div><div class="code-field"><div class="code-field-name">Computation Method</div><div class="code-field-body"><div class="line-block"><div class="line">Choose the method to use to compute the amount of depreciation lines.</div><div class="line">  * Linear: Calculated on basis of: Gross Value / Number of Depreciations</div><div class="line">  * Degressive: Calculated on basis of: Residual Value * Degressive Factor</div></div></div></div><div class="code-field"><div class="code-field-name">Time Method</div><div class="code-field-body"><div class="line-block"><div class="line">Choose the method to use to compute the dates and number of depreciation lines.</div><div class="line">  * Number of Depreciations: Fix the number of depreciation lines and the time between 2 depreciations.</div><div class="line">  * Ending Date: Choose the time between 2 depreciations and the date the depreciations won't go beyond.</div></div></div></div><div class="code-field"><div class="code-field-name">Prorata Temporis</div><div class="code-field-body"><div class="line-block"><div class="line">Indicates that the first depreciation entry for this asset have to be done from the purchase date instead of the first January / Start date of fiscal year</div></div></div></div><div class="code-field"><div class="code-field-name">Number of Depreciations</div><div class="code-field-body"><div class="line-block"><div class="line">The number of depreciations needed to depreciate your asset</div></div></div></div><div class="code-field"><div class="code-field-name">Number of Months in a Period</div><div class="code-field-body"><div class="line-block"><div class="line">The amount of time between two depreciations, in months</div></div></div></div></div><a href="https://demo.yuancloud.com?module=account_asset.action_account_asset_asset_form" class="center-block reference btn-lg btn-primary external btn-block btn"><p >尝试创建一个*资产*我们的在线演示</p></a></section><section id="create-assets-automatically-from-a-supplier-bill"><h2 >从供应商票据自动创建资产</h2><p >资产可以从供应商账单中自动创建。所有你需要做的是设置您的帐单上线的资产类别。当用户将验证票据，资产将被自动创建，使用供应商帐单的信息。</p><img src="../../../_images/image09.png" class="img-responsive"><p >根据资产类别上的信息, 可直接生成草稿资产或是直接确认。直接生成确认的资产更容易,这样你不会忘记确认。(检查字段*跳过草案状态* 在*资产类别上*).  如果你想要在过账前检查你的资产, 可生成草稿资产.</p><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >如果你把资产的产品，资产类别将自动填入该供应商的法案。</p></div></section><section id="how-to-deprecate-an-asset"><h2 >如何折旧资产？</h2><p >YuanCloud将在合适的日期为每位确认资产自动创建折旧日记帐分录。 （不是那些草案）。您可以在贬值板控制：绿色圆点表示日记帐分录已经为这个系列创作。</p><p >但你也可以通过点击绿色子弹，迫使建立相关的折旧入境后的预产期前日记帐分录。</p><img src="../../../_images/image11.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >在折旧板，点击红色子弹后日记帐分录。点击 <span class="guilabel">Items</span> 键在顶部，看看哪些是已经发布的日记帐分录。</p></div></section><section id="how-to-modify-an-existing-asset"><h2 >如何修改现有的资产？</h2><ul ><li ><p >点击 <span class="guilabel">Modify Depreciation</span></p></li><li ><p >更改折旧次数</p></li></ul><p >YuanCloud会自动重新计算一个新的折旧板。</p></section><section id="how-to-record-the-sale-or-disposal-of-an-asset"><h2 >如何记录出售或处置资产？</h2><p >如果您出售或处置资产，则需要完全地贬低该资产。点击按钮 <span class="guilabel">Sell or Dispose</span>。这一行动将在本资产的全部成本，但它不会记录应通过客户发票登记的销售交易。</p></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <div t-name="web_extended.geo" style="width: 100%;">
+        <iframe id="mapPage" width="100%" height="400px" frameborder='0'
+                src="http://3gimg.qq.com/lightmap/components/locationPicker2/index.html?search=1&amp;type=1&amp;key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77&amp;referer=myapp">
+        </iframe>
+    </div>
+</templates>

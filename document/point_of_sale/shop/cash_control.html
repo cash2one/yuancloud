@@ -1,0 +1,150 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>How to set up cash control? &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../index.html" />
+    <link rel="up" title="Advanced Shop Features" href="../shop.html" />
+    <link rel="next" title="Advanced Restaurant Features" href="../restaurant.html" />
+    <link rel="prev" title="How to apply Time-limited or seasonal discounts?" href="seasonal_discount.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../point_of_sale.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              How to set up cash control?
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../inventory.html" class="internal reference">库存</a></li><li class="current toctree-l2"><a href="../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuring-cash-control" class="ripple internal reference">Configuring cash control</a></li><li class="list-group-item"><a href="#starting-a-session" class="ripple internal reference">Starting a session</a></li><li class="list-group-item"><a href="#register-a-sale" class="ripple internal reference">登记销售</a></li><li class="list-group-item"><a href="#payment" class="ripple internal reference">付款</a></li><li class="list-group-item"><a href="#closing-a-session" class="ripple internal reference">Closing a session</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/point_of_sale/shop/cash_control.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-set-up-cash-control"><p >Cash control permits you to check the amount of the cashbox at the
+opening and closing.</p></section><section id="configuring-cash-control"><h2 >Configuring cash control</h2><p >On the <strong >Point of Sale</strong> dashboard,
+click on <span class="menuselection">More ‣ Settings</span>.</p><img src="../../_images/cash_control01.png" class="img-responsive center-block"><p >On this page, scroll and tick the the option <strong >Cash Control</strong>.</p><img src="../../_images/cash_control02.png" class="img-responsive center-block"></section><section id="starting-a-session"><h2 >Starting a session</h2><p >On your point of sale dashboard click on <strong >new session</strong>:</p><img src="../../_images/cash_control03.png" class="img-responsive center-block"><p >Before launching the point of sale interface, you get the open control
+view. Click on set an opening balance to introduce the amount in the
+cashbox.</p><img src="../../_images/cash_control04.png" class="img-responsive center-block"><p >Here you can insert the value of the coin or bill, and the amount present in
+the cashbox. The system sums up the total, in this example we have
+<code >86,85€</code> in the cashbox. Click on <strong >confirm</strong>.</p><img src="../../_images/cash_control05.png" class="img-responsive center-block"><p >You can see that the opening balance has changed and when you click on
+<strong >Open Session</strong> you will get the main point of sale interface.</p></section><section id="register-a-sale"><h2 >登记销售</h2><img src="../../_images/cash_control06.png" class="img-responsive center-block"><p >On the right you can see the list of your products with the categories
+on the top. If you click on a product, it will be added in the cart. You
+can directly set the correct quantity or weight by typing it on the
+keyboard.</p></section><section id="payment"><h2 >付款</h2><p >Once the order is completed, click on <strong >Payment</strong>. You can choose the
+customer payment method. In this example, the customer owes you <code >10.84€</code>
+and pays with a <code >20€</code> note. When it's done, click on <strong >Validate</strong>.</p><img src="../../_images/cash_control07.png" class="img-responsive center-block"><p >Your ticket is printed and you are now ready to make your second order.</p></section><section id="closing-a-session"><h2 >Closing a session</h2><p >At the time of closing the session, click on the <strong >Close</strong> button on the top
+right. Click again on the <strong >Close</strong> button to exit the point of sale interface.
+On this page, you will see a summary of the transactions. At this moment you can
+take the money out.</p><img src="../../_images/cash_control08.png" class="img-responsive center-block"><p >For instance you want to take your daily transactions out of your
+cashbox.</p><img src="../../_images/cash_control09.png" class="img-responsive center-block"><p >Now you can see that the theoretical closing balance has been updated
+and it only remains you to count your cashbox to set a closing balance.</p><img src="../../_images/cash_control10.png" class="img-responsive center-block"><p >You can now validate the closing.</p><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="invoice.html" class="internal alert-link reference"><em >How to invoice from the POS interface?</em></a></li><li ><a href="refund.html" class="internal alert-link reference"><em >How to return and refund products?</em></a></li><li ><a href="seasonal_discount.html" class="internal alert-link reference"><em >How to apply Time-limited or seasonal discounts?</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

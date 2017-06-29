@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>从补货到发货 &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="过程检视" href="../process.html" />
+    <link rel="next" title="设置" href="../../settings.html" />
+    <link rel="prev" title="过程检视" href="../process.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../inventory.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              从补货到发货
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="current toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#overview" class="ripple internal reference">概述</a></li><li class="list-group-item"><a href="#how-to-process-a-receipt" class="ripple internal reference">如何处理收货？</a><ul ><li class="list-group-item"><a href="#install-purchase-application" class="ripple internal reference">安装采购模块</a></li><li class="list-group-item"><a href="#make-a-purchase-order" class="ripple internal reference">创建采购订单</a></li><li class="list-group-item"><a href="#retrieve-the-receipt" class="ripple internal reference">针对收货的退货</a><ul ><li class="list-group-item"><a href="#from-the-purchase-order" class="ripple internal reference">在采购订单</a></li><li class="list-group-item"><a href="#from-the-inventory-dashboard" class="ripple internal reference">从仓库的仪表盘</a></li></ul></li><li class="list-group-item"><a href="#process-the-receipt" class="ripple internal reference">处理收货</a></li></ul></li><li class="list-group-item"><a href="#how-to-process-a-delivery-order" class="ripple internal reference">如何处理发货单？</a><ul ><li class="list-group-item"><a href="#install-sales-application" class="ripple internal reference">安装销售模块</a></li><li class="list-group-item"><a href="#place-a-sale-order" class="ripple internal reference">下销售订单</a></li><li class="list-group-item"><a href="#retrieve-the-delivery-order" class="ripple internal reference">发货的退货</a><ul ><li class="list-group-item"><a href="#from-the-sale-order" class="ripple internal reference">从销售订单</a></li><li class="list-group-item"><a href="#id1" class="ripple internal reference">从仓库的仪表盘</a></li></ul></li><li class="list-group-item"><a href="#process-the-delivery" class="ripple internal reference">处理发货</a></li></ul></li><li class="list-group-item"><a href="#advanced-flows" class="ripple internal reference">高级流程</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/inventory/overview/process/sale_to_delivery.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="from-procurement-to-delivery"></section><section id="overview"><h2 >概述</h2><p >存货是你的业务的中心。存货真的很复杂，但是在YuanCloud中，无论是收货还是发货都不能再简单了。我们将在本文档中演示从收货到发货是如何的简单。</p><p >YuanCloud库存模块和其他的应用完全的集成，例如 <strong >采购</strong>, <strong >销售</strong> or <strong >库存</strong>。但它不局限于这些过程，它还能完全的和 <strong >电商</strong>，<strong >生产</strong> ，<strong >维修</strong> 等模块集成。</p></section><section id="how-to-process-a-receipt"><h2 >如何处理收货？</h2></section><section id="install-purchase-application"><h3 >安装采购模块</h3><p >首先，你需要安装 <strong >采购模块</strong> ，进入菜单 <span class="menuselection">应用(Apps)</span> 并安装。</p><img src="../../../_images/sale_to_delivery01.png" class="img-responsive center-block"></section><section id="make-a-purchase-order"><h3 >创建采购订单</h3><p >进入**采购**模块。第一个看到的界面是**询价需求单**列表，点击**创建**按钮。</p><p >输入**供应商**信息并点击**添加一个新条目**给询价单添加一些产品。</p><img src="../../../_images/sale_to_delivery02.png" class="img-responsive center-block"><p >一旦确定了产品，价格和数量等，可以点击**确认订单**。</p></section><section id="retrieve-the-receipt"><h3 >针对收货的退货</h3><p >2步采购退货</p></section><section id="from-the-purchase-order"><h4 >在采购订单</h4><p >在采购订单的右上角，你会按到一个和**收货**关联的按钮：</p><img src="../../../_images/sale_to_delivery03.png" class="img-responsive center-block"><p >点击查看**调拨单**</p></section><section id="from-the-inventory-dashboard"><h4 >从仓库的仪表盘</h4><p >打开**库存**应用，点击**# 待收**查看收货列表并处理。</p><img src="../../../_images/sale_to_delivery04.png" class="img-responsive center-block"><p >在列表中，点击与采购订单相关的一个</p><img src="../../../_images/sale_to_delivery05.png" class="img-responsive center-block"></section><section id="process-the-receipt"><h3 >处理收货</h3><img src="../../../_images/sale_to_delivery06.png" class="img-responsive center-block"><p >要处理库存调拨，只要简单的点击**确认**就可以完成调拨。一条信息会弹出问你是否要完成所有数量，如果是就点击**应用**。</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >补货可以自动进行。详情请参阅我们的文档:文档:[UNKNOWN NODE title_reference]</p></div></section><section id="how-to-process-a-delivery-order"><h2 >如何处理发货单？</h2></section><section id="install-sales-application"><h3 >安装销售模块</h3><p >首先，你需要安装 <strong >销售管理</strong> 模块。进入菜单 <span class="menuselection">应用(Apps)</span> 并安装。</p><img src="../../../_images/sale_to_delivery07.png" class="img-responsive center-block"></section><section id="place-a-sale-order"><h3 >下销售订单</h3><p >进入**销售**应用，点击你所在团队的**报价单**按钮。</p><img src="../../../_images/sale_to_delivery08.png" class="img-responsive center-block"><p >你将得到所有报价单的列表。点击**创建**按钮。</p><p >输入**客户信息**并点击**添加新条目**在报价单中添加一些产品。</p><img src="../../../_images/sale_to_delivery09.png" class="img-responsive center-block"><p >点击**确认销售**下单。</p></section><section id="retrieve-the-delivery-order"><h3 >发货的退货</h3><p >有2中方法给发货单退货：</p></section><section id="from-the-sale-order"><h4 >从销售订单</h4><p >在销售订单的右上角，你会看到和**发货**相关的按钮：</p><img src="../../../_images/sale_to_delivery10.png" class="img-responsive center-block"><p >点击查看**调拨单**</p></section><section id="id1"><h4 >从仓库的仪表盘</h4><p >打开**库存**应用，点击**＃待做**查看收货单列表并处理。</p><img src="../../../_images/sale_to_delivery11.png" class="img-responsive center-block"><p >在列表中，点击和该销售订单相关的一个</p><img src="../../../_images/sale_to_delivery12.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >如果库存中没有产品，销售订单会在看板中的**等待**中显示。</p></div></section><section id="process-the-delivery"><h3 >处理发货</h3><img src="../../../_images/sale_to_delivery12.png" class="img-responsive center-block"><p >要处理库存转移。只要简单的点击**确认**就可以完成转移。一条信息会弹出来问你是否需要完成所有的数量，如果是的话点击**应用**。</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >电商订单用同样方法处理</p></div><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >你可以容易的把发货单和不同的发货方式集成起来，请参阅文档:文档：[UNKNOWN NODE title_reference]。</p></div></section><section id="advanced-flows"><h2 >高级流程</h2><p >在该文档中，演示的流程都是最简单的，YuanCloud也可以通过配置仓库的高级功能适应更多公司的需求。</p><ul ><li ><p >默认状况下，只配置了**收货**和**发货**，但是你还可以激活多库位和多仓库来处理**内部调拨**。</p></li><li ><p ><strong >路径</strong>：可以使用推拉规则使流程自动化</p></li><li ><p >[UNKNOWN NODE problematic]多步骤**收货和发货可以在每个仓库中很容易的被配置</p></li><li ><p >更多：<strong >条码扫描</strong>, <strong >序列号 **, **批次</strong>, <strong >交叉转运</strong>, <strong >直运</strong>, 和第三方 <strong >货代 **集成 , **上架</strong> 以及 <strong >下架</strong> 策略…… 所有这些都可以在YuanCloud实现。</p></li></ul></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

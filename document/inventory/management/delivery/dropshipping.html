@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何直接从供应商发货给客户(直运)？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="交货订单" href="../delivery.html" />
+    <link rel="next" title="如何变更标签类型？" href="label_type.html" />
+    <link rel="prev" title="计划交货日期是如何运算的？" href="scheduled_dates.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../inventory.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何直接从供应商发货给客户(直运)？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="current toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#what-is-drop-shipping" class="ripple internal reference">什么是直运</a></li><li class="list-group-item"><a href="#points-to-be-considered-while-implementing-drop-shipping" class="ripple internal reference">在实现直运的时候需要考虑到的点</a></li><li class="list-group-item"><a href="#configuring-drop-shipping" class="ripple internal reference">配置直运</a><ul ><li class="list-group-item"><a href="#how-to-send-products-from-the-customers-directly-to-the-suppliers" class="ripple internal reference">如何把产品直接从供应商处发给客户？</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/inventory/management/delivery/dropshipping.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-send-products-to-customers-directly-from-suppliers-drop-shipping"></section><section id="what-is-drop-shipping"><h2 >什么是直运</h2><p >直运是一个能让订单在你的系统中完成但是货物直接从供应商发送到客户的系统。在通常的发货系统中，产品从供应商发到你的仓库中，然后发送到客户中。在直运中，你仓库中不进行存货。当客户在你的店铺下了单，货物会直接从供应商发送到客户。因此，货物不需要通过你的仓库。</p></section><section id="points-to-be-considered-while-implementing-drop-shipping"><h2 >在实现直运的时候需要考虑到的点</h2><ul ><li ><p >只给那些不不想或者不能在库存中保存的产品。一个理由就是在这个过程中的你总是只有更少的利润率，所以你只有在这个时候才腾出你的仓库的大量空间进行存储。</p></li><li ><p >对于消肿产品直运是最好的选择。机会是哪些有着大量需求的且有很多供应商产品你只能赚一小部分。所以使用经济的交货方式不会获得奖励。但是如果产品是独特的，情况就变得不同！</p></li><li ><p >以防生产环境中出错给客户留下不好的体验，在交接之前可以在自己的内部公司间测试直运并列出最好的</p></li><li ><p >确保时间是可控的。直运的操作时间应该确保在全部由你来处理的时间之内。如果能给客户提供运单号更好。</p></li><li ><p >要确保在供应商那边有足够的库存。如果知道产品在供应链上游的状况是很有用的。如果你没有这些信息，就告诉客户现在没有库存并且这取决第三方的库存。</p></li></ul><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >关于直运的详情以及更加深入，请阅读我们的博客'直运是什么以及如何使用'&lt;<a href="https://www.yuancloud.com/blog/business-hacks-1/post/what-is-drop-shipping-and-how-to-use-it-250" class="external reference alert-link">https://www.yuancloud.com/blog/business-hacks-1/post/what-is-drop-shipping-and-how-to-use-it-250</a>&gt;`__.</p></div></section><section id="configuring-drop-shipping"><h2 >配置直运</h2><ul ><li ><p >打开菜单：[UNKNOWN NODE title_reference]。进入**库位＆仓库**，找到**直运**选项并勾选**允许供应商直接发货给客户**,然后点击**应用**。</p></li></ul><img src="../../../_images/dropshipping06.png" class="img-responsive center-block"><ul ><li ><p >然后进入菜单：[UNKNOWN NODE title_reference]。找到**订单路线**并选择**在销售订单选择特定的路线(高级)**。点击**应用**。</p></li></ul><img src="../../../_images/dropshipping05.png" class="img-responsive center-block"><ul ><li ><p >现在，打开菜单 <span class="menuselection">销售(Sales) ‣ 销售(Sales) ‣ 产品(Products)</span>。给需要直运的产品添加供应商。</p></li></ul><img src="../../../_images/dropshipping03.png" class="img-responsive center-block"></section><section id="how-to-send-products-from-the-customers-directly-to-the-suppliers"><h3 >如何把产品直接从供应商处发给客户？</h3><ul ><li ><p >创建一个**销售订单**并且对某一订单行的路径设置为**直运**</p></li></ul><img src="../../../_images/dropshipping01.png" class="img-responsive center-block"><ul ><li ><p >打开 <span class="menuselection">采购(Purchases) ‣ 采购(Purchases) ‣ 采购询价单(Requests for Quotation)</span> 。直运路线的产品会自动产生采购询价单。一旦订单确认，你可以看到调拨单已经创建。</p></li></ul><img src="../../../_images/dropshipping04.png" class="img-responsive center-block"><ul ><li ><p >要确认从供应商直接发货到客户，回到**存货**app。在仪表盘的直运卡上，点击**# 代收**。</p></li></ul><img src="../../../_images/dropshipping02.png" class="img-responsive center-block"><ul ><li ><p >这会打开直运单列表。一旦完成就确认该调拨。货物会直接从供应商的仓库到客户仓库而不经过你的仓库。</p></li></ul><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="inventory_flow.html" class="internal alert-link reference"><em >如何选择正确的仓库流程完成发货单</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

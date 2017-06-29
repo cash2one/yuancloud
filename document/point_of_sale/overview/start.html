@@ -1,0 +1,166 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>Getting started with YuanCloud Point of Sale &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../index.html" />
+    <link rel="up" title="概述" href="../overview.html" />
+    <link rel="next" title="Point of Sale Hardware Setup" href="setup.html" />
+    <link rel="prev" title="概述" href="../overview.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../point_of_sale.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              Getting started with YuanCloud Point of Sale
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../inventory.html" class="internal reference">库存</a></li><li class="current toctree-l2"><a href="../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#overview" class="ripple internal reference">概述</a></li><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#install-the-point-of-sale-application" class="ripple internal reference">Install the Point of Sale Application</a></li><li class="list-group-item"><a href="#adding-products" class="ripple internal reference">Adding Products</a></li><li class="list-group-item"><a href="#configuring-a-payment-method" class="ripple internal reference">Configuring a payment method</a></li><li class="list-group-item"><a href="#configuring-your-points-of-sales" class="ripple internal reference">Configuring your points of sales</a></li></ul></li><li class="list-group-item"><a href="#first-steps-in-the-point-of-sale" class="ripple internal reference">First Steps in the Point of Sale</a><ul ><li class="list-group-item"><a href="#your-first-order" class="ripple internal reference">Your first order</a></li><li class="list-group-item"><a href="#payment" class="ripple internal reference">付款</a></li><li class="list-group-item"><a href="#closing-a-session" class="ripple internal reference">Closing a session</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/point_of_sale/overview/start.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="getting-started-with-yuancloud-point-of-sale"></section><section id="overview"><h2 >概述</h2><p >YuanCloud's online <strong >Point of Sale</strong> application is based on a simple, user
+friendly interface. The <strong >Point of Sale</strong> application can be used online or
+offline on iPads, Android tablets or laptops.</p><p >YuanCloud <strong >Point of Sale</strong> is fully integrated with the <strong >Inventory</strong> and the
+<strong >Accounting</strong> applications. Any transaction with your point of sale will
+automatically be registered in your inventory management and accounting
+and, even in your <strong >CRM</strong> as the customer can be identified from the app.</p><p >You will be able to run real time statistics and consolidations across
+all your shops without the hassle of integrating several external
+applications.</p></section><section id="configuration"><h2 >配置</h2></section><section id="install-the-point-of-sale-application"><h3 >Install the Point of Sale Application</h3><p >Start by installing the <strong >Point of Sale</strong> application. Go to
+<span class="menuselection">Apps</span> and install the <strong >Point of Sale</strong> application.</p><img src="../../_images/start01.png" class="img-responsive center-block"><p >Do not forget to install an accounting <strong >chart of account</strong>. If it is not
+done, go to the <strong >Invoicing/Accounting</strong> application and click on <strong >Browse
+available countries</strong>:</p><img src="../../_images/start02.png" class="img-responsive center-block"><p >Then choose the one you want to install.</p><p >When it is done, you are all set to use the point of sale.</p></section><section id="adding-products"><h3 >Adding Products</h3><p >To add products from the point of sale <strong >Dashboard</strong> go to
+<span class="menuselection">Orders ‣ Products</span> and click on <strong >Create</strong>.</p><p >The first example will be oranges with a price of <code >3€/kg</code>. In the <strong >Sales</strong>
+tab, you can see the point of sale configuration. There, you can set a
+product category, specify that the product has to be weighted or not and
+ensure that it will be available in the point of sale.</p><img src="../../_images/start03.png" class="img-responsive center-block"><p >In same the way, you can add lemons, pumpkins, red onions, bananas... in
+the database.</p><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >How to easily manage categories?</p><p >If you already have a database with your products, you can easily set a
+<strong >Point of Sale Category</strong> by using the Kanban view and by grouping the
+products by <strong >Point of Sale Category</strong>.</p></div><img src="../../_images/start04.png" class="img-responsive center-block"></section><section id="configuring-a-payment-method"><h3 >Configuring a payment method</h3><p >To configure a new payment method go to
+<span class="menuselection">Configuration ‣ Payment methods</span>
+and click on <strong >Create</strong>.</p><img src="../../_images/start05.png" class="img-responsive center-block"><p >After you set up a name and the type of payment method, you can go to
+the point of sale tab and ensure that this payment method has been
+activated for the point of sale.</p></section><section id="configuring-your-points-of-sales"><h3 >Configuring your points of sales</h3><p >Go to <span class="menuselection">Configuration ‣ Point of Sale</span>,
+click on the <code >main</code> point of sale. Edit the point of sale
+and add your custom payment method into the available payment methods.</p><img src="../../_images/start06.png" class="img-responsive center-block"><p >You can configure each point of sale according to your hardware,
+location,...</p><div class="code-fields"><div class="code-field"><div class="code-field-name">Point of Sale Name</div><div class="code-field-body"><div class="line-block"><div class="line">An internal identification of the point of sale</div></div></div></div><div class="code-field"><div class="code-field-name">Sale Journal</div><div class="code-field-body"><div class="line-block"><div class="line">Accounting journal used to post sales entries.</div></div></div></div><div class="code-field"><div class="code-field-name">Group Journal Items</div><div class="code-field-body"><div class="line-block"><div class="line">Check this if you want to group the Journal Items by Product while closing a Session</div></div></div></div><div class="code-field"><div class="code-field-name">Barcodes</div><div class="code-field-body"><div class="line-block"><div class="line">Defines what kind of barcodes are available and how they are assigned to products, customers and cashiers</div></div></div></div><div class="code-field"><div class="code-field-name">Order IDs Sequence</div><div class="code-field-body"><div class="line-block"><div class="line">This sequence is automatically created by YuanCloud but you can change it to customize the reference numbers of your orders.</div></div></div></div><div class="code-field"><div class="code-field-name">Virtual KeyBoard</div><div class="code-field-body"><div class="line-block"><div class="line">Enables an integrated Virtual Keyboard</div></div></div></div><div class="code-field"><div class="code-field-name">Invoicing</div><div class="code-field-body"><div class="line-block"><div class="line">Enables invoice generation from the Point of Sale</div></div></div></div><div class="code-field"><div class="code-field-name">Prefill Cash Payment</div><div class="code-field-body"><div class="line-block"><div class="line">The payment input will behave similarily to bank payment input, and will be prefilled with the exact due amount</div></div></div></div><div class="code-field"><div class="code-field-name">Start Category</div><div class="code-field-body"><div class="line-block"><div class="line">The point of sale will display this product category by default. If no category is specified, all available products will be shown</div></div></div></div><div class="code-field"><div class="code-field-name">Tip Product</div><div class="code-field-body"><div class="line-block"><div class="line">The product used to encode the customer tip. Leave empty if you do not accept tips.</div></div></div></div><div class="code-field"><div class="code-field-name">Include Taxes in Prices</div><div class="code-field-body"><div class="line-block"><div class="line">The displayed prices will always include all taxes, even if the taxes have been setup differently</div></div></div></div><div class="code-field"><div class="code-field-name">Large Scrollbars</div><div class="code-field-body"><div class="line-block"><div class="line">For imprecise industrial touchscreens</div></div></div></div><div class="code-field"><div class="code-field-name">Automatic Receipt Printing</div><div class="code-field-body"><div class="line-block"><div class="line">The receipt will automatically be printed at the end of each order</div></div></div></div><div class="code-field"><div class="code-field-name">Display Category Pictures</div><div class="code-field-body"><div class="line-block"><div class="line">The product categories will be displayed with pictures.</div></div></div></div><div class="code-field"><div class="code-field-name">Skip Receipt Screen</div><div class="code-field-body"><div class="line-block"><div class="line">The receipt screen will be skipped if the receipt can be printed automatically.</div></div></div></div><div class="code-field"><div class="code-field-name">Cash Control</div><div class="code-field-body"><div class="line-block"><div class="line">Check the amount of the cashbox at opening and closing.</div></div></div></div><div class="code-field"><div class="code-field-name">IP Address</div><div class="code-field-body"><div class="line-block"><div class="line">The hostname or ip address of the hardware proxy, Will be autodetected if left empty</div></div></div></div><div class="code-field"><div class="code-field-name">Receipt Printer</div><div class="code-field-body"><div class="line-block"><div class="line">Bypass browser printing and prints via the hardware proxy</div></div></div></div><div class="code-field"><div class="code-field-name">Barcode Scanner</div><div class="code-field-body"><div class="line-block"><div class="line">Enable barcode scanning with a remotely connected barcode scanner</div></div></div></div><div class="code-field"><div class="code-field-name">Electronic Scale</div><div class="code-field-body"><div class="line-block"><div class="line">Enables Electronic Scale integration</div></div></div></div><div class="code-field"><div class="code-field-name">Cashdrawer</div><div class="code-field-body"><div class="line-block"><div class="line">Automatically open the cashdrawer</div></div></div></div><div class="code-field"><div class="code-field-name">Header</div><div class="code-field-body"><div class="line-block"><div class="line">A short text that will be inserted as a header in the printed receipt</div></div></div></div><div class="code-field"><div class="code-field-name">Footer</div><div class="code-field-body"><div class="line-block"><div class="line">A short text that will be inserted as a footer in the printed receipt</div></div></div></div><div class="code-field"><div class="code-field-name">Bill Splitting</div><div class="code-field-body"><div class="line-block"><div class="line">Enables Bill Splitting in the Point of Sale</div></div></div></div><div class="code-field"><div class="code-field-name">Bill Printing</div><div class="code-field-body"><div class="line-block"><div class="line">Allows to print the Bill before payment</div></div></div></div><div class="code-field"><div class="code-field-name">Orderline Notes</div><div class="code-field-body"><div class="line-block"><div class="line">Allow custom notes on Orderlines</div></div></div></div><div class="code-field"><div class="code-field-name">Restaurant Floors</div><div class="code-field-body"><div class="line-block"><div class="line">The restaurant floors served by this point of sale</div></div></div></div></div><p >Now you are ready to make your first steps with your point of sale.</p></section><section id="first-steps-in-the-point-of-sale"><h2 >First Steps in the Point of Sale</h2></section><section id="your-first-order"><h3 >Your first order</h3><p >On the dashboard, you can see your points of sales, click on <strong >New
+session</strong>:</p><img src="../../_images/start07.png" class="img-responsive center-block"><p >你会看到销售点主界面：</p><img src="../../_images/start08.png" class="img-responsive center-block"><p >On the right you can see the products list with the categories
+on the top. If you click on a product, it will be added in the cart. You
+can directly set the correct quantity or weight by typing it on the
+keyboard.</p></section><section id="payment"><h3 >付款</h3><p >Once the order is completed, click on <strong >Payment</strong>. You can choose the
+customer payment method. In this example, the customer owes you <code >10.84 €</code>
+and pays with a <code >20 €</code> note. When it's done, click on <strong >Validate</strong>.</p><img src="../../_images/start09.png" class="img-responsive center-block"><p >Your ticket is printed and you are now ready to make your second order.</p></section><section id="closing-a-session"><h3 >Closing a session</h3><p >At the end of the day, to close the session, click on the <strong >Close</strong> button
+on the top right. Click again on the close button of the point of sale.
+On this page, you will see a summary of the transactions</p><img src="../../_images/start10.png" class="img-responsive center-block"><p >If you click on a payment method line, the journal of this method
+appears containing all the transactions performed.</p><img src="../../_images/start11.png" class="img-responsive center-block"><p >Now, you only have to validate and close the session.</p><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="../shop/cash_control.html" class="internal alert-link reference"><em >How to set up cash control?</em></a></li><li ><a href="../shop/invoice.html" class="internal alert-link reference"><em >How to invoice from the POS interface?</em></a></li><li ><a href="../shop/refund.html" class="internal alert-link reference"><em >How to return and refund products?</em></a></li><li ><a href="../shop/seasonal_discount.html" class="internal alert-link reference"><em >How to apply Time-limited or seasonal discounts?</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

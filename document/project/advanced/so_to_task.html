@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何为销售订单创建相关任务？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../index.html" />
+    <link rel="up" title="高级" href="../advanced.html" />
+    <link rel="next" title="如何使用项目来处理索赔/问题？" href="claim_issue.html" />
+    <link rel="prev" title="高级" href="../advanced.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../project.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何为销售订单创建相关任务？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="current toctree-l2"><a href="../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#install-the-required-applications" class="ripple internal reference">安装所需的应用</a></li></ul></li><li class="list-group-item"><a href="#create-and-set-up-a-product" class="ripple internal reference">创建并配置产品</a></li><li class="list-group-item"><a href="#create-the-sales-order" class="ripple internal reference">创建销售订单</a></li><li class="list-group-item"><a href="#access-the-task-generated-from-the-sale-order" class="ripple internal reference">从销售单生成相应任务</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/project/advanced/so_to_task.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-create-tasks-from-sales-orders"><p >在这部分里，我们可以看到YuanCloud“项目管理”和“销售”这两个的整合模块的整合，准确一点说是如何从销售条目中直接产生任务。</p><p >在项目管理中，任务需要在一个规定的时间内完成。对于一个服务型公司，任务就会被定义为卖给客户，并交付到客户。这就是为什么要从销售销售订单中生成任务来组织销售和服务部门。</p><p >作为例子，你可以卖25000美元50个小时的服务。固定价格并已支付。但是你需要追踪你的之前为客户做过的服务。在销售订单上，可以直接生成任务，并且顾问可以直接输入工单，如有需要也可以再向客户收取超时服务费。</p></section><section id="configuration"><h2 >配置</h2></section><section id="install-the-required-applications"><h3 >安装所需的应用</h3><p >你需要安装&quot;销售管理“和”项目”模块才可以在销售订单上生成任务。只需安装模块即可。</p><img src="../../_images/so_to_task01.png" class="img-responsive center-block"><img src="../../_images/so_to_task02.png" class="img-responsive center-block"><p >而且，如果你想基于工单为客户开发票，也是必须要安装“工单”模块。</p><img src="../../_images/so_to_task03.png" class="img-responsive center-block"></section><section id="create-and-set-up-a-product"><h2 >创建并配置产品</h2><p >你需要在产品上配置服务用来在每次产品卖出后生成任务。从销售模块的菜单里面，销售-产品，创建并配置新产品。</p><ul ><li ><p ><strong >名称</strong>: 技术支持</p></li><li ><p ><strong >产品类型</strong>: 服务型</p></li><li ><p >“测量单位”：小时，在菜单 - 设置 的“测量单位”，查看按钮“有些产品可以以不同的测量单位买卖”。</p></li><li ><p >“发票形式”：你可以基于订单数量，也可以按发货数量产生发票。你可以简单地依据时间总量来发货或开发票给客户。</p></li><li ><p >“跟踪服务”：创建任务，跟踪时间，如果你的产品是以时间来开发票给客户， 你需要把你的测量时间设置成小时。</p></li></ul><img src="../../_images/so_to_task04.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >把你的任务与已存在的项目相关联或者建一个新的，如果这个产品是只针对这一个项目。否则，你就空着，YuanCloud会根据销售订单创建一个新的项目。</p></div></section><section id="create-the-sales-order"><h2 >创建销售订单</h2><p >一旦商品配置好，你就可以建询价单或者销售订单。一旦询价单确认变成销售订单后，任务就会被生成。</p><img src="../../_images/so_to_task05.png" class="img-responsive center-block"></section><section id="access-the-task-generated-from-the-sale-order"><h2 >从销售单生成相应任务</h2><p >在项目模块，你的新任务将会显示。</p><ul ><li ><p >可以在一个相关的项目，如果你已经选择了一个产品表格。</p></li><li ><p >在新的项目与对应的销售订单相关联,你只需点击“更多”按钮来设置。</p></li></ul><img src="../../_images/so_to_task06.png" class="img-responsive center-block"><p >对于任务自身，你可以在任务上记录记工单并根据开票原则给客户开票。</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >在YuanCloud中，销售订单是一切的中心，也就意味着任务的源文档和销售订单关联。</p></div><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="../configuration/setup.html" class="internal alert-link reference"><em >如何安装与配置项目管理?</em></a></li><li ><a href="../../sales/invoicing/services/reinvoice.html" class="internal alert-link reference"><em >如何为你的客户重开费用发票。</em></a></li><li ><a href="../../sales/invoicing/services/support.html" class="internal alert-link reference"><em >如何刚给支持合同开票(预付小时数)？</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

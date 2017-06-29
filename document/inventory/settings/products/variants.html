@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>使用产品型号(变体) &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="产品" href="../products.html" />
+    <link rel="next" title="何时应该使用包装，计量单位或者套装？" href="usage.html" />
+    <link rel="prev" title="如何使用不同计量单位？" href="uom.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../inventory.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              使用产品型号(变体)
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="current toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#impact-of-variants" class="ripple internal reference">变动的影响</a></li><li class="list-group-item"><a href="#should-you-use-variants" class="ripple internal reference">要使用产品型号吗？</a><ul ><li class="list-group-item"><a href="#when-should-you-use-variants" class="ripple internal reference">何时使用产品型号呢？</a></li><li class="list-group-item"><a href="#when-should-you-avoid-using-variants" class="ripple internal reference">在什么时候应该避免使用产品型号？</a></li></ul></li><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#activate-the-variant-feature" class="ripple internal reference">激活产品型号特性</a></li><li class="list-group-item"><a href="#creating-products-with-variants" class="ripple internal reference">创建带有型号的产品</a></li></ul></li><li class="list-group-item"><a href="#managing-product-variants" class="ripple internal reference">管理产品型号</a><ul ><li class="list-group-item"><a href="#introduction" class="ripple internal reference">介绍</a></li><li class="list-group-item"><a href="#managing-combination-possibilities" class="ripple internal reference">管理组合可能性</a></li><li class="list-group-item"><a href="#setting-a-price-per-variant" class="ripple internal reference">根据型号设置价格</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/inventory/settings/products/variants.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="using-product-variants"><p >产品变量用来管理有不同变量的产品，例如尺寸，颜色等等。它可以让我们在产品模板层面对产品进行管理(所有的变量)，也可以在产品变量层面管理(特定一个变量)。</p><p >例如，一个销售ｔ血衫的公司可能有以下产品：</p><ul ><li ><p >B&amp;C T血衫</p><ul ><li ><p >尺寸: S, M, L, XL, XXL</p></li><li ><p >颜色：蓝色，红色，白色，黑色</p></li></ul></li></ul><p >在该示例中，<strong >B&amp;C ｔ血衫**是产品模板，**B&amp;C ｔ血衫，S，蓝色**是一个产品变量，尺寸和颜色是**属性</strong>。</p><p >以上示例总共有20个不同的产品(5中尺寸x4种颜色)。每一个产品都会有自己的库存，销售信息，等等。</p></section><section id="impact-of-variants"><h2 >变动的影响</h2><ul ><li ><p ><strong >条码</strong>：编码和条码和一个产品型号绑定，而不是一个产品模板。每个型号都可以有自己的条码／SKU。</p></li><li ><p ><strong >价格</strong>：每个产品变量都会根据自己的额外属性价格(红色额外加$3)在产品模板的价格 ($20)计算出自己的价格。然而，你还可以依据产品模板或者产品变量定义价格表。</p></li><li ><p ><strong >存货</strong>：存货在产品变量层面管理。你拥有的不是ｔ血衫，而是&quot;ｔ血衫, S, 红色&quot;, 或者&quot;ｔ血衫, M, 蓝色&quot;。需要注意的是，在产品模板上你看到的产品数量是该产品模板下面所有变量的数量总和。(但是实际数量需要看产品变量)</p></li><li ><p ><strong >图片</strong>：图片和产品型号关联，每个型号可以有自己主要的图片。</p></li><li ><p ><strong >其余字段</strong>：大部分其他字段属于产品模板。如果你对他么恩进行更新，它会自动地更新到所有相关的型号上。(例如:主营业务收入科目，税)</p></li></ul></section><section id="should-you-use-variants"><h2 >要使用产品型号吗？</h2></section><section id="when-should-you-use-variants"><h3 >何时使用产品型号呢？</h3><p >使用产品型号有以下影响：</p><ul ><li ><p ><strong >电商</strong>：在你的在线商铺，客户只会在分类页面看到产品模板。一旦访客点击这样的产品，他将能在众多的型号中间进行选择(颜色，尺寸，……)</p></li><li ><p ><strong >生产</strong>：使用型号可以基于产品模板和各种型号质检的细微差别只定义一个物料表。例如：你可以创建一个&quot;T血衫&quot;并添加一些特定尺寸例如S的行以及特定颜色例如红色的行，从而代替创建物料表&quot;T血衫, 红色, S&quot;。</p></li><li ><p ><strong >价格</strong>：产品的默认价格是产品模板的价格加上型号上特定属性的额外价格。这样，型号的价格维护起来就很容易，你不必在每个型号上维护，当然也可以使用价格表规则固定每个型号的价格。</p></li></ul></section><section id="when-should-you-avoid-using-variants"><h3 >在什么时候应该避免使用产品型号？</h3><p >使用变量有可能会增加操作的复杂程度，当你要使用产品的变量属性时，你要确保这样做只会减少操作的复杂程度。</p><p >例如，如果使用型号的话，在导入期初数据的时候就比较麻烦。你不能只是导入产品的列表，还必须要导入产品模板以及相关的型号。</p><p >另外，你需要谨慎的选择尺寸作为变量，这些都术语一个单独的产品模板。局一个例子，一个公司有如下产品：</p><ul ><li ><p >质量：T血衫，马球，衬衫</p></li><li ><p >颜色: 红色, 蓝色</p></li><li ><p >尺寸: S, M, L, XL</p></li></ul><p >在该用户案例中，你可以创建1个带有尺寸变量的模板(布局，ｔ血衫，保罗)。但是，我们还是建议你创建两种不同的产品把保罗或者衬衫分开，并且在你的电脑上网站客户也乐意看到这样分：</p><ul ><li ><p >产品模板：T血衫</p><ul ><li ><p >颜色: 红色, 蓝色</p></li><li ><p >尺寸: S, M, L, XL</p></li></ul></li><li ><p >产品模板：马球</p><ul ><li ><p >颜色: 红色, 蓝色</p></li><li ><p >尺寸: S, M, L, XL</p></li></ul></li></ul></section><section id="configuration"><h2 >配置</h2></section><section id="activate-the-variant-feature"><h3 >激活产品型号特性</h3><p >在你使用产品变量之前，你需要在设置中激活产品变量。要这样做，你需要进入销售模块，在菜单：[UNKNOWN NODE title_reference]，找到 ** 产品变形 [UNKNOWN NODE problematic]　行，然后勾选 ** 产品可以有多个变体 ** ,然后点击 ** 应用 ** 。</p><img src="../../../_images/variant01.png" class="img-responsive center-block"></section><section id="creating-products-with-variants"><h3 >创建带有型号的产品</h3><p >一旦你激活了变量选项，你就可以给产品添加变量。要这样做的话，进入销售模块：[UNKNOWN NODE title_reference]。还可以从采购和库存模块进入产品页面。</p><p >现在，点击你想添加型号的产品。</p><p >在产品页面，一个新的变量页面显示出来。在页面上方的紫色数字是当前该产品的变量数量。要添加新的变量，点击该按钮，在新的窗口，点击 <strong >创建</strong> 。</p><p >在 ** 属性 ** 中，点击下拉菜单并选择你要添加的变量类型。。如果变量不存在，你可以通过点击创建和编辑随手创建……</p><img src="../../../_images/variant02.png" class="img-responsive center-block"><p >在属性窗口， ** 值 ** 字段是属性的描述例如绿色，塑料或者32G，<strong >属性</strong> 字段是变量的类型例如颜色，材料或者内存。</p><img src="../../../_images/variant03.png" class="img-responsive center-block"><p >你可以在**属性额外价格**字段顺便给特定型号添加相关成本，或者选择稍后更改，点击**保存**。</p><p >你也可以给型号添加不同的条码以及内部参考码。</p><p >完成输入该型号的所有的特定属性后，点击**保存**。</p></section><section id="managing-product-variants"><h2 >管理产品型号</h2></section><section id="introduction"><h3 >介绍</h3><p >以下示例就是一个产品模板上的两个不同属性的型号产品：</p><ul ><li ><p >B&amp;C T血衫</p><ul ><li ><p >颜色: 红色, 蓝色, 白色</p></li><li ><p >尺寸: S, M, L, XL, XXL</p></li></ul></li></ul></section><section id="managing-combination-possibilities"><h3 >管理组合可能性</h3><p >默认地，基于以上的产品模板，你得到15个不同的产品(3种颜色，5种尺寸)，如果XXL号的红色和蓝色不存在，你可以设定这两个产品型号无效。</p><p >要这样做的话，点击**型号**按钮，选择XXL，白色Ｔ血衫。在产品页面上，不勾选XXL，白色Ｔ血衫这个产品**有效**框。</p><img src="../../../_images/variant04.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >使产品无效不同于设定产品的库存为0.</p></div></section><section id="setting-a-price-per-variant"><h3 >根据型号设置价格</h3><p >对产品的有些型号你可以添加超过主要价格的成本。</p><p >一旦你激活了产品变量选项，你就可以在产品上添加产品变量。要这样做，进入销售模块，打开：[UNKNOWN NODE problematic]销售 --&gt; 产品`并点击你想要更改的产品，点击 ** 变量价格 ** 按钮来查看变量列表。</p><img src="../../../_images/variant05.png" class="img-responsive center-block"><p >点击你想要添加值的变量名称，确保3个字段可编辑。在**额外属性价格**字段你，添加该变量的成本，他会自动的和原始价格相加。</p><img src="../../../_images/variant06.png" class="img-responsive center-block"><p >一旦你输入了所有的额外值，点击 <strong >保存</strong>。</p></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

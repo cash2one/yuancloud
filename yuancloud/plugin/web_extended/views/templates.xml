@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <template id="web_extended_js" name="web_extended JS"
+                  inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/web_extended/static/src/js/web_extended.js"></script>
+            </xpath>
+        </template>
+
+        <template id="web_extended_login" name="web_extended Login"
+                  inherit_id="web.login">
+            <xpath expr="//form" position="attributes">
+                <attribute name="style">margin-left: 30px;margin-right: 30px;</attribute>
+            </xpath>
+        </template>
+    </data>
+</yuancloud>

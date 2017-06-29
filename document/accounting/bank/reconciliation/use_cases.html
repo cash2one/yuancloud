@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>银行调节过程中的使用案例？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="银行调节" href="../reconciliation.html" />
+    <link rel="next" title="配置条目模型" href="configure.html" />
+    <link rel="prev" title="银行调节" href="../reconciliation.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../accounting.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              银行调节过程中的使用案例？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="current toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#overview" class="ripple internal reference">概述</a></li><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a></li><li class="list-group-item"><a href="#user-cases" class="ripple internal reference">使用案例</a><ul ><li class="list-group-item"><a href="#case-1-payments-registration" class="ripple internal reference">案例1: 付款登记</a></li><li class="list-group-item"><a href="#case-2-bank-statements-reconciliations" class="ripple internal reference">案例2: 银行对账单对账</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/accounting/bank/reconciliation/use_cases.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="use-cases-in-the-bank-reconciliation-process"></section><section id="overview"><h2 >概述</h2><p >将账户链接到银行对账单的工作量比较大。你需要找到发票,相关的付款, 这需要很多的时间。幸运的是,使用YuanCloud, 您可以很容易地将发票或是付款链接到相关的银行对账单。</p><p >yuancloud中存在2种对账过程.</p><ol ><li ><p >能在发票上直接登记付款</p></li><li ><p >我们能用银行对账单调节开放的发票</p></li></ol></section><section id="configuration"><h2 >配置</h2><p >登记发票不需要任何特殊配置。我们需要做的就是安装会计软件。</p><img src="../../../_images/use01.png" class="img-responsive center-block"></section><section id="user-cases"><h2 >使用案例</h2></section><section id="case-1-payments-registration"><h3 >案例1: 付款登记</h3><p >我们收到付款证明, 是史密斯公司的2100欧元。</p><p >我们开了张2100欧元的发票给史密斯公司。因为我们出售的产品是服务,要求立即付款。而我们的会计只在周末处理银行对账单,所以我们在发票上做标记为支付, 就可以为我们的客户提供服务。</p><p >我们的客户发给我们付款凭证。我们可以登记付款, 相关的发票为已付。</p><img src="../../../_images/use02.png" class="img-responsive center-block"><p >通过点击 <strong >付款登记(register payment)</strong> ，我们告诉YuanCloud，客户已支付。我们因此需要指定金额和支付方式</p><img src="../../../_images/use03.png" class="img-responsive center-block"><p >我们可以找到付款信息，通过单击发票上 <span class="menuselection">信息(Info) ‣ 开启付款(Open Payment)</span> 。</p><img src="../../../_images/use04.png" class="img-responsive center-block"><p >发票已经支付， <strong >自动核销已完成</strong> 。</p></section><section id="case-2-bank-statements-reconciliations"><h3 >案例2: 银行对账单对账</h3><p >我们开始已开给Smith &amp; Co的3000欧元的发票。让我们也假定其他不同客户的发票未付款。</p><img src="../../../_images/use05.png" class="img-responsive center-block"><p >我们收到银行对账单, 不仅是史密斯公司的款已支付,Buzz的92欧元也已支付。</p><p ><strong >导入(Import)</strong> 或 <strong >创建(Create)</strong> 银行对账单。请在银行提要部分参考相关文档。</p><img src="../../../_images/use06.png" class="img-responsive center-block"><p >在仪表板,  点击 <strong >核销 # 项</strong></p><img src="../../../_images/use07.png" class="img-responsive center-block"><p >如果一切是正确的(正确的业务伙伴名字，金额正确), yuancloud会 <strong >自动(automatically)</strong> 核销。</p><img src="../../../_images/use08.png" class="img-responsive center-block"><p >如果发现某些问题，需要执行 <strong >手工动作</strong> 。</p><p >例如,如果在银行对账单中缺少业务伙伴,请填写</p><img src="../../../_images/use09.png" class="img-responsive center-block"><p >如果用首付完成了付款,只检查它是否正确并验证所有相关的付款</p><img src="../../../_images/use10.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >点击CTRL-Enter, 核销表中的所有项。</p></div><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="../feeds/ofx.html" class="internal alert-link reference"><em >导入OFX 对账单文件</em></a></li><li ><a href="../feeds/synchronize.html" class="internal alert-link reference"><em >如何与银行同步yuancloud？</em></a></li><li ><a href="../feeds/manual.html" class="internal alert-link reference"><em >手工登记银行对账单</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

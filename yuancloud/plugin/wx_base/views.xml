@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+  <data>
+
+    <menuitem name="微信" id="wx_base.menu_root" web_icon="wx_base,static/description/yuan_wx.png"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="微信公众号" id="wx_base.officialaccount" web_icon="wx_base,static/description/yuan_wx.png" parent="wx_base.menu_root" sequence="1"/>
+    <menuitem name="微信企业号" id="wx_base.qyh" web_icon="wx_base,static/description/yuan_wxenterprise.png" parent="wx_base.menu_root" sequence="2"/>
+    <menuitem name="微信第三方" id="wx_base.thirdplat" web_icon="wx_base,static/description/yuan_wx.png" parent="wx_base.menu_root" sequence="3"/>
+    <!-- actions -->
+    <menuitem id="wx_third_platform" name="微信第三方实体" parent="wx_base.thirdplat" web_icon="wx_base,static/description/yuan_wx.png"
+                  action="wx_base.wx_thirdplatform_list_action" sequence="1"/>
+
+    <menuitem id="wx_openplatform_webapp" name="开放平台网站应用实体" parent="wx_base.thirdplat" web_icon="wx_base,static/description/yuan_wx.png"
+                  action="wx_base.wx_openplatform_webapp_list_action" sequence="2"/>
+
+    <menuitem id="wx_offi_account" name="微信公众号实体" parent="wx_base.officialaccount" web_icon="wx_base,static/description/yuan_wx.png"
+                  action="wx_base.wx_official_account_list_action" sequence="1"/>
+
+    <menuitem name="微信企业号实体" id="ycloud_wx_qyh" parent="wx_base.qyh"
+              action="wx_base.wx_qyh_list_action" sequence="1" web_icon="wx_base,static/description/yuan_wxenterprise.png"/>
+    <menuitem name="微信企业号应用实体" id="ycloud_wx_qyhapp" parent="wx_base.qyh" web_icon="wx_base,static/description/yuan_wxenterprise.png"
+              action="wx_base.wx_qyhapp_list_action" sequence="2"/>
+  </data>
+</yuancloud>

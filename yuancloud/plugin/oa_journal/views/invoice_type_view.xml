@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!-- Action -->
+        <record model="ir.actions.act_window" id="oa_journal_invoice_type_list_action">
+            <field name="name">发票类型</field>
+            <field name="res_model">oa_journal.invoice.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建第一个发票类型
+                </p>
+            </field>
+        </record>
+
+        <!-- 发票类型-列表样式-->
+        <record model="ir.ui.view" id="oa_journal_invoice_type_list_view">
+            <field name="name">oa_journal_invoice_type.tree</field>
+            <field name="model">oa_journal.invoice.type</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="note"/>
+                    <field name="invoicing_method"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--发票类型-卡片样式 -->
+        <record model="ir.ui.view" id="oa_journal_invoice_type_form_view">
+            <field name="name">oa_journal_invoice_type.form</field>
+            <field name="model">oa_journal.invoice.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="active"/>
+                            </group>
+                            <group>
+                                <field name="invoicing_method"/>
+                            </group>
+                            <group>
+                                <field name="note"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</yuancloud>

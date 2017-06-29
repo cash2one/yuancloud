@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何管理同一张交货单的多个包裹？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="发货操作" href="../operation.html" />
+    <link rel="next" title="如何打印发货标签？" href="labels.html" />
+    <link rel="prev" title="如何就运费给客户开票？" href="invoicing.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../inventory.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何管理同一张交货单的多个包裹？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="current toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#overview" class="ripple internal reference">概述</a></li><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a></li><li class="list-group-item"><a href="#sale-process" class="ripple internal reference">销售过程</a><ul ><li class="list-group-item"><a href="#sale-order" class="ripple internal reference">销售订单</a></li><li class="list-group-item"><a href="#multi-packages-delivery" class="ripple internal reference">多包裹发货</a></li><li class="list-group-item"><a href="#multi-packages-with-a-3rd-party-shipper" class="ripple internal reference">第3方货代的多包裹</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/inventory/shipping/operation/multipack.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-manage-multiple-packs-for-the-same-delivery-order"></section><section id="overview"><h2 >概述</h2><p >默认状况下，YuanCloud会认为发货单只有一个包裹构成，但是你可以在一张发货单上配置多个包裹。它和第三方货运公司完全集成起来。</p></section><section id="configuration"><h2 >配置</h2><p >要配置包裹的使用，进入：[UNKNOWN NODE title_reference]。找到**包裹**的位置并选择**在包装上记录包材:栈板，箱子，……**</p><img src="../../../_images/multipack03.png" class="img-responsive center-block"><p >一旦完成，点击**应用** 。</p></section><section id="sale-process"><h2 >销售过程</h2></section><section id="sale-order"><h3 >销售订单</h3><img src="../../../_images/multipack06.png" class="img-responsive center-block"><p >点击**交货方式**选择正确的一个。</p><p >当你点击**保存**销售订单或者点击**设置价格**的时候计算价格。</p></section><section id="multi-packages-delivery"><h3 >多包裹发货</h3><p >从销售订单创建的发货单会带出发货信息。</p><img src="../../../_images/multipack07.png" class="img-responsive center-block"><p >在这里，你可以把要发的货物分成不同的包</p><p >在**完成**栏位选择你想要放进该包裹的产品的数量，然后点击**放进一个包裹**链接。</p><img src="../../../_images/multipack02.png" class="img-responsive center-block"><p >它会总动的创建所需数量的包裹。</p><p >其余的产品可以按照同样的步骤进行打包。</p><img src="../../../_images/multipack04.png" class="img-responsive center-block"><p >一旦完成，点击**确认**。</p></section><section id="multi-packages-with-a-3rd-party-shipper"><h3 >第3方货代的多包裹</h3><p >一旦交货单被确认后，你就能收到追踪号。[UNKNOWN NODE problematic]运单追踪号**会被自动填好。点击货运供应商网站上的**追踪**按钮可以查看你的发货单。</p><img src="../../../_images/multipack05.png" class="img-responsive center-block"><p >要黏贴在包裹上的**标签**可以在下面的历史信息中找到：</p><img src="../../../_images/multipack01.png" class="img-responsive center-block"><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="invoicing.html" class="internal alert-link reference"><em >如何就运费给客户开票？</em></a></li><li ><a href="labels.html" class="internal alert-link reference"><em >如何打印发货标签？</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

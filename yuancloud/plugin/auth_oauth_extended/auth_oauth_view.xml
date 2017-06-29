@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<yuancloud>
+    <data>
+        <record model="ir.ui.view" id="view_oauth_provider_form_extended">
+            <field name="name">auth.oauth.provider.form</field>
+            <field name="model">auth.oauth.provider</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="auth_oauth.view_oauth_provider_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="provider_type"/>
+                    <field name="client_sercret"/>
+                    <field name="provider_browser"/>
+                </xpath>
+                <xpath expr="//field[@name='body']" position="before">
+                    <field name="css_class"/>
+                </xpath>
+            </field>
+        </record>
+        <template id="weixin_signup" name="weixin_signup" inherit_id="auth_signup.signup">
+
+            <xpath expr="//div[@class='pull-right']" position="replace">
+            </xpath>
+
+            <xpath expr="//a[@class='btn btn-link pull-right']" position="replace">
+                <a t-attf-href="/web/login?{{ keep_query() }}" class="btn btn-link pull-right">Existed Account</a>
+            </xpath>
+        </template>
+
+        <template id="weixin_signin" name="weixin_signin" inherit_id="web.login">
+            <xpath expr="//input[@name='redirect']" position="after">
+                <input type="hidden" name="oauth_provider_id" t-att-value="oauth_provider_id"/>
+                <input type="hidden" name="oauth_uid" t-att-value="oauth_uid"/>
+                <input type="hidden" name="oauth_access_token" t-att-value="oauth_access_token"/>
+            </xpath>
+        </template>
+    </data>
+</yuancloud>

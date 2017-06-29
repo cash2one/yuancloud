@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如果管理支票的批量缴存? &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="杂项" href="../misc.html" />
+    <link rel="next" title="如何用电汇从一个银行转移到另一个银行?" href="interbank.html" />
+    <link rel="prev" title="杂项" href="../misc.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../accounting.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如果管理支票的批量缴存?
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="current toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#install-the-batch-deposit-feature" class="ripple internal reference">安装批量缴存功能</a></li><li class="list-group-item"><a href="#activate-the-feature-on-your-bank-accounts" class="ripple internal reference">在银行账户激活该功能</a></li></ul></li><li class="list-group-item"><a href="#from-checks-received-to-the-bank" class="ripple internal reference">从收到支票到银行</a><ul ><li class="list-group-item"><a href="#receive-customer-checks" class="ripple internal reference">收到客户支票</a></li><li class="list-group-item"><a href="#prepare-a-batch-deposit" class="ripple internal reference">预备批量缴存</a></li><li class="list-group-item"><a href="#reconciling-the-deposit-with-the-bank-statement" class="ripple internal reference">使用银行对账单调节缴存</a></li></ul></li><li class="list-group-item"><a href="#troubleshooting" class="ripple internal reference">排查</a><ul ><li class="list-group-item"><a href="#i-don-t-see-the-batch-deposit-link-on-bank-statements" class="ripple internal reference">在银行对帐单上没有此明细行？</a></li><li class="list-group-item"><a href="#what-happens-if-a-check-was-refused" class="ripple internal reference">假如支票被拒绝会发生什么?</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/accounting/bank/misc/batch.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-manage-batch-deposits-of-checks"><p >当你们公司集中从客户收到支票后,他们往往会把这些钱批次地放到银行账户。这钱已经以一个物理形式收到了,你的公司的人必须手动把支票登记到银行。</p><p >银行将要求填写一张包含支票或现金的细节的交易事项的存款单证(也称为存款单).</p><p >银行对账单将反映总计和存款单的参考信息,而不是个人支票。</p><p >YuanCloud帮助您准备和打印你的押金单据,之后与银行对账单核销就很容易了。</p></section><section id="configuration"><h2 >配置</h2></section><section id="install-the-batch-deposit-feature"><h3 >安装批量缴存功能</h3><p >为了使用批处理存款功能,你需要安装模块**批存款**。</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >通常, 如果支票在你的国家被广泛使用,这个模块是自动安装的。</p></div><p >验证 <strong >Batch Deposit</strong> 功能是否安装,去:menuselection:[UNKNOWN NODE title_reference] menu of the accounting application。检查功能: <strong >Allow batch deposit</strong>。</p><img src="../../../_images/batch01.png" class="img-responsive center-block"></section><section id="activate-the-feature-on-your-bank-accounts"><h3 >在银行账户激活该功能</h3><p >一旦你已经安装了这个特性,YuanCloud将自动激活你的银行账户内的押金功能。</p><p >哪个银行账户可以做批处理押金,哪些不能,这个控制可以去账内定义,通常被称为“支票”或“银行”(参见:doc:[UNKNOWN NODE title_reference],会计应用程序:menuselection:[UNKNOWN NODE title_reference].</p><p >在 <strong >Advanced Settings</strong> 项卡中,**Miscellaneous**节,设置借记方式为**Batch Deposit**。</p><img src="../../../_images/batch02.png" class="img-responsive center-block"><p >如果你在借记方式中检查**Batch Deposit**,这意味着付款时使用这个账(当收款或是付款时称为支付方式), 将适用于之后的押金批处理。</p></section><section id="from-checks-received-to-the-bank"><h2 >从收到支票到银行</h2></section><section id="receive-customer-checks"><h3 >收到客户支票</h3><p >一旦你将登记收到的支票,作为保证金登记在银行账上。一旦你选择的银行账户(或支票账户),YuanCloud建议您使用批处理。选择这个选项,如果你计划批处理。</p><img src="../../../_images/batch03.png" class="img-responsive center-block"><p >在备忘录字段，你可以设置支票的参考。</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >可在此菜单中登记付款:menuselection::[UNKNOWN NODE title_reference],或直接在相关发票上登记,使用 <strong >Register Payment</strong> 按钮。</p></div></section><section id="prepare-a-batch-deposit"><h3 >预备批量缴存</h3><p >从会计程序,进入菜单:menuselection <span class="menuselection">Sales ‣ Batch Deposit</span>,并创建一个新的**Batch Deposit**.</p><img src="../../../_images/batch04.png" class="img-responsive center-block"><p >选择银行,然后选择你想要添加的付款(支票)。默认情况下,YuanCloud建议你保存所有的支票。这样,您就可以确认你不要忘记或丢失支票。</p><img src="../../../_images/batch05.png" class="img-responsive center-block"><p >然后你可以打印批存款,这将是非常有用的, 银行通常需要。</p></section><section id="reconciling-the-deposit-with-the-bank-statement"><h3 >使用银行对账单调节缴存</h3><p >当核销银行对账单时, 对账单中将会看到存款单的号码。核销运行时,用户将能够选择匹配的批处理存款。</p><img src="../../../_images/batch06.png" class="img-responsive center-block"><p >如果您选择一批存款,YuanCloud将自动填充所匹配的支票存款。(下面的例子中有2账支票是作为批处理的)</p><img src="../../../_images/batch07.png" class="img-responsive center-block"></section><section id="troubleshooting"><h2 >排查</h2></section><section id="i-don-t-see-the-batch-deposit-link-on-bank-statements"><h3 >在银行对帐单上没有此明细行？</h3><p >如果在银行对账单中没有批存款链接,可能是两个原因:</p><ul ><li ><p >安装批存款功能后,您需要重新加载页面,这样浏览器知道这个新特性。点击浏览器的刷新按钮。</p></li><li ><p >你的银行账户内没有创建批处理存款。</p></li></ul></section><section id="what-happens-if-a-check-was-refused"><h3 >假如支票被拒绝会发生什么?</h3><p >如果银行对账单的金额小于实际批存款的金额,它可能意味着你的某一张支票已经被拒绝了。</p><p >在这种情况下,在银行对账单中,点击相应的行并删除.</p></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

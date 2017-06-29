@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <record id="res_company_inherit_default_rfq_settings" model="ir.ui.view">
+            <field name="name">res.company.default.rfq.settings</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+		 <xpath expr="//page[@name='report']" position="inside">
+			<group name="default_rfq_order" string="Default RFQ Template">
+				<group>
+			           <field name="template_rfq"/>
+				</group>
+			</group>
+		 </xpath>
+	    </field>
+	</record>
+    </data>
+</yuancloud>
+

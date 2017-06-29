@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data><!-- Action -->
+        <record model="ir.actions.act_window" id="wx_product_group_list_action">
+            <field name="name">商品分组</field>
+            <field name="res_model">wx.productgroup</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建第一个微信商品分组
+                </p>
+            </field>
+        </record>
+        <!-- 微信商品分组 list-->
+        <record model="ir.ui.view" id="wx_productgroup_list_view">
+            <field name="name">wx.productgroup.tree</field>
+            <field name="model">wx.productgroup</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="wx_officialaccount"/>
+                    <field name="wx_group_id"/>
+                    <field name="wx_group_name"/>
+                </tree>
+            </field>
+        </record>
+        <!--微信商品分组卡片 -->
+        <record model="ir.ui.view" id="wx_productgroup_form_view">
+            <field name="name">wx.productgroup.form</field>
+            <field name="model">wx.productgroup</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="wx_officialaccount"/>
+                                <field name="wx_group_name"/>
+                            </group>
+                            <group>
+                                <field name="wx_group_id" readonly="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</yuancloud>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data><!-- Action -->
+        <record model="ir.actions.act_window" id="wx_shop_order_list_action">
+            <field name="name">小店订单</field>
+            <field name="res_model">wx.shop.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">当前还没有小店订单
+                </p>
+            </field>
+        </record>
+        <!-- List View (wx_record)-->
+        <record model="ir.ui.view" id="wx_shop_order_list_view">
+            <field name="name">wx.shop.order.tree</field>
+            <field name="model">wx.shop.order</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree create="false">
+                    <field name="oe_salesorder"/>
+                    <field name="order_id"/>
+                    <field name="order_create_time"/>
+                    <field name="order_status"/>
+                    <field name="product_name"/>
+                    <field name="product_price" string="单价"/>
+                    <field name="product_count" string="数量"/>
+                    <field name="order_total_price" string="总价"/>
+                    <field name="buyer_nick"/>
+                </tree>
+            </field>
+        </record>
+        <!--微信订单卡片 -->
+        <record model="ir.ui.view" id="wx_shop_order_form_view">
+            <field name="name">wx.shop.order.form</field>
+            <field name="model">wx.shop.order</field>
+            <field name="arch" type="xml">
+                <form create="false" edit="false">
+                    <header>
+                        <button string="检查状态" type="object" name="signal_check_stocking" class="oe_highlight"/>
+                        <button string="确认发货" type="object" name="signal_delivery_goods" class="oe_highlight"/>
+                        <!--<button string="检查退货" type="object" name="signal_check_goods" class="oe_highlight"/>-->
+                        <button string="确认退款" type="object" name="signal_confirm_refund" class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="oe_salesorder"/>
+                                <field name="wx_shop"/>
+                                <field name="order_id"/>
+                                <field name="order_status"/>
+                                <field name="order_total_price"/>
+                            </group>
+                            <group>
+                                <!--<field name="is_micro_channel_ship"/>-->
+                                <field name="order_create_time"/>
+                                <field name="order_express_price"/>
+                                <field name="buyer_openid"/>
+                                <field name="buyer_nick"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="商品信息">
+                                <group colspan="4">
+                                    <group>
+                                        <field name="product_id"/>
+                                        <field name="product_name"/>
+                                        <field name="product_price"/>
+                                    </group>
+                                    <group>
+                                        <field name="product_sku"/>
+                                        <field name="product_count"/>
+                                        <!--<field name="product_img"/>-->
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="收货信息">
+                                <group colspan="4">
+                                    <group>
+                                        <field name="receiver_name"/>
+                                        <field name="receiver_mobile"/>
+                                        <field name="receiver_phone"/>
+                                    </group>
+                                    <group>
+                                        <field name="receiver_province"/>
+                                        <field name="receiver_city"/>
+                                        <field name="receiver_zone"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <field name="receiver_address"/>
+                                </group>
+                            </page>
+                            <page string="交易信息">
+                                <group colspan="4">
+                                    <group>
+                                        <field name="trans_id"/>
+                                        <field name="tradetype"/>
+                                        <field name="tradestatus"/>
+                                        <field name="bank"/>
+                                    </group>
+                                    <group>
+                                        <field name="currency"/>
+                                        <field name="redpacketmoney"/>
+                                        <field name="fee"/>
+                                        <field name="rate"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- 增加按钮-Begin  -->
+        <record model="ir.actions.server" id="action_check_stocking">
+            <field name="name">检查状态</field>
+            <field name="model_id" ref="model_wx_shop_order"/>
+            <field name="code">self.batch_check_stocking(cr,uid,context.get('active_ids', []),context)</field>
+        </record>
+        <record model="ir.values" id="values_action_check_stocking">
+            <field name="name">检查状态</field>
+            <field name="model" eval="'wx.shop.order'"/>
+            <field name="key">action</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.server,%d'%action_check_stocking"/>
+        </record>
+
+        <record model="ir.actions.server" id="action_delivery_goods">
+            <field name="name">确认发货</field>
+            <field name="model_id" ref="model_wx_shop_order"/>
+            <field name="code">self.batch_delivery_goods(cr,uid,context.get('active_ids', []),context)</field>
+        </record>
+        <record model="ir.values" id="values_action_delivery_goods">
+            <field name="name">确认发货</field>
+            <field name="model" eval="'wx.shop.order'"/>
+            <field name="key">action</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.server,%d'%action_delivery_goods"/>
+        </record>
+
+        <!-- 增加按钮-End  -->
+    </data>
+</yuancloud>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!--员工档案－卡片”-->
+        <record id="view_employee_form_sy" model="ir.ui.view">
+            <field name="name">hr.employee.form.inherited</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <field name='country_id' position='after'>
+                    <field name="province_id" domain="[('country_id','=',country_id)]" options="{'no_create_edit': True}"/>
+                </field>
+                <field name="category_ids" position='before'>
+                    <field name="code" placeholder="员工代号"/>
+                </field>
+                <field name="passport_id" position='replace'/>
+                <field name="work_phone" position='after'>
+                    <field name="ext"/>
+                </field>
+                <!--教育状况-->
+                <xpath expr="//page[@name='Personal_Information']" position='after'>
+                    <page string="教育状况" name ='education' groups="base.group_hr_user">
+                        <group string="最高学历">
+                            <group>
+                                <field name="university"/>
+                                <field name="educatio"/>
+                                <field name="degrees"/>
+                                <field name="profession"/>
+                            </group>
+                            <group>
+                                <field name="training_methods"/>
+                                <field name="learning"/>
+                                <field name="admission_date"/>
+                                <field name="graduation_date"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+
+                <!--职类、职别、职等-->
+                <field name="department_id" position='after'>
+                    <field name="category"/>
+                </field>
+                 <field name="category" position='after'>
+                    <field name="job_titile"/>
+                </field>
+                <field name="job_titile" position='after'>
+                    <field name="grade"/>
+                </field>
+                <!--<field name="coach_id" invisible="1"/>-->
+                <!--紧急联系人-->
+                <field name="address_home_id" position='after'>
+                    <field name="urgent_contacts"/>
+                </field>
+                <field name="urgent_contacts" position='after'>
+                    <field name="urgent_contacts_mobile"/>
+                </field>
+                <field name="urgent_contacts_mobile" position='after'>
+                    <field name="urgent_contacts_phone"/>
+                </field>
+                <field name="urgent_contacts_phone" position='after'>
+                    <field name="urgent_contacts_relation"/>
+                </field>
+                <!--增加其他信息页签-->
+                <xpath expr="//page[@name='HR_Settings']" position='after'>
+                    <page string="其他信息" name ='other' groups="base.group_hr_user">
+                        <group>
+                            <group string="在职情况">
+                                <group>
+                                    <field name="service_state"/>
+                                    <field name="employment"/>
+                                    <field name="induction_date"/>
+                                    <field name="formally_date"/>
+                                    <field name="exit_date"/>
+                                </group>
+                            </group>
+                            <group string="社保相关">
+                                <group>
+                                    <field name="social_insurance_years"/>
+                                    <field name="social_insurance_months"/>
+                                </group>
+                            </group>
+                            <group string="工龄">
+                                <group>
+                                    <field name="working_years_prove"/>
+                                    <field name="pre_job_seniority"/>
+                                    <field name="company_years"/>
+                                    <field name="now_working_years"/>
+                                </group>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+
+                <!--民族-->
+                <field name="identification_id" position="before">
+                    <field name="nation"/>
+                </field>
+                <!--户口性质-->
+                <field name="nation" position="before">
+                    <field name="household"/>
+                </field>
+                <!--年龄-->
+                <field name="birthday" position="after">
+                    <field name="age"/>
+                </field>
+            </field>
+        </record>
+        <!--部门档案-->
+        <record id="view_department_form_sy" model="ir.ui.view">
+            <field name="name">hr.department.form.inherited</field>
+            <field name="model">hr.department</field>
+            <field name="inherit_id" ref="hr.view_department_form"/>
+            <field name="arch" type="xml">
+                <field name='manager_id' position='after'>
+                    <field name="code"/>
+                </field>
+            </field>
+        </record>
+
+
+        <record id="view_employee_tree_sy" model="ir.ui.view">
+            <field name="name">hr.employee.tree.inherited</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_tree"/>
+            <field name="arch" type="xml">
+                <!--办公手机-->
+                <field name="work_phone" position="before">
+                    <field name="mobile_phone"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</yuancloud>

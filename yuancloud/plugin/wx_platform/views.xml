@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+  <data>
+    <menuitem name="接入平台" id="wx_platform.access_platform" parent="wx_base.menu_root" sequence="4" web_icon="wx_base,static/description/yuan_wx.png" action="wx_platform.base_apppartner_list_action"/>
+    <menuitem name="微信客户" id="wx_platform.wx_customer" parent="wx_base.officialaccount" sequence="2" web_icon="wx_base,static/description/yuan_wx.png" action="wx_platform.wx_customer_list_action"/>
+    <menuitem name="公众号自定义菜单" id="wx_platform.officialaccount_menu" parent="wx_base.officialaccount" sequence="3" web_icon="wx_base,static/description/yuan_wx.png" action="wx_platform.wx_officialmenu_list_action"/>
+    <menuitem name="企业号自定义菜单" id="wx_platform.qyhapp_menu" parent="wx_base.qyh" sequence="3" web_icon="wx_base,static/description/yuan_wxenterprise.png" action="wx_platform.wx_qyhappmenu_list_action"/>
+      <!-- actions -->
+  </data>
+</yuancloud>

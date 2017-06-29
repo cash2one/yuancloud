@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>设置你的条码扫描器 &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="设置" href="../setup.html" />
+    <link rel="next" title="如何在YuanCloud中激活条码？" href="software.html" />
+    <link rel="prev" title="设置" href="../setup.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../inventory.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              设置你的条码扫描器
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="current toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#find-the-barcode-scanner-that-suits-your-needs" class="ripple internal reference">找到适用的条码扫描枪</a></li><li class="list-group-item"><a href="#configure-your-barcode-scanner" class="ripple internal reference">配置条码扫描器</a><ul ><li class="list-group-item"><a href="#keyboard-layout" class="ripple internal reference">键盘布局</a></li><li class="list-group-item"><a href="#automatic-carriage-return" class="ripple internal reference">自动退货</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/inventory/barcode/setup/hardware.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="set-up-your-barcode-scanner"><p >在YuanCloud中使用条码扫描相当容易。但是一个好的用户体验依赖与正确的硬件设置。该向导会帮你完成从条码枪的选择到设置。</p></section><section id="find-the-barcode-scanner-that-suits-your-needs"><h2 >找到适用的条码扫描枪</h2><p >用来进行**盘点**和**条码扫描**推荐的3种不同的条码扫描应用是**USB扫描枪**，<strong >蓝牙扫描枪**以及**移动电脑扫描枪</strong>。</p><img src="../../../_images/hardware02.png" class="img-responsive center-block"><ul ><li ><p >如果在你电脑旁边对产品进行扫描，[UNKNOWN NODE problematic]USB扫描枪**是不错的选择。只要插入电脑即可扫描。只要确保买到的扫描枪和你的键盘布局兼容或者可以配置成那样就可以。</p></li><li ><p >[UNKNOWN NODE problematic]蓝牙扫描枪**能和一个手机或者平板进行配对，如果你想要是移动设备但是又不想投入太多，使用蓝牙扫描枪就是不错的选择。方法是使用手机登陆YuanCloud，并把手机和蓝牙链接即可在仓库中扫描作业。蓝牙扫描能满足你使用手机就可以实时的进行移动操作以及 '手工的 '登陆系统。</p></li><li ><p >在繁忙的业务中，[UNKNOWN NODE problematic]移动电脑扫描枪**是最简便的解决方法。它由一个小型电脑和一个内置扫描枪构成。并且该扫描设备是操作最具有生产力的解决方法，然而，你需要在该设备能流畅的运行YuanCloud。最近使用Android + 谷歌 Chrome浏览器或者Windows + IE浏览器的移动端的模式可以实现该功能。然而，由于模式的多样性以及市场上的不同的配置，有必要先进行测试。</p></li></ul></section><section id="configure-your-barcode-scanner"><h2 >配置条码扫描器</h2></section><section id="keyboard-layout"><h3 >键盘布局</h3><img src="../../../_images/hardware01.png" class="img-responsive center-block"><p >一个USB扫描枪需要配置成和电脑键盘布局一样的操作系统，不然，你的扫描枪将不会直接的翻译(例如，用'Q'代替'A')。大多数扫描枪通过扫描用户手册中的条码进行配置。</p></section><section id="automatic-carriage-return"><h3 >自动退货</h3><p >默认的，YuanCloud在每次成功的扫描之间有50毫秒的延时(这样可以避免偶然的重复扫描)。如果你想禁用该延时，你可以通过在每次扫描条码之后插入一个回车配置你的扫描枪。这通常是默认的配置并且能通过扫描用户手册中特定的条码进行配置('CR 后缀 ON', '申请输入后缀', 等等。)。</p></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

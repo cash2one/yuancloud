@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_oa_journal_manager,oa.journal,model_oa_journal,base.group_hr_manager,1,1,1,1
+access_oa_journal_report_manager,oa.journal.report,model_oa_journal_report,base.group_hr_manager,1,1,1,1
+access_oa_journal_invoice_type_manager,oa_journal.invoice.type,model_oa_journal_invoice_type,base.group_hr_manager,1,1,1,1
+access_oa_journal_ecplatform_manager,oa_journal.ecplatform,model_oa_journal_ecplatform,base.group_hr_manager,1,1,1,1
+access_oa_journal_officer,oa.journal,model_oa_journal,base.group_hr_user,1,1,1,1
+access_oa_journal_invoice_type_officer,oa_journal.invoice.type,model_oa_journal_invoice_type,base.group_hr_user,1,0,0,0
+access_oa_journal_ecplatform_officer,oa_journal.ecplatform,model_oa_journal_ecplatform,base.group_hr_user,1,0,0,0
+access_oa_journal_user,oa.journal,model_oa_journal,base.group_user,1,1,1,1
+access_oa_journal_invoice_type_user,oa_journal.invoice.type,model_oa_journal_invoice_type,base.group_user,1,0,0,0
+access_oa_journal_ecplatform_user,oa_journal.ecplatform,model_oa_journal_ecplatform,base.group_user,1,0,0,0

@@ -1,0 +1,144 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>怎么理解科目类型，如何配置呢？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="配置" href="../configuration.html" />
+    <link rel="next" title="分析" href="../analytic.html" />
+    <link rel="prev" title="配置" href="../configuration.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../accounting.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              怎么理解科目类型，如何配置呢？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="current toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#what-is-an-account-type" class="ripple internal reference">科目类型是什么？</a></li><li class="list-group-item"><a href="#which-are-the-account-types-in-yuancloud" class="ripple internal reference">yuancloud中有哪些科目类型？</a></li><li class="list-group-item"><a href="#how-do-i-configure-my-accounts" class="ripple internal reference">我如何来配置我的科目？</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/accounting/others/configuration/account_type.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="what-is-an-account-type-and-how-do-i-configure-it"></section><section id="what-is-an-account-type"><h2 >科目类型是什么？</h2><p >An account type is a name or code given to an account that indicates the
+account's purpose.</p><p >In YuanCloud, Account Types are used for information purpose, to generate
+country-specific legal reports, set the rules to close a fiscal year and
+generate opening entries.</p><p >Basically Account types categorize general account with some specific
+category according to its behaviour or purpose.</p></section><section id="which-are-the-account-types-in-yuancloud"><h2 >yuancloud中有哪些科目类型？</h2><p >YuanCloud covers all accounting types. Therefore, you cannot create new
+account types. Just pick the one related to your account.</p><table class="table"><thead ><tr ><th ><p ><strong >科目类型列表</strong></p></th></tr></thead><tbody ><tr ><td ><p >应收账款</p></td></tr><tr ><td ><p >应付账款</p></td></tr><tr ><td ><p >银行和现金</p></td></tr><tr ><td ><p >流动资产</p></td></tr><tr ><td ><p >非流动资产</p></td></tr><tr ><td ><p >预付账款</p></td></tr><tr ><td ><p >固定资产</p></td></tr><tr ><td ><p >流动负债</p></td></tr><tr ><td ><p >非流动负债</p></td></tr><tr ><td ><p >权益</p></td></tr><tr ><td ><p >当年盈余</p></td></tr><tr ><td ><p >其它收入</p></td></tr><tr ><td ><p >收入</p></td></tr><tr ><td ><p >折旧</p></td></tr><tr ><td ><p >费用报销</p></td></tr><tr ><td ><p >直接成本</p></td></tr></tbody></table></section><section id="how-do-i-configure-my-accounts"><h2 >我如何来配置我的科目？</h2><p >Account types are automatically created when installing a chart of
+account. By default, YuanCloud provides a lot of chart of accounts, just
+install the one related to your country.</p><p >It will install generic accounts. But if it does not cover all your
+cases, you can create your own accounts too.</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >If you are a Saas User, your country chart of account is
+automatically installed.</p></div><p >To create a new accounts, go to the Accounting application. Open the
+menu <span class="menuselection">Adviser ‣ Chart of Accounts</span>, the click on the
+<strong >Create</strong> button.</p><img src="../../../_images/type01.png" class="img-responsive center-block"><div class="code-fields"><div class="code-field"><div class="code-field-name">Type</div><div class="code-field-body"><div class="line-block"><div class="line">Account Type is used for information purpose, to generate country-specific legal reports, and set the rules to close a fiscal year and generate opening entries.</div></div></div></div><div class="code-field"><div class="code-field-name">Tags</div><div class="code-field-body"><div class="line-block"><div class="line">Optional tags you may want to assign for custom reporting</div></div></div></div><div class="code-field"><div class="code-field-name">Account Currency</div><div class="code-field-body"><div class="line-block"><div class="line">Forces all moves for this account to have this account currency.</div></div></div></div><div class="code-field"><div class="code-field-name">Type</div><div class="code-field-body"><div class="line-block"><div class="line">The 'Internal Type' is used for features available on different types of accounts: liquidity type is for cash or bank accounts, payable/receivable is for vendor/customer accounts.</div></div></div></div><div class="code-field"><div class="code-field-name">Allow Reconciliation</div><div class="code-field-body"><div class="line-block"><div class="line">Check this box if this account allows invoices &amp; payments matching of journal items.</div></div></div></div></div><a href="https://demo.yuancloud.com?module=account.action_account_form" class="center-block reference btn-lg btn-primary external btn-block btn">View <em >Create Account</em> in our Online Demonstration</a></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

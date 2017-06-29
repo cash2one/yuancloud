@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data noupdate="1">
+
+        <record id="payment_acquirer_weixin" model="payment.acquirer">
+            <field name="name">weixin</field>
+            <field name="provider">weixin</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="view_template_id" ref="weixin_acquirer_button"/>
+            <field name="environment">test</field>
+            <field name="pre_msg"><![CDATA[<p>点击支付按钮后，将进行微信支付</p>]]></field>
+            <field name="weixin_officialaccount"></field>
+        </record>
+    </data>
+</yuancloud>

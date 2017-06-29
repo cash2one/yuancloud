@@ -1,0 +1,199 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>分析会计使用案例 &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="分析" href="../analytic.html" />
+    <link rel="next" title="如何追踪使用能够记工单的人资？" href="timesheets.html" />
+    <link rel="prev" title="分析" href="../analytic.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../accounting.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              分析会计使用案例
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="current toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#case-1-industrial-company-costs-analyse" class="ripple internal reference">案例1：工业公司：成本分析</a></li><li class="list-group-item"><a href="#case-2-law-firm-costs-of-human-resources" class="ripple internal reference">案例2：法律公司：人力资源的成本？</a></li><li class="list-group-item"><a href="#case-3-it-services-company-perfomance-analysis" class="ripple internal reference">案例3：IT服务公司：绩效分析</a></li><li class="list-group-item"><a href="#conclusion" class="ripple internal reference">结论</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/accounting/others/analytic/usage.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="analytic-account-use-cases"><p >分析会计可以用于以下几种目的：</p><ul ><li ><p >公司的成本分析</p></li><li ><p >给顾客再开记工单发票</p></li><li ><p >分析服务或者项目的绩效</p></li></ul><p >To manage analytic accounting, you have to activate it in
+<span class="menuselection">Configuration ‣ Settings</span>:</p><img src="../../../_images/usage01.png" class="img-responsive center-block"><p >To illustrate analytic accounts clearly, you will follow three use
+cases, each in one of three different types of company:</p><ol ><li ><p >工业公司：成本分析</p></li><li ><p >法律公司：花费时间的再开票</p></li><li ><p >IT/服务公司：绩效分析</p></li></ol></section><section id="case-1-industrial-company-costs-analyse"><h2 >案例1：工业公司：成本分析</h2><p >In industry, you will often find analytic charts of accounts structured
+into departments and products the company itself is built on.</p><p >The objective is to examine the costs, sales and margins by
+department/resources and by product. The first level of the structure
+comprises the different departments, and the lower levels represent the
+product ranges the company makes and sells.</p><p ><strong >Analytic Chart of Accounts for an Industrial Manufacturing Company</strong>:</p><ol ><li ><p >市场部门</p></li><li ><p >商务部门</p></li><li ><p >管理部门</p></li><li >Production Range 1</li><li >Production Range 2</li></ol><p >In daily use, it is useful to mark the analytic account on each purchase
+invoice. When the invoice is approved, it will
+automatically generate the entries for both the general and the
+corresponding analytic accounts. For each entry on the general
+accounts, there is at least one analytic entry that allocates costs to
+the department which incurred them.</p><p >Here is a possible breakdown of some general accounting entries for the
+example above, allocated to various analytic accounts:</p><table class="table"><thead ><tr ><th ><p ><strong >总账科目</strong></p></th><th ></th><th ></th><th ></th><th ></th><th ><p ><strong >分析账户</strong></p></th><th ></th></tr></thead><tbody ><tr ><td ><p ><strong >称呼</strong></p></td><td ><p ><strong >科目</strong></p></td><td ><p ><strong >借方</strong></p></td><td ><p ><strong >贷方</strong></p></td><td ></td><td ><p ><strong >科目</strong></p></td><td ><p ><strong >值</strong></p></td></tr><tr ><td ><p >原材料采购</p></td><td >2122</td><td >1500</td><td ></td><td ></td><td >Production Range 1</td><td >-1 500</td></tr><tr ><td ><p >分包</p></td><td >2122</td><td >450</td><td ></td><td ></td><td >Production Range 2</td><td >-450</td></tr><tr ><td ><p >有缺陷的材料的待方记录</p></td><td >2122</td><td ></td><td >200</td><td ></td><td >Production Range 1</td><td >200</td></tr><tr ><td ><p >运输费</p></td><td >2122</td><td >450</td><td ></td><td ></td><td >Production Range 1</td><td >-450</td></tr><tr ><td ><p >员工成本</p></td><td >2121</td><td >10000</td><td ></td><td ></td><td ><p >市场</p></td><td >-2 000</td></tr><tr ><td ></td><td ></td><td ></td><td ></td><td ></td><td ><p >商务</p></td><td >-3 000</td></tr><tr ><td ></td><td ></td><td ></td><td ></td><td ></td><td ><p >管理</p></td><td >-1 000</td></tr><tr ><td ></td><td ></td><td ></td><td ></td><td ></td><td >Production Range 1</td><td >-2 000</td></tr><tr ><td ></td><td ></td><td ></td><td ></td><td ></td><td >Production Range 2</td><td >-2 000</td></tr><tr ><td ><p >采购需求单</p></td><td >2122</td><td >450</td><td ></td><td ></td><td ><p >市场</p></td><td >-400</td></tr></tbody></table><p >The analytic representation by department enables you to investigate the
+costs allocated to each department in the company. The analytic chart of
+accounts shows the distribution of the company's costs using the example above:</p><img src="../../../_images/usage02.png" class="img-responsive center-block"><p >In this example of a hierarchical structure in YuanCloud, you can analyse not
+only the costs of each product range, but also the costs of the whole
+production. A report that relates both general accounts and analytic
+accounts enables you to get a breakdown of costs within a given
+department.</p><img src="../../../_images/usage03.png" class="img-responsive center-block"><p >The examples above are based on a breakdown of the costs of the company.
+Analytic allocations can be just as effective for sales. That gives you
+the profitability (sales - costs) of different departments.</p><p >This analytic representation by department is generally used by trading
+companies and industries.</p><p >A variantion of this, is not to break it down by sales and marketing
+departments, but to assign each cost to its corresponding product range.
+This will give you an analysis of the profitability of each product
+range.</p><p >Choosing one over the other depends on how you look at your marketing
+effort. Is it a global cost allocated in some general way, or is each
+product range responsible for its own marketing costs?</p></section><section id="case-2-law-firm-costs-of-human-resources"><h2 >案例2：法律公司：人力资源的成本？</h2><p >Law firms generally adopt management by case, where each case represents
+a current client file. All of the expenses and products are then
+attached to a given file/analytic account.</p><p >A principal preoccupation of law firms is the invoicing of hours worked,
+and the profitability by case and by employee.</p><p >Mechanisms used for encoding the hours worked will be covered in detail
+in timesheet documentation. Like most system processes, hours worked are
+integrated into the analytic accounting. In the employee form, specify
+the cost of the employee. The hourly charge is a function of the
+employee's cost.</p><p >So a law firm will opt for an analytic representation which reflects the
+management of the time that employees work on the different customer
+cases.</p><p >Billing for the different cases is a bit unusual. The cases do not match
+any entry in the general account nor do they come from purchase or sales
+invoices. They are represented by the various analytic operations and do
+not have exact counterparts in the general accounts. They are calculated
+on the basis of the hourly cost per employee.</p><p >At the end of the month when you pay salaries and benefits, you
+integrate them into the general accounts but not in the analytic
+accounts, because they have already been accounted for in billing each
+account. A report that relates data from the analytic and general
+accounts then lets you compare the totals, so you can readjust your
+estimates of hourly cost per employee depending on the time actually
+worked.</p><p >The following table shows an example of different analytic entries that
+you can find for your analytic account:</p><table class="table"><thead ><tr ><th ><p ><strong >称呼</strong></p></th><th ><p ><strong >科目</strong></p></th><th ><p ><strong >总量</strong></p></th><th ></th><th ><p ><strong >总账科目</strong></p></th><th ><p ><strong >借方</strong></p></th><th ><p ><strong >贷方</strong></p></th></tr></thead><tbody ><tr ><td ><p >学习文件(1h)</p></td><td ><p >案例1.1</p></td><td >-15</td><td ></td><td ></td><td ></td><td ></td></tr><tr ><td ><p >搜索信息(3h)</p></td><td ><p >案例1.1</p></td><td >-45</td><td ></td><td ></td><td ></td><td ></td></tr><tr ><td ><p >顾问 (4 h)</p></td><td ><p >案例 2.1</p></td><td >-60</td><td ></td><td ></td><td ></td><td ></td></tr><tr ><td ><p >服务费用</p></td><td ><p >案例1.1</p></td><td >280</td><td ></td><td ><p >705 –给服务开票</p></td><td ></td><td >280</td></tr><tr ><td ><p >办公用品采购</p></td><td ><p >管理</p></td><td >-42</td><td ></td><td ><p >601 –家具采购</p></td><td >42</td><td ></td></tr><tr ><td ><p >燃油成本－客户方出差</p></td><td ><p >案例1.1</p></td><td >-35</td><td ></td><td ><p >613 – 运费</p></td><td >35</td><td ></td></tr><tr ><td ><p >员工工资</p></td><td ></td><td ></td><td ></td><td ><p >6201 – 工资</p></td><td ></td><td >3 000</td></tr></tbody></table><p >Such a structure allows you to make a detailed study of the
+profitability of various transactions.</p><p >For more details about profitablity, please read the following document:
+<a href="timesheets.html" class="internal reference"><em >如何追踪使用能够记工单的人资？</em></a></p><p >But analytical accounting is not limited to a simple analysis of the
+profitability of different customer. The same data can be used for
+automatic recharging of the services to the customer at the end of the
+month. To invoice customers, just link the analytic account to a sale
+order and sell products that manage timesheet or expenses .</p></section><section id="case-3-it-services-company-perfomance-analysis"><h2 >案例3：IT服务公司：绩效分析</h2><p >大多数IT服务公司都面临者如下问题：</p><ul ><li ><p >项目计划，</p></li><li ><p >开票，项目的盈利能力和财务跟踪，</p></li><li ><p >管理支持合同。</p></li></ul><p >To deal with these problems, you would use an analytic chart of accounts
+structured by project and by sale order.</p><p >The management of services, expenditures and sales is similar to that
+presented above for lawyers. Invoicing and the study of profitability
+are also similar.</p><p >But now look at support contracts. These contracts are usually limited
+to a prepaid number of hours. Each service posted in the analytic
+accounts shows the remaining hours of support. To manage support
+contracts, you would create a product configured to invoice on order and
+link the sale order to an analytic account</p><p >In YuanCloud, each analytic line lists the number of units sold or used, as
+well as what you would usually find there – the amount in currency units
+(USD or GBP, or whatever other choice you make). So you can sum the
+quantities sold and used on each sale order to determine whether any
+hours of the support contract remain.</p></section><section id="conclusion"><h2 >结论</h2><p >Analytic accounting helps you to analyse costs and revenues whatever the
+use case. You can sell or purchase services, track time or analyse the
+production performance.</p><p >Analytic accounting is flexible and easy to use through all YuanCloud
+applications (sales, purchase, timesheet, production, invoice, …).</p></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

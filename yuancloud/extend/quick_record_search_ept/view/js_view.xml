@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yuancloud>
+    <data>
+        
+        <template id="quick_record_search_assets_backend" name="quick_record_search_ept assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/quick_record_search_ept/static/src/js/job_search.js"></script>
+            </xpath>
+        </template>
+    </data>
+</yuancloud>

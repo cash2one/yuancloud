@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data><!-- Action -->
+        <record model="ir.actions.act_window" id="wx_product_list_action">
+            <field name="name">微信商品</field>
+            <field name="res_model">wx.product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建第一个微信商品
+                </p>
+            </field>
+        </record>
+        <!-- List View (ec_shop)-->
+        <record model="ir.ui.view" id="product_list_view">
+            <field name="name">wx.product.tree</field>
+            <field name="model">wx.product</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="oe_product"/>
+                    <field name="wx_productcategory"/>
+                    <field name="list_price"/>
+                    <field name="wx_shop"/>
+                    <!--<field name="base_freight"/>-->
+                    <field name="wx_productid"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <!--微信商品卡片 -->
+        <record model="ir.ui.view" id="product_form_view">
+            <field name="name">wx.product.form</field>
+            <field name="model">wx.product</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button string="发布" type='workflow' name="action_toreleased" states="draft"
+                                class="oe_highlight"/>
+                        <button string="同步" type="object" name="single_sync_product" states="released"
+                                class="oe_highlight"/>
+                        <!--<button string="获取规格" type="object" name="single_reload_product_spec" states="released"-->
+                        <!--class="oe_highlight"/>-->
+                        <button string="上架" type='workflow' name="action_toonsale" states="released"
+                                class="oe_highlight"/>
+                        <button string="下架" type='workflow' name="action_toreleased" states="onsale"
+                                class="oe_highlight"/>
+                        <button string="关闭" type='workflow' name="action_toclosed" states="draft,released"
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,released,onsale,closed"
+                               statusbar_colors='{"released":"red","onsale":"blue"}'/>
+                    </header>
+                    <sheet>
+                        <div class="oe_left" style="width: 500px;">
+                            <field name="image_medium" widget="image" class="oe_avatar oe_left" readonly="1"/>
+                            <div class="oe_title" style="width: 390px;">
+                                <!--只过滤可销售的商品 -->
+                                <field name="oe_product" domain="[('sale_ok', '=', 't')]"
+                                       attrs="{'readonly': [('state', 'in', ['released','onsale','closed'])]}"/>
+                            </div>
+                            <div class="oe_left" name="options" groups="base.group_user">
+                                <div>
+                                    <field name="sale_ok" readonly="1"/>
+                                    <label for="sale_ok"/>
+                                </div>
+                            </div>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="wx_shop"
+                                       attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
+                                <field name="wx_productcategory"
+                                       attrs="{'readonly': [('state', 'in', ['released','onsale','closed'])]}"/>
+                                <field name="single_spec" readonly="1"/>
+                                <field name="single_spec_quantity"
+                                       attrs="{'readonly': ['|','&amp;',('state', 'not in', ['draft']),('single_spec','=',True),('single_spec','=',False)]}"/>
+                                <field name="single_spec_quantity_offset"
+                                       attrs="{'readonly': ['|','&amp;',('state', 'not in', ['released']),('single_spec','=',True),('single_spec','=',False)]}"/>
+                                <field name="list_price" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="wx_group_officialaccount" invisible="1"/>
+                                <field name="wx_productid"/>
+                                <field name="wx_group_cross" domain="[('wx_officialaccount','=',wx_group_officialaccount)]" widget="many2many_tags" options="{'no_create_edit': True}" attrs="{'readonly': [('state', 'not in', ['draft','released'])]}"/>
+                                <field name="wx_productdesp"
+                                       attrs="{'readonly': [('state', 'not in', ['draft','released'])]}"/>
+                                <!--<field name="base_freight"/>-->
+                                <!--<field name="state"/>-->
+                            </group>
+                        </group>
+                        <notebook>
+                            <!--<page string="信息">-->
+                            <!--<group colspan="4">-->
+                            <!--<group>-->
+                            <!--<field name="type" readonly="1"/>-->
+                            <!--<field name="list_price" readonly="1"/>-->
+                            <!--</group>-->
+                            <!--<group>-->
+                            <!--<field name="active" readonly="1"/>-->
+                            <!--</group>-->
+                            <!--</group>-->
+                            <!--</page>-->
+                            <page string="商品规格">
+                                <button string="重新获取规格" type="object" name="single_reload_product_spec"
+                                        states="released"/>
+                                <field name="wx_product_lines">
+                                    <tree create="false" delete="false" editable="bottom">
+                                        <field name="wx_product_state" invisible="1"/>
+                                        <field name="product_product_id" attrs="{'readonly': 1}"/>
+                                        <field name="spec_name" attrs="{'readonly': 1}"/>
+                                        <field name="spec_value" attrs="{'readonly': 1}"/>
+                                        <field name="wx_lst_price" attrs="{'readonly': 1}"/>
+                                        <field name="wx_quantity"
+                                               attrs="{'readonly': [('wx_product_state', 'not in', ['draft'])]}"/>
+                                        <field name="wx_quantity_offset"
+                                               attrs="{'readonly': [('wx_product_state', 'not in', ['released'])]}"/>
+                                        <!--<field name="sales_range"-->
+                                               <!--attrs="{'readonly': [('wx_product_state', 'not in', ['draft','released'])]}"/>-->
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="商品图片">
+                                <field name="wx_product_images">
+                                    <tree>
+                                        <field name="serial_number"/>
+                                        <field name="image_uses"/>
+                                        <field name="image"/>
+                                        <field name="sync_upload"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="控制">
+                                <group>
+                                    <group>
+                                        <field name="wx_islimited"
+                                               attrs="{'readonly': [('state', 'not in', ['draft','released'])]}"/>
+                                        <field name="wx_buylimit"
+                                               attrs="{'readonly': [('state', 'not in', ['draft','released'])]}"/>
+                                        <field name="wx_isunderguaranty"
+                                               attrs="{'readonly': [('state', 'not in', ['draft','released'])]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="wx_ishasreceipt"
+                                               attrs="{'readonly': [('state', 'not in', ['draft','released'])]}"/>
+                                        <field name="wx_isSupportReplace"
+                                               attrs="{'readonly': [('state', 'not in', ['draft','released'])]}"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="位置">
+                                <group>
+                                    <group>
+                                        <field name="wx_productcountry" on_change="onchange_country(wx_productcountry)"
+                                               attrs="{'readonly': [('state', 'not in', ['draft','released'])]}"/>
+                                        <field name="wx_productcity"
+                                               attrs="{'readonly': [('state', 'not in', ['draft','released'])]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="wx_productprovince" domain="[('country_id','=',wx_productcountry)]"
+                                               options="{'no_create_edit': True}"
+                                               attrs="{'readonly': [('state', 'not in', ['draft','released'])]}"/>
+                                        <field name="wx_productaddress"
+                                               attrs="{'readonly': [('state', 'not in', ['draft','released'])]}"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+        <!-- 门店图片子表  Form-->
+        <record model="ir.ui.view" id="wx_product_images_form_view">
+            <field name="name">wx.product_images.form</field>
+            <field name="model">wx.product.images</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="serial_number"/>
+                                <field name="sync_upload"/>
+                            </group>
+                            <group>
+                                <field name="image_uses"/>
+                                <field name="image"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="text"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- 暂停 -->
+        <!--<record id="ycloud_wx_productspec_tree_view" model="ir.ui.view">-->
+        <!--<field name="name">ycloud.wx.productspec.tree.view</field>-->
+        <!--<field name="model">ycloud.wx.productspec</field>-->
+        <!--<field name="arch" type="xml">-->
+        <!--<tree string="111">-->
+        <!--<field name="name_template"/>-->
+        <!--<field name="quantity"/>-->
+        <!--</tree>-->
+        <!--</field>-->
+        <!--</record>-->
+        <!--<record id="ycloud_wx_productspec_form_view" model="ir.ui.view">-->
+        <!--<field name="name">ycloud.wx.productspec.form.view</field>-->
+        <!--<field name="model">ycloud.wx.productspec</field>-->
+        <!--<field name="arch" type="xml">-->
+        <!--<form string="图文">-->
+        <!--<group col="4">-->
+        <!--<field name="name_template"/>-->
+        <!--<field name="quantity"/>-->
+        <!--</group>-->
+        <!--</form>-->
+        <!--</field>-->
+        <!--</record>-->
+        <!-- 暂停 -->
+        <!-- Begin 增加按钮  -->
+        <record model="ir.actions.server" id="action_update_products">
+            <field name="name">同步商品</field>
+            <field name="model_id" ref="model_wx_product"/>
+            <field name="code">self.batch_sync_product(cr,uid,context.get('active_ids', []),context)</field>
+        </record>
+        <record model="ir.values" id="values_action_sync_wxproduct">
+            <field name="name">同步商品</field>
+            <field name="model" eval="'wx.product'"/>
+            <field name="key">action</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.server,%d'%action_update_products"/>
+        </record>
+        <!--&lt;!&ndash; addd button for sync oe.product to wechat &ndash;&gt;-->
+        <!--<record model="ir.actions.server" id="action_sync_wxproduct">-->
+        <!--<field name="name">Product Release</field>-->
+        <!--<field name="model_id" ref="model_ycloud_wx_product"/>-->
+        <!--<field name="code">self.sync_product(cr,uid,context.get('active_ids', []),context)</field>-->
+        <!--</record>-->
+        <!--<record model="ir.values" id="values_action_sync_wxproduct">-->
+        <!--<field name="name">Product Release</field>-->
+        <!--<field name="model" eval="'ycloud.wx.product'"/>-->
+        <!--<field name="key">action</field>-->
+        <!--<field name="key2">client_action_multi</field>-->
+        <!--<field name="value" eval="'ir.actions.server,%d'%action_sync_wxproduct"/>-->
+        <!--</record>-->
+        <!--&lt;!&ndash; addd button for on the shelf in wechat &ndash;&gt;-->
+        <!--<record model="ir.actions.server" id="action_wxproduct_on">-->
+        <!--<field name="name">On-the-shelf</field>-->
+        <!--<field name="model_id" ref="model_ycloud_wx_product"/>-->
+        <!--<field name="code">self.on_the_shelf(cr,uid,context.get('active_ids', []))</field>-->
+        <!--</record>-->
+        <!--<record model="ir.values" id="values_action_wxproduct_on">-->
+        <!--<field name="name">On-the-shelf</field>-->
+        <!--<field name="model" eval="'ycloud.wx.product'"/>-->
+        <!--<field name="key">action</field>-->
+        <!--<field name="key2">client_action_multi</field>-->
+        <!--<field name="value" eval="'ir.actions.server,%d'%action_wxproduct_on"/>-->
+        <!--</record>-->
+        <!--&lt;!&ndash; addd button for off the shelf in wechat &ndash;&gt;-->
+        <!--<record model="ir.actions.server" id="action_wxproduct_off">-->
+        <!--<field name="name">Off-the-shelf</field>-->
+        <!--<field name="model_id" ref="model_ycloud_wx_product"/>-->
+        <!--<field name="code">self.off_the_shelf(cr,uid,context.get('active_ids', []))</field>-->
+        <!--</record>-->
+        <!--<record model="ir.values" id="values_action_wxproduct_off">-->
+        <!--<field name="name">Off-the-shelf</field>-->
+        <!--<field name="model" eval="'ycloud.wx.product'"/>-->
+        <!--<field name="key">action</field>-->
+        <!--<field name="key2">client_action_multi</field>-->
+        <!--<field name="value" eval="'ir.actions.server,%d'%action_wxproduct_off"/>-->
+        <!--</record>-->
+        <!--&lt;!&ndash; addd button for delete product in wechat &ndash;&gt;-->
+        <!--<record model="ir.actions.server" id="action_wxproduct_del">-->
+        <!--<field name="name">Delete Product</field>-->
+        <!--<field name="model_id" ref="model_ycloud_wx_product"/>-->
+        <!--<field name="code">self.del_product(cr,uid,context.get('active_ids', []))</field>-->
+        <!--</record>-->
+        <!--<record model="ir.values" id="values_action_wxproduct_del">-->
+        <!--<field name="name">Delete Product</field>-->
+        <!--<field name="model" eval="'ycloud.wx.product'"/>-->
+        <!--<field name="key">action</field>-->
+        <!--<field name="key2">client_action_multi</field>-->
+        <!--<field name="value" eval="'ir.actions.server,%d'%action_wxproduct_del"/>-->
+        <!--</record>-->
+        <!-- End 增加按钮  -->
+    </data>
+</yuancloud>

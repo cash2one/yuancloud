@@ -1,0 +1,135 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如果管理B2B (不含税) 和 B2C (含税)价格? &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="价格管理" href="../prices.html" />
+    <link rel="next" title="eBay" href="../../sale_ebay.html" />
+    <link rel="prev" title="价格管理" href="../prices.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../sales.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如果管理B2B (不含税) 和 B2C (含税)价格?
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="current toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#introduction" class="ripple internal reference">介绍</a></li><li class="list-group-item"><a href="#setting-your-products" class="ripple internal reference">设置你的产品</a></li><li class="list-group-item"><a href="#setting-the-b2c-fiscal-position" class="ripple internal reference">设置B2C的财政位置</a></li></ul></li><li class="list-group-item"><a href="#test-by-creating-a-quotation" class="ripple internal reference">创建报价单测试</a></li><li class="list-group-item"><a href="#avoid-changing-every-sale-order" class="ripple internal reference">避免更改每一张销售订单</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/sales/products_prices/prices/B2B_B2C.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-manage-prices-for-b2b-tax-excluded-and-b2c-tax-included"><p >销售消耗品的时候，标价通常都包含税(例如，大多数的电商场景中)。但是一旦在B2B场景中，公司之间的价格谈判都不包含税</p><p >YuanCloud能容易地管理两种用例，不管你在产品的标价上是否包含税。如果你对所有产品都标含税价(或者不含税价)，你也可以在销售订单上报不含税价(含税价)：就是这么简单。</p><p >本文档只是用在一个产品的价格的两种参照(含税价或者不含税价)特定用例中。复杂的理由是含税价和不含税价的不对称，例如本用例中，比利时的税率是21%：</p><ul ><li ><p >电商业务中有一个标价为 [UNKNOWN NODE problematic]10€ (含税)**的产品</p></li><li ><p >会做成**8.26€ (不含税)** 和** 1.74€的税**</p></li></ul><p >但是对于同一个用例，如果你在产品上的标价不含税(8.26€)，但是你确得到了一个含税的价格9.99€，原因是：</p><ul ><li ><strong >8.26€ * 1.21 = 9.99€</strong></li></ul><p >所以，基于你在产品信息中维护的价格，你将可以得到含税价和不含税价两种不同结果：</p><ul ><li ><p >不含税: <strong >8.26€ &amp; 10.00€</strong></p></li><li ><p >含税价: <strong >8.26€ &amp; 9.99€</strong></p></li></ul><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >如果以10€的含税价买了100片，结果看起来会很有意思。
+你会得到：<strong >1000€ (含税价) = 826.45€ (单价) + 173.55€ (税)</strong> ，这和
+不含税价格8.26€明显存在差异。</p></div><p >本文档解释了如何处理特定用例下的同一个公司的产品上两种价格处理(含税价和不含税价)。</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >在财务方面，你的产品卖到10€ 比9.99€ (21% 的税)对你的年营收来说并没有增加，因为对你来说你的营收和你卖9.99€时候是一样的。只是税高了0.01€。所以如果你在比利时营运着一家电子商务，为了讨好顾客，你可以把价格定为9.99€而不是10€ 。请注意此种状况对20€ 或者30€不一定适用。或者是别的税率，或者数量大于1的时候。当然这也忙了你很大忙，因为你可以对所有的东西都可以价外税管理，而这能让你的销售人员操作起来更加简单以及出错更少。</p></div></section><section id="configuration"><h2 >配置</h2></section><section id="introduction"><h3 >介绍</h3><p >要避免此种复杂状况，最好的办法就是只选择一种方法管理价格并固定下来：价格含税或者不含税。在产品表单中设置为默认的(在产品相关的默认税上)，然后让YuanCloud根据价格表和财政位置自动计算其余的。只要专注于和客户谈判。这样就实现了开箱即用，而你不需要做特别的配置。</p><p >如果你实在做不来并且把价格谈定为价外税，但是对其余的客户却是含税价。这时必须：</p><ol ><li ><p >总是在产品信息中默认的维护不含税价并且维护一个税(产品信息中包含价格)</p></li><li ><p >为特定的客户创建一个含税价的价格表</p></li><li ><p >创建一个把不含税价格换位含税价格的财政位置</p></li><li ><p >把价格表和财政位置分别设置在需要使用它们的客户上</p></li></ol><p >对于本文当的目的,我们会使用以上的用例：</p><ul ><li ><p >产品的默认价格是8.26€，不含税价</p></li><li ><p >但是我们却想在我们店铺或者电商应用中卖10€，含税价</p></li></ul></section><section id="setting-your-products"><h3 >设置你的产品</h3><p >你的公司必须要配置为默认不含税价格。通常这是默认的配置，但是你可以会计模块的 <span class="menuselection">配置(Configuration) ‣ 设置(Settings)</span> 中勾选 <strong >默认销项税</strong> 。</p><img src="../../../_images/price_B2C_B2B01.png" class="img-responsive center-block"><p >一旦完成，你就可以创建 <strong >B2C</strong> 价格表。你可以在以下菜单项激活价格表特性 <span class="menuselection">配置(Configuration) ‣ 设置(Settings)</span>。选择设置 <strong >不同的客户段不同的价格</strong> 。</p><p >一旦完成，从以下路径创建一个B2C价格表：销售模块菜单项 <span class="menuselection">配置(Configuration) ‣ 价格表(Pricelists)</span> 。当然也可以把默认的价格表更名为B2B。</p><p >然后，创建一个标价为8.26€的产品，税是 21%(不含税价)，并且给该产品的B2C客户设置价格为10€。可以通过以下菜单项 <span class="menuselection">销售(Sales) ‣ 产品(Products)</span></p><img src="../../../_images/price_B2C_B2B02.png" class="img-responsive center-block"></section><section id="setting-the-b2c-fiscal-position"><h3 >设置B2C的财政位置</h3><p >在会计模块下创建一个B2C的财务结构 <span class="menuselection">配置(Configuration ) ‣ 财务结构(Fiscal Positions)</span> 。该财政位置做了VAT 21%(不含税价)和VAT 21%(含税价)的映射</p><img src="../../../_images/price_B2C_B2B03.png" class="img-responsive center-block"></section><section id="test-by-creating-a-quotation"><h2 >创建报价单测试</h2><p >在销售模块下创建一个报价单，使用菜单项 <span class="menuselection">销售(Sales) ‣ 报价单(Quotations)</span> 菜单。你会得到以下结果：8.26€ + 1.73€ = 9.99€。</p><img src="../../../_images/price_B2C_B2B04.png" class="img-responsive center-block"><p >然后，创建一个报价单但是在添加产品之前把报价单上的**价格表更改为B2C并且财政位置也更改为B2C**。你会得到预期的结果：总价是10€，对客户就是：8.26€ + 1.74€ = 10.00€。</p><img src="../../../_images/price_B2C_B2B05.png" class="img-responsive center-block"><p >这是你的店铺中客户的预期行为。</p></section><section id="avoid-changing-every-sale-order"><h2 >避免更改每一张销售订单</h2><p >如果你和客户谈下来一个合同，不管谈下来的价格是否含税，你可以在客户的信息中维护价格表和财政位置，然后该客户的所有订单都会自动带出正确的价格和税。</p><p >价格表在客户的**销售 &amp; 采购**标签页面，财政位置在客户的会计标签页面</p><p >注意有一个错误的倾向：如果你要设置一个价内税的财政位置但是使用一个不含税的价格表，你可能会得出错误的价格。这就是我们建议公司只用一个价格参照</p></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

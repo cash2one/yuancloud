@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data><!-- Action -->
+        <record model="ir.actions.act_window" id="wx_sync_order_list_action">
+            <field name="name">同步微信小店订单：处理销售订单、微信小店订单、客户发票、客户付款单、微信对账单</field>
+            <field name="res_model">wx.syncorder</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <!--同步订单卡片 -->
+        <record model="ir.ui.view" id="sync_record_form_view">
+            <field name="name">wx.syncorder.form</field>
+            <field name="model">wx.syncorder</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button string="确认同步" type="object" name="sync_shop_order"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="wx_shop"/>
+                                <field name="order_status"/>
+                            </group>
+                            <group>
+                                <field name="timeperiod"/>
+                                <field name="start_time"/>
+                                <field name="end_time"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</yuancloud>

@@ -1,0 +1,36 @@
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>门店信息</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!--css-->
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+	<!--<link rel="stylesheet" href="css/style.css">-->
+
+</head>
+
+<body class="bg1" style="height: 460px; margin-top: 0;">
+　　<div id="container">
+            <div id="header">
+                <img src="../../diy_whm/static/src/img/whm.jpg" style="width: auto;max-width: 100%;">
+            </div>
+            <div id="main">
+                <br>
+                <div><b>{{name}}</b></div>
+                <div>所属分类：{{category}}</div>
+                <br>
+                <div>详细地址：{{address}}</div>
+                <div>联系电话：<a href="tel:{{phone}}">{{phone}}</a></div>
+                <div>手机号：<a href="tel:{{mobile}}">{{mobile}}</a></div>
+                <div>联系人：{{contact}}</div>
+                <br>
+                <div>门店简介：<br>{{simple_info}}</div>　
+                <div>老板推荐：<br>{{recommend}}</div>　
+            </div>
+            <div id="footer"></div>
+    </div>
+</body>
+</html>

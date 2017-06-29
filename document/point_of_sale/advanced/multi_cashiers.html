@@ -1,0 +1,145 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何管理多个钱箱？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../index.html" />
+    <link rel="up" title="主题" href="../advanced.html" />
+    <link rel="next" title="如何创建&amp;运营忠诚度&amp;奖励机制" href="loyalty.html" />
+    <link rel="prev" title="如何在产品上使用折扣标签" href="discount_tags.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../point_of_sale.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何管理多个钱箱？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../inventory.html" class="internal reference">库存</a></li><li class="current toctree-l2"><a href="../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#switch-cashier-without-any-security" class="ripple internal reference">无需安全设置在转换钱箱</a></li><li class="list-group-item"><a href="#switch-cashier-with-pin-code" class="ripple internal reference">使用pin码转换钱箱</a><ul ><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a></li><li class="list-group-item"><a href="#change-cashier" class="ripple internal reference">变更钱箱</a></li></ul></li><li class="list-group-item"><a href="#switch-cashier-with-cashier-barcode-badge" class="ripple internal reference">Switch cashier with cashier barcode badge</a><ul ><li class="list-group-item"><a href="#id1" class="ripple internal reference">配置</a></li><li class="list-group-item"><a href="#id2" class="ripple internal reference">变更前箱</a></li></ul></li><li class="list-group-item"><a href="#assign-session-to-a-user" class="ripple internal reference">给用户分配一个会话</a></li><li class="list-group-item"><a href="#assign-a-default-point-of-sale-to-a-cashier" class="ripple internal reference">把默认销售点赋予一个钱箱</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/point_of_sale/advanced/multi_cashiers.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-manage-multiple-cashiers"><p >This tutorial will describe how to manage multiple cashiers. There are
+four differents ways to manage several cashiers.</p></section><section id="switch-cashier-without-any-security"><h2 >无需安全设置在转换钱箱</h2><p >As prerequisite, you just need to have a second user with the <strong >Point of
+Sale User</strong> rights (Under the <span class="menuselection">General Settings ‣ Users</span> menu).
+On the <strong >Dashboard</strong> click on <strong >New Session</strong> as the main user.</p><img src="../../_images/multi_cashier01.png" class="img-responsive center-block"><p >在屏幕上方点击**用户名称**。</p><img src="../../_images/multi_cashier02.png" class="img-responsive center-block"><p >并且转换到另外一个钱箱。</p><img src="../../_images/multi_cashier03.png" class="img-responsive center-block"><p >The name on the top has changed which means you have changed the cashier.</p><img src="../../_images/multi_cashier04.png" class="img-responsive center-block"></section><section id="switch-cashier-with-pin-code"><h2 >使用pin码转换钱箱</h2></section><section id="configuration"><h3 >配置</h3><p >If you want your cashiers to need a pin code to be able to use it, you
+can set it up in by clicking on <strong >Settings</strong>.</p><img src="../../_images/multi_cashier05.png" class="img-responsive center-block"><p >然后点击**管理登陆权限**。</p><img src="../../_images/multi_cashier06.png" class="img-responsive center-block"><p >[UNKNOWN NODE problematic]编辑**钱箱并在**销售点**页面添加安全pin码。</p><img src="../../_images/multi_cashier07.png" class="img-responsive center-block"></section><section id="change-cashier"><h3 >变更钱箱</h3><p >在**仪表盘**点击**新的会话**。</p><img src="../../_images/multi_cashier08.png" class="img-responsive center-block"><p >在屏幕上方点击**用户名称**。</p><img src="../../_images/multi_cashier09.png" class="img-responsive center-block"><p >选择你的**钱箱**：</p><img src="../../_images/multi_cashier10.png" class="img-responsive center-block"><p >You will have to insert the user's <strong >pin code</strong> to be able to continue.</p><img src="../../_images/multi_cashier11.png" class="img-responsive center-block"><p >Now you can see that the cashier has changed.</p><img src="../../_images/multi_cashier12.png" class="img-responsive center-block"></section><section id="switch-cashier-with-cashier-barcode-badge"><h2 >Switch cashier with cashier barcode badge</h2></section><section id="id1"><h3 >配置</h3><p >If you want your cashiers to scan its badge,
+you can set it up in by clicking on <strong >Settings</strong>.</p><img src="../../_images/multi_cashier13.png" class="img-responsive center-block"><p >Then click on <strong >Manage access rights</strong></p><img src="../../_images/multi_cashier14.png" class="img-responsive center-block"><p ><strong >Edit</strong> the cashier and add a <strong >security pin code</strong> on the <strong >Point of Sale</strong>
+tab.</p><img src="../../_images/multi_cashier15.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >Be careful of the barcode nomenclature, the default one forced you
+to use a barcode starting with <code >041</code> for cashier barcodes. To change that
+go to <span class="menuselection">Point of Sale ‣ Configuration ‣ Barcode Nomenclatures</span>.</p></div><img src="../../_images/multi_cashier16.png" class="img-responsive center-block"></section><section id="id2"><h3 >变更前箱</h3><p >在**仪表盘**点击**新的会话**。</p><img src="../../_images/multi_cashier17.png" class="img-responsive center-block"><p >在屏幕上方点击**用户名称**。</p><img src="../../_images/multi_cashier18.png" class="img-responsive center-block"><p >When the cashier scans his own badge, you can see on the top that the
+cashier has changed.</p></section><section id="assign-session-to-a-user"><h2 >给用户分配一个会话</h2><p >Click on the menu <span class="menuselection">Point of Sale ‣ Orders ‣ Sessions</span>.</p><img src="../../_images/multi_cashier19.png" class="img-responsive center-block"><p >Then, click on <strong >New</strong> and assign as <strong >Responsible</strong> the correct cashier to the
+point of sale.</p><img src="../../_images/multi_cashier20.png" class="img-responsive center-block"><p >When the cashier logs in he is able to open the session</p><img src="../../_images/multi_cashier21.png" class="img-responsive center-block"></section><section id="assign-a-default-point-of-sale-to-a-cashier"><h2 >把默认销售点赋予一个钱箱</h2><p >If you want your cashiers to be assigned to a point of sale, go to
+<span class="menuselection">Point of Sales ‣ Configuration ‣ Settings</span>.</p><img src="../../_images/multi_cashier22.png" class="img-responsive center-block"><p >Then click on <strong >Manage Access Rights</strong>.</p><img src="../../_images/multi_cashier23.png" class="img-responsive center-block"><p ><strong >Edit</strong> the cashier and add a <strong >Default Point of Sale</strong> under the <strong >Point of
+Sale</strong> tab.</p><img src="../../_images/multi_cashier24.png" class="img-responsive center-block"><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="../shop/cash_control.html" class="internal alert-link reference"><em >How to set up cash control?</em></a></li><li ><a href="../shop/invoice.html" class="internal alert-link reference"><em >How to invoice from the POS interface?</em></a></li><li ><a href="../shop/refund.html" class="internal alert-link reference"><em >How to return and refund products?</em></a></li><li ><a href="../shop/seasonal_discount.html" class="internal alert-link reference"><em >How to apply Time-limited or seasonal discounts?</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

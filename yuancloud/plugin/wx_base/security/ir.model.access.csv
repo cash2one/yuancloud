@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wx_base_wx_base,wx_base.wx_base,model_wx_base_wx_base,,1,0,0,0
+access_wx_officialaccount_public,wx.officialaccount.public,model_wx_officialaccount,,1,0,0,0

@@ -1,0 +1,58 @@
+<yuancloud>
+    <data><!-- Action -->
+        <record model="ir.actions.act_window" id="wx_music_message_template_list_action">
+            <field name="name">音乐消息模板</field>
+            <field name="res_model">wx.music_message_template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建第一个音乐消息模板
+                </p>
+            </field>
+        </record>
+        <!-- List View (wx_message-text)-->
+        <record model="ir.ui.view" id="music_message_template_list_view">
+            <field name="name">ycloud_wx_music_message_template.tree</field>
+            <field name="model">wx.music_message_template</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="message_type"/>
+                    <field name="template_code"/>
+                    <field name="template_name"/>
+                    <field name="message_title"/>
+                    <field name="message_description"/>
+                    <field name="message_musicURL"/>
+                    <field name="message_ThumbMediaId"/>
+                    <field name="iseffective"/>
+                    <field name="model_id"/>
+                </tree>
+            </field>
+        </record>
+        <!--文字消息卡片 -->
+        <record model="ir.ui.view" id="music_message_template_form_view">
+            <field name="name">ycloud_wx_music_message_template.form</field>
+            <field name="model">wx.music_message_template</field>
+            <field name="arch" type="xml">
+                <form create="false">
+                    <sheet>
+                        <group>
+                            <field name="message_type"/>
+                            <field name="template_code"/>
+                            <field name="template_name"/>
+                            <field name="message_title"/>
+                            <field name="message_description"/>
+                            <field name="message_musicURL"/>
+                            <field name="message_HQMusicUrl"/>
+                            <field name="message_ThumbMediaData" widget="image" class="oe_avatar"/>
+                            <field name="message_ThumbMediaId"/>
+                            <field name="iseffective"/>
+                            <field name="model_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</yuancloud>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!--记账凭证-增加“附件张数” -->
+
+        <!--记账凭证卡片视图增加“附件张数”-->
+        <record id="view_account_move_form_inherited" model="ir.ui.view">
+            <field name="name">account.move.form.inherited</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <field name="attachment_count"/>
+                </field>
+            </field>
+        </record>
+
+        <!--记账凭证列表视图增加“附件张数”-->
+        <record id="view_account_move_tree_inherited" model="ir.ui.view">
+            <field name="name">account.view_move_tree.inherited</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_tree"/>
+            <field name="arch" type="xml">
+                <field name="currency_id" position="after">
+                    <field name="attachment_count"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</yuancloud>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!--产品视图-增加“功能清单”页签 -->
+        <!--销售订单行-产品-导航-Form-->
+        <record id="view_product_template_form_inherited" model="ir.ui.view">
+            <field name="name">product.template.form.inherited</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <field name="type" position="after">
+                    <field name="must_choose"/>
+                </field>
+                <xpath expr="//page[@name='sales']" position="after">
+                    <page string="功能清单" attrs="{'invisible':[('type','!=','service')]}" >
+                        <field name="function_ids" widget="one2many_list">
+                            <tree>
+                                <field name="name"/>
+                                <!--<field name="must_choose"/>-->
+                                <!--<field name="standard_price"/>-->
+                                <field name="description"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_product_template_function_form" model="ir.ui.view">
+            <field name="name">product.template.function.form</field>
+            <field name="model">product.template.function</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group string="功能清单">
+                        <group>
+                            <field name="name"/>
+                            <!--<field name="must_choose"/>-->
+                        </group>
+                        <group>
+                            <!--<field name="standard_price"/>-->
+                            <field name="description"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!--规格产品-->
+        <record id="view_product_normal_form_view_inherited" model="ir.ui.view">
+            <field name="name">product.product.form.inherited</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <field name="type" position="after">
+                    <field name="must_choose"/>
+                </field>
+                <xpath expr="//page[@name='sales']" position="after">
+                    <page string="规格清单" attrs="{'invisible':['|',('type','!=','service'),('product_variant_count', '&lt;=', 1)]}"  groups="product.group_product_variant">
+                        <field name="function_product_ids" widget="one2many_list">
+                            <tree>
+                                <field name="name"/>
+                                <field name="description"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_product_product_function_form" model="ir.ui.view">
+            <field name="name">product.product.function.form</field>
+            <field name="model">product.product.function</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group string="规格清单">
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</yuancloud>

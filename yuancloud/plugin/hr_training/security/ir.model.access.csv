@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_training_lession_manager,hr.training.lession,model_hr_training_lession,base.group_hr_manager,1,1,1,1
+access_training_record_manager,hr.training.reord,model_hr_training_record,base.group_hr_manager,1,1,1,1
+access_training_lession_user,hr.training.lession,model_hr_training_lession,base.group_user,1,0,0,0
+access_training_record_user,hr.training.reord,model_hr_training_record,base.group_user,1,0,0,0

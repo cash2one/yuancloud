@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <report
+            id="report_payroll_sswy"
+            string="工资单"
+            model="hr.payslip.run"
+            report_type="qweb-pdf"
+            file="hr_payroll_extend.report_payroll"
+            name="hr_payroll_extend.report_payroll"
+        />
+    </data>
+</yuancloud>

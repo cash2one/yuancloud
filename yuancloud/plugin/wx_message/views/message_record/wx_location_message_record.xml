@@ -1,0 +1,72 @@
+<yuancloud>
+    <data><!-- Action -->
+        <record model="ir.actions.act_window" id="wx_location_message_record_list_action">
+            <field name="name">位置消息记录</field>
+            <field name="res_model">wx.location_message_record</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建第一个位置消息记录
+                </p>
+            </field>
+        </record>
+        <!-- List View (wx_message-text)-->
+        <record model="ir.ui.view" id="location_message_record_list_view">
+            <field name="name">ycloud_wx_location_message_record.tree</field>
+            <field name="model">wx.location_message_record</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="message_type"/>
+                    <field name="message_event"/>
+                    <field name="message_msgid"/>
+                    <field name="official_username"/>
+                    <field name="qy_toUserName"/>
+                    <field name="send_event"/>
+                    <field name="createTime"/>
+                    <field name="message_locationX"/>
+                    <field name="message_locationY"/>
+                    <field name="message_scale"/>
+                    <field name="message_label"/>
+                    <field name="message_template"/>
+                    <field name="officialaccount"/>
+                    <field name="association_order"/>
+                    <field name="association_user"/>
+                    <field name="message_status"/>
+                    <field name="session_id"/>
+                </tree>
+            </field>
+        </record>
+        <!--文字消息卡片 -->
+        <record model="ir.ui.view" id="location_message_record_form_view">
+            <field name="name">ycloud_wx_location_message_record.form</field>
+            <field name="model">wx.location_message_record</field>
+            <field name="arch" type="xml">
+                <form create="false">
+                    <sheet>
+                        <group>
+                            <field name="message_type"/>
+                            <field name="message_event"/>
+                            <field name="message_msgid"/>
+                            <field name="official_username"/>
+                            <field name="qy_toUserName"/>
+                            <field name="send_event"/>
+                            <field name="createTime"/>
+                            <field name="message_locationX"/>
+                            <field name="message_locationY"/>
+                            <field name="message_scale"/>
+                            <field name="message_label"/>
+                            <field name="message_template"/>
+                            <field name="officialaccount"/>
+                            <field name="association_order"/>
+                            <field name="association_user"/>
+                            <field name="message_status"/>
+                            <field name="session_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</yuancloud>

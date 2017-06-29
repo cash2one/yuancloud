@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!--HR的经理、官员、员工均可查看到“日常流水”菜单-->
+        <record id="menu_journal" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[(6,0,[ref('base.group_hr_manager'),ref('base.group_hr_user'),ref('base.group_user')])]"></field>
+        </record>
+        <!--HR的经理可查看到“日常流水分析”菜单-->
+        <record id="menu_oa_journal_report_all" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('base.group_hr_manager')])]"></field>
+        </record>
+        <!--HR的经理可查看到“配置”菜单-->
+        <record id="menu_oa_journal_configuration" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('base.group_hr_manager')])]"></field>
+        </record>
+    </data>
+</yuancloud>
+

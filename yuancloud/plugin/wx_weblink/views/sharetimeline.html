@@ -1,0 +1,39 @@
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script type="text/javascript" src="/wx_weblink/static/src/js/jquery-1.9.1.min.js" defer="defer"></script>
+    <script type="text/javascript" src="/wx_weblink/static/src/js/jweixin-1.0.0.js?v=2" defer="defer"></script>
+    <script type="text/javascript" src="/wx_weblink/static/src/js/wx_sign.js?v=4" defer="defer"></script>
+
+</head>
+
+<body>
+
+<form>
+    <div class="div01">
+        <img src="{{imageurl}}" width="50px;">
+        <div>
+            <p>{{ title }}</p>
+            <div>
+                <span>{{ desc }}</span>
+            </div>
+            <div>
+                <span>{{ share_mood_1 }}</span>
+            </div>
+            <div>
+                <span>{{ share_mood_2 }}</span>
+            </div>
+            <div>
+                <span>{{ share_mood_3 }}</span>
+            </div>
+        </div>
+    </div>
+
+</form>
+</body>
+</html>

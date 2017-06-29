@@ -1,0 +1,150 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何安装与配置项目管理? &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../index.html" />
+    <link rel="up" title="基础配置" href="../configuration.html" />
+    <link rel="next" title="如何可视化项目的任务？" href="visualization.html" />
+    <link rel="prev" title="基础配置" href="../configuration.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../project.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何安装与配置项目管理?
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="current toctree-l2"><a href="../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#overview" class="ripple internal reference">概述</a></li><li class="list-group-item"><a href="#installing-the-project-module" class="ripple internal reference">安装项目管理模块</a></li><li class="list-group-item"><a href="#creating-a-new-project" class="ripple internal reference">创建一个新的项目</a></li><li class="list-group-item"><a href="#manage-your-project-s-stages" class="ripple internal reference">自定义项目阶段</a><ul ><li class="list-group-item"><a href="#add-your-project-s-stages" class="ripple internal reference">创建自定义的项目阶段</a></li><li class="list-group-item"><a href="#rearrange-stages" class="ripple internal reference">调整项目阶段</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/project/configuration/setup.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-set-up-configure-a-project"></section><section id="overview"><h2 >概述</h2><p >YuanCloud项目允许你和整个项目团队一起管理项目，与项目和任务成员中的任何一个人沟通。</p><p >It works with projects containing tasks following customizable stages. A
+can be internal or customer-oriented. A task is something to perform as
+part of a project. You will be able to give different tasks to several
+employees working on this project.</p></section><section id="installing-the-project-module"><h2 >安装项目管理模块</h2><p >Open the <strong >Apps</strong> module, search for <strong >Project Management</strong>, and click on
+<strong >Install</strong>.</p><img src="../../_images/setup015.png" class="img-responsive center-block"></section><section id="creating-a-new-project"><h2 >创建一个新的项目</h2><p >Open the <strong >Project</strong> application, and click on <strong >Create</strong>. From this window,
+you can specify the name of the project and set up the privacy of the
+project.</p><p >隐私设置如：</p><ul ><li ><p >[UNKNOWN NODE problematic]客户项目 [UNKNOWN NODE problematic]：如果该客户是一个关注者那么就可以在门户中看到。</p></li><li ><p ><strong >所有员工</strong>:员工能看到所有的任务或者问题。</p></li><li ><p >** 私有项目**：只有关注者能看到的任务或者问题</p></li></ul><p >如果某个项目有特定的客户，就可以在项目中标明；如果不是客户的项目，那么**客户**字段留空。</p><img src="../../_images/setup025.png" class="img-responsive center-block"><p >输完所有必要的详细信息之后，点击**保存**。</p></section><section id="manage-your-project-s-stages"><h2 >自定义项目阶段</h2></section><section id="add-your-project-s-stages"><h3 >创建自定义的项目阶段</h3><p >在你项目仪表盘上。点击**＃任务**。</p><img src="../../_images/setup033.png" class="img-responsive center-block"><p >In the new window, add a new column and name it according to the first
+stage of your project, then add as many columns as there are stages in
+your project.</p><img src="../../_images/setup042.png" class="img-responsive center-block"><p >For each stage, there are markers for the status of tasks within a
+stage, that you can personalize to fit your needs.</p><p >Drag your mouse pointer over a stage name, and click on the appearing
+bearing, and on the opening menu, click on <strong >Edit</strong>.</p><img src="../../_images/setup052.png" class="img-responsive center-block"><p >A new window will open. The color dots and star icon correspond to
+customizable markers applied on tasks, making it easier to know what
+task requires attention. You can give them any signification you like.</p><img src="../../_images/setup061.png" class="img-responsive center-block"><p >完成的时候点击 <strong >保存</strong> 。</p></section><section id="rearrange-stages"><h3 >调整项目阶段</h3><p >You can easily personalize this view to better suit your business needs
+by creating new columns. From the Kanban view of your project, you can
+add stages by clicking on <strong >Add new column</strong>. If you want to rearrange
+the order of your stages, you can easily do so by dragging and dropping
+the column you want to move to the desired location. You can also fold
+or unfold your stages by using the <strong >Setting</strong> icon on your desired stage.</p><img src="../../_images/setup071.png" class="img-responsive center-block"><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="visualization.html" class="internal alert-link reference"><em >如何可视化项目的任务？</em></a></li><li ><a href="collaboration.html" class="internal alert-link reference"><em >如何在任务上管理&amp;协作？</em></a></li><li ><a href="time_record.html" class="internal alert-link reference"><em >如何记录花费的时间？</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

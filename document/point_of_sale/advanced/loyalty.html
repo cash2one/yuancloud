@@ -1,0 +1,138 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何创建&amp;运营忠诚度&amp;奖励机制 &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../index.html" />
+    <link rel="up" title="主题" href="../advanced.html" />
+    <link rel="next" title="如何注册客户？" href="register.html" />
+    <link rel="prev" title="如何管理多个钱箱？" href="multi_cashiers.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../point_of_sale.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何创建&amp;运营忠诚度&amp;奖励机制
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../inventory.html" class="internal reference">库存</a></li><li class="current toctree-l2"><a href="../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a></li><li class="list-group-item"><a href="#create-a-loyalty-program" class="ripple internal reference">创建忠诚项目</a></li><li class="list-group-item"><a href="#applying-your-loyalty-program-to-a-point-of-sale" class="ripple internal reference">把你的忠诚度项目应用在某的销售点上</a></li><li class="list-group-item"><a href="#gathering-and-consuming-points" class="ripple internal reference">收集好消耗点数</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/point_of_sale/advanced/loyalty.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-create-run-a-loyalty-reward-system"></section><section id="configuration"><h2 >配置</h2><p >在**销售点**应用中，进入：[UNKNOWN NODE title_reference]。</p><img src="../../_images/loyalty01.png" class="img-responsive center-block"><p >你可以勾选**设置忠诚项目并且给客户奖励 [UNKNOWN NODE problematic]。</p><img src="../../_images/loyalty02.png" class="img-responsive center-block"></section><section id="create-a-loyalty-program"><h2 >创建忠诚项目</h2><p >在你申请后，进入：[UNKNOWN NODE title_reference] 并点击**创建**。</p><img src="../../_images/loyalty03.png" class="img-responsive center-block"><p >Set a <strong >name</strong> and an <strong >amount</strong> of points given <strong >by currency</strong>,
+<strong >by order</strong> or <strong >by product</strong>. Extra rules can also be added
+such as <strong >extra points</strong> on a product.</p><p >要这样做，就在下面的**规则**点击**添加新的条目**。</p><img src="../../_images/loyalty04.png" class="img-responsive center-block"><p >你可以通过设置一些配置值配置任何规则。</p><ul ><li ><p ><strong >名称</strong>：一个忠诚项目的内部标识</p></li><li ><p ><strong >类型</strong>：该规则是否影响到产品或产品的内部分类？</p></li><li ><p ><strong >目标产品</strong>:规则影响到的产品</p></li><li ><p ><strong >目标种类</strong>：规则影响到的种类</p></li><li ><strong >Cumulative</strong>: The points won from this rule will be won in addition to other rules</li><li ><strong >Points per product</strong>: How many points the product will earn per product ordered</li><li ><strong >Points per currency</strong>: How many points the product will earn per value sold</li></ul><img src="../../_images/loyalty05.png" class="img-responsive center-block"><p >Your new rule is now created and rewards can be added by clicking on
+<strong >Add an Item</strong> under <strong >Rewards</strong>.</p><img src="../../_images/loyalty06.png" class="img-responsive center-block"><p >能提供三种类型奖励：</p><ul ><li ><strong >Resale</strong>: convert your points into money. Set a product that represents the value of 1 point.</li></ul><img src="../../_images/loyalty14.png" class="img-responsive center-block"><ul ><li ><strong >Discount</strong>: give a discount for an amount of points. Set a product with a price of <code >0 €</code> and without any taxes.</li></ul><img src="../../_images/loyalty13.png" class="img-responsive center-block"><ul ><li ><strong >Gift</strong>: give a gift for an amount of points</li></ul><img src="../../_images/loyalty07.png" class="img-responsive center-block"></section><section id="applying-your-loyalty-program-to-a-point-of-sale"><h2 >把你的忠诚度项目应用在某的销售点上</h2><p >On the <strong >Dashboard</strong>, click on <span class="menuselection">More ‣ Settings</span>.</p><img src="../../_images/loyalty08.png" class="img-responsive center-block"><p >Next to loyalty program, set the program you want to set.</p><img src="../../_images/loyalty09.png" class="img-responsive center-block"></section><section id="gathering-and-consuming-points"><h2 >收集好消耗点数</h2><p >To start gathering points you need to set a customer on the order.</p><p >点击**客户**并选择正确的</p><p >忠诚点数会显示在屏幕上。</p><img src="../../_images/loyalty10.png" class="img-responsive center-block"><p >The next time the customer comes to your shop and has enough points to
+get a reward, the <strong >Rewards</strong> button is highlighted and gifts can be
+given.</p><img src="../../_images/loyalty11.png" class="img-responsive center-block"><p >The reward is added and of course points are subtracted from the total.</p><img src="../../_images/loyalty12.png" class="img-responsive center-block"><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="../shop/cash_control.html" class="internal alert-link reference"><em >How to set up cash control?</em></a></li><li ><a href="../shop/invoice.html" class="internal alert-link reference"><em >How to invoice from the POS interface?</em></a></li><li ><a href="../shop/refund.html" class="internal alert-link reference"><em >How to return and refund products?</em></a></li><li ><a href="../shop/seasonal_discount.html" class="internal alert-link reference"><em >How to apply Time-limited or seasonal discounts?</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

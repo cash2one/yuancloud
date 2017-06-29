@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!--定义记录规则-->
+        <!-- HR经理：查看所有-->
+        <record id="journal_manager_list_view" model="ir.rule">
+            <field name="name">All Journal</field>
+            <field name="model_id" ref="model_oa_journal"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+            <field name="groups" eval="[(4, ref('base.group_hr_manager'))]"/>
+        </record>
+        <!--HR官员，HR员工：只看个人-->
+        <record id="journal_user_list_view" model="ir.rule">
+            <field name="name">Personal Journal</field>
+            <field name="model_id" ref="model_oa_journal"/>
+            <field name="domain_force">[('payer_employee.user_id','=',user.id)]</field>
+            <field name="groups" eval="[(4, ref('base.group_hr_user')),(4, ref('base.group_user'))]"/>
+        </record>
+        <!--************日常流水-多公司-记录规则******************-->
+        <record id="journal_multycompany_list_view" model="ir.rule">
+            <field name="name">日常流水多公司</field>
+            <field name="model_id" ref="model_oa_journal"/>
+            <field name="domain_force">['|',('company_id','=',user.company_id.id),('company_id','=',False)]</field>
+        </record>
+    </data>
+</yuancloud>
+

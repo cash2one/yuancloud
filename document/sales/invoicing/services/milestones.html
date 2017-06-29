@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何给一个项目按里程碑开发票 &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="服务" href="../services.html" />
+    <link rel="next" title="如何为你的客户重开费用发票。" href="reinvoice.html" />
+    <link rel="prev" title="服务" href="../services.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../sales.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何给一个项目按里程碑开发票
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="current toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#install-the-sales-application" class="ripple internal reference">安装销售管理</a></li><li class="list-group-item"><a href="#create-products" class="ripple internal reference">创建产品</a></li></ul></li><li class="list-group-item"><a href="#managing-your-project" class="ripple internal reference">管理项目</a><ul ><li class="list-group-item"><a href="#quotations-and-sale-orders" class="ripple internal reference">销售报价及销售订单</a></li><li class="list-group-item"><a href="#invoice-milestones" class="ripple internal reference">根据里程碑开票</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/sales/invoicing/services/milestones.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-invoice-milestones-of-a-project"><p >有各种不同的销售服务：按小时/天数预付(比如 支持合同)，基于时间和物料的账单(例如 顾问小时数的账单)或者一个固定价格的合同(比如，一个项目).</p><p >在本节中，我们将看看如何按项目的里程碑开发票。</p><p >按里程碑开票可以用在昂贵的或大型项目上，每个里程碑代表了一个明确的工作序列号并将逐步建立来完成合同。例如，聘请的营销机构把一个产品的发布分解成以下的里程碑，其中每一个在销售订单中都被作为一个固定价格的服务。</p><ul ><li ><p >里程碑1：市场营销战略审计 - 5000欧元</p></li><li ><p >里程碑2：品牌识别 - 10000欧元</p></li><li ><p >里程碑3：活动启动及公关 - 8500欧元</p></li></ul><p >在这种情况下，每当一个里程碑将成功地达到目标时发票被发送给客户。这种开票的方法对于想通过项目周期确保得到稳定的现金流的公司和想监控项目进度分几次付款的客户都觉得很舒服。</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >你也可以使用里程碑的方式按项目的百分比开票。比如，对于一个百万欧元的项目，你的公司也许需要预付15%的款项，在中点再付30%，合同结束时付余清余款。在这种情况下，每个付款都被看作一个里程碑。</p></div></section><section id="configuration"><h2 >配置</h2></section><section id="install-the-sales-application"><h3 >安装销售管理</h3><p >为了销售服务和发送发票，你需要从**Apps** 图标安装**销售**模块。</p><img src="../../../_images/milestones01.png" class="img-responsive center-block"></section><section id="create-products"><h3 >创建产品</h3><p >在YuanCloud中，你的项目的每个里程碑都被看作一个产品. 从 <strong >销售模块</strong> 中，使用菜单 <span class="menuselection">销售(Sales) ‣ 产品(Products)</span>，按以下步骤生成一个产品：</p><ul ><li ><p ><strong >名字</strong>：战略审计</p></li><li ><p ><strong >产品类型</strong>: 服务</p></li><li ><p ><strong >开票策略</strong>：已发货的数量，你将在发货后开票。</p></li><li ><p ><strong >跟踪服务</strong>：手动在订单上设置数量，当你完成了每个里程碑，你将手动在销售订单的&quot;已发货“标签更新他们的数量。</p></li></ul><img src="../../../_images/milestones02.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >为其他里程碑做同样的配置。</p></div></section><section id="managing-your-project"><h2 >管理项目</h2></section><section id="quotations-and-sale-orders"><h3 >销售报价及销售订单</h3><p >现在你的里程碑(或产品)生成了，你能创建一个报价或者订单，每行对应一个里程碑。每行设置**订购量**为1当每个里程碑完成时。当报价被确认并转化成一个销售订单，你可以更改发货数量当对应的里程碑达到目标时。</p><img src="../../../_images/milestones03.png" class="img-responsive center-block"></section><section id="invoice-milestones"><h3 >根据里程碑开票</h3><p >让我们假设你的第一个里程碑(战略审计)已成功交付并要其开具发票给客户。在销售订单，点击**编辑**，并设置相关产品的**交货数量**为 1。</p><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >当上述修改已经保存，你会发现，线的颜色变为蓝色，这意味着该服务现在可以开具发票。在同一时间，所以发票的状态已经从**没有可开发票**到**可开票**</p></div><p >点击**创建发票**，并在新的弹出窗口中选择**开票线**和验证。这将创建一个新的发票(处于草案状态)，只有在**战略审核**产品为客户开具发票。</p><img src="../../../_images/milestones04.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >为了能够为产品开票，你需要设置的**会计**模块和配置会计日记账和科目表。点击以下链接了解详情：：doc:[UNKNOWN NODE title_reference]</p></div><p >回到您的销售订单上，你会发现，你的订单行的**开具发票**的列进行了相应的更新，而且**发票状态**回到了**没有可开发票**。</p><p >按一样的流程为你剩下的里程碑开票</p><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="recurring.html" class="internal alert-link reference"><em >如何管理经常性发票(通过合同)？</em></a></li><li ><a href="time_materials.html" class="internal alert-link reference"><em >如何基于时间和材料开具发票？</em></a></li><li ><a href="reinvoice.html" class="internal alert-link reference"><em >如何为你的客户重开费用发票。</em></a></li><li ><a href="support.html" class="internal alert-link reference"><em >如何刚给支持合同开票(预付小时数)？</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

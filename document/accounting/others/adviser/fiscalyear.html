@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何在YuanCloud中做年末(关闭会计区间) &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="顾问" href="../adviser.html" />
+    <link rel="next" title="如何管理财务预算?" href="budget.html" />
+    <link rel="prev" title="管理固定资产" href="assets.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../accounting.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何在YuanCloud中做年末(关闭会计区间)
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="current toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#year-end-checklist" class="ripple internal reference">年终（科目）余额</a></li><li class="list-group-item"><a href="#closing-the-fiscal-year" class="ripple internal reference">关闭会计年度</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/accounting/others/adviser/fiscalyear.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-do-a-year-end-in-yuancloud-close-a-fiscal-year"><p >在关闭一个财政年度前, 需要做几步以确保你的会计是正确的,最新的,和精确的:</p><ul ><li ><p >确保你完全核销了* <em >银行账户(s)</em> [UNKNOWN NODE problematic]直至年底, 同时确认登帐期末余额和银行对账单的期末余额一致。</p></li><li ><p >确认所有**客户发票**已输入和批准。</p></li><li ><p >确认您已输入并同意的所有 <strong >供应商账单</strong>。</p></li><li ><p >审核所有的费用，保证其正确。</p></li><li ><p >证实,所有的 [UNKNOWN NODE problematic]received payments**已登记并准确记录。</p></li></ul></section><section id="year-end-checklist"><h2 >年终（科目）余额</h2><ul ><li ><p >运行 <strong >税报表</strong>, 并验证你的税务信息是正确的。</p></li><li ><p >在 <strong >资产负债表</strong> 调节所有科目 :</p><ul ><li ><p >将银行对账单和实际的银行余额一致, 可利用* <em >Bank Reconciliation</em> [UNKNOWN NODE problematic]报表来辅助。</p></li><li ><p >通过运行**Aged Receivables** and [UNKNOWN NODE problematic]Aged Payables**报表, 核销所有交易中的现金和银行科目。</p></li><li ><p >检查你的科目, 确定理解所有交易对科目的影响和交易的性质,确保包括贷款和固定资产。</p></li></ul></li><li ><p >运行选项* <em >付款匹配 * *特性, 在仪表盘上的下拉</em> <em >更多 * *,验证所有</em> <em >供应商账单</em> <em >和</em> * 客户发票* [UNKNOWN NODE problematic]以及他们的付款。这一步是可选的, 如果所有未付款和发票已核销, 同时可能会发现系统中的错误,但是它可能帮助年终操作, 。</p></li><li ><p >你的会计/登记员可能会验证您的资产负债表项目和登记凭证:</p><ul ><li ><p >年终手动调整,使用* <em >Adviser Journal Entries</em> <em >菜单(例如,</em> <em >当年收入</em> * 和* <em >留存收益</em> [UNKNOWN NODE problematic]报告)。</p></li><li ><p >工作进度</p></li><li ><p >折旧帐簿明细</p></li><li ><p >贷款</p></li><li ><p >纳税调整</p></li></ul></li></ul><p >如果你的会计正经历今年年底审计,他们可能想要复印纸质的所有资产负债表项目(如贷款、银行账户、预付款、销项税,等等…), 这些应与YuanCloud内的余额一致。</p><p >在这个过程中, 很好的实用方法就设置会计年度的最后一天, 通过设置 <strong >Lock date for Non-Advisers</strong> , 这个在会计配置下设置。这样, 在审计时, 会计可确保没有人能改变前一年的交易。</p><img src="../../../_images/fiscalyear01.png" class="img-responsive center-block"></section><section id="closing-the-fiscal-year"><h2 >关闭会计年度</h2><p >在YuanCloud, 不需要做一个特定的年底关闭凭证以关闭损益表科目。这些报表实时产生,这意味着* <em >损益表</em> <em >直接对应于您指定的年终YuanCloud日期。因此,任何时候你生成</em> <em >损益表</em> <em >,开始日期与</em> * 财政年度* [UNKNOWN NODE problematic]一致, 科目余额都是0。</p><p >一旦会计创建凭证用于分配* <em >当年利润</em> <em >,你应该设置本财政年度的最后一天为</em> <em >锁定日期</em> <em >。确保在这样做之前,您确认是否当前年度收入</em> [UNKNOWN NODE problematic]资产负债表 * [UNKNOWN NODE problematic]中正确余额为0。</p></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

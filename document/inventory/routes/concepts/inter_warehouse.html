@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何做仓库的内部调拨？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="概念" href="../concepts.html" />
+    <link rel="next" title="如何在仓库中实现cross-dock？" href="cross_dock.html" />
+    <link rel="prev" title="什么是推规则？" href="push_rule.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../inventory.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何做仓库的内部调拨？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="current toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a></li><li class="list-group-item"><a href="#creating-a-new-warehouse" class="ripple internal reference">创建一个新的仓库</a></li><li class="list-group-item"><a href="#creating-a-new-inventory" class="ripple internal reference">创建一个新的库存</a></li><li class="list-group-item"><a href="#create-an-internal-transfer" class="ripple internal reference">创建内部调拨</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/inventory/routes/concepts/inter_warehouse.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-do-inter-warehouses-transfers"><p >如果有不同的仓库，并且想在不同仓库间调拨货物。因为有了YuanCloud这些变得都很容易。</p></section><section id="configuration"><h2 >配置</h2><p >首先需要选择多库位选项：在 <strong >库存模块 **中的`配置 --&gt; 设置` 。然后勾选**仓库进行多库位管理**选项。不要忘了勾选之后点击**应用</strong>。</p><img src="../../../_images/inter01.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >如果想在你的仓库中管理多库位以及路径就需要勾选该选项。</p></div></section><section id="creating-a-new-warehouse"><h2 >创建一个新的仓库</h2><p >下一步是创建新的仓库，在库存模块，点击：[UNKNOWN NODE title_reference]。现在就可以通过点击**创建**创建新的仓库。</p><p >输入仓库名称和一个简称，简称最多只能5个字。</p><img src="../../../_images/inter02.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >需要注意的是**简称**非常的重要，它会出现在调拨单以及其余的仓库文档中，定义的时候需要足够简单并且易于理解(例如：WH/[库位的首字母])。</p></div><p >如果你回到仪表盘，新的仓库会自动的生成操作类型。</p><img src="../../../_images/inter03.png" class="img-responsive center-block"></section><section id="creating-a-new-inventory"><h2 >创建一个新的库存</h2><p >如果你创建了一个新的仓库，你可能在此之前已经有一些实际的库存。这样的话你就需在YuanCloud中创建一个盘点。如果没有库存的话，就可以跳过该步骤。</p><p >进入库存管理应用模块，选择：[UNKNOWN NODE problematic]库存控制--&gt; 库存调整 [UNKNOWN NODE problematic]。通过点击**创建**创建新的盘点。在**盘点参照**，[UNKNOWN NODE problematic]日期**中输入内容并确保选择正确的仓库和库位。</p><img src="../../../_images/inter04.png" class="img-responsive center-block"><p >接下啦，点击**开始盘点**。会弹出一个你可以输入当前产品的窗口。选择添加新的条目并确认仓库中的**实际数量**。理论数量不能更改，因为它代表着采购和销售相关的计算数量。</p><img src="../../../_images/inter05.png" class="img-responsive center-block"><p >一旦记录了所有的产品，不要忘了校验你的库存。</p></section><section id="create-an-internal-transfer"><h2 >创建内部调拨</h2><p >最后一步就是创建内部调拨。如果你想把2片产品从第一个产品呢转移到布鲁塞尔的另外一个仓库，可以按照以下步骤：</p><p >在仪表盘上，选择两个仓库中的其中一个内部调拨。要这样做，点击菜单 <span class="menuselection">调拨(More) ‣ 转移(Transfer)</span>。</p><img src="../../../_images/inter06.png" class="img-responsive center-block"><p >一个新的窗口会打开，在这里你可以选择源库位区域(这里是**旧的仓库**)和目标区域(在这里是位于布鲁塞尔的**新**仓库)。</p><p >通过点击**添加新的条目**添加想要调拨的产品，做完之后不要忘了**确认**或者**标记为待做**。</p><img src="../../../_images/inter07.png" class="img-responsive center-block"><p >如果你选择了**确认**，YuanCloud会把调拨所有的数量。</p><p >如果你选择了**标记为代办**，YuanCloud会把调拨单转换为**等待可用**状态。点击**保留**来保留源仓库中需要保留的数量。</p><p >也有可能手工地调拨所有产品：</p><ol ><li ><p >通过仪表盘在源库位中选择调拨单。</p><img src="../../../_images/inter08.png" class="img-responsive center-block"></li><li ><p >选择正确的调拨单</p><img src="../../../_images/inter09.png" class="img-responsive center-block"></li></ol><p >3.在右下角铅笔的图标上点击打开详细操作窗口。在新的窗口中你可以手工的输入你想处理的产品数量。</p><img src="../../../_images/inter10.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >如果你决定部分的完成调拨单(例如因为未知事件造成了部分产品不能发货)，YuanCloud会自动的问你是否需要创建一个**未完成单子**。如果你想稍后完成剩下部分就创建一个未完成单子，如果不打算稍后进一步操作就不创建未完成订单。</p></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

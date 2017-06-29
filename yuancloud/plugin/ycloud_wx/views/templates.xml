@@ -1,0 +1,10 @@
+<yuancloud>
+    <data>
+        <template id="assets_frontend" inherit_id="website.assets_frontend" name="Payment Frontend assets">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js?v=20160315002"></script>
+                <script type="text/javascript" src="/ycloud_saas/static/src/js/yuancloud-wx-0.1.js"></script>
+            </xpath>
+        </template>
+    </data>
+</yuancloud>

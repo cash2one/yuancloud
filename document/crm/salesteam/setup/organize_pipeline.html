@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>设置和管理您的销售管道 &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="销售团队" href="../setup.html" />
+    <link rel="next" title="管理销售人员" href="../manage.html" />
+    <link rel="prev" title="如何创建新的销售团队?" href="create_team.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../crm.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              设置和管理您的销售管道
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="current toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#create-and-organize-your-stages" class="ripple internal reference">生成和组织你的阶段</a><ul ><li class="list-group-item"><a href="#add-rearrange-stages" class="ripple internal reference">增加/重新安排阶段</a></li><li class="list-group-item"><a href="#activate-the-lead-stage" class="ripple internal reference">激活线索阶段</a></li></ul></li><li class="list-group-item"><a href="#set-up-stage-probabilities" class="ripple internal reference">设置阶段概率</a><ul ><li class="list-group-item"><a href="#what-is-a-stage-probability" class="ripple internal reference">什么是阶段概率</a></li><li class="list-group-item"><a href="#how-to-set-up-stage-probabilities" class="ripple internal reference">如何设置阶段概率</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/crm/salesteam/setup/organize_pipeline.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="set-up-and-organize-your-sales-pipeline"><p >一个结构良好的销售管道是为了保持对你销售过程的控制，并有对您的线索，机会和客户有360度视图。</p><p >销售管道是销售过程的可视化表示，从第一次接触到最终成交。它是指由您生成的，通过你的销售周期和资格结束线索的过程。在YuanCloud CRM中，线索在看板视图销售管道的左端，再沿向右从一个阶段移动到另一个。</p><p >每个阶段指在销售周期中的具体步骤和特别是你的潜在客户的销售准备。阶段数量在销售漏斗中各个公司是不同的。比如一个销售漏斗包含下列阶段：<em >领域，资格认证，资格认证的保证，主张，谈判，赢得，丢失</em>。</p><img src="../../../_images/team_kanban.jpg" class="img-responsive center-block"><p >当然，每个组织对销售渠道的定义取决于它们的流程和工作流，所以多点或少一点的阶段都有可能。</p></section><section id="create-and-organize-your-stages"><h2 >生成和组织你的阶段</h2></section><section id="add-rearrange-stages"><h3 >增加/重新安排阶段</h3><p >从销售模块，进入你的仪表板和点击选中的销售团队的**管道按钮**。如果你没有任何销售队伍，你需要首先创建一个。</p><img src="../../../_images/image09.jpg" class="img-responsive center-block"><p >从你的管道看板视图中，您可以通过点击**添加新列**添加阶段。当创建一个列，YuanCloud将自动建议你为了完成你的过程而添加另一列。如果你想重新排列阶段的顺序，你可以很容易地通过拖放移动列到所需位置。</p><img src="../../../_images/add_column.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >你可以增加任意多的阶段，但我们建议为了保持清楚的管道最好不要超过6列。</p></div></section><section id="activate-the-lead-stage"><h3 >激活线索阶段</h3><p >有些公司使用一个预先验证步骤来管理他们的线索，在将它们转换成机会之前。要激活领先阶段，请访问：菜单选择：[UNKNOWN NODE problematic]配置 - &gt; Settings`并选择单选按钮，如下图所示。这将创造一个新的子菜单**线索**在**销售**下面，让您可以访问所有的线索列表视图。</p><img src="../../../_images/image01.jpg" class="img-responsive center-block"></section><section id="set-up-stage-probabilities"><h2 >设置阶段概率</h2></section><section id="what-is-a-stage-probability"><h3 >什么是阶段概率</h3><p >为了更好地了解什么是完成交易对于在你管道中一个给定的机会，你必须为每个阶段设置概率百分比。这一比例是指完成交易的成功率。</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >建立阶段的概率是至关重要的，如果你想估计你销售周期的预期收入。</p></div><p >比如，如果你的销售周期包含阶段*领域，资格认证，资格认证保证，主张，谈判，赢得 和丢失，* 然后你的工作流就可以这样：</p><ul ><li ><p ><strong >领域</strong>：机会刚刚从线索管理接收或创建从陌生的呼叫活动。顾客的兴趣还没有被证实。</p><p ><em >成功率 : 5%</em></p></li><li ><p ><strong >合格</strong>：前景的业务和工作流程的了解，痛点的鉴定，确认，预算和时间是已知的。</p><p ><em >成功率 : 15%</em></p></li><li ><p ><strong >资格发起人</strong>：与决策者直接接触已经完成</p><p ><em >成功率 : 25%</em></p></li><li ><p ><strong >提案</strong>：潜在顾客收到了一个报价</p><p ><em >成功率 : 50%</em></p></li><li ><p ><strong >谈判</strong>：和潜在客户针对给他的报价进行谈判</p><p ><em >成功率 : 75%</em></p></li><li ><p ><strong >赢得</strong>：潜在客户确认了给他的报价单，已经收到销售订单，他现在已经是客户了</p><p ><em >成功率 : 100%</em></p></li><li ><p ><strong >失落</strong>：前景不再有兴趣</p><p ><em >成功率 : 0%</em></p></li></ul><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >对于你的管道，每个阶段应该对应于一个相应的概率。每当你移动你的机会到下一阶段，您的销售的概率会自动适应。</p><p >你应该考虑使用**100**作为赢得交易的概率，使用**0**作为失去机会的概率。</p></div></section><section id="how-to-set-up-stage-probabilities"><h3 >如何设置阶段概率</h3><p >编辑一个阶段，点击**设置**在选定的阶段的编辑上。</p><img src="../../../_images/image08.jpg" class="img-responsive center-block"><p >自动选择更改概率复选框让YuanCloud适应机会在阶段中中定义的几率。例如，如果设置为0％(丢失)或100％(赢得)的概率，YuanCloud分配相应的阶段当机会被标记为丢失或赢得。</p><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >在需求字段可以输入这一阶段的内在要求。当您将鼠标移到阶段的名字就会出现一个提示。</p></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

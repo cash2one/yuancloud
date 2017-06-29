@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!--一级菜单 -->
+        <menuitem id="shop_menu" name="微小店"/>
+
+        <!--二级－微小店 -->
+        <menuitem id="wx_product_menu" name="微信商品" parent="shop_menu" action="wx_product_list_action" sequence="10"/>
+        <menuitem id="wx_shop_order_menu" name="小店订单" parent="shop_menu" action="wx_shop_order_list_action" sequence="20"/>
+
+        <menuitem id="wx_shop_tool_menu" name="同步工具" parent="shop_menu" sequence="30"/>
+        <menuitem id="sync_group_menu" name="同步商品分组" parent="wx_shop_tool_menu" action="wx_syncgroup_list_action" sequence="10"/>
+        <menuitem id="sync_order_menu" name="同步小店订单" parent="wx_shop_tool_menu" action="wx_sync_order_list_action" sequence="20"/>
+        <!--二级－配置 -->
+        <menuitem id="wx_shop_config_menu" name="配置" parent="shop_menu" sequence="40"/>
+        <menuitem id="wx_shop_menu" name="微小店" parent="wx_shop_config_menu" action="wx_shop_list_action" sequence="10"/>
+        <menuitem id="product_category_menu" name="商品分类" parent="wx_shop_config_menu" action="wx_product_category_list_action" sequence="20"/>
+        <menuitem id="product_group_menu" name="商品分组" parent="wx_shop_config_menu" action="wx_product_group_list_action" sequence="30"/>
+        <!--<menuitem id="wx_carrier_menu" name="承运方" parent="wx_shop_config_menu" action="wx_carrier_list_action" sequence="40"/>-->
+
+
+    </data>
+</yuancloud>

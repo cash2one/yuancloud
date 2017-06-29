@@ -1,0 +1,50 @@
+@notification-error-bg-color: #F16567;
+@notification-info-bg-color: #fcfcfc;
+.o_notification_manager {
+    width: 300px;
+    max-width: 100%;
+
+    .o-position-absolute(@navbar-height, 0px);
+    z-index: 50;  // same as debug manager. Fixme: expose a variable
+
+    .o_notification {
+        padding: 0;
+        opacity: 0;
+
+        background-color: #fff;
+        box-shadow: 0px 0px 5px 1px @yuancloud-main-text-color;
+
+        position: relative;
+        .o_close {
+            .o-position-absolute(5px, 5px);
+            color: rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+        }
+
+        .o_notification_title {
+            .o-flex-display();
+            .o-align-items(center);
+
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 10px 10px 10px 20px;
+
+            font-weight: bold;
+
+            .o_icon {
+                display: inline-block;
+                margin-right: 20px;
+                color: rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        .o_notification_content {
+            padding: 10px;
+        }
+
+        &.o_error {
+            color: #7a7a7a;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 5px;
+        }
+    }
+}

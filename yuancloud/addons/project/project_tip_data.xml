@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <record model="web.tip" id="project_tip_1">
+        <field name="title"><![CDATA[<b>Crear nuevas tareas</b>]]></field>
+        <field name="description">Clic para todas las tareas relacionadas con este proyecto.</field>
+        <field name="action_id" ref="open_view_project_all"/> 
+        <field name="model">project.project</field>
+        <field name="mode">form</field>
+        <field name="trigger_selector">div.oe_button_box > button:not(.o_form_invisible)</field>
+        <field name="highlight_selector">div.oe_button_box > button:not(.o_form_invisible):eq(0)</field>
+        <field name="placement">bottom</field>
+    </record>
+    
+    <record model="web.tip" id="project_tip_3">
+        <field name="description">Cada evento en una tarea se registra en esta seccion. Envia un nuevo mensaje para notificar a los seguidores o ingresa una nota interna..</field>
+        <field name="action_id" ref="action_view_task"/>
+        <field name="model">project.task</field>
+        <field name="mode">form</field>
+        <field name="trigger_selector">.o_form_buttons_view:visible,div.oe_chatter div.o_mail_thread:visible</field>
+        <field name="highlight_selector">div.oe_chatter .o_mail_thread</field>
+        <field name="placement">top</field>
+    </record>
+</yuancloud>

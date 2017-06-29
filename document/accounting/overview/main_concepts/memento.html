@@ -1,0 +1,158 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>企业家的会计备忘录（US GAAP美国通用会计准则） &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="主要概念" href="../main_concepts.html" />
+    <link rel="next" title="会计名词术语" href="terminologies.html" />
+    <link rel="prev" title="YuanCloud之外的会计学" href="in_yuancloud.html" />
+  </head>
+  <body role="document"><header class="has_code_col">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar has_code_col">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../accounting.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              企业家的会计备忘录（US GAAP美国通用会计准则）
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="current toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container-fluid has_code_col">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#chart-of-accounts" class="ripple internal reference">会计科目表</a></li><li class="list-group-item"><a href="#journal-entries" class="ripple internal reference">日记帐分录</a></li><li class="list-group-item"><a href="#reconciliation" class="ripple internal reference">调节</a></li><li class="list-group-item"><a href="#bank-reconciliation" class="ripple internal reference">银行调节</a></li><li class="list-group-item"><a href="#checks-handling" class="ripple internal reference">支票处理</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/accounting/overview/main_concepts/memento.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="accounting-memento-for-entrepreneurs-us-gaap"><div class="intro-list"><p class="intro-p-l">The <strong >Profit and Loss</strong> (P&amp;L) report shows the performance of the company
+over a specific period (usually the current year).</p><ul ><li ><p class="intro-gross-profit">The <strong >Gross Profit</strong> equals the revenues from sales minus the cost of
+goods sold.</p></li><li ><p class="intro-opex"><strong >Operating Expenses</strong> (OPEX) include administration, sales and R&amp;D
+salaries as well as rent and utilities, miscellaneous costs, insurances,
+… anything beyond the costs of products sold.</p></li></ul><p class="intro-balance">The <strong >Balance Sheet</strong> is a snapshot of the company's finances at a specific
+date (as opposed to the Profit and Loss which is an analysis over a period)</p><ul ><li ><p class="intro-assets"><strong >Assets</strong> represent the company's wealth, things it owns. Fixed assets
+includes building and offices, current assets include bank accounts and
+cash. A client owing money is an asset. An employee is not an asset.</p></li><li ><p class="intro-liabilities"><strong >Liabilities</strong> are obligations from past events that the company will
+have to pay in the future (utility bills, debts, unpaid suppliers).</p></li><li ><p class="intro-equity"><strong >Equity</strong> is the amount of the funds contributed by the owners (founders
+or shareholders) plus previously retained earnings (or losses).</p><p class="intro-retained">每年，净利润（或亏损）的报告留存收益。</p></li></ul></div>
+<div class="doc-aside accounts-table"></div>
+<p >什么是国有（资产）已经通过债务融资偿还（债务）或股权（利润，资本）。</p><p >的不同是购买的资产（如建筑物）和费用（如燃料）之间进行。资产的内在价值随着时间的推移，对具有这些价​​值被消耗，为公司'工作'费用。</p><blockquote class="doc-aside highlights"><p >资产=负债+所有者权益</p></blockquote></section><section id="chart-of-accounts"><h2 >会计科目表</h2><p >The <strong >chart of accounts</strong> lists all the accounts, whether they are balance
+sheet accounts or P&amp;L accounts. Every financial transaction (e.g. a payment, an
+invoice) impacts accounts by moving value from one account (credit) to an other
+account (debit).</p><div class="doc-aside"><blockquote class="highlights"><p >余额=借方 - 贷方</p></blockquote><div class="chart-of-accounts"></div>
+</div>
+</section><section id="journal-entries"><h2 >日记帐分录</h2><p >公司的每个财务文件（如发票，银行对账单，工资单，增资合同）记录为日记帐分录，影响多个账户。</p><p >对于日记帐分录是*平衡*，它的所有借方的总和必须等于其所有学分的总和。</p><div class="doc-aside journal-entries"><p >各种交易的会计分录的例子。示例：</p><p >例1：客户发票：</p><p >说明：</p><blockquote ><ul ><li ><p >产生收入 $ 1,000</p></li><li ><p >支付税金 $ 90</p></li><li ><p >客户欠 $ 1,090</p></li></ul></blockquote><p >配置：</p><blockquote ><ul ><li ><p >收入：在产品定义，或者产品类别</p></li><li ><p >应收账款：定义在客户</p></li><li ><p >税：在发票上线税收集中定义</p></li></ul><p >发票上所使用的财政状况可能有替代收入账户或另外一个在产品定义的税收规则。</p></blockquote><p >例2：客户付款方式：</p><p >说明：</p><blockquote ><ul ><li ><p >你的客户欠$ 1,090少</p></li><li ><p >你收到$ 1,090您的银行帐户</p></li></ul></blockquote><p >配置：</p><blockquote ><ul ><li ><p >银行账户：在相关的银行存款日记帐定义</p></li><li ><p >应收账款：定义在客户</p></li></ul></blockquote></div>
+</section><section id="reconciliation"><i id="accounting-reconciliation"></i><h2 >调节</h2><p >和解是连接特定帐户的日记项目，配套贷方和借方的过程。</p><p >它的主要目的是为了纪念那些付款的发票，并清除客户声明链接支付给他们的相关发票。这是通过执行和解的*应收账款*帐户做。</p><p >An invoice is marked as paid when its Accounts Receivable journal items are
+reconciled with the related payment journal items.</p><p >和解是由系统时自动执行的：</p><ul ><li ><p >支付直接在发票登记</p></li><li ><p >在银行的匹配过程中检测到的支付和发票之间的联系</p></li></ul><div class="doc-aside reconciliation-example"><h3 >客户声明实例</h3><table class="table d-c-table table-condensed"><thead ><tr ><th ><p >应收账款</p></th><th ><p >借</p></th><th ><p >贷</p></th></tr></thead><tbody ><tr ><td ><p >发票1</p></td><td >100</td><td ></td></tr><tr ><td ><p >付款1.1</p></td><td ></td><td >70</td></tr><tr ><td ><p >发票2</p></td><td >65</td><td ></td></tr><tr ><td ><p >付款1.2</p></td><td ></td><td >30</td></tr><tr ><td ><p >付款2</p></td><td ></td><td >65</td></tr><tr ><td ><p >发票3</p></td><td >50</td><td ></td></tr><tr ><td ></td><td ></td><td ></td></tr><tr ><td ><p >待支付合计</p></td><td >50</td><td ></td></tr></tbody></table></div>
+</section><section id="bank-reconciliation"><h2 >银行调节</h2><p >银行和解的银行对帐单行的匹配（由银行提供）与内部记录（支付给供应商或客户）的交易。对于在银行对账单的每一行，它可以是：</p><dl ><dt >与先前记录的付款匹配：</dt><dd ><p >当从客户收到的支票付款登记，然后检查银行对账单时，匹配</p></dd><dt >记录为一个新的付款方式：</dt><dd >the payment's journal entry is created and <a href="#accounting-reconciliation" class="internal reference"><span >reconciled</span></a> with the related invoice when processing the
+bank statement</dd><dt >记录为另一个交易：</dt><dd ><p >银行转帐，直充等。</p></dd></dl><p >YuanCloud should automatically reconcile most transactions, only a few of them
+should need manual review. When the bank reconciliation process is finished,
+the balance on the bank account in YuanCloud should match the bank statement's
+balance.</p></section><section id="checks-handling" class="checks-handling"><h2 >支票处理</h2><p >有两种方法来管理的检查和内部电汇：</p><ul ><li ><p >2笔日记帐分录和1笔对账调节</p></li><li ><p >1笔日记帐分录和1笔银行对账调节</p></li></ul><div class="doc-aside"><p >第一个日记帐分录是由注册在发票付款创建的。注册银行对账单时，第二个是创建。</p><table class="table d-c-table table-condensed"><thead ><tr ><th ><p >帐户</p></th><th ><p >借</p></th><th ><p >贷</p></th><th ><p >调节</p></th></tr></thead><tbody ><tr ><td ><p >应收账款</p></td><td ></td><td >100</td><td ><p >发票ABC</p></td></tr><tr ><td ><p >未缴存的资金</p></td><td >100</td><td ></td><td ><p >支票0123</p></td></tr></tbody></table><table class="table d-c-table table-condensed"><thead ><tr ><th ><p >帐户</p></th><th ><p >借</p></th><th ><p >贷</p></th><th ><p >调节</p></th></tr></thead><tbody ><tr ><td ><p >未缴存的资金</p></td><td ></td><td >100</td><td ><p >支票0123</p></td></tr><tr ><td ><p >银行</p></td><td >100</td><td ></td><td ></td></tr></tbody></table></div>
+<div class="doc-aside"><p >日记帐分录是由注册在发票付款创建的。当核对银行对账单，该声明是连接到现有的日记帐分录。</p><table class="table d-c-table table-condensed"><thead ><tr ><th ><p >帐户</p></th><th ><p >借</p></th><th ><p >贷</p></th><th ><p >调节</p></th><th ><p >银行对帐单</p></th></tr></thead><tbody ><tr ><td ><p >应收账款</p></td><td ></td><td >100</td><td ><p >发票ABC</p></td><td ></td></tr><tr ><td ><p >银行</p></td><td >100</td><td ></td><td ></td><td ><p >对账单XYZ</p></td></tr></tbody></table></div>
+</section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

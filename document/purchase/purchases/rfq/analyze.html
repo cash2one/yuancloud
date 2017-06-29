@@ -1,0 +1,164 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何分析供应商的表现？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="报价需求" href="../rfq.html" />
+    <link rel="next" title="Purchase Tenders" href="../tender.html" />
+    <link rel="prev" title="如何设置采购订单的两步验证？" href="approvals.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../purchase.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何分析供应商的表现？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="current toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#install-the-purchase-management-module" class="ripple internal reference">安装采购管理模块</a></li><li class="list-group-item"><a href="#issue-some-purchase-orders" class="ripple internal reference">发布一些采购订单</a></li></ul></li><li class="list-group-item"><a href="#analyzing-your-vendors" class="ripple internal reference">分析供应商</a><ul ><li class="list-group-item"><a href="#generate-flexible-reports" class="ripple internal reference">生成灵活弹性的报表</a></li></ul></li><li class="list-group-item"><a href="#customize-reports" class="ripple internal reference">定制报表</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/purchase/purchases/rfq/analyze.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-analyze-the-performance-of-my-vendors"><p >If your company regularly buys products from several suppliers, it would
+be useful to get statistics on your purchases. There are several reasons
+to track and analyze your vendor's performance :</p><ul ><li ><p >你会看到你的公司是如何依赖于一个供应商的；</p></li><li ><p >你可以就价格进行谈判;</p></li><li ><p >可以检查单个供应商的平均交货时间；</p></li><li ><p >等等。</p></li></ul><p >For example, an IT products reseller that issues dozens of purchase
+orders to several suppliers each week may want to measure for each
+product the total price paid for each vendor and the delivery delay. The
+insights gathered by the company will help it to better analyze,
+forecast and plan their future orders.</p></section><section id="configuration"><h2 >配置</h2></section><section id="install-the-purchase-management-module"><h3 >安装采购管理模块</h3><p >在**应用**菜单，搜索并安装**采购管理**模块。</p><img src="../../../_images/analyze03.png" class="img-responsive center-block"></section><section id="issue-some-purchase-orders"><h3 >发布一些采购订单</h3><p >Of course, in order to analyze your vendors' performance, you need to
+issue some <strong >Request For Quotations</strong> (RfQ) and confirm some <strong >Purchase
+Orders</strong>. If you want to know how to generate a purchase order, please
+read the documentation <a href="../../overview/process/from_po_to_invoice.html" class="internal reference"><em >从采购订单到开票和收货</em></a>.</p></section><section id="analyzing-your-vendors"><h2 >分析供应商</h2></section><section id="generate-flexible-reports"><h3 >生成灵活弹性的报表</h3><p >You have access to your vendors' performances on the Reports menu.
+By default, the report groups all your purchase orders on a pivot table
+by <strong >total price</strong>, <strong >product quantity</strong> and <strong >average price</strong> for the <strong >each month</strong>
+and for <strong >each supplier</strong>. Simply by accessing this basic report, you can
+get a quick overview of your actual performance. You can add a lot of
+extra data to your report by clicking on the <strong >Measures</strong> icon.</p><img src="../../../_images/analyze04.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >By clicking on the <strong >+</strong> and <strong >-</strong> icons, you can drill up and down
+your report in order to change the way your information is displayed.
+For example, if I want to see all the products bought for the current
+month, I need to click on the <strong >+</strong> icon on the vertical axis and
+then on &quot;Products&quot;.</p></div><p >Depending on the data you want to highlight, you may need to display
+your reports in a more visual view. You can transform your report in
+just a click in 3 graph views : a <strong >Pie Chart</strong>, a <strong >Bar Chart</strong> and a <strong >Line
+Chart</strong>: These views are accessible through the icons highlighted on the
+screenshot below.</p><img src="../../../_images/analyze02.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >On the contrary to the pivot table, a graph can only
+be computed with one dependent and one independent measure.</p></div></section><section id="customize-reports"><h2 >定制报表</h2><p >You can easily customize your purchase reports depending on your needs.
+To do so, use the <strong >Advanced search view</strong> located in the right hand side
+of your screen, by clicking on the magnifying glass icon at the end of
+the search bar button. This function allows you to highlight only
+selected data on your report. The <strong >filters</strong> option is very useful in
+order to display some categories of datas, while the <strong >Group by</strong> option
+improves the readability of your reports. Note that you can filter and
+group by any existing field, making your customization very flexible and
+powerful.</p><img src="../../../_images/analyze01.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >您可以保存并再次使用定制的过滤，从**高级搜索视图**中点击**收藏**，然后**保存当前的搜索**。保存的过滤器将从**收藏**菜单访问。</p></div><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="../../overview/process/from_po_to_invoice.html" class="internal alert-link reference"><em >从采购订单到开票和收货</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

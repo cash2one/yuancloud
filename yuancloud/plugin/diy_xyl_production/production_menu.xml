@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <menuitem id="menu_finish_plan" name="捕捞计划" parent="mrp.menu_mrp_manufacturing" sequence="30" action="finish_plan_list_action"/>
+        <menuitem id="menu_operation_work" name="工序报工" parent="mrp.menu_mrp_manufacturing" sequence="40" action="operation_work_list_action"/>
+        <menuitem id="menu_stock_move" name="库存移动" parent="mrp.menu_mrp_manufacturing" sequence="50" action="stock_move_list_action"/>
+    </data>
+</yuancloud>

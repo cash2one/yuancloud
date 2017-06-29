@@ -1,0 +1,138 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何理解使用付款条件 &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="客户发票" href="../customer_invoices.html" />
+    <link rel="next" title="如何为客户发票制定分期付款计划?" href="installment_plans.html" />
+    <link rel="prev" title="如何设置现金折扣？" href="cash_discounts.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../accounting.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何理解使用付款条件
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="current toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a></li><li class="list-group-item"><a href="#using-payment-terms" class="ripple internal reference">使用付款条款</a><ul ><li class="list-group-item"><a href="#payment-terms-for-customers" class="ripple internal reference">付款方式为客户</a></li><li class="list-group-item"><a href="#payment-terms-for-vendor-bills" class="ripple internal reference">付款方式的供应商票据</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/accounting/receivables/customer_invoices/payment_terms.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-setup-and-use-payment-terms"><p >付款条款规定的条件支付发票。它们适用于双方的客户发票和供应商的账单。</p><p >例如，对于一个特定发票：</p><ul ><li ><p >10日内付款50%</p></li><li ><p >30日内付款剩下的余额</p></li></ul><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >付款期限为从开票不同了好几次。如果在一个特定的顺序，发票的客户分为两部分，这不是一个付款期限，但是发票的条件。</p></div></section><section id="configuration"><h2 >配置</h2><p >从客户应用程序的配置菜单配置您的一般付款条款。付款条款的描述是出现在发票或销售订单之一。</p><p >的支付期限可有一条线（例如：21天）或几条线（3天以内10％，并在21天内平衡）。如果您创建的几行付款期限，确保最新的一个是平衡的。 （避免做的50％在10天及21天的50％，因为，与舍入，它可能无法做完全100％）</p></section><section id="using-payment-terms"><h2 >使用付款条款</h2></section><section id="payment-terms-for-customers"><h3 >付款方式为客户</h3><p >付款方式可以设置：</p><ul ><li ><strong >a customer</strong>: to apply this payment term automatically on new
+sale orders or invoices for this customer. Set payment terms on
+customers if you grant this payment term for all future orders of
+this customer.</li><li ><strong >a quotation</strong>: to apply this payment term on all invoices
+created from this quotation or sale order, but not on other
+quotations</li><li ><strong >an invoice</strong>: to apply the payment term on this invoice only</li></ul><p >如果发票有付款条件，日记条目相关的发票是不同的。如果没有付款条件或税收，$ 100的发票将产生此日记帐分录：</p><table class="table"><thead ><tr ><th ><p >帐户</p></th><th ><p >到期日</p></th><th ><p >借</p></th><th ><p >贷</p></th></tr></thead><tbody ><tr ><td ><p >应收账款</p></td><td ></td><td >100</td><td ></td></tr><tr ><td ><p >收入</p></td><td ></td><td ></td><td >100</td></tr></tbody></table><p >如果你做发票1月1日的10％，3天之内付款期限，并在30天内的平衡，你会得到以下日记帐分录：</p><table class="table"><thead ><tr ><th ><p >帐户</p></th><th ><p >到期日</p></th><th ><p >借</p></th><th ><p >贷</p></th></tr></thead><tbody ><tr ><td ><p >应收账款</p></td><td >Jan 03</td><td >10</td><td ></td></tr><tr ><td ><p >应收账款</p></td><td >Jan 30</td><td >90</td><td ></td></tr><tr ><td ><p >收入</p></td><td ></td><td ></td><td >100</td></tr></tbody></table><p >在客户的声明中，你会看到两行不同的到期日。</p></section><section id="payment-terms-for-vendor-bills"><h3 >付款方式的供应商票据</h3><p >管理付款条件的供应商票据的最简单方法是记录对账单的到期日期。你并不需要分配付款条件，就在预产期是不够的。</p><p >但是，如果你需要管理供应商方面有几批，你仍然可以使用的付款条件，完全像在顾客发票。如果设置于供应商的账单付款期限，则不需要设置一个截止日期。确切的截止日期为所有分期付款将被自动创建。</p><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><p ><a href="cash_discounts.html" class="internal alert-link reference"><em >如何设置现金折扣？</em></a></p></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

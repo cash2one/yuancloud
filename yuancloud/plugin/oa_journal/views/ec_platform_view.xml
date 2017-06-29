@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!-- Action -->
+        <record model="ir.actions.act_window" id="oa_journal_ecplatform_list_action">
+            <field name="name">电商平台</field>
+            <field name="res_model">oa_journal.ecplatform</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建第一个电商平台档案
+                </p>
+            </field>
+        </record>
+
+        <!-- 电商平台-列表样式-->
+        <record model="ir.ui.view" id="oa_journal_ecplatform_list_view">
+            <field name="name">oa_journal.ecplatform.tree</field>
+            <field name="model">oa_journal.ecplatform</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="platform_code"/>
+                    <field name="platform_name"/>
+                    <field name="platform_url"/>
+                    <field name="enabled"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--电商平台-卡片样式 -->
+        <record model="ir.ui.view" id="oa_journal_ecplatform_form_view">
+            <field name="name">oa_journal.ecplatform.form</field>
+            <field name="model">oa_journal.ecplatform</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="platform_code"/>
+                                <field name="platform_name"/>
+                            </group>
+                            <group>
+                                <field name="platform_url"/>
+                                <field name="enabled"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</yuancloud>

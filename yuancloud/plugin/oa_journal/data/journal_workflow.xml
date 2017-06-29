@@ -1,0 +1,74 @@
+<yuancloud>
+    <data>
+        <!--工作流定义：日常流水-->
+        <record id="wkf_oa_journal" model="workflow">
+            <field name="name">oa.journal</field>
+            <field name="osv">oa.journal</field>
+            <field name="on_create">True</field>
+        </record>
+        <!-- Activity 活动-->
+        <record id="journal_act_draft" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_oa_journal"/>
+            <field name="flow_start">True</field>
+            <field name="name">Draft</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'draft'})</field>
+        </record>
+
+        <record id="journal_act_pay" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_oa_journal"/>
+            <field name="name">Pay</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'paid'})</field>
+        </record>
+
+        <record id="journal_act_receive" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_oa_journal"/>
+            <field name="name">Receive</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'received'})</field>
+        </record>
+
+        <record id="journal_act_expense" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_oa_journal"/>
+            <field name="name">Expensed</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'expensed'})</field>
+        </record>
+
+        <record id="journal_act_close" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_oa_journal"/>
+            <field name="name">Close</field>
+            <field name="kind">function</field>
+            <field name="flow_stop">True</field>
+            <field name="action">write({'state':'closed'})</field>
+        </record>
+
+        <!-- Transistion  迁移-->
+        <record id="journal_trans_draft_pay" model="workflow.transition">
+            <field name="act_from" ref="journal_act_draft"/>
+            <field name="act_to" ref="journal_act_pay"/>
+            <field name="signal">action_topaid</field>
+        </record>
+        <record id="journal_trans_pay_receive" model="workflow.transition">
+            <field name="act_from" ref="journal_act_pay"/>
+            <field name="act_to" ref="journal_act_receive"/>
+            <field name="signal">action_toreceived</field>
+        </record>
+        <record id="journal_trans_receive_expense" model="workflow.transition">
+            <field name="act_from" ref="journal_act_receive"/>
+            <field name="act_to" ref="journal_act_expense"/>
+            <field name="signal">action_toexpensed</field>
+        </record>
+        <record id="journal_trans_expense_close" model="workflow.transition">
+            <field name="act_from" ref="journal_act_expense"/>
+            <field name="act_to" ref="journal_act_close"/>
+            <field name="signal">action_toclosed</field>
+        </record>
+        <record id="journal_trans_expense_draft" model="workflow.transition">
+            <field name="act_from" ref="journal_act_expense"/>
+            <field name="act_to" ref="journal_act_draft"/>
+            <field name="signal">action_todraft</field>
+        </record>
+    </data>
+</yuancloud>

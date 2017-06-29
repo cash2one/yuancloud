@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>用YuanCloud CRM 生成线索 &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="过程概述" href="../process.html" />
+    <link rel="next" title="主要概念" href="../main_concepts.html" />
+    <link rel="prev" title="过程概述" href="../process.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../crm.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              用YuanCloud CRM 生成线索
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="current toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#what-is-lead-generation" class="ripple internal reference">什么是线索生成</a></li><li class="list-group-item"><a href="#why-is-lead-generation-important-for-my-business" class="ripple internal reference">为什么线索生成器对于我的业务很重要。</a></li><li class="list-group-item"><a href="#how-to-generate-leads-with-yuancloud-crm" class="ripple internal reference">如何生成YuanCloud CRM线索？</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/crm/overview/process/generate_leads.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="generating-leads-with-yuancloud-crm"></section><section id="what-is-lead-generation"><h2 >什么是线索生成</h2><p >线索生成是由一个公司获得线索和收集有关潜在客户相关数据并建立关系转化成客户的过程。</p><p >例如，一个网站的访问者填写了联系表单来了解更多你的产品和服务从而变成了你的公司一个线索。典型的比如YuanCloud 这样一个客户关系管理系统被用来集中，追踪，管理线索。</p></section><section id="why-is-lead-generation-important-for-my-business"><h2 >为什么线索生成器对于我的业务很重要。</h2><p >生成高品质的潜在的稳定客户流是营销团队的最重要的职责之一。事实上，一个管理良好的线索生成过程就像是燃料，这将使你的公司提供出色的成就 - 线索带来的会议，会议带来销量，销售收入带来更多的工作。</p></section><section id="how-to-generate-leads-with-yuancloud-crm"><h2 >如何生成YuanCloud CRM线索？</h2><p >信息可以通过多种来源捕获 - 营销活动，展览展销，外部数据库等。最常见的挑战是成功地收集所有数据，并跟踪任何线索的活动。把线索集中存储在一个地方，如YuanCloud CRM将解放你的这些忧虑，并会帮助你更好地自动化您的线索生成过程，与你的团队共享信息，并轻松地分析你的销售过程中的线索信息。</p><p >YuanCloud CRM提供了几种方法来生成线索：</p><ul ><li ><p ><a href="../../leads/generate/emails.html" class="internal reference"><em >如何通过邮件收取生成相关线索?</em></a></p><p >发送到您的公司的通用电子邮箱的查询邮件可以自动生成线索或机会。</p></li><li ><p ><a href="../../leads/generate/manual.html" class="internal reference"><em >如何在YUANCLOUD CRM中创建客户联系人?</em></a></p><p >您可能要跟进一个在展览见过一面并给了你他的名片的潜在客户。您可以手动创建一个新的线索和输入所有需要的信息。</p></li><li ><p ><a href="../../leads/generate/website.html" class="internal reference"><em >如何从网站生成相应的线索?</em></a></p><p >网站访问者填写表单自动在YuanCloud CRM 里生成线索或机会。</p></li><li ><p ><a href="../../leads/generate/import.html" class="internal reference"><em >怎么将联系人导入CRM?</em></a></p><p >您可以提供潜在机会清单给您的销售人员- 例如陌生的电子邮件或电话推销活动 - 从CSV文件导入它们。</p></li></ul></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!--科目-增加“是否预算科目” -->
+        <!--科目卡片视图-增加“是否预算科目”-->
+        <record id="view_account_account_form_inherited" model="ir.ui.view">
+            <field name="name">account.account.form.inherited</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_form"/>
+            <field name="arch" type="xml">
+                <field name="deprecated" position="after">
+                    <field name="budget"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</yuancloud>

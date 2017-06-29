@@ -1,0 +1,179 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如果根据国家，省份或者城市设置特定的税？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="税" href="../taxes.html" />
+    <link rel="next" title="如何定义新的税？" href="create.html" />
+    <link rel="prev" title="税" href="../taxes.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../accounting.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如果根据国家，省份或者城市设置特定的税？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="current toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#set-the-right-taxes-on-your-products" class="ripple internal reference">Set the right taxes on your products</a></li><li class="list-group-item"><a href="#defining-fiscal-positions" class="ripple internal reference">定义财政位置</a></li><li class="list-group-item"><a href="#apply-fiscal-positions-automatically" class="ripple internal reference">自动应用财政位置</a></li><li class="list-group-item"><a href="#specific-use-cases" class="ripple internal reference">特殊使用案例</a></li></ul></li><li class="list-group-item"><a href="#using-fiscal-positions" class="ripple internal reference">使用财政位置</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/accounting/others/taxes/application.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-apply-specific-taxes-by-country-state-or-city"><p >In YuanCloud, the default tax to apply on a product/service is set on the
+<strong >product form</strong>. But, some customers may have specific tax rates because of
+their status (in some countries, construction companies are VAT exempts)
+or their location (customers in a different country, state and/or city
+may be subjected to another tax rate).</p><p >In order to select the right tax to apply according to the customer or
+product, YuanCloud uses the concept of <strong >fiscal positions</strong>. If a customer has a
+specific fiscal position, the default tax may be replaced by another
+one. (as an example, construction companies have 0% instead of 21% in
+Belgium for construction related work).</p><p >As an example, in Belgium, for the VAT tax, there are 3 fiscal positions
+that depend on on the country of the customer and some companies (like
+construction companies) benefit from a specific fiscal treatments:</p><ul ><li ><strong >Belgian companies:</strong> with 21% VAT (default, on product form)</li><li ><strong >European companies:</strong> with 0% VAT (intra-EU)</li><li ><strong >Other countries:</strong> 0% (but a different tax since it uses different
+accounts)</li><li ><strong >Construction companies:</strong> with 0% VAT, only for construction companies
+in Belgium</li></ul></section><section id="configuration"><h2 >配置</h2></section><section id="set-the-right-taxes-on-your-products"><h3 >Set the right taxes on your products</h3><p >The main taxes are automatically configured according to the chart of
+accounts of your country.</p><p >But if you want to set a specific tax on a specific product, you can set
+the <strong >sales and purchases taxes</strong> on the <strong >product form</strong>, under the <strong >Accounting
+tab</strong>. These taxes are the default one (used when you sell to companies
+that are in the same country/state than you)</p><img src="../../../_images/application05.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >If you work in a multi-company environment, the sales and
+purchase taxes may have a different value according to the
+company you work for. You can login into two different companies
+and change this field for each company.</p></div></section><section id="defining-fiscal-positions"><h3 >定义财政位置</h3><p >The main fiscal positions are automatically created according to the
+chart of accounts of your country. But you may have to create fiscal
+positions manually for specific use cases.</p><p >To define fiscal positions, from the <strong >Accounting</strong> application, go to
+<span class="menuselection">Configuration ‣ Fiscal Positions</span>.</p><p >Fiscal position is just a set of rules that maps default taxes (as defined on
+product form) into other taxes. In the screenshot below, european
+customers have a VAT of 0% instead of the default 15%, for both sales
+and purchases.</p><img src="../../../_images/application02.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >You can also map the <strong >income / expense account</strong> according to the fiscal
+position. For example, in Belgium, revenues from sales are not posted in
+the same account than revenues from sales in foreign countries.</p></div></section><section id="apply-fiscal-positions-automatically"><h3 >自动应用财政位置</h3><p >If you check the box <strong >Detect Automatically</strong>, the fiscal position will be
+applied automatically if the <strong >Country</strong>, <strong >State</strong>, <strong >City</strong> or even the
+<strong >Country Group</strong> matches. You can also apply the fiscal position only
+to companies having a valid <strong >VAT number</strong>.</p><p >You can also set a target <strong >Country/State/City</strong>. The fiscal position will
+be applied if the destination address of the customer matches these
+criteria.</p><img src="../../../_images/application04.png" class="img-responsive center-block"></section><section id="specific-use-cases"><h3 >特殊使用案例</h3><p >If, for some fiscal positions, you want to remove a tax, instead of
+replacing by another, just keep the <strong >Tax to Apply</strong> field empty.</p><img src="../../../_images/application03.png" class="img-responsive center-block"><p >If, for some fiscal positions, you want to replace a tax by two other
+taxes, just create two lines having the same <strong >Tax on Product</strong>. You can
+also create one that is a grouping of two other taxes, depending on how
+you want to make them appear on the invoice.</p></section><section id="using-fiscal-positions"><h2 >使用财政位置</h2><p >If you keep the field <strong >Fiscal Position</strong> empty on customers
+<span class="menuselection">Accounting ‣ Sales ‣ Customers</span>, the fiscal position
+is applied automatically on sales order, purchase orders, web orders and invoices.</p><img src="../../../_images/application01.png" class="img-responsive center-block"><p >But, if you set the fiscal position, YuanCloud will use this specific fiscal
+position for this customer on orders (example: construction companies).
+In such a case, it's recommended to set the fiscal position on the
+customer form. YuanCloud will automatically reuse this value for orders and
+invoices, without trying to auto-detect the fiscal position.</p><p >If you set the fiscal position at the sale order or invoice level, it
+will only apply to this document only and not to future orders/invoices
+of the same customer.</p><p >For eCommerce orders, the tax of the visitor's cart will automatically
+update and apply the new tax after the visitor has logged in or filled
+in his shipping address.</p><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="create.html" class="internal alert-link reference"><em >如何定义新的税？</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何创建我的第一个报价？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="设置" href="../setup.html" />
+    <link rel="next" title="如何使用不同的发票和交货地址？" href="different_addresses.html" />
+    <link rel="prev" title="设置" href="../setup.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../sales.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何创建我的第一个报价？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="current toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#overview" class="ripple internal reference">概述</a></li><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#install-the-sales-management-module" class="ripple internal reference">安装 销售管理 模块</a></li><li class="list-group-item"><a href="#allow-discounts-on-sales-order-line" class="ripple internal reference">允许指定销售行的折扣信息</a></li></ul></li><li class="list-group-item"><a href="#create-your-quotation" class="ripple internal reference">创建销售询价单</a><ul ><li class="list-group-item"><a href="#customer-and-products" class="ripple internal reference">客户与产品</a></li><li class="list-group-item"><a href="#taxes" class="ripple internal reference">税</a></li><li class="list-group-item"><a href="#terms-and-conditions" class="ripple internal reference">条款和条件</a></li></ul></li><li class="list-group-item"><a href="#preview-and-send-quotation" class="ripple internal reference">预览并发送报价</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/sales/quotation/setup/first_quote.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-create-my-first-quotation"></section><section id="overview"><h2 >概述</h2><p >报价单是发送给客户的用于提供产品或者服务预估成本的文档。客户可以接收报价，这时候销售人员就需要发布一个销售订单。或者客户不接受。</p><p >例如，我们的公司销售电子产品并且我的客户Agrolait有兴趣购买 <code >3 iPads</code> 。我会发给他们一个这些Ipad的报价单，报价 <code >320 USD</code>，<code >5%</code> 的折扣。</p><p >本节将告诉您如何进行。</p></section><section id="configuration"><h2 >配置</h2></section><section id="install-the-sales-management-module"><h3 >安装 销售管理 模块</h3><p >为了能发出你的第一个报价单，你需要在YuanCloud后台的APP模块中安装**销售管理**模块。</p><img src="../../../_images/first_quote01.png" class="img-responsive center-block"></section><section id="allow-discounts-on-sales-order-line"><h3 >允许指定销售行的折扣信息</h3><p >在报价单上允许设置折扣是一个常见的销售活动，它可以改进把潜在客户变成正式客户的机会。</p><p >在我们的示例中，我们想要给 <code >Agrolait</code> 一个 <code >5%</code> 的销售折扣。要想使用该特性，进入 <strong >销售</strong> 应用，选择 <span class="menuselection">配置(Configuration) ‣ 设置(Settings)</span> 然后在 <strong >报价和销售</strong> 勾选 <strong >允许在销售订单行折扣</strong> (见下图)并且 <code >应用</code> 变更。</p><img src="../../../_images/first_quote02.png" class="img-responsive center-block"></section><section id="create-your-quotation"><h2 >创建销售询价单</h2><p >要创建你的第一个报价单，点击 <span class="menuselection">销售(Sales) ‣ 报价单(Quotations)</span> 并点击 <strong >创建</strong> 。然后，按照以下步骤完成报价：</p></section><section id="customer-and-products"><h3 >客户与产品</h3><p >添加到报价单中的基本信息是客户(你要发送的那个人)和要卖的产品。
+从报价单视图中，在 <strong >客户</strong> 的下拉列表中选择客户，并且在 <strong >订单行</strong> 点击 <strong >添加一个新的项目</strong> 并选择产品。不要忘了在 <strong >订单数量</strong> 手工的更改数量以及折扣(如果安装了此特性)。</p><img src="../../../_images/first_quote03.png" class="img-responsive center-block"><p >如果在你的YuanCloud环境中还没有客户或者产品，你可以在创建报价单的时候随手创建客户或者产品：</p><ul ><li ><p >添加一个新的客户，点击**客户**的下拉菜单并且点击**创建和编辑**。在新的窗口中，你将能记录客户所有的详细信息，例如地址，网址，电话号码和个人联系信息</p></li><li ><p >要添加一个新的产品，在**订单行**中点击添加一个新项目并在下拉列表中选择**创建和编辑**。你就可以记录按照以下图片记录产品信息(产品类型，成本，销售价格，开票规则等)</p></li></ul></section><section id="taxes"><h3 >税</h3><p >要设置税的参数，只需要在产品行的税字段点击**创建和编辑**。填写详细信息(例如你们的销项税是``21%`` )并保存。</p><img src="../../../_images/first_quote04.png" class="img-responsive center-block"></section><section id="terms-and-conditions"><h3 >条款和条件</h3><p >你可以选择报价单的到期日期并且可以直接在报价单中添加公司的条款和条件(见下图)。</p><img src="../../../_images/first_quote05.png" class="img-responsive center-block"></section><section id="preview-and-send-quotation"><h2 >预览并发送报价</h2><p >在发送报价单之前，如果想预览报价单。可以点击**打印**按钮(右上角)。它会给你呈现出一个带有详细信息的PDF版本</p><img src="../../../_images/first_quote06.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >更新你的公司的会显示在报价单上的详细信息(地址，网址，图标等)：进入 <strong >设置</strong> 菜单 <span class="menuselection">设置(Settings) ‣ 通用设置(General settings) ‣ 配置公司的数据(Configure company data)</span> 。</p></div><p >点击**通过电邮发送**可以自动的把报价单作为电子邮件的附件发送给你的客户。你可以在发送邮件之前调整邮件内容，甚至可以把它保存，作为以后可以重复使用的模板</p><img src="../../../_images/first_quote07.png" class="img-responsive center-block"><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="recurring.html" class="internal alert-link reference"><em >如何建立周期性报价</em></a></li><li ><a href="../online/creation.html" class="internal alert-link reference"><em >如何创建/编辑在线报价？</em></a></li><li ><a href="optional.html" class="internal alert-link reference"><em >如何在报价显示可选产品？</em></a></li><li ><a href="terms_conditions.html" class="internal alert-link reference"><em >如何在报价中链接我的条款和条件？</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<yuancloud>
+    <data>
+        <template id="assets_frontend" inherit_id="website.assets_frontend" name="Payment Frontend assets">
+            <xpath expr="." position="inside">
+                <link rel='stylesheet' href='/ycloud_saas/static/src/css/ycloud_saas.css'/>
+            </xpath>
+        </template>
+        <template id="my_account_database" name="Link to database portal" inherit_id="website.layout">
+            <xpath expr="//li[@id='o_logout']" position="before">
+                <li>
+                    <a href="/my/database" role="menuitem">我的数据库</a>
+                </li>
+            </xpath>
+        </template>
+
+        <template id="database" name="Database">
+            <t t-call="website.layout">
+                <div id="wrap">
+                    <main>
+
+                        <div class="container">
+                            <h2 class="text-center mb32">选择数据库</h2>
+                            <div class="yuancloud-oe-instance-container yuancloud-oe-databases">
+                                <t t-foreach="clients" t-as="my">
+                                    <a t-attf-href="#{urls[my.client_id]}">
+                                        <div class="yuancloud-oe-instance">
+                                            <!--<p style="margin: 15px;">-->
+                                            <!--<span class="pull-right label label-info">Trial</span>-->
+                                            <!--</p>-->
+
+                                            <div class="text-center mt48">
+                                                <img t-attf-src="/logo?dbname=#{my.name}"
+                                                     class="yuancloud-oe-instance-icon"
+                                                     t-attf-data-src="/logo?dbname=#{my.name}"/>
+
+                                            </div>
+                                            <div class="yuancloud-oe-instance-description">
+                                                <p class="text-muted yuancloud-oe-company-name">
+                                                    <t t-esc="my.name"/>
+                                                </p>
+                                                <p>
+                                                    <span class="btn btn-primary yuancloud-oe-login-button">
+                                                        <i class="fa fa-arrow-right"></i>
+                                                        <t t-esc="my.name"/>
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </t>
+                            </div>
+                            <p class="text-center mt92 mb128">
+                                <!--<a class="btn btn-default" href="/my/databases/manage">Manage Your Databases</a>-->
+                            </p>
+                        </div>
+                    </main>
+                </div>
+            </t>
+        </template>
+    </data>
+
+    <!--<data noupdate="0">-->
+        <!--<record id="base.group_no_one" model="res.groups">-->
+            <!--<field name="users" eval="[(4, ref('base.user_root'))]"/>-->
+        <!--</record>-->
+    <!--</data>-->
+</yuancloud>

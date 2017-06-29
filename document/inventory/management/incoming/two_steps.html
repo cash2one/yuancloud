@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何卸货到收货区域?(2步) &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="入库" href="../incoming.html" />
+    <link rel="next" title="在收货时如何添加质量检验?(3步)" href="three_steps.html" />
+    <link rel="prev" title="如何选择正确的步骤来处理收货？" href="handle_receipts.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../inventory.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何卸货到收货区域?(2步)
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="current toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#overview" class="ripple internal reference">概述</a></li><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#use-advanced-routes" class="ripple internal reference">使用高级路径</a></li><li class="list-group-item"><a href="#how-to-configure-your-warehouse" class="ripple internal reference">如何配置仓库？</a></li></ul></li><li class="list-group-item"><a href="#how-to-receipt-a-shipment-in-2-steps" class="ripple internal reference">如何2步收货？</a><ul ><li class="list-group-item"><a href="#how-to-process-the-receipt-step" class="ripple internal reference">如何收货</a></li><li class="list-group-item"><a href="#how-to-to-transfer-the-receipt-to-your-stock" class="ripple internal reference">如何收货到仓库？</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/inventory/management/incoming/two_steps.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-unload-your-shipment-to-an-input-location-2-steps"></section><section id="overview"><h2 >概述</h2><p >YuanCloud使用路径精确地定义如何处理不同的接收步骤。该配置可以在仓库层面完成。默认的，收货是一步完成，通过变更配置可以允许2步或者3步收货。</p><p >2步过程如下：在收货区域收货然后再进一步从收货区域转移到库存中。只要产品没有移到库存中，这些产品就不能被发放到车间或者进行销售。</p><p >这个情景会在本文档解释。</p></section><section id="configuration"><h2 >配置</h2></section><section id="use-advanced-routes"><h3 >使用高级路径</h3><p >要进行路径管理，进入菜单项 <span class="menuselection">库存(Inventory) ‣ 配置(Configuration) ‣ 设置(Settings)</span></p><img src="../../../_images/two_steps051.png" class="img-responsive center-block"><p >确保路径选项**使用规则产品的高级路径**有勾选。然后点击**应用**来保存变更。</p><p >确保 <strong >&quot; 仓库进行多库位管理&quot;</strong> 被勾选。</p></section><section id="how-to-configure-your-warehouse"><h3 >如何配置仓库？</h3><p >进入菜单 <span class="menuselection">库存(Inventory) ‣ 配置(Configuration) ‣ 仓库(Warehouse)</span> 并选择你想变更收货方式的仓库。</p><p >默认情况下，仓库配置是一步收货(选项是**收货直接入库**)。</p><p >要添加一个控制步骤，勾选**在进入库存之前先卸货到收货区域(2步)**。</p><img src="../../../_images/two_steps021.png" class="img-responsive center-block"></section><section id="how-to-receipt-a-shipment-in-2-steps"><h2 >如何2步收货？</h2></section><section id="how-to-process-the-receipt-step"><h3 >如何收货</h3><ul ><li ><p >在采购模块下，创建一个**采购询价单**，然后点击**确认**订单。你可以看到在采购订单上方的**状态栏位**有一个**收货单**和采购订单关联。这是收货步骤。</p></li></ul><img src="../../../_images/two_steps031.png" class="img-responsive center-block"><ul ><li ><p >进入**存货**然后点击**收货**看板上的**待收**链接。</p></li></ul><img src="../../../_images/two_steps011.png" class="img-responsive center-block"><p >点击想要处理的收货单，然后点击**确认**完成从**供应商**到**库存／收货区域**的调拨。</p><p >已经完成了参照为**WH/IN**的收货步骤。产品已经完成了从**供应商**到**WH/收货区域**的调拨，现在就可以进行下一步骤的操作了。</p></section><section id="how-to-to-transfer-the-receipt-to-your-stock"><h3 >如何收货到仓库？</h3><p >回到**存货**仪表盘。等待状态的调拨已经就绪。点击**内部调拨**的**转移**完成质检调拨。</p><img src="../../../_images/two_steps041.png" class="img-responsive center-block"><p >点击想要处理的调拨单。点击**确认**完成从**存货/收货区域**到**库存／库存**的调拨。</p><p >已经完成了序列号参照为**WH/INT**的内部调拨，收货已经移动到了库存中。</p><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="../delivery/inventory_flow.html" class="internal alert-link reference"><em >如何选择正确的仓库流程完成发货单</em></a></li><li ><a href="three_steps.html" class="internal alert-link reference"><em >在收货时如何添加质量检验?(3步)</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

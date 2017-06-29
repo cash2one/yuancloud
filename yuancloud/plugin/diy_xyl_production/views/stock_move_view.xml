@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+         <record model="ir.actions.act_window" id="stock_move_list_action">
+            <field name="name">库存移动</field>
+            <field name="res_model">stock.move</field>
+            <!--<field name="domain">[('is_finish_plan','=',True)]</field>-->
+            <!--<field name="context">{"default_is_finish_plan": True}</field>-->
+            <field name="priority">20</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建第一笔库存移动
+                </p>
+            </field>
+        </record>
+
+        <!--列表-->
+        <record id="view_stock_move_tree" model="ir.ui.view">
+            <field name="name">stock.move.tree</field>
+            <field name="model">stock.move</field>
+            <field name="priority">20</field>
+            <field name="inherit_id" eval="False"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree decoration-muted="state == 'cancel'" decoration-danger="(state not in ('cancel','done')) and date > current_date" string="Moves">
+                    <field name="name" invisible="1"/>
+                    <field name="lot_id" />
+                    <!--<field name="picking_id" string="Reference"/>-->
+                    <field name="origin"/>
+                    <field name="picking_type_id" invisible="1"/>
+                    <field name="create_date" invisible="1" groups="base.group_no_one"/>
+                    <field name="product_id" on_change="onchange_product_id(product_id,location_id,location_dest_id, False)"/>
+                    <field name="product_uom_qty" on_change="onchange_quantity(product_id, product_uom_qty, product_uom)"/>
+                    <field name="product_uom" options="{'no_open': True, 'no_create': True}" string="计量单位" groups="product.group_uom"/>
+                    <button name="%(stock.move_scrap)d"
+                        string="Scrap Products" type="action"
+                        icon="terp-gtk-jump-to-ltr" context="{'scrap': True}"
+                        states="draft,waiting,confirmed,assigned"
+                        groups="stock.group_stock_user"/>
+                    <field name="location_id" groups="stock.group_locations"/>
+                    <field name="location_dest_id" groups="stock.group_locations"/>
+                    <field name="date" groups="base.group_no_one"/>
+                    <field name="date_expected"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <!--卡片-->
+        <record id="view_stock_move_form" model="ir.ui.view">
+            <field name="name">stock.move.form</field>
+            <field name="model">stock.move</field>
+            <field name="priority">20</field>
+            <field name="inherit_id" eval="False"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Stock Moves">
+                <header>
+                    <button name="action_confirm" states="draft" string="稍后处理" type="object" class="oe_highlight"/>
+                    <button name="action_done" states="draft,assigned,confirmed" string="全部处理" type="object" class="oe_highlight"/>
+                    <button name="force_assign" states="confirmed" string="设为可用" type="object" class="oe_highlight"/>
+                    <button name="action_cancel" states="draft,assigned,confirmed" string="取消移动" type="object"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,assigned,done" statusbar_colors='{"waiting":"blue","confirmed":"blue"}'/>
+                </header>
+                <sheet>
+                    <group>
+                        <group name="main_grp" colspan="2">
+                            <group name="main_grp_col1">
+                                <field name="product_id" on_change="onchange_product_id(product_id,location_id,location_dest_id, False)"/>
+                                <label for="product_uom_qty"/>
+                                <div class="o_row">
+                                    <field name="product_uom_qty"
+                                        on_change="onchange_quantity(product_id, product_uom_qty, product_uom)"/>
+                                    <field name="product_uom" options="{'no_open': True, 'no_create': True}" groups="product.group_uom"/>
+                                    <button name="%(stock.move_scrap)d" class="btn-default"
+                                            string="报废" type="action" context="{'scrap': True}"
+                                            states="draft,waiting,confirmed,assigned"/> <!-- FIXME icon="terp-gtk-jump-to-ltr" -->
+                                </div>
+                                <field name="name"/>
+                                <field name="lot_id"/>
+                            </group>
+                            <group name="main_grp_col2">
+                                <field name="picking_type_id"/>
+                                <field name="priority"/>
+                                <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                                <field name="date_expected" on_change="onchange_date(date,date_expected)" attrs="{'invisible': [('state', '=', 'done')]}"/>
+                                <field name="date" attrs="{'invisible': [('state', '!=', 'done')]}"/>
+                            </group>
+                        </group>
+                        <group name="origin_grp" string="原始">
+                            <field name="origin"/>
+                            <field name="location_id" groups="stock.group_locations"/>
+                            <field name="picking_id" domain="[('picking_type_id','=',picking_type_id)]"/>
+                            <field name="create_date" groups="base.group_no_one"/>
+                            <field name="procure_method" attrs="{'readonly': [('state', '!=', 'draft')]}" groups="stock.group_adv_location"/>
+                            <field name="group_id"/>
+                        </group>
+                        <group name="destination_grp" string="目标" groups="stock.group_locations">
+                            <field name="location_dest_id" />
+                            <field name="partner_id" context="{'contact_display':'partner'}" />
+                            <field name="picking_partner_id" context="{'contact_display':'partner'}"/>
+                            <field name="move_dest_id" groups="base.group_no_one" readonly="1"/>
+                        </group>
+                        <group name="quants_grp" string="保留的份" colspan="2" groups="base.group_no_one" attrs="{'invisible': [('state', '=', 'done')]}">
+                            <field name="string_availability_info"/>
+                        </group>
+                        <group name="moved_quants_grp" string="已移动的份" colspan="4" groups="base.group_no_one" attrs="{'invisible': [('state', '!=', 'done')]}">
+                            <field name="quant_ids" readonly="1" nolabel="1"/>
+                        </group>
+                    </group>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_stock_move_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_stock_move_tree"></field>
+            <field name="act_window_id" ref="stock_move_list_action"/>
+        </record>
+        <record id="action_stock_move_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_stock_move_form"/>
+            <field name="act_window_id" ref="stock_move_list_action"/>
+        </record>
+
+    </data>
+</yuancloud>

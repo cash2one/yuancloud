@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <record id="view_oa_journal_report_graph" model="ir.ui.view">
+            <field name="name">oa.journal.report.graph</field>
+            <field name="model">oa.journal.report</field>
+            <field name="arch" type="xml">
+                <graph string="Journal Analysis" type="pivot" stacked="True">
+                    <field name="payer_employee" type="row"/>
+                    <field name="paidon" interval="month" type="col"/>
+                    <field name="total_debit" type="measure"/>
+                </graph>
+            </field>
+        </record>
+        <record id="view_oa_journal_report_search" model="ir.ui.view">
+            <field name="name">oa.journal.report.graph</field>
+            <field name="model">oa.journal.report</field>
+            <field name="arch" type="xml">
+                <search string="Journal Analysis">
+                    <filter string="草稿" domain="[('state', '=' ,'draft')]" help="过滤状态为'草稿'的数据"/>
+                    <filter string="已付款" domain="[('state', '=' ,'paid')]" help="过滤状态为'已付款'的数据"/>
+                    <filter string="已收货" domain="[('state','=','received')]" help="过滤状态为'已收货'的数据"/>
+                     <filter string="已报销" domain="[('state','=','expensed')]" help="过滤状态为'已报销'的数据"/>
+                    <filter string="关闭" domain="[('state','=', 'closed')]" help="过滤状态为'关闭'的数据"/>
+                    <group expand="0" string="Extended Filters...">
+                        <field name="payer_employee"/>
+                    </group>
+                    <group expand="1" string="分组">
+                        <filter string="付款人" name="User" context="{'group_by':'payer_employee'}" help="按'付款人'分组"/>
+                        <filter string="状态" context="{'group_by':'state'}" help="按'状态'分组"/>
+                        <filter string="发票类型" context="{'group_by':'Invoice_type'}" help="按'发票类型'分组"/>
+                        <filter string="付款方式" context="{'group_by':'mode_of_payment'}" help="按'付款方式'分组" />
+                        <separator/>
+                        <!--<filter string="月份" context="{'group_by':'create_date:month'}" help="Creation Date"/>-->
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="action_oa_journal_report_all" model="ir.actions.act_window">
+            <field name="name">日常流水分析</field>
+            <field name="res_model">oa.journal.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">graph</field>
+            <field name="context">
+                {'search_default_year':1,'search_default_month':1,'search_default_employee':1,'group_by_no_leaf':1,'group_by':[]}
+            </field>
+            <field name="search_view_id" ref="view_oa_journal_report_search"/>
+        </record>
+    </data>
+</yuancloud>

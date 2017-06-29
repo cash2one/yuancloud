@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<yuancloud>
+    <data>
+
+        <!-- Top menu item -->
+        <!--<menuitem name="Marketing" id="base.marketing_menu" sequence="100"-->
+            <!--web_icon="marketing,static/description/icon.png"-->
+            <!--icon="fa-check-square-o"/>-->
+
+        <menuitem name="Marketing" id="base.marketing_menu" sequence="30"
+            parent="base.menu_sale_config"/>
+
+        <!-- Marketing main configuration menu -->
+        <menuitem name="Configuration" id="base.menu_marketing_config_root" sequence="30"
+            parent="base.marketing_menu" groups="base.group_configuration"/>
+
+    </data>
+</yuancloud>

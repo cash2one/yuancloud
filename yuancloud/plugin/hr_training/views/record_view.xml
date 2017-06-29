@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!-- Action -->
+        <record model="ir.actions.act_window" id="training_record_list_action">
+            <field name="name">培训记录</field>
+            <field name="res_model">hr.training.record</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建第一次培训
+                </p>
+            </field>
+        </record>
+        <!-- 培训记录-列表样式 -->
+        <record model="ir.ui.view" id="training_record_list_view">
+            <field name="name">hr.training.record.tree</field>
+            <field name="model">hr.training.record</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="date"/>
+                    <field name="time"/>
+                    <field name="address"/>
+                    <field name="lession_id"/>
+                    <field name="teacher"/>
+                    <!--<field name="student"/>-->
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+        <!--培训记录-卡片样式 -->
+        <record model="ir.ui.view" id="training_record_form_view">
+            <field name="name">hr.training.record.form</field>
+            <field name="model">hr.training.record</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="lession_id"/>
+                                <field name="date"/>
+                                <field name="time"/>
+                                <field name="student" widget="many2many_tags" options="{'no_create_edit': True}"/>
+                            </group>
+                            <group>
+                                <field name="address"/>
+                                <field name="price"/>
+                                <field name="teacher"/>
+                            </group>
+                            <group>
+                                <field name="description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</yuancloud>

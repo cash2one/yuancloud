@@ -1,0 +1,171 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>How to control product received? (entirely &amp; partially) &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="报价需求" href="../rfq.html" />
+    <link rel="next" title="How to cancel a purchase order?" href="cancel.html" />
+    <link rel="prev" title="如何管理供应商账单？" href="bills.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../purchase.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              How to control product received? (entirely &amp; partially)
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="current toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#install-the-purchase-and-inventory-applications" class="ripple internal reference">Install the Purchase and Inventory applications</a></li><li class="list-group-item"><a href="#create-products" class="ripple internal reference">创建产品</a></li></ul></li><li class="list-group-item"><a href="#control-products-receptions" class="ripple internal reference">Control products receptions</a><ul ><li class="list-group-item"><a href="#purchase-products" class="ripple internal reference">Purchase products</a></li><li class="list-group-item"><a href="#receive-products" class="ripple internal reference">Receive Products</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/purchase/purchases/rfq/reception.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-control-product-received-entirely-partially"><p >The <strong >Purchase</strong> app allows you to manage your purchase orders, to control
+products to receive and to control supplier bills.</p><p >If you want to get product forecasts and receptions under control, the
+first thing to do is to deploy the YuanCloud purchase process. Knowing what
+have been purchased is the basis of forecasting and controlling
+receptions.</p></section><section id="configuration"><h2 >配置</h2></section><section id="install-the-purchase-and-inventory-applications"><h3 >Install the Purchase and Inventory applications</h3><p >Start by installing the Purchase application from the <strong >Apps</strong> module.
+This will automatically trigger the installation of the <strong >Inventory</strong> app
+(among others), which is required with <strong >Purchase</strong>.</p><img src="../../../_images/reception02.png" class="img-responsive center-block"></section><section id="create-products"><h3 >创建产品</h3><p >Then, you need to create the products you want to purchase. Go to the
+<strong >Purchase</strong> app, then <span class="menuselection">Purchase ‣ Products</span>,
+and click on <strong >Create</strong>.</p><img src="../../../_images/reception05.png" class="img-responsive center-block"><p >When creating the product, the <strong >Product Type</strong> field is important:</p><ul ><li ><strong >Stockable &amp; Consumable</strong>: products need to be received in the
+inventory.</li><li ><strong >Services &amp; Digital Products</strong> (only when the <strong >eCommerce</strong> app is
+installed): there is no control about what you receive or not.</li></ul><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >It's always good to create a <strong >Miscellaneous</strong> product for all
+the products you purchased rarely and for which you don't want
+to manage the stocks or have purchase/sale statistics.
+If you create such a product, we recommend to set his product
+type field as <strong >Service</strong>.</p></div></section><section id="control-products-receptions"><h2 >Control products receptions</h2></section><section id="purchase-products"><h3 >Purchase products</h3><p >From the purchase application, create a purchase order with a few
+products. If the vendor sent you a sale order or a quotation, put its
+reference in the <strong >Vendor Reference</strong> field. This will allow you to easily
+do the matching with the delivery order later on (as the delivery order
+will probably include the <strong >Vendor Reference</strong> of his sale order).</p><img src="../../../_images/reception03.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >See the documentation page <a href="../../overview/process/from_po_to_invoice.html" class="internal alert-link reference"><em >从采购订单到开票和收货</em></a>
+for a full overview of the purchase process.</p></div></section><section id="receive-products"><h3 >Receive Products</h3><p >If you purchased physical goods (stockable or consumable products), you
+can receive the products from the <strong >Inventory</strong> application. From the
+<strong >Inventory</strong> dashboard, you should see a button <strong >X To Receive</strong>, on the
+receipt box of the related warehouse.</p><img src="../../../_images/reception01.png" class="img-responsive center-block"><p >Click on this button and you access a list of all awaiting orders for
+this warehouse.</p><img src="../../../_images/reception07.png" class="img-responsive center-block"><p >If you have a lot of awaiting orders, you can use the filter bar to
+search on the <strong >Vendor</strong> (also called <strong >Partner</strong> in YuanCloud), the product or the
+source document, which is the reference of your purchase order. You can
+open the document that matches with the received delivery order and
+process all the lines within it.</p><img src="../../../_images/reception04.png" class="img-responsive center-block"><p >You may validate the whole document at once by clicking on the
+<strong >Validate</strong> button or you can control all products, one by one, by
+manually change the <strong >Done</strong> quantity (what has actually been received).
+When a line is green, it means the quantity received matches to what
+have been expected.</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >If you work with lots or serial numbers, you can not set
+the processed quantity, but you have to provide all the
+lots or serial numbers to record the quantity received.</p></div><p >When you validate the reception, if you have received less products than
+the initial demand, YuanCloud will ask youthe permission to create a
+backorder.</p><img src="../../../_images/reception06.png" class="img-responsive center-block"><p >If you plan to receive the remaining product in the future, select
+<strong >Create Backorder</strong>. YuanCloud will create a new documents for the awaiting
+products. If you choose <strong >No Backorder</strong>, the order is considered as
+fulfilled.</p><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="bills.html" class="internal alert-link reference"><em >如何管理供应商账单？</em></a></li><li ><a href="cancel.html" class="internal alert-link reference"><em >How to cancel a purchase order?</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

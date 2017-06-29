@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<yuancloud>
+    <data>
+        <delete id="auth_oauth.provider_yuancloud" model="auth.oauth.provider"/>
+    </data>
+</yuancloud>

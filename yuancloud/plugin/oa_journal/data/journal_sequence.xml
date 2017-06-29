@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <!--日常流水-序列-->
+    <data noupdate="1">
+        <record id="sequence_oa_journal" model="ir.sequence">
+            <field name="name">日常流水</field>
+            <field name="code">oa.journal</field>
+            <field name="prefix">CJ%(y)s%(month)s</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</yuancloud>

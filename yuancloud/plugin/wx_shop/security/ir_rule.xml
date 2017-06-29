@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!--************2.微信小店-记录规则***********-->
+        <record id="wx_shop_multcompany_view" model="ir.rule">
+            <field name="name">微信小店多公司</field>
+            <field name="model_id" ref="model_wx_shop"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',('wx_official_account.wx_company','=',user.company_id.id),('wx_official_account.wx_company','=',False)]</field>
+        </record>
+        <!--************3.微信商品多公司-记录规则***********-->
+        <record id="wx_produc_multcompany_view" model="ir.rule">
+            <field name="name">微信商品多公司</field>
+            <field name="model_id" ref="model_wx_product"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',('wx_shop.wx_official_account.wx_company','=',user.company_id.id),('wx_shop.wx_official_account.wx_company','=',False)]</field>
+        </record>
+    </data>
+</yuancloud>

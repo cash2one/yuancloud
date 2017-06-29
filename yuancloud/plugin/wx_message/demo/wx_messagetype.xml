@@ -1,0 +1,46 @@
+<yuancloud>
+    <data noupdate="1">
+        <!-- 微信消息类型-Begin  -->
+        <record id="messagetype1" model="wx.messagetype">
+            <field name="typecode">text</field>
+            <field name="typename">文字</field>
+        </record>
+        <record id="messagetype2" model="wx.messagetype">
+            <field name="typecode">image</field>
+            <field name="typename">图片</field>
+        </record>
+        <record id="messagetype3" model="wx.messagetype">
+            <field name="typecode">imagetext</field>
+            <field name="typename">图文</field>
+        </record>
+        <record id="messagetype4" model="wx.messagetype">
+            <field name="typecode">voice</field>
+            <field name="typename">语音</field>
+        </record>
+        <record id="messagetype5" model="wx.messagetype">
+            <field name="typecode">video</field>
+            <field name="typename">视频</field>
+        </record>
+        <record id="messagetype6" model="wx.messagetype">
+            <field name="typecode">location</field>
+            <field name="typename">位置</field>
+        </record>
+        <record id="messagetype7" model="wx.messagetype">
+            <field name="typecode">link</field>
+            <field name="typename">链接</field>
+        </record>
+        <record id="messagetype8" model="wx.messagetype">
+            <field name="typecode">music</field>
+            <field name="typename">音乐</field>
+        </record>
+         <record id="messagetype9" model="wx.messagetype">
+            <field name="typecode">template</field>
+            <field name="typename">模板</field>
+        </record>
+        <record id="messagetype10" model="wx.messagetype">
+            <field name="typecode">list</field>
+            <field name="typename">列表</field>
+        </record>
+        <!-- 微信消息类型 -End -->
+    </data>
+</yuancloud>

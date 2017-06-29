@@ -1,0 +1,134 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何和第三方货代集成？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="发货设置" href="../setup.html" />
+    <link rel="next" title="如何得到用于集成UPS的证书？" href="ups_credentials.html" />
+    <link rel="prev" title="如何设置发货方法" href="delivery_method.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../inventory.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何和第三方货代集成？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="current toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#overview" class="ripple internal reference">概述</a></li><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#install-the-shipper-company-connector-module" class="ripple internal reference">安装货代公司的接口模块</a></li><li class="list-group-item"><a href="#configure-the-delivery-method" class="ripple internal reference">配置发货方式</a></li><li class="list-group-item"><a href="#company-configuration" class="ripple internal reference">公司配置</a></li><li class="list-group-item"><a href="#product-configuration" class="ripple internal reference">产品配置</a></li></ul></li><li class="list-group-item"><a href="#sale-process" class="ripple internal reference">销售过程</a><ul ><li class="list-group-item"><a href="#sale-order" class="ripple internal reference">销售订单</a></li><li class="list-group-item"><a href="#delivery" class="ripple internal reference">发货</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/inventory/shipping/setup/third_party_shipper.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-integrate-a-third-party-shipper"></section><section id="overview"><h2 >概述</h2><p >YuanCloud可以处理不同的交货方式，包含第三方货代。YuanCloud可以和货运公司的追踪系统链接。这会让你管理货代公司，运输价格以及目的地。</p></section><section id="configuration"><h2 >配置</h2></section><section id="install-the-shipper-company-connector-module"><h3 >安装货代公司的接口模块</h3><p >在库存模块，点击：：[UNKNOWN NODE title_reference]。在**货运接口**下方，标识出你想要集成的货代公司：</p><img src="../../../_images/third_party_shipper06.png" class="img-responsive center-block"><p >点击 <strong >应用</strong> 。</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >If you want to integrate delivery methods in your e-commerce,
+you'll have to install the <strong >eCommerce Delivery</strong> module.</p></div></section><section id="configure-the-delivery-method"><h3 >配置发货方式</h3><p >要配置交货方式，进入**库存**模块，点击:[UNKNOWN NODE problematic]配置 --&gt; 交货方式 [UNKNOWN NODE problematic]。</p><p >货代供应商的交货方式已经自动创建了。大多数情况下，一些货代供应商会有**2**种交货方式：一个是**国际运输**，一个是**国内运输**。</p><p >你还可以用其他配置给同一个供给创建其他方式，例如**包装类型**。</p><p >你可以更改发货方式的**名称**。该名称会显示在电商模块中。</p><p >如何准备使用的话，就标记为 <strong >可以发货</strong> 。</p><img src="../../../_images/third_party_shipper02.png" class="img-responsive center-block"><p >在价格栏位，选择在**价格计算**下面的的货代意味着价格是由货代系统计算出来的。</p><p >货代配置被分成了两个栏位</p><ul ><li ><p >第一个和**你的账户**链接(开发者秘钥，密码，……)，更多信息参照货代的网站。</p></li><li ><p >第二栏根据**供应者**的不同而有所差别。你可以选择包材类型，服务类型，单位重量……</p></li><li ><p >一旦完成测试，就不要勾选**测试模式**。</p></li></ul><p >最终我们可以把发货方式局限在几个目的位置。你可以把它们限制为一些国家，省份甚至邮编。这种特性限制了电商的国家列表。对国内的用户很有用。例如 USPS US只在美国国内运输。</p><img src="../../../_images/third_party_shipper07.png" class="img-responsive center-block"></section><section id="company-configuration"><h3 >公司配置</h3><p >为了计算正确的价格，供应商需要知道你的公司信息。确保地址和电话号码的信息都是正确的。</p><img src="../../../_images/third_party_shipper03.png" class="img-responsive center-block"><p >要查看你的信息，进入**设置**应用并点选**通用设置**。点击第一个链接**配置公司信息**。</p></section><section id="product-configuration"><h3 >产品配置</h3><p >货代公司需要产品的重量，不然运输价格不能计算。</p><p >进入菜单：[UNKNOWN NODE title_reference]。打开你想要交货的产品并为之维护重量。</p><img src="../../../_images/third_party_shipper09.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >产品页面中的重量默认的用千克表示。如果使用英制单位，不要忘了进行转换。</p></div></section><section id="sale-process"><h2 >销售过程</h2></section><section id="sale-order"><h3 >销售订单</h3><img src="../../../_images/third_party_shipper05.png" class="img-responsive center-block"><p >现在你可以在销售订单选择货代。点击**发货方式**选择正确的一个。</p><p >在你保存订单或者点击**设置价格**的时候价格就会计算。</p><p >如果你想要给销售订单的运费开票，点击**设置价格**，它就会把运输方式作为一个产品名称添加到销售订单上。可能和实际价格存在差异。</p><p >不然，实际价格(发货单确认的时候会计算)会自动的添加到发票中。详情请参照文档：[UNKNOWN NODE title_reference]</p></section><section id="delivery"><h3 >发货</h3><p >销售订单产生的发货单会从销售订单带出发货信息。如果有需要的话，可以更改货代信息。</p><p >如果你在存货模块下创建一个发货转移，你可以在额外的信息页签中添加第三方货代信息。</p><img src="../../../_images/third_party_shipper01.png" class="img-responsive center-block"><p >发货重量根据产品的重量计算。一旦调拨确认后运输成本就会计算。</p><p >点击 [UNKNOWN NODE problematic]确认**接收追踪号码。[UNKNOWN NODE problematic]运单号**字段会被自动填上。在货代的网站上点击**追踪**按钮查看发货单。</p><img src="../../../_images/third_party_shipper08.png" class="img-responsive center-block"><p >黏贴在包裹上的标签可以在下方的历史信息中找到：</p><img src="../../../_images/third_party_shipper04.png" class="img-responsive center-block"><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="../operation/invoicing.html" class="internal alert-link reference"><em >如何就运费给客户开票？</em></a></li><li ><a href="../operation/labels.html" class="internal alert-link reference"><em >如何打印发货标签？</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

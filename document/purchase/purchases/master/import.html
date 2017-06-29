@@ -1,0 +1,149 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何导入供应商价格表? &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="主材数据" href="../master.html" />
+    <link rel="next" title="报价需求" href="../rfq.html" />
+    <link rel="prev" title="如何产品上设置不同的供应商" href="suppliers.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../purchase.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何导入供应商价格表?
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="current toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#introduction" class="ripple internal reference">介绍</a></li><li class="list-group-item"><a href="#required-configuration" class="ripple internal reference">所需配置</a></li><li class="list-group-item"><a href="#import-vendor-pricelists" class="ripple internal reference">导入供应商价格表</a><ul ><li class="list-group-item"><a href="#import-the-list-for-the-first-time" class="ripple internal reference">第一次导入列表</a><ul ><li class="list-group-item"><a href="#prepare-the-document" class="ripple internal reference">准备文档</a></li><li class="list-group-item"><a href="#update-the-vendor-pricelist" class="ripple internal reference">更新供应商价格表</a></li></ul></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/purchase/purchases/master/import.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-import-supplier-pricelists"></section><section id="introduction"><h2 >介绍</h2><p >Big companies use to import supplier pricelists day to day. Indeed,
+prices are always changing and you need to get price up to date to deal
+with a high number of products.</p><p >To manage supplier prices on product form, read this document (<a href="suppliers.html" class="internal reference"><em >如何产品上设置不同的供应商</em></a>).
+Here we will show you how to import customer prices.</p></section><section id="required-configuration"><h2 >所需配置</h2><p >在采购设置中，你有2种选择：</p><ul ><li ><p >在产品页面上管理供应商价格</p></li><li ><p >允许使用并导入供应商价格表</p></li></ul><p >在此我们选择：<strong >允许使用并导入供应商价格表</strong></p><img src="../../../_images/import05.png" class="img-responsive center-block"></section><section id="import-vendor-pricelists"><h2 >导入供应商价格表</h2><p >There are 2 scenarios: import the vendor pricelist for the first time,
+or update an existing vendor pricelist. In both scenarios, we assume
+your product list and vendor list is updated and you want to import the
+price list of vendors for a given product.</p><p >To import a list from a document, the best pratice is to export first to
+get an example of data formating and a proper header to reimport.</p><img src="../../../_images/import07.png" class="img-responsive center-block"><img src="../../../_images/import04.png" class="img-responsive center-block"></section><section id="import-the-list-for-the-first-time"><h3 >第一次导入列表</h3></section><section id="prepare-the-document"><h4 >准备文档</h4><p >In <span class="menuselection">Purchase ‣ Purchase ‣ Supplier Pricelists</span>,
+export a template of document to get import/export compatible and
+get the right format to import in mass. Create manually a data and export it
+(<span class="menuselection">select ‣ Action ‣ Export</span>)</p><img src="../../../_images/import07.png" class="img-responsive center-block"><p >这里是你可以导入的字段的列表：</p><table class="table"><thead ><tr ><th ><p ><strong >导入文档的头(csv, xls)</strong></p></th><th ><p >[UNKNOWN NODE problematic]意义和如何得到 **</p></th><th ><p ><strong >示例</strong></p></th></tr></thead><tbody ><tr ><td >name_id</td><td ><p >供应商ID-&gt;导出获取供应商列表</p></td><td >__export__.res_partner_12</td></tr><tr ><td >product_code</td><td ><p >供应商产品编码 -&gt; 自由文本</p></td><td >569874</td></tr><tr ><td >price</td><td ><p >供应商价格  -&gt; 随意文本</p></td><td >1500</td></tr><tr ><td >product_tmpl_id.id</td><td ><p >产品模板ID -&gt;导出并获取产品列表</p></td><td >__export__.product_template_13</td></tr><tr ><td >currency_id.id</td><td ><p >币别 -&gt;获取并导出币别列表</p></td><td ></td></tr><tr ><td >date_end</td><td ><p >价格有效期的最后一天</p></td><td >2015-10-22</td></tr><tr ><td >min_qty</td><td ><p >从该供应商采购最小数量</p></td><td >2</td></tr><tr ><td >product_id.id</td><td ><p >产品变量名称－&gt;导出并获取变量</p></td><td >__export__.product_13</td></tr><tr ><td >date_start</td><td ><p >价格可用的开始日期</p></td><td >2015-12-31</td></tr></tbody></table><p >你能得到一个能导入的文档，可以在其中填入供应商价格</p><img src="../../../_images/import02.png" class="img-responsive center-block"><p >导入该文档到YuanCloud，点击列表视图中的**导入**并上传你的文档。你可以确认并查看错误。一旦系统告知你一切正常，你就可以导入列表。</p><img src="../../../_images/import01.png" class="img-responsive center-block"><img src="../../../_images/import06.png" class="img-responsive center-block"><p >在导入之后，在**库存**页签的**供应商**的位置已经被填好。</p></section><section id="update-the-vendor-pricelist"><h4 >更新供应商价格表</h4><p >当你的供应商的价格表变更，有必要更新当前的价格。</p><p >Follow the procedure of the first scenario in order to export existing
+data from <span class="menuselection">Purchases ‣ Purchase ‣ Vendor Pricelist</span>.
+Select everything, and export from the <strong >Action</strong> menu.</p><p >Change price, end date, add a line, change a supplier, ... and then
+reimport in YuanCloud. Thanks to the ID, the list will be updated. Either the
+id is recognized and the line is updated or the ID is not known by YuanCloud
+and it will create a new pricelist line.</p><p >After the import, the <strong >Vendors</strong> section in <strong >Inventory</strong> tab of the
+product form is updated.</p><img src="../../../_images/import03.png" class="img-responsive center-block"></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>怎么将联系人导入CRM? &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="创建线索" href="../generate.html" />
+    <link rel="next" title="如何通过邮件收取生成相关线索?" href="emails.html" />
+    <link rel="prev" title="如何在YUANCLOUD CRM中创建客户联系人?" href="manual.html" />
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../crm.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              怎么将联系人导入CRM?
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="current toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#activate-the-lead-stage" class="ripple internal reference">激活线索阶段</a></li><li class="list-group-item"><a href="#import-your-csv-file" class="ripple internal reference">导入 CSV 文件</a></li><li class="list-group-item"><a href="#select-rows-to-import" class="ripple internal reference">选择记录以导入</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/crm/leads/generate/import.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-import-contacts-to-the-crm"><p >在YuanCloud CRM，您可以通过CSV文件导入潜在客户的数据库，例如陌生的电子邮件或陌生的电话拜访活动。你可能会想，如果最好的选择是导入你的联系情况作为线索或机会。这取决于你的业务特点和工作流程：</p><ul ><li ><p >一些公司可能决定不使用线索，而是直接保持所有信息作为机会。对于一些公司，线索仅仅是在销售过程中的额外步骤。你可以称之为扩展(从开始线索)与简化的客户关系管理(从机会开始).</p></li><li ><p >YuanCloud完全允许这些方法中的选择任何一个。如果你的公司处理从一个预先验证步骤的销售，如下面顺序描述首先激活线索阶段以便可以作为线索导入数据库。</p></li></ul></section><section id="activate-the-lead-stage"><h2 >激活线索阶段</h2><p >默认情况下，线索阶段是不再YuanCloud里被激活的.如果你要导入你的联系做为线索而不是机会，如下所示去到 <span class="menuselection">配置(Configuration) ‣ 设置(Settings)</span> ，选择 <strong >使用线索如果...</strong> 并点击 <strong >应用</strong> 。</p><img src="../../../_images/import01.jpg" class="img-responsive center-block"><p >这种激活将创建一个新的子菜单：[UNKNOWN NODE title_reference])</p><img src="../../../_images/import02.jpg" class="img-responsive center-block"></section><section id="import-your-csv-file"><h2 >导入 CSV 文件</h2><p >在新的子菜单 <span class="menuselection">销售(Sales) ‣ 线索(Leads)</span>，点击 <strong >导入</strong> 并选择您的Excel文件，从 <strong >选择文件</strong> 按钮导入。确保它的扩展名是 <strong >.csv</strong> 文件，不要忘记设置正确的文件格式选项( <strong >编码</strong> 和 <strong >分离器</strong> )，以配合您的本地设置和正确显示你的列。</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >如果您的潜在客户数据库是以另一种格式而非CSV提供的，你可以使用Microsoft Excel，OpenOffice/ LibreOffice，谷歌文档等很容易地将其转换为CSV格式。</p></div><img src="../../../_images/import03.jpg" class="img-responsive center-block"></section><section id="select-rows-to-import"><h2 >选择记录以导入</h2><p >如果你打勾*文件的第一行包含列的标签*的选项，从CSV文件中的列标题将自动映射到相应的字段。这使得导入更加容易，特别是当文件有很多列。当然，你可以重新映射列标题来描述你要导入的数据属性(姓，名，电子邮件等).</p><img src="../../../_images/import04.jpg" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >如果你要导入你的联系作为机会而不是线索，确信增加*类型*列到你的CSV.这列用来表明你的导入是作为一个线索(类型=线索)还是作为一个机会(类型=机会)。</p></div><p >点击**验证**按钮，如果你要在导入前让YuanCloud校验一切看上去就可以了。除此以外，你可以直接按导入按钮：相同的验证也会被执行。</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >其他关于如何导入联系情况到YuanCloud CRM的技术信息，可以阅读统一窗口中导入工具下的**常见问题**</p></div><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="manual.html" class="internal alert-link reference"><em >如何在YUANCLOUD CRM中创建客户联系人?</em></a></li><li ><a href="emails.html" class="internal alert-link reference"><em >如何通过邮件收取生成相关线索?</em></a></li><li ><a href="website.html" class="internal alert-link reference"><em >如何从网站生成相应的线索?</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

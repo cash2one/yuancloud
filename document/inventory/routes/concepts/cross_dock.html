@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何在仓库中实现cross-dock？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="概念" href="../concepts.html" />
+    <link rel="next" title="产品成本" href="../costing.html" />
+    <link rel="prev" title="如何做仓库的内部调拨？" href="inter_warehouse.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../inventory.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何在仓库中实现cross-dock？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="current toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a><ul ><li class="list-group-item"><a href="#warehouse-and-routes" class="ripple internal reference">仓库和路径</a></li><li class="list-group-item"><a href="#cross-docking-route" class="ripple internal reference">Cross Docking 路径</a></li><li class="list-group-item"><a href="#product-with-cross-dock" class="ripple internal reference">使用cross dock的产品</a></li></ul></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/inventory/routes/concepts/cross_dock.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-organize-a-cross-dock-in-your-warehouse"><p >交叉转运区域是一个不存放产品的临时区域，只是用来管理把产品发给客户的地方。这会省掉很多仓库内部调拨时间以及存储过程。我们管理转运区域的产品，在那里产品直接从供应商处，只需要在我们的仓库过一下就直接发给客户。</p><img src="../../../_images/cross01.jpg" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >关于更多关于如何构架你的仓库，请参阅`交叉转运是什么以及它是否是和我？&lt;<a href="https://www.yuancloud.com/blog/business-hacks-1/post/what-is-cross-docking-and-is-it-for-me-270" class="external reference alert-link">https://www.yuancloud.com/blog/business-hacks-1/post/what-is-cross-docking-and-is-it-for-me-270</a>&gt;`_`</p></div></section><section id="configuration"><h2 >配置</h2></section><section id="warehouse-and-routes"><h3 >仓库和路径</h3><p >在**库存**模块下，打开：[UNKNOWN NODE title_reference]，然后在**路线**中选择**产品使用高级路线**，然后点击**应用**。</p><img src="../../../_images/cross02.png" class="img-responsive center-block"><p >打开：[UNKNOWN NODE title_reference]，然后打开想要进行交叉转运的仓库并点击**编辑**。</p><p >在**仓库配置**页面，选择：</p><ul ><li ><p ><strong >收货</strong>：先卸货在收货区域然后再进入库存(2步)</p></li><li ><p ><strong >发货</strong>：直接从库存发货(直接出货)</p></li></ul><p >点击**保存**</p><img src="../../../_images/cross03.png" class="img-responsive center-block"><p >本步骤生成了一个cross-docking路径，你可以在以下地方看到 <span class="menuselection">存货(Inventory) ‣ 配置(Configurations) ‣ 路径(Routes) ‣ 路径(Routes)</span> 。</p></section><section id="cross-docking-route"><h3 >Cross Docking 路径</h3><p >我们在第一部分使用**购买**路径然后其余部分创建一个路径。</p><img src="../../../_images/cross04.png" class="img-responsive center-block"><p >每一个拉规则现在可以被配置。用内部的实体库位类型创建Cross Dock库位</p><div id="id1" class="figure"><img src="../../../_images/cross05.png" class="img-responsive"><h4 ><span class="menuselection">收货区(Input) ‣ Cross Dock</span></h4></div><div id="id2" class="figure"><img src="../../../_images/cross06.png" class="img-responsive"><h4 ><span class="menuselection">Cross Dock ‣ 出货区域(Output)</span></h4></div><div id="id3" class="figure"><img src="../../../_images/cross07.png" class="img-responsive"><h4 ><span class="menuselection">出货区域(Output) ‣ 客户(Customer)</span></h4></div></section><section id="product-with-cross-dock"><h3 >使用cross dock的产品</h3><p >我们创建蔬菜茴香产品并且设置刚才创建的路径以及**购买路径**。</p><p >我们可以指定一个供应商以及用于补充产品库存的最小库存规则。</p><img src="../../../_images/cross08.png" class="img-responsive center-block"><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="use_routes.html" class="internal alert-link reference"><em >如何使用路径？</em></a></li><li ><a href="../../management/incoming/two_steps.html" class="internal alert-link reference"><em >如何卸货到收货区域?(2步)</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

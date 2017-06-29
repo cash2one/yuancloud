@@ -1,0 +1,1 @@
+python yuancloud.py --config=.\install\yuancloud@ryanpc.conf

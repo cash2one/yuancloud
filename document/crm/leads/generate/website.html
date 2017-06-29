@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何从网站生成相应的线索? &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="创建线索" href="../generate.html" />
+    <link rel="next" title="管理线索" href="../manage.html" />
+    <link rel="prev" title="如何通过邮件收取生成相关线索?" href="emails.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../crm.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何从网站生成相应的线索?
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="current toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#activate-the-lead-stage" class="ripple internal reference">激活线索阶段</a></li><li class="list-group-item"><a href="#from-an-yuancloud-website" class="ripple internal reference">从一个YuanCloud 网站</a><ul ><li class="list-group-item"><a href="#configuration" class="ripple internal reference">配置</a></li><li class="list-group-item"><a href="#create-a-lead-by-using-the-contact-form-module" class="ripple internal reference">使用联系模块创建一个线索</a></li><li class="list-group-item"><a href="#create-a-lead-using-the-form-builder-module" class="ripple internal reference">使用界面格式生成器建立一个线索</a></li></ul></li><li class="list-group-item"><a href="#from-another-cms" class="ripple internal reference">从其他CMS系统</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/crm/leads/generate/website.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-generate-leads-from-my-website"><p >您的网站应该是你公司的第一线索生成工具。您的网站是您的在线营销活动的中心枢纽，你自然会推动合格的流量养活你的销售管道。当一个潜在客户登陆你的网站，你的目标是捕捉到他的信息，以便能够留在与他联系，进一步推动他来到销售漏斗。</p><p >这就是一个典型的在线线索产生过程中的工作：</p><ul ><li ><p >您的网站访问者点击号召行动(CTA)从你的营销方式中的一种(例如电子邮件通讯，社交媒体消息或博客文章)</p></li><li ><p >该CTA引领你的访问者到收集个人信息的形式登陆页面(如他的名字，他的电子邮件地址，他的电话号码).</p></li><li ><p >访问者发送表单并自动在YuanCloud里生成一个线索。</p></li></ul><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >你的号召行动，登陆页面和表单是线索生成过程的关键部分。随着YuanCloud网站，你可以轻松地创建和优化的关键要素，而无需编写代码或使用第三方应用程序。在这里了解更多&lt;<a href="https://www.yuancloud.com/page/website-builder" class="external reference alert-link">https://www.yuancloud.com/page/website-builder</a>&gt;`__。</p></div><p >在YuanCloud，网站和CRM模块完全集成，这意味着您可以轻松地通过您的网站的各种方式生成线索。但是，即使你的网站托管在另一个CMS，仍然可以使用YuanCloud CRM从您的网站产生线索。</p></section><section id="activate-the-lead-stage"><h2 >激活线索阶段</h2><p >默认情况下，线索阶段在YuanCloud CRM 里是不激活的。而是，新的线索自动成成机会.你能轻松地激活增加线索步骤的选项.如果你要导入你的联系活动作为线索而不是机会,从销售模块的 <span class="menuselection">配置(Configuration) ‣ 设置(Settings)</span>，如下所示选择 <strong >使用线索如果...</strong> 的选项并点击 <strong >应用</strong> 。</p><img src="../../../_images/website01.jpg" class="img-responsive center-block"><p >注意即使没有激活这个步骤，以下信息依然适用 -生成的线索会位于仪表盘的机会中</p></section><section id="from-an-yuancloud-website"><h2 >从一个YuanCloud 网站</h2><p >让我们假设你要尽可能多的得到你的网站访问者的信息。但是你怎么能确保每个想知道更多关于你公司的产品和服务的人真的留下了他的信息？感谢YuanCloud在CRM和网站模块间的集成,你能轻松地自动收集线索，感谢**联系表**和**表单生成**模块。</p><div role="alert" class="alert-info alert"><p class="alert-title">注解</p><p >另外好的方法是从你的YuanCloud网站的通讯或通讯弹窗收集来访者的邮件地址来产生线索。这些摘要会在你的邮件营销的邮件列表上生成新的联系人。这里可以了解更多&lt;<a href="https://www.yuancloud.com/page/email-marketing" class="external reference alert-link">https://www.yuancloud.com/page/email-marketing</a>&gt;`__.</p></div></section><section id="configuration"><h3 >配置</h3><p >从安装网站建设者模块开始。从主仪表盘，点击**应用**，在搜索栏中输入“<strong >网站</strong>”，并点击**安装**。您将被自动重定向到Web界面。</p><img src="../../../_images/website02.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >该教程将在屏幕上弹出窗口，如果这是你用YuanCloud网站上的第一次。这将帮助你开始使用的工具，你就可以在几分钟内使用它。因此，我们强烈建议您使用它。</p></div></section><section id="create-a-lead-by-using-the-contact-form-module"><h3 >使用联系模块创建一个线索</h3><p >您可以毫不费力地通过联系表格生成线索在**联系我们**的页面上。要做到这一点，首先需要安装联系表格模块。它会在你的**联系我们**页面添加联系人的形式，并自动生成表格提交线索。</p><p >要安装它，使用在屏幕的左上角方形图标回到后台。然后，点击**应用程序**，输入“<strong >联系表</strong>”，在搜索栏(不要忘记删除**应用程序**标记，否则你将看不到该模块)，然后单击* <em >安装*</em>。</p><img src="../../../_images/website03.png" class="img-responsive center-block"><p >一旦模块安装完，如下联系表单会集成到你的“联系我们”的页面。这个表单被链接到YuanCloud CRM,意味着所有通过这个表单输入的数据会被CRM捕获并生成一个新线索。</p><img src="../../../_images/website04.jpg" class="img-responsive center-block"><p >通过联系表单创建的所有线索都可以在销售模块中访问，通过点击：菜单选择：[UNKNOWN NODE title_reference]。线索的名字对应与联系表格上的“主题”字段，其他所有的信息都存储在CRM中的相应字段。作为销售人员，你可以添加更多的信息，率先转变成一个机会，甚至直接将其标记为赢或输。</p><img src="../../../_images/website05.jpg" class="img-responsive center-block"></section><section id="create-a-lead-using-the-form-builder-module"><h3 >使用界面格式生成器建立一个线索</h3><p >您可以在您的网站上的任何目标网页上使用格式生成器创建完全可编辑的自定义表单。至于联系表格模块，访问者已完成表格并点击该按钮后，表单生成器会自动生成一个线索**发送**。</p><p >从后端，转到设置和安装“<strong >网站表单生成器</strong>”模块(不要忘记删除**应用程序**标记，否则你将看不到模块)。然后，回到网站上，去你想要的目标网页，然后点击编辑访问可用片段。表单生成器片段位于**功能**部分。</p><img src="../../../_images/website06.png" class="img-responsive center-block"><p >一旦你已经把你的表单放置在您希望的网页位置上，一个**表单参数**窗口会弹出。从**行动**下拉列表中，选择**创建一个线索**在YuanCloud CRM自动创建线索。在**谢谢**字段中，选择要重定向访问者提交表单后(你不添加任何URL，消息“表格已成功发送”网页的URL将确认提交)。</p><img src="../../../_images/website07.png" class="img-responsive center-block"><p >然后，您可以开始创建自定义窗体。要添加新的领域，请点击**选择容器块**，然后在蓝色**自定义**按钮。 3个选项就会出现：</p><img src="../../../_images/website08.png" class="img-responsive center-block"><ul ><li ><p ><strong >变更表参数</strong>：让你回到表单参数和更改配置</p></li><li ><p ><strong >添加一个模型字段</strong>：允许您从下拉列表中添加YuanCloud CRM现有的字段。例如，如果您选择的字段*国家*，在线索中输入的这个值就会出现在CRM*国家*字段里 - 即使你改变窗体上的字段的名称。</p></li><li ><p ><strong >添加自定义字段</strong>：允许您添加默认情况下不会在YuanCloud CRM存在额外的字段。输入的值将添加在CRM中的“注意事项”中。您可以创建任意字段类型：复选框，单选按钮，文本，十进制数等。</p></li></ul><p >任何提交的表单将在后台创建一个线索。</p></section><section id="from-another-cms"><h2 >从其他CMS系统</h2><p >如果您使用YuanCloud CRM但不是YuanCloud网站，您依然可以用电子邮件网关自动化您的在线销售过程，通过编辑表单上“提交”按钮，更换超级链接，用一个mailto到你的相关的邮件别名(了解如何创建销售别名：DOC：'&lt;电子邮件&gt;`)。</p><p >例如，如果你的公司的别名是**salesEMEA@mycompany.com**，加``mailto:<a href="mailto:salesEMEA@mycompany" class="external reference">salesEMEA@mycompany</a>.com``到常规超链接的代码(CTRL + K)来生成一个线索到相关销售团队YuanCloud CRM。</p><img src="../../../_images/website09.png" class="img-responsive center-block"><div role="alert" class="alert-go_to alert"><p class="alert-title">参见</p><ul ><li ><a href="manual.html" class="internal alert-link reference"><em >如何在YUANCLOUD CRM中创建客户联系人?</em></a></li><li ><a href="import.html" class="internal alert-link reference"><em >怎么将联系人导入CRM?</em></a></li><li ><a href="emails.html" class="internal alert-link reference"><em >如何通过邮件收取生成相关线索?</em></a></li></ul></div></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

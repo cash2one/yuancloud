@@ -1,0 +1,49 @@
+<yuancloud>
+    <data><!-- Action -->
+        <record model="ir.actions.act_window" id="wx_thirdplatform_list_action">
+            <field name="name">第三方平台</field>
+            <field name="res_model">wx.third_platform</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建微信开放平台中公众号第三方平台或企业号第三方应用实体
+                </p>
+            </field>
+        </record>
+        <!-- List View (wx_qyh)-->
+        <record model="ir.ui.view" id="wx_thirdplatform_list_view">
+            <field name="name">ycloud_wx_third_platform.tree</field>
+            <field name="model">wx.third_platform</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="auth_component_platformname"/>
+                    <field name="auth_component_appid"/>
+                    <field name="auth_component_appsecret"/>
+                    <field name="auth_component_token"/>
+                    <field name="auth_component_encodingasekey"/>
+                    <field name="auth_component_platfromtype"/>
+                </tree>
+            </field>
+        </record>
+        <!--微信企业号卡片 -->
+        <record model="ir.ui.view" id="wx_thirdplatform_form_view">
+            <field name="name">ycloud_wx_third_platform.form</field>
+            <field name="model">wx.third_platform</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="auth_component_platformname"/>
+                            <field name="auth_component_appid"/>
+                            <field name="auth_component_appsecret"/>
+                            <field name="auth_component_token"/>
+                            <field name="auth_component_encodingasekey"/>
+                            <field name="auth_component_platfromtype"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</yuancloud>

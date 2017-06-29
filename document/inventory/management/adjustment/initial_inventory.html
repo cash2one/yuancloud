@@ -1,0 +1,133 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>如何进行初始化盘点？ &mdash; YuanCloud Business 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/accounting.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/prefixfree.min.js"></script>
+    <script type="text/javascript" src="../../../_static/atom.js"></script>
+    <script type="text/javascript" src="../../../_static/immutable.js"></script>
+    <script type="text/javascript" src="../../../_static/react.min.js"></script>
+    <script type="text/javascript" src="../../../_static/accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/chart-of-accounts.js"></script>
+    <script type="text/javascript" src="../../../_static/entries.js"></script>
+    <script type="text/javascript" src="../../../_static/reconciliation.js"></script>
+    <script type="text/javascript" src="../../../_static/misc.js"></script>
+    <script type="text/javascript" src="../../../_static/inventory.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-continental.js"></script>
+    <script type="text/javascript" src="../../../_static/coa-valuation-anglo-saxon.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../_static/doc.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.noconflict.js"></script>
+    <link rel="top" title="YuanCloud Business 0.1 文档" href="../../../index.html" />
+    <link rel="up" title="库存调整" href="../adjustment.html" />
+    <link rel="next" title="如何在最小库存和按订单补货规则之间选择？" href="min_stock_rule_vs_mto.html" />
+    <link rel="prev" title="库存调整" href="../adjustment.html" /> 
+  </head>
+  <body role="document"><header class="">
+    <figure class="card top">
+      <span class="card-img" ></span>
+    </figure>
+  </header>
+  <nav id="main_navbar" class="navbar ">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="nav navbar-nav navbar-left">
+          <li id="main-back">
+            
+            
+              
+              
+            
+            <a href="../../../inventory.html" class="mdi-navigation-arrow-back"></a>
+          </li>
+          <li>
+            <h1 id="main_title">
+              如何进行初始化盘点？
+            </h1>
+          </li>
+        </nav>
+      </div>
+
+      <nav class="collapse navbar-collapse navbar-main navbar-right" role="navigation">
+        
+        <ul class="current navbar-nav navbar-right nav"><li class="toctree-l1"><a href="../../../index.html" class="internal reference">Index</a></li><li class="toctree-l1 current dropdown"><a data-toggle="dropdown" href="../../../applications.html" class="dropdown-toggle internal reference">应用</a><ul class="current dropdown-menu"><li class="toctree-l2"><a href="../../../accounting.html" class="internal reference">会计</a></li><li class="toctree-l2"><a href="../../../crm.html" class="internal reference">CRM</a></li><li class="toctree-l2"><a href="../../../sales.html" class="internal reference">销售</a></li><li class="toctree-l2"><a href="../../../discuss/getting_started.html" class="internal reference">Discuss</a></li><li class="toctree-l2"><a href="../../../purchase.html" class="internal reference">采购</a></li><li class="current toctree-l2"><a href="../../../inventory.html" class="internal reference">库存</a></li><li class="toctree-l2"><a href="../../../point_of_sale.html" class="internal reference">终端零售POS</a></li><li class="toctree-l2"><a href="../../../project.html" class="internal reference">项目管理</a></li><li class="toctree-l2"><a href="../../../getting_started/documentation.html" class="internal reference">YUANCLOUD 在线</a></li><li class="toctree-l2"><a href="../../../website.html" class="internal reference">网站</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </nav>
+    
+  
+  <main class="container ">
+    
+    <div class="row">
+      
+      <aside>
+        <div class="navbar-aside text-center">
+          <ul class="list-group text-left nav"><li class="list-group-item"><a href="#product-configuration" class="ripple internal reference">产品配置</a></li><li class="list-group-item"><a href="#start-the-initial-inventory" class="ripple internal reference">开始初始化化盘点</a><ul ><li class="list-group-item"><a href="#update-the-product-quantity-for-one-product" class="ripple internal reference">为一种产品更新产品数量</a></li><li class="list-group-item"><a href="#multiple-products-at-once" class="ripple internal reference">一次多个产品</a></li></ul></li><li class="list-group-item"><a href="#reporting" class="ripple internal reference">报表</a></li></ul>
+          
+          <!--<p class="gith-container"><a href="https://github.com/yuancloud/documentation-user/edit/9.0/inventory/management/adjustment/initial_inventory.rst" class="gith-link">
+              Edit on GitHub
+          </a></p>-->
+          
+        </div>
+      </aside>
+      
+      <article class="doc-body ">
+        
+        
+  <section id="how-to-make-the-initial-inventory"><p >仓库管理系统的一个重要特性就是保持库存正确</p><p >一旦产品被定义好，就可以做库存的初始化了。你可以通过盘点库位中的存货来正确的管理存货数量。</p></section><section id="product-configuration"><h2 >产品配置</h2><p >在存货模块下，打开 <span class="menuselection">存货控制(Inventory Control) ‣ 产品(Products)</span>，然后点击 <strong >创建</strong> 创建新的产品。把产品类型定义为 <strong >库存产品</strong> ，不要定义为消耗品。</p><img src="../../../_images/initial01.png" class="img-responsive center-block"></section><section id="start-the-initial-inventory"><h2 >开始初始化化盘点</h2></section><section id="update-the-product-quantity-for-one-product"><h3 >为一种产品更新产品数量</h3><p >在刚刚创建的产品中，我们可以在上方的标题栏中看到产品在手数量是0。点击**更新在手数量**按钮</p><p >一个心窗口打开，在**最新在手数量**字段，输入当前库存中产品的数量，然后点击**应用**。</p><img src="../../../_images/initial02.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >如果使用仓库的多库位，你可以从这个界面设置产品的库位。</p></div><p >可以看到在手数量标签里面的数量已经变化了</p><img src="../../../_images/initial03.png" class="img-responsive center-block"><p >现在，如果在**存货控制**菜单下点击**存货调整**，你会看到系统自动创建并确认了一个命名为&quot;INV: (产品名称)&quot;的行。</p><img src="../../../_images/initial04.png" class="img-responsive center-block"></section><section id="multiple-products-at-once"><h3 >一次多个产品</h3><p >创建所有你想要追踪产品库存的产品(作为库存类型的产品)。一旦产品在库存中产生需求，用期初盘点在系统中按照库位放置当前的数量。进入：[UNKNOWN NODE problematic]库存控制  --&gt; 库存调整 [UNKNOWN NODE problematic]开始期初盘点。</p><p >给之命名(例如期初库存)并选择库存的存放库位。注意，当你选择了父库位(例如库存可以被分成不同的子库位),你也可以选择下级(或子)库位。</p><img src="../../../_images/initial05.png" class="img-responsive center-block"><p >在盘点的时候你可以选择盘所有产品，部分产品或者只盘一个。在这种状况下，我们选择**所有产品**。</p><img src="../../../_images/initial06.png" class="img-responsive center-block"><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >如果你需要在不同是时间段进行库存你估值而不是只有在期末盘点时候在强制估值期间字段输入响应的会计期间。需要安装会计模块。</p></div><p >点击**开始盘点**按钮。基于选择的盘点类型(所有产品或者部分产品)可能你需要通过点击**添加条目**手工地添加产品</p><p >添加库存中每一个产品的**实际数量**。</p><div role="alert" class="alert-info alert"><p class="alert-title">小技巧</p><p >通过你激活一些选项之后额外的信息就会出现(多库位，序列号，代销库存)。</p></div><img src="../../../_images/initial07.png" class="img-responsive center-block"><p >点击**确认盘点**按钮确认该次盘点并过账。</p></section><section id="reporting"><h2 >报表</h2><p >检查当前的库存，进入:menuselection:[UNKNOWN NODE title_reference] ,并且点击 <strong >列表按钮</strong> ：</p><img src="../../../_images/initial08.png" class="img-responsive center-block"></section>
+
+      </article>
+    </div>
+    
+    <div id="mask"></div>
+  </main>
+
+  <div class="floating_action_container">
+    <a id="floating_action" class="ripple" href="#">
+      <i class="mdi-action-explore"></i>
+    </a>
+    <div id="floating_action_menu">
+      <span class="bubble"></span>
+      <ul class="list-group content">
+        <li class="list-group-item ripple"><a>Cras justo odio</a></li>
+        <li class="list-group-item ripple"><a>Dapibus ac facilisis in</a></li>
+        <li class="list-group-item ripple"><a>Morbi leo risus</a></li>
+        <li class="list-group-item ripple"><a>Porta ac consectetur ac</a></li>
+        <li class="list-group-item ripple"><a>Vestibulum at eros</a></li>
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>

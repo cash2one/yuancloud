@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <!-- 预置-发票类型，日常流水使用-->
+        <record id="invoiceType_No" model="oa_journal.invoice.type">
+            <field name="name">无发票</field>
+            <field name="active">True</field>
+            <field name="invoicing_method">simple</field>
+        </record>
+        <record id="invoiceType_Common" model="oa_journal.invoice.type">
+            <field name="name">普通发票</field>
+            <field name="active">True</field>
+            <field name="invoicing_method">simple</field>
+        </record>
+        <record id="invoiceType_VAT" model="oa_journal.invoice.type">
+            <field name="name">增值税发票</field>
+            <field name="active">True</field>
+            <field name="invoicing_method">simple</field>
+        </record>
+    </data>
+</yuancloud>

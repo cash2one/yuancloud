@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yuancloud>
+    <data>
+        <record id="wkf_wx_product" model="workflow">
+            <field name="name">wx.product</field>
+            <field name="osv">wx.product</field>
+            <field name="on_create">True</field>
+        </record>
+        <!-- Activity 活动-->
+        <record id="product_act_draft" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_wx_product"/>
+            <field name="flow_start">True</field>
+            <field name="name">Draft</field>
+            <field name="kind">dummy</field>
+        </record>
+
+        <record id="product_act_released" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_wx_product"/>
+            <field name="name">Released</field>
+            <field name="kind">function</field>
+            <field name="action">released()</field>
+        </record>
+
+        <record id="product_act_onsale" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_wx_product"/>
+            <field name="name">Onsale</field>
+            <field name="kind">function</field>
+            <field name="action">onsale()</field>
+        </record>
+
+        <record id="product_act_close" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_wx_product"/>
+            <field name="name">Close</field>
+            <field name="kind">function</field>
+            <field name="flow_stop">True</field>
+            <field name="action">close()</field>
+        </record>
+
+        <!-- Transistion  迁移-->
+        <record id="product_trans_draft_released" model="workflow.transition">
+            <field name="act_from" ref="product_act_draft"/>
+            <field name="act_to" ref="product_act_released"/>
+            <field name="signal">action_toreleased</field>
+        </record>
+        <record id="product_trans_released_onsale" model="workflow.transition">
+            <field name="act_from" ref="product_act_released"/>
+            <field name="act_to" ref="product_act_onsale"/>
+            <field name="signal">action_toonsale</field>
+        </record>
+        <record id="product_trans_onsale_released" model="workflow.transition">
+            <field name="act_from" ref="product_act_onsale"/>
+            <field name="act_to" ref="product_act_released"/>
+            <field name="signal">action_toreleased</field>
+        </record>
+        <record id="product_trans_release_close" model="workflow.transition">
+            <field name="act_from" ref="product_act_released"/>
+            <field name="act_to" ref="product_act_close"/>
+            <field name="signal">action_toclosed</field>
+        </record>
+        <record id="product_trans_draft_close" model="workflow.transition">
+            <field name="act_from" ref="product_act_draft"/>
+            <field name="act_to" ref="product_act_close"/>
+            <field name="signal">action_toclosed</field>
+        </record>
+
+    </data>
+</yuancloud>
